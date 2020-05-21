@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="fleet_vehicle_view_form" model="ir.ui.view">
+        <field name="name">fleet.vehicle.form.license.plate.alt</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_form" />
+        <field name="arch" type="xml">
+            <field name="vin_sn" position="after">
+                <field name="license_plate_alt" />
+            </field>
+        </field>
+    </record>
+    <record id="fleet_vehicle_view_search" model="ir.ui.view">
+        <field name="name">fleet.vehicle.search</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_search" />
+        <field name="arch" type="xml">
+            <field name="name" position="attributes">
+                <attribute
+                    name="filter_domain"
+                >['|', '|', ('name', 'ilike', self), ('license_plate', 'ilike', self), ('license_plate_alt', 'ilike', self)]</attribute>
+            </field>
+        </field>
+    </record>
+</odoo>
