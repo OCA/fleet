@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="fleet_vehicle_log_services_tag_view_form" model="ir.ui.view">
+        <field name="name">fleet.vehicle.log.services.tag.form</field>
+        <field name="model">fleet.vehicle.log.services.tag</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="fleet_vehicle_log_services_tag_view_tree" model="ir.ui.view">
+        <field name="name">fleet.vehicle.log.services.tag.tree</field>
+        <field name="model">fleet.vehicle.log.services.tag</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+    <record id="fleet_vehicle_log_services_tag_action" model="ir.actions.act_window">
+        <field name="name">Vehicle Services Tags</field>
+        <field name="res_model">fleet.vehicle.log.services.tag</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add a new tag
+            </p>
+        </field>
+    </record>
+    <menuitem
+        id="fleet_vehicle_log_services_tag_menu"
+        parent="fleet_vehicle_log_services_conf_menu"
+        action="fleet_vehicle_log_services_tag_action"
+        sequence="99"
+    />
+</odoo>
