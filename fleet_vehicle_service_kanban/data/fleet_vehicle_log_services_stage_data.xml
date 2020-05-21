@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <record
+        id="fleet_vehicle_log_services_stage_draft"
+        model="fleet.vehicle.log.services.stage"
+    >
+        <field name="name">Draft</field>
+        <field name="sequence">1</field>
+    </record>
+</odoo>
