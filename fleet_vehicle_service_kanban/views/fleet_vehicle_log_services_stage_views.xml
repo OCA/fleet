@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="fleet_vehicle_log_services_stage_view_tree" model='ir.ui.view'>
+        <field name="name">fleet.vehicle.log.services.stage.tree</field>
+        <field name="model">fleet.vehicle.log.services.stage</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="sequence" widget="handle" />
+                <field name="name" />
+                <field name="fold" />
+            </tree>
+        </field>
+    </record>
+    <record id="fleet_vehicle_log_services_stage_action" model="ir.actions.act_window">
+        <field name="name">Vehicle Services Stages</field>
+        <field name="res_model">fleet.vehicle.log.services.stage</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new stage for vehicle services
+                </p>
+            <p>
+                You can customize available stages to track the evolution of
+                each service. Example: registered, finished, etc.
+            </p>
+        </field>
+    </record>
+    <menuitem
+        action="fleet_vehicle_log_services_stage_action"
+        parent="fleet_vehicle_log_services_conf_menu"
+        id="fleet_vehicle_log_services_stage_menu"
+        groups="fleet.fleet_group_manager"
+    />
+</odoo>

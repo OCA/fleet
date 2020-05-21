@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="fleet_vehicle_log_services_view_form" model="ir.ui.view">
+        <field name="name">fleet.vehicle.log.services.form.kanban</field>
+        <field name="model">fleet.vehicle.log.services</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_log_services_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="before">
+                <header>
+                    <field
+                        name="stage_id"
+                        widget="statusbar"
+                        options="{'clickable': '1', 'fold_field': 'fold'}"
+                    />
+                </header>
+            </xpath>
+            <xpath expr="//sheet/group[1]" position="before">
+                <div class="oe_button_box" name="button_box">
+                </div>
+                <widget
+                    name="web_ribbon"
+                    title="Archived"
+                    bg_color="bg-danger"
+                    attrs="{'invisible': [('active', '=', True)]}"
+                />
+            </xpath>
+            <field name="date" position="after">
+                <field name="active" invisible="1" />
+                <field name="user_id" />
+            </field>
+            <xpath expr="//sheet/group[@col='2'][2]" position="inside">
+                <group name="service_priority" string="Priority">
+                    <field name="priority" widget="priority" />
+                    <field
+                        name="tag_ids"
+                        widget="many2many_tags"
+                        options="{'color_field': 'color', 'no_create_edit': True}"
+                    />
+                </group>
+            </xpath>
+            <form position="inside">
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" />
+                    <field name="activity_ids" widget="mail_activity" />
+                    <field
+                        name="message_ids"
+                        widget="mail_thread"
+                        options='{"thread_level": 1}'
+                    />
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="fleet_vehicle_log_services_view_kanban" model="ir.ui.view">
+        <field name="name">fleet.vehicle.log.services.kanban</field>
+        <field name="model">fleet.vehicle.log.services</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_log_services_view_kanban" />
+        <field name="arch" type="xml">
+            <templates position="before">
+                <field name="activity_ids" />
+                <field name="activity_state" />
+                <progressbar
+                    field="activity_state"
+                    colors='{"planned": "success", "today": "warning", "overdue": "danger"}'
+                />
+            </templates>
+            <kanban position="attributes">
+                <attribute name="default_group_by">stage_id</attribute>
+            </kanban>
+            <xpath
+                expr="//div[contains(@t-attf-class, 'oe_kanban_global_click')]/div[2]"
+                position="after"
+            >
+                <div class="o_kanban_tags_section">
+                    <field name="tag_ids" widget="many2many_tags" />
+                </div>
+            </xpath>
+            <xpath
+                expr="//div[contains(@t-attf-class, 'oe_kanban_global_click')]"
+                position="inside"
+            >
+                <div class="o_kanban_inline_block" t-if="!selection_mode">
+                    <field name="activity_ids" widget="kanban_activity" />
+                </div>
+                <div class="o_kanban_image float-right">
+                    <img
+                        t-att-src="kanban_image('fleet.vehicle', 'image_128', record.vehicle_id.raw_value)"
+                        alt="Vehicle"
+                    />
+                </div>
+            </xpath>
+        </field>
+    </record>
+    <record id="fleet_vehicle_log_services_view_activity" model="ir.ui.view">
+        <field name="name">fleet.vehicle.log.services.activity</field>
+        <field name="model">fleet.vehicle.log.services</field>
+        <field name="arch" type="xml">
+            <activity string="Vehicles Services">
+                <field name="vehicle_id" />
+                <field name="cost_subtype_id" />
+                <templates>
+                    <div t-name="activity-box">
+                        <img
+                            t-att-src="activity_image('fleet.vehicle', 'image_128', record.vehicle_id.raw_value)"
+                            role="img"
+                            t-att-title="record.vehicle_id.value"
+                            t-att-alt="record.vehicle_id.value"
+                        />
+                        <div>
+                            <field name="vehicle_id" /> : <field
+                                name="cost_subtype_id"
+                            />
+                        </div>
+                    </div>
+                </templates>
+            </activity>
+        </field>
+    </record>
+    <record id="fleet.fleet_vehicle_log_services_action" model="ir.actions.act_window">
+        <field name="view_mode">kanban,tree,form,graph,activity</field>
+    </record>
+    <record id="fleet_vehicle_log_services_view_search" model="ir.ui.view">
+        <field name="name">fleet.vehicle.log.services.search</field>
+        <field name="model">fleet.vehicle.log.services</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_log_services_view_search" />
+        <field name="arch" type="xml">
+            <search position="inside">
+                <field string="Status" name="stage_id" />
+                <filter
+                    string="My Services"
+                    name="my_services"
+                    domain="[('user_id', '=', uid)]"
+                />
+                <separator />
+                <filter
+                    string="Archived"
+                    name="inactive"
+                    domain="[('active', '=', False)]"
+                />
+                <separator />
+                <filter
+                    string="Unread Messages"
+                    name="message_needaction"
+                    domain="[('message_needaction', '=', True)]"
+                />
+                <separator />
+                <filter
+                    string="Late Activities"
+                    name="activities_overdue"
+                    domain="[('activity_ids.date_deadline', '&lt;', context_today().strftime('%Y-%m-%d'))]"
+                    help="Show all records which has next action date is before today"
+                />
+                <filter
+                    string="Today Activities"
+                    name="activities_today"
+                    domain="[('activity_ids.date_deadline', '=', context_today().strftime('%Y-%m-%d'))]"
+                />
+                <filter
+                    string="Future Activities"
+                    name="activities_upcoming_all"
+                    domain="[('activity_ids.date_deadline', '&gt;', context_today().strftime('%Y-%m-%d'))]"
+                />
+                <group expand="1" string="Group By">
+                    <filter
+                        string="Status"
+                        name="groupby_status"
+                        context="{'group_by': 'stage_id'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="fleet_vehicle_log_services_view_tree" model="ir.ui.view">
+        <field name="name">fleet.vehicle.log.services.tree</field>
+        <field name="model">fleet.vehicle.log.services</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_log_services_view_tree" />
+        <field name="arch" type="xml">
+            <tree position="inside">
+                <field name="active" invisible="1" />
+            </tree>
+        </field>
+    </record>
+    <menuitem
+        name="Services Logs"
+        id="fleet_vehicle_log_services_conf_menu"
+        parent="fleet.fleet_configuration"
+        sequence="99"
+    />
+</odoo>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <record
+        id="mail_message_subtype_fleet_service_purchaser_updated"
+        model="mail.message.subtype"
+    >
+        <field name="name">Changed Purchaser</field>
+        <field name="sequence">0</field>
+        <field name="res_model">fleet.vehicle.log.services</field>
+        <field name="default" eval="True" />
+        <field name="description">Changed Purchaser</field>
+    </record>
+    <record
+        id="mail_message_subtype_fleet_service_vendor_updated"
+        model="mail.message.subtype"
+    >
+        <field name="name">Changed Vendor</field>
+        <field name="sequence">1</field>
+        <field name="res_model">fleet.vehicle.log.services</field>
+        <field name="default" eval="True" />
+        <field name="description">Changed Vendor</field>
+    </record>
+    <record
+        id="mail_message_subtype_fleet_service_user_updated"
+        model="mail.message.subtype"
+    >
+        <field name="name">Changed Responsible</field>
+        <field name="sequence">2</field>
+        <field name="res_model">fleet.vehicle.log.services</field>
+        <field name="default" eval="True" />
+        <field name="description">Changed Responsible</field>
+    </record>
+</odoo>
