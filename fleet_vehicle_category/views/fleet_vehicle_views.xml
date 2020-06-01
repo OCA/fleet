@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Copyright 2019 Stefano Consolaro (Ass. PNLUG<http://odoo.pnlug.it>)
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl)
+-->
+<odoo>
+    <!-- Inherit vehicle form view to add new field category-->
+    <record id="fleet_vehicle_form_inherit" model="ir.ui.view">
+        <field name="name">fleet.vehicle</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='model_year']" position="after">
+                <field name="vehicle_category_id" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
