@@ -10,6 +10,7 @@ setuptools.setup(
     install_requires=[
         'odoo13-addon-fleet_vehicle_category',
         'odoo13-addon-fleet_vehicle_history_date_end',
+        'odoo13-addon-fleet_vehicle_license_plate_alt',
         'odoo13-addon-fleet_vehicle_service_kanban',
     ],
     classifiers=[
