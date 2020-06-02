@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo13-addon-fleet_vehicle_category',
+        'odoo13-addon-fleet_vehicle_history_date_end',
     ],
     classifiers=[
         'Programming Language :: Python',
