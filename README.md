@@ -15,6 +15,7 @@ addon | version | summary
 --- | --- | ---
 [fleet_vehicle_category](fleet_vehicle_category/) | 13.0.1.0.0 | Add category definition for vehicles.
 [fleet_vehicle_history_date_end](fleet_vehicle_history_date_end/) | 13.0.1.0.0 | Automatically assign date end in vehicle history when a new driver is assigned.
+[fleet_vehicle_service_kanban](fleet_vehicle_service_kanban/) | 13.0.1.0.0 | Add features of kanban to logs of vehicle services.
 
 [//]: # (end addons)
 <!-- prettier-ignore-end -->
