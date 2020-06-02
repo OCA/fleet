@@ -14,6 +14,7 @@ Available addons
 addon | version | summary
 --- | --- | ---
 [fleet_vehicle_category](fleet_vehicle_category/) | 13.0.1.0.0 | Add category definition for vehicles.
+[fleet_vehicle_history_date_end](fleet_vehicle_history_date_end/) | 13.0.1.0.0 | Automatically assign date end in vehicle history when a new driver is assigned.
 
 [//]: # (end addons)
 <!-- prettier-ignore-end -->
