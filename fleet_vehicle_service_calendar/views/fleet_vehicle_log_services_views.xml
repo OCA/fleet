@@ -12,7 +12,7 @@
                 <button
                     name="action_schedule_meeting"
                     type="object"
-                    class="oe_stat_button"
+                    class="oe_stat_button pull-right"
                     icon="fa-calendar"
                 >
                     <div class="o_stat_info">
