@@ -18,7 +18,12 @@
             <field name="name" position="attributes">
                 <attribute
                     name="filter_domain"
-                >['|', '|', ('name', 'ilike', self), ('license_plate', 'ilike', self), ('license_plate_alt', 'ilike', self)]</attribute>
+                >['|',
+                  '|',
+                  ('name', 'ilike', self),
+                  ('license_plate', 'ilike', self),
+                  ('license_plate_alt', 'ilike', self)
+                  ]</attribute>
             </field>
         </field>
     </record>

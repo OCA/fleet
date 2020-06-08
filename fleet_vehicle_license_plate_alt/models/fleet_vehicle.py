@@ -32,4 +32,4 @@ class FleetVehicle(models.Model):
         rec = self._search(
             expression.AND([domain, args]), limit=limit, access_rights_uid=name_get_uid
         )
-        return models.lazy_name_get(self.browse(rec).with_user(name_get_uid))
+        return self.browse(rec).name_get()
