@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo12-addon-fleet_vehicle_category',
+        'odoo12-addon-fleet_vehicle_license_plate_alt',
     ],
     classifiers=[
         'Programming Language :: Python',
