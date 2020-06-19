@@ -16,15 +16,13 @@
             </xpath>
             <xpath expr="//sheet/group[1]" position="before">
                 <div class="oe_button_box" name="button_box"
-                    attrs="{'invisible': [('active', '=', True)]}">
-                    <button class="oe_stat_button bg-danger" type="object"
-                        name="toggle_active" icon="fa-archive">
-                        Archived
+                    >
+                    <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                        <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
                     </button>
                 </div>
             </xpath>
             <field name="date" position="after">
-                <field name="active" invisible="1" />
                 <field name="user_id" />
             </field>
             <xpath expr="//sheet/group[@col='2'][2]" position="inside">
