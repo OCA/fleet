@@ -16,6 +16,7 @@ addon | version | summary
 [fleet_vehicle_category](fleet_vehicle_category/) | 12.0.1.0.0 | Add category definition for vehicles.
 [fleet_vehicle_history_date_end](fleet_vehicle_history_date_end/) | 12.0.1.0.0 | Automatically assign date end in vehicle history when a new driver is assigned.
 [fleet_vehicle_license_plate_alt](fleet_vehicle_license_plate_alt/) | 12.0.1.0.0 | Add a new field in the vehicle, to store an alternative license plate.
+[fleet_vehicle_service_calendar](fleet_vehicle_service_calendar/) | 12.0.1.0.0 | Add a smart button in services to schedule meetings.
 [fleet_vehicle_service_kanban](fleet_vehicle_service_kanban/) | 12.0.1.0.0 | Add features of kanban to logs of vehicle services.
 
 [//]: # (end addons)
