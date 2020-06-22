@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="fleet_vehicle_log_services_view_form" model="ir.ui.view">
+        <field name="name">fleet.vehicle.log.services.form.calendar</field>
+        <field name="model">fleet.vehicle.log.services</field>
+        <field
+            name="inherit_id"
+            ref="fleet_vehicle_service_kanban.fleet_vehicle_log_services_view_form"
+        />
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button
+                    name="action_schedule_meeting"
+                    type="object"
+                    class="oe_stat_button pull-right"
+                    icon="fa-calendar"
+                >
+                    <div class="o_stat_info">
+                        <field name="meeting_count" class="o_stat_value" />
+                        <span
+                            class="o_stat_text"
+                            attrs="{'invisible': [('meeting_count', '&lt;', 2)]}"
+                        > Meetings</span>
+                        <span
+                            class="o_stat_text"
+                            attrs="{'invisible': [('meeting_count', '&gt;', 1)]}"
+                        > Meeting</span>
+                    </div>
+                </button>
+            </div>
+        </field>
+    </record>
+</odoo>
