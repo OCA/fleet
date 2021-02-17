@@ -79,7 +79,6 @@ class FleetVehicleInspection(models.Model):
         'res.partner',
         'Inspected By',
         track_visibility="onchange",
-        help='Inspected By',
         states=READONLY_STATES,
     )
 
@@ -111,7 +110,6 @@ class FleetVehicleInspection(models.Model):
         readonly=True,
         copy=False,
         store=True,
-        help='Inspection Result',
     )
 
     @api.depends('inspection_line_ids', 'state')
