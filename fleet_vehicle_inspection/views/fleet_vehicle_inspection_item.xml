@@ -16,6 +16,9 @@
                         <label for="name" class="oe_edit_only"/>
                         <h1><field name="name"/></h1>
                     </div>
+                    <group>
+                        <field name="instruction"/>
+                    </group>
                 </sheet>
             </form>
         </field>
@@ -37,6 +40,7 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
+                <field name="instruction"/>
             </tree>
         </field>
     </record>
