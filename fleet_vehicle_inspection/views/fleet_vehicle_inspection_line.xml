@@ -10,19 +10,38 @@
         <field name="arch" type="xml">
             <form>
                 <header>
+                    <button name="action_item_success"
+                            states="draft"
+                            string="Approve"
+                            type="object"
+                            class="oe_highlight btn-success"
+                            groups="fleet.fleet_group_manager"
+                    />
+                    <button name="action_item_failure"
+                            states="draft"
+                            string="Refuse"
+                            type="object"
+                            class="oe_highlight btn-danger"
+                            groups="fleet.fleet_group_manager"
+                    />
                 </header>
                 <sheet>
+                    <field name="result" invisible="1"/>
+                    <div class="badge-pill badge-primary float-right"
+                         attrs="{'invisible': [('result', 'not in', ['todo'])]}">Todo</div>
+					<div class="badge-pill badge-danger float-right"
+                         attrs="{'invisible': [('result', 'not in', ['failure'])]}">Failure</div>
+					<div class="badge-pill badge-success float-right"
+                         attrs="{'invisible': [('result', 'not in', ['success'])]}">Success</div>
                     <div class="oe_title">
                         <h1>
-                            <field name="inspection_id" readonly="1"/>
+                            <field name="inspection_item_id" readonly="1"/>
                         </h1>
-                        <h2>
-                            <field name="inspection_item_id"/>
-                        </h2>
                     </div>
                     <group>
-                        <field name="result"/>
-                        <field name="state"/>
+                        <field name="inspection_item_id"/>
+                        <field name="inspection_item_instruction"/>
+                        <field name="result_description"/>
                     </group>
                 </sheet>
                 <div class="oe_chatter">
@@ -52,6 +71,8 @@
             <tree>
                 <field name="inspection_id"/>
                 <field name="inspection_item_id"/>
+                <field name="inspection_item_instruction"/>
+                <field name="result_description"/>
                 <field name="result"/>
                 <field name="state"/>
             </tree>

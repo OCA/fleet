@@ -10,3 +10,4 @@ class FleetVehicleInspectionItem(models.Model):
     _description = 'Fleet Vehicle Inspection Item'
 
     name = fields.Char(required=True)
+    instruction = fields.Text(string='Instruction')

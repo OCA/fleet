@@ -20,28 +20,34 @@ class FleetVehicleInspectionLine(models.Model):
         string='Inspection Reference',
         required=True,
         ondelete='cascade',
-        index=True,
-        copy=False)
+        index=True)
 
     inspection_item_id = fields.Many2one(
         'fleet.vehicle.inspection.item',
         'Inspection Item',
         required=True,
         track_visibility="onchange",
-        help='Inspection Item',
+        index=True,
+        ondelete='cascade',
         states=READONLY_STATES,
+        copy=True
     )
+
+    inspection_item_instruction = fields.Text(
+        'Instruction',
+        related='inspection_item_id.instruction')
 
     result = fields.Selection([
         ('todo', 'Todo'),
         ('success', 'Success'),
         ('failure', 'Failure')
     ], 'Result', default='todo',
-        help='Inspection Line Result ',
         readonly=True,
         required=True,
         copy=False
     )
+
+    result_description = fields.Char()
 
     state = fields.Selection([
         ('draft', 'Draft'),
