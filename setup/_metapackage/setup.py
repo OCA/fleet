@@ -11,6 +11,7 @@ setuptools.setup(
         'odoo12-addon-fleet_vehicle_category',
         'odoo12-addon-fleet_vehicle_history_date_end',
         'odoo12-addon-fleet_vehicle_inspection',
+        'odoo12-addon-fleet_vehicle_inspection_template',
         'odoo12-addon-fleet_vehicle_license_plate_alt',
         'odoo12-addon-fleet_vehicle_service_calendar',
         'odoo12-addon-fleet_vehicle_service_kanban',
