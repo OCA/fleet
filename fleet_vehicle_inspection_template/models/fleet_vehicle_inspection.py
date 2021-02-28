@@ -14,7 +14,7 @@ class FleetVehicleInspection(models.Model):
 
     def _compute_line_data_for_template_change(self, line):
         return {
-            "inspection_item_id": line.inspection_template_item_id,
+            "inspection_item_id": line.inspection_template_item_id.id,
             "state": "draft",
         }
 
