@@ -6,8 +6,8 @@ from odoo import fields, models
 
 class FleetVehicleInspectionItem(models.Model):
 
-    _name = 'fleet.vehicle.inspection.item'
-    _description = 'Fleet Vehicle Inspection Item'
+    _name = "fleet.vehicle.inspection.item"
+    _description = "Fleet Vehicle Inspection Item"
 
     name = fields.Char(required=True)
-    instruction = fields.Text(string='Instruction')
+    instruction = fields.Text(string="Instruction")
