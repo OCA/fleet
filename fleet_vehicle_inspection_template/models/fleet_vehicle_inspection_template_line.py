@@ -6,21 +6,22 @@ from odoo import fields, models
 
 class FleetVehicleInspectionTemplateLine(models.Model):
 
-    _name = 'fleet.vehicle.inspection.template.line'
-    _description = 'Fleet Vehicle Inspection Template Line'
+    _name = "fleet.vehicle.inspection.template.line"
+    _description = "Fleet Vehicle Inspection Template Line"
 
     inspection_template_id = fields.Many2one(
-        'fleet.vehicle.inspection.template',
-        string='Inspection Template Reference',
+        "fleet.vehicle.inspection.template",
+        string="Inspection Template Reference",
         required=True,
-        ondelete='cascade',
+        ondelete="cascade",
         index=True,
-        copy=False)
+        copy=False,
+    )
 
     inspection_template_item_id = fields.Many2one(
-        'fleet.vehicle.inspection.item',
-        'Inspection Template Item',
+        "fleet.vehicle.inspection.item",
+        "Inspection Template Item",
         required=True,
         track_visibility="onchange",
-        help='Inspection Template Item',
+        help="Inspection Template Item",
     )

@@ -6,20 +6,19 @@ from odoo import api, fields, models
 
 class FleetVehicleInspection(models.Model):
 
-    _inherit = 'fleet.vehicle.inspection'
+    _inherit = "fleet.vehicle.inspection"
 
     inspection_template_id = fields.Many2one(
-        'fleet.vehicle.inspection.template',
-        string="Inspection Template"
+        "fleet.vehicle.inspection.template", string="Inspection Template"
     )
 
     def _compute_line_data_for_template_change(self, line):
         return {
-            'inspection_item_id': line.inspection_template_item_id,
-            'state': 'draft',
+            "inspection_item_id": line.inspection_template_item_id,
+            "state": "draft",
         }
 
-    @api.onchange('inspection_template_id')
+    @api.onchange("inspection_template_id")
     def _onchange_inspection_template_id(self):
         if self.inspection_template_id:
             self.name = self.inspection_template_id.name
