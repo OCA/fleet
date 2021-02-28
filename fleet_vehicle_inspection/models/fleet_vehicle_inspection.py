@@ -1,190 +1,176 @@
 # Copyright 2020 - TODAY, Marcel Savegnago - Escodoo https://www.escodoo.com.br
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError
+from odoo import _, api, fields, models
+from odoo.exceptions import UserError, ValidationError
 
 
 class FleetVehicleInspection(models.Model):
 
-    _name = 'fleet.vehicle.inspection'
-    _description = 'Fleet Vehicle Inspection'
-    _inherit = ['mail.thread', 'mail.activity.mixin']
+    _name = "fleet.vehicle.inspection"
+    _description = "Fleet Vehicle Inspection"
+    _inherit = ["mail.thread", "mail.activity.mixin"]
 
     READONLY_STATES = {
-        'confirmed': [('readonly', True)],
-        'cancel': [('readonly', True)],
+        "confirmed": [("readonly", True)],
+        "cancel": [("readonly", True)],
     }
 
     name = fields.Char(
-        'Reference',
-        required=True,
-        index=True,
-        copy=False,
-        default='New'
+        "Reference", required=True, index=True, copy=False, default="New"
     )
 
-    state = fields.Selection([
-        ('draft', 'Draft'),
-        ('confirmed', 'Confirmed'),
-        ('cancel', 'Cancelled'),
-    ], string='Status',
-        copy=False, index=True, readonly=True, track_visibility='onchange',
-        default='draft',
+    state = fields.Selection(
+        [("draft", "Draft"), ("confirmed", "Confirmed"), ("cancel", "Cancelled")],
+        string="Status",
+        copy=False,
+        index=True,
+        readonly=True,
+        track_visibility="onchange",
+        default="draft",
         help=" * Draft: not confirmed yet.\n"
-             " * Confirmed: inspection has been confirmed.\n"
-             " * Cancelled: has been cancelled, can't be confirmed anymore.")
+        " * Confirmed: inspection has been confirmed.\n"
+        " * Cancelled: has been cancelled, can't be confirmed anymore.",
+    )
 
     vehicle_id = fields.Many2one(
-        'fleet.vehicle',
-        'Vehicle',
-        help='Fleet Vehicle',
+        "fleet.vehicle",
+        "Vehicle",
+        help="Fleet Vehicle",
         required=True,
-        states=READONLY_STATES
+        states=READONLY_STATES,
     )
 
     odometer_id = fields.Many2one(
-        'fleet.vehicle.odometer',
-        'Odometer',
-        help='Odometer measure of the vehicle at the moment of this log'
+        "fleet.vehicle.odometer",
+        "Odometer ID",
+        help="Odometer measure of the vehicle at the moment of this log",
     )
 
     odometer = fields.Float(
-        compute="_get_odometer",
-        inverse='_set_odometer',
-        string='Last Odometer',
-        help='Odometer measure of the vehicle at the moment of this log',
+        compute="_compute_odometer",
+        inverse="_inverse_odometer",
+        string="Odometer",
+        help="Odometer measure of the vehicle at the moment of this log",
         stored=True,
         states=READONLY_STATES,
     )
 
-    odometer_unit = fields.Selection([
-        ('kilometers', 'Kilometers'),
-        ('miles', 'Miles')
-    ], 'Odometer Unit', default='kilometers',
+    odometer_unit = fields.Selection(
+        [("kilometers", "Kilometers"), ("miles", "Miles")],
+        "Odometer Unit",
+        default="kilometers",
         required=True,
         states=READONLY_STATES,
     )
 
     date_inspected = fields.Datetime(
-        'Inspection Date',
+        "Inspection Date",
         required=True,
         default=fields.Datetime.now,
-        help='Date when the vehicle has been inspected',
+        help="Date when the vehicle has been inspected",
         copy=False,
         states=READONLY_STATES,
     )
 
     inspected_by = fields.Many2one(
-        'res.partner',
-        'Inspected By',
+        "res.partner",
+        "Inspected By",
         track_visibility="onchange",
         states=READONLY_STATES,
     )
 
     direction = fields.Selection(
-        selection=[('in', 'IN'),
-                   ('out', 'OUT')],
-        default='out',
-        states=READONLY_STATES,
+        selection=[("in", "IN"), ("out", "OUT")], default="out", states=READONLY_STATES,
     )
 
-    note = fields.Html('Notes', states=READONLY_STATES)
+    note = fields.Html("Notes", states=READONLY_STATES)
 
     inspection_line_ids = fields.One2many(
-        'fleet.vehicle.inspection.line',
-        'inspection_id',
-        string='Inspection Lines',
+        "fleet.vehicle.inspection.line",
+        "inspection_id",
+        string="Inspection Lines",
         copy=True,
         auto_join=True,
         states=READONLY_STATES,
     )
 
-    result = fields.Selection([
-        ('todo', 'Todo'),
-        ('success', 'Success'),
-        ('failure', 'Failure')
-    ], 'Inspection Result',
-        default='todo',
+    result = fields.Selection(
+        [("todo", "Todo"), ("success", "Success"), ("failure", "Failure")],
+        "Inspection Result",
+        default="todo",
         compute="_compute_inspection_result",
         readonly=True,
         copy=False,
         store=True,
     )
 
-    @api.depends('inspection_line_ids', 'state')
+    @api.depends("inspection_line_ids", "state")
     def _compute_inspection_result(self):
-        for inspection in self:
-            if inspection.inspection_line_ids:
-                if (inspection.inspection_line_ids.filtered(
-                        lambda x: x.result == 'todo')):
-                    inspection.result = 'todo'
-                    continue
-                elif (inspection.inspection_line_ids.filtered(
-                        lambda x: x.result == 'failure')):
-                    inspection.result = 'failure'
+        for rec in self:
+            if rec.inspection_line_ids:
+                if any(l.result == "todo" for l in rec.inspection_line_ids):
+                    rec.result = "todo"
+                elif any(l.result == "failure" for l in rec.inspection_line_ids):
+                    rec.result = "failure"
                 else:
-                    inspection.result = 'success'
+                    rec.result = "success"
             else:
-                inspection.result = 'todo'
+                rec.result = "todo"
 
     @api.model
     def create(self, vals):
-        if vals.get('name', 'New') == 'New':
-            if vals.get('direction') == 'out':
-                vals['name'] = self.env['ir.sequence'].next_by_code(
-                    'fleet.vehicle.inspection.out') or '/'
+        if vals.get("name", "New") == "New":
+            if vals.get("direction") == "out":
+                vals["name"] = (
+                    self.env["ir.sequence"].next_by_code("fleet.vehicle.inspection.out")
+                    or "/"
+                )
             else:
-                vals['name'] = self.env['ir.sequence'].next_by_code(
-                    'fleet.vehicle.inspection.in') or '/'
+                vals["name"] = (
+                    self.env["ir.sequence"].next_by_code("fleet.vehicle.inspection.in")
+                    or "/"
+                )
         return super(FleetVehicleInspection, self).create(vals)
 
-    @api.multi
     def button_cancel(self):
-        for inspection in self:
-            if inspection.state not in ['draft', 'confirmed']:
-                continue
-            inspection.write({'state': 'cancel'})
-        return True
+        records = self.filtered(lambda rec: rec.state in ["draft", "confirmed"])
+        return records.write({"state": "cancel"})
 
-    @api.multi
     def button_confirm(self):
-        for inspection in self:
-            if inspection.inspection_line_ids:
-                if inspection.state not in ['draft', 'cancel']:
-                    continue
-                if (inspection.inspection_line_ids.filtered(
-                        lambda x: x.result == 'todo')):
-                    raise UserError(_(
-                        'Inspection cannot be completed. There are uninspected items.'
-                    ))
-                inspection.write({'state': 'confirmed'})
-            else:
-                raise UserError(_(
-                    'Inspection cannot be completed. There are no inspected items.'
-                ))
-        return True
+        if any(not rec.inspection_line_ids for rec in self) or any(
+            line.result == "todo" for line in self.mapped("inspection_line_ids")
+        ):
+            raise UserError(
+                _("Inspection cannot be completed. " "There are uninspected items.")
+            )
+        if any(rec.state not in ["draft", "cancel"] for rec in self):
+            raise ValidationError(
+                _("Only inspections in 'draft' or 'cancel' states can be confirmed")
+            )
+        return self.write({"state": "confirmed"})
 
-    @api.multi
     def button_draft(self):
-        for inspection in self:
-            inspection.write({'state': 'draft'})
-            inspection.write({'result': 'todo'})
-        return True
+        return self.write({"state": "draft", "result": "todo"})
 
-    def _get_odometer(self):
-        for record in self:
-            if record.odometer_id:
-                record.odometer = record.odometer_id.value
+    def _compute_odometer(self):
+        self.odometer = 0.0
+        for rec in self:
+            rec.odometer = False
+            if rec.odometer_id:
+                rec.odometer = rec.odometer_id.value
 
-    def _set_odometer(self):
-        for record in self:
-            if not record.odometer:
-                raise UserError(_('Emptying the odometer value of a '
-                                  'vehicle is not allowed.'))
-            odometer = self.env['fleet.vehicle.odometer'].create({
-                'value': record.odometer,
-                'date': record.date_inspected or fields.Date.context_today(record),
-                'vehicle_id': record.vehicle_id.id
-            })
+    def _inverse_odometer(self):
+        for rec in self:
+            if not rec.odometer:
+                raise UserError(
+                    _("Emptying the odometer value of a " "vehicle is not allowed.")
+                )
+            odometer = self.env["fleet.vehicle.odometer"].create(
+                {
+                    "value": rec.odometer,
+                    "date": rec.date_inspected or fields.Date.context_today(rec),
+                    "vehicle_id": rec.vehicle_id.id,
+                }
+            )
             self.odometer_id = odometer
