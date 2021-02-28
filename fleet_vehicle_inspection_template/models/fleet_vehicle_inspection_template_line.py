@@ -22,6 +22,6 @@ class FleetVehicleInspectionTemplateLine(models.Model):
         "fleet.vehicle.inspection.item",
         "Inspection Template Item",
         required=True,
-        track_visibility="onchange",
+        tracking=True,
         help="Inspection Template Item",
     )
