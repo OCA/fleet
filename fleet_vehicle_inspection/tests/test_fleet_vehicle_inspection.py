@@ -22,8 +22,16 @@ class TestFleetVehicleInspection(SavepointCase):
             {
                 "vehicle_id": cls.vehicle,
                 "inspection_line_ids": [
-                    (0, 0, {"inspection_item_id": cls.item_01.id},),
-                    (0, 0, {"inspection_item_id": cls.item_02.id},),
+                    (
+                        0,
+                        0,
+                        {"inspection_item_id": cls.item_01.id},
+                    ),
+                    (
+                        0,
+                        0,
+                        {"inspection_item_id": cls.item_02.id},
+                    ),
                 ],
             }
         )

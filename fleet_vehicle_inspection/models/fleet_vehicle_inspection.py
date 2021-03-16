@@ -81,7 +81,9 @@ class FleetVehicleInspection(models.Model):
     )
 
     direction = fields.Selection(
-        selection=[("in", "IN"), ("out", "OUT")], default="out", states=READONLY_STATES,
+        selection=[("in", "IN"), ("out", "OUT")],
+        default="out",
+        states=READONLY_STATES,
     )
 
     note = fields.Html("Notes", states=READONLY_STATES)
@@ -109,9 +111,9 @@ class FleetVehicleInspection(models.Model):
     def _compute_inspection_result(self):
         for rec in self:
             if rec.inspection_line_ids:
-                if any(l.result == "todo" for l in rec.inspection_line_ids):
+                if any(line.result == "todo" for line in rec.inspection_line_ids):
                     rec.result = "todo"
-                elif any(l.result == "failure" for l in rec.inspection_line_ids):
+                elif any(line.result == "failure" for line in rec.inspection_line_ids):
                     rec.result = "failure"
                 else:
                     rec.result = "success"
