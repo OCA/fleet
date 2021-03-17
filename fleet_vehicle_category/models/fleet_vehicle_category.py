@@ -15,4 +15,7 @@ class VehicleCategory(models.Model):
 
     # fields
     # name
-    name = fields.Char("Category", help="Eg. Tow truck, Ambulance, Trailer, Boat",)
+    name = fields.Char(
+        "Category",
+        help="Eg. Tow truck, Ambulance, Trailer, Boat",
+    )
