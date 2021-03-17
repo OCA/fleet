@@ -27,7 +27,7 @@ class FleetVehicleInspectionLine(models.Model):
         "fleet.vehicle.inspection.item",
         "Inspection Item",
         required=True,
-        track_visibility="onchange",
+        tracking=True,
         index=True,
         ondelete="cascade",
         states=READONLY_STATES,
@@ -50,13 +50,9 @@ class FleetVehicleInspectionLine(models.Model):
     result_description = fields.Char()
 
     state = fields.Selection(
-        [("draft", "Draft"), ("confirmed", "Confirmed"), ("cancel", "Cancelled")],
         related="inspection_id.state",
-        string="Inspection Status",
         readonly=True,
-        copy=False,
         store=True,
-        default="draft",
     )
 
     def action_item_success(self):
