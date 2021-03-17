@@ -21,16 +21,16 @@ class FleetVehicleInspection(models.Model):
     )
 
     state = fields.Selection(
-        [("draft", "Draft"), ("confirmed", "Confirmed"), ("cancel", "Cancelled")],
+        [("draft", "Draft"), ("confirmed", "Confirmed"), ("cancel", "Canceled")],
         string="Status",
         copy=False,
         index=True,
         readonly=True,
-        track_visibility="onchange",
+        tracking=True,
         default="draft",
         help=" * Draft: not confirmed yet.\n"
         " * Confirmed: inspection has been confirmed.\n"
-        " * Cancelled: has been cancelled, can't be confirmed anymore.",
+        " * Canceled: has been canceled, can't be confirmed anymore.",
     )
 
     vehicle_id = fields.Many2one(
@@ -52,7 +52,7 @@ class FleetVehicleInspection(models.Model):
         inverse="_inverse_odometer",
         string="Odometer",
         help="Odometer measure of the vehicle at the moment of this log",
-        stored=True,
+        store=True,
         states=READONLY_STATES,
     )
 
@@ -76,7 +76,7 @@ class FleetVehicleInspection(models.Model):
     inspected_by = fields.Many2one(
         "res.partner",
         "Inspected By",
-        track_visibility="onchange",
+        tracking=True,
         states=READONLY_STATES,
     )
 
