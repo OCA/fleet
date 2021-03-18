@@ -45,5 +45,5 @@ class TestFleetVehicleInspectionTemplate(SavepointCase):
     def test_fleet_vehicle_inspection(self):
 
         self.inspection._onchange_inspection_template_id()
-        self.assertTrue(self.inspection.name)
+        self.assertEqual(self.inspection.name, self.inspection_template.name)
         self.assertTrue(self.inspection.inspection_line_ids)
