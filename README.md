@@ -20,6 +20,7 @@ Available addons
 addon | version | summary
 --- | --- | ---
 [fleet_vehicle_category](fleet_vehicle_category/) | 14.0.1.0.0 | Add category definition for vehicles.
+[fleet_vehicle_inspection](fleet_vehicle_inspection/) | 14.0.1.0.0 | This module extends the Fleet module allowing the registration of vehicle entry and exit inspections.
 
 [//]: # (end addons)
 
