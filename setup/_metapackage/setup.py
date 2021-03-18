@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo14-addon-fleet_vehicle_category',
+        'odoo14-addon-fleet_vehicle_inspection',
     ],
     classifiers=[
         'Programming Language :: Python',
