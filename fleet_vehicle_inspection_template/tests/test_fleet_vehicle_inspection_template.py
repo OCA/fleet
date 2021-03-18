@@ -21,8 +21,16 @@ class TestFleetVehicleInspectionTemplate(SavepointCase):
             {
                 "name": "TemplateTest",
                 "inspection_template_line_ids": [
-                    (0, 0, {"inspection_template_item_id": cls.item_01.id},),
-                    (0, 0, {"inspection_template_item_id": cls.item_02.id},),
+                    (
+                        0,
+                        0,
+                        {"inspection_template_item_id": cls.item_01.id},
+                    ),
+                    (
+                        0,
+                        0,
+                        {"inspection_template_item_id": cls.item_02.id},
+                    ),
                 ],
             }
         )
