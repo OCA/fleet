@@ -14,7 +14,7 @@ class TestVehicleLogServicesCommon(TransactionCase):
                 "color": "Black",
                 "location": "Grand-Rosiere",
                 "doors": 5,
-                "driver_id": self.env.ref("base.user_demo_res_partner").id,
+                "driver_id": self.env.ref("base.user_demo").id,
                 "odometer_unit": "kilometers",
                 "car_value": 20000,
                 "model_id": self.env.ref("fleet.model_astra").id,
@@ -38,7 +38,7 @@ class TestVehicleLogServicesCommon(TransactionCase):
         self.service_repair = self.env["fleet.vehicle.log.services"].create(
             {
                 "vehicle_id": self.vehicle.id,
-                "cost_subtype_id": service_type_repair.id,
+                "service_type_id": service_type_repair.id,
                 "amount": 500,
                 "priority": "1",
                 "tag_ids": [(4, service_tag_oil.id)],
