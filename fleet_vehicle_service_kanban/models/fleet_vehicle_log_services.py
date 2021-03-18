@@ -18,7 +18,7 @@ class FleetVehicleLogServices(models.Model):
 
     stage_id = fields.Many2one(
         "fleet.vehicle.log.services.stage",
-        "Stage",
+        "Service Stage",
         default=lambda self: self._default_stage(),
         group_expand="_read_group_stage_ids",
         tracking=True,

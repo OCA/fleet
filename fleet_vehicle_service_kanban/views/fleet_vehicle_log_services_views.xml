@@ -5,15 +5,6 @@
         <field name="model">fleet.vehicle.log.services</field>
         <field name="inherit_id" ref="fleet.fleet_vehicle_log_services_view_form" />
         <field name="arch" type="xml">
-            <xpath expr="//sheet" position="before">
-                <header>
-                    <field
-                        name="stage_id"
-                        widget="statusbar"
-                        options="{'clickable': '1', 'fold_field': 'fold'}"
-                    />
-                </header>
-            </xpath>
             <xpath expr="//sheet/group[1]" position="before">
                 <div class="oe_button_box" name="button_box">
                 </div>
@@ -24,11 +15,14 @@
                     attrs="{'invisible': [('active', '=', True)]}"
                 />
             </xpath>
+            <field name="service_type_id" position="after">
+                <field name="stage_id" />
+            </field>
             <field name="date" position="after">
                 <field name="active" invisible="1" />
                 <field name="user_id" />
             </field>
-            <xpath expr="//sheet/group[@col='2'][2]" position="inside">
+            <xpath expr="//sheet/group[@col='2']" position="inside">
                 <group name="service_priority" string="Priority">
                     <field name="priority" widget="priority" />
                     <field
@@ -97,7 +91,6 @@
         <field name="arch" type="xml">
             <activity string="Vehicles Services">
                 <field name="vehicle_id" />
-                <field name="cost_subtype_id" />
                 <templates>
                     <div t-name="activity-box">
                         <img
@@ -107,9 +100,7 @@
                             t-att-alt="record.vehicle_id.value"
                         />
                         <div>
-                            <field name="vehicle_id" /> : <field
-                                name="cost_subtype_id"
-                            />
+                            <field name="vehicle_id" />/>
                         </div>
                     </div>
                 </templates>
@@ -125,7 +116,7 @@
         <field name="inherit_id" ref="fleet.fleet_vehicle_log_services_view_search" />
         <field name="arch" type="xml">
             <search position="inside">
-                <field string="Status" name="stage_id" />
+                <field string="Stage" name="stage_id" />
                 <filter
                     string="My Services"
                     name="my_services"
@@ -162,7 +153,7 @@
                 />
                 <group expand="1" string="Group By">
                     <filter
-                        string="Status"
+                        string="Stage"
                         name="groupby_status"
                         context="{'group_by': 'stage_id'}"
                     />
