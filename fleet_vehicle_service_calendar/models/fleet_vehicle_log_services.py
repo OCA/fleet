@@ -23,8 +23,8 @@ class FleetVehicleLogServices(models.Model):
             record.meeting_count = mapped_data.get(record.id, 0)
 
     def action_schedule_meeting(self):
-        """ Open meeting's calendar view to schedule meeting on current service.
-            :return dict: dictionary value for created Meeting view
+        """Open meeting's calendar view to schedule meeting on current service.
+        :return dict: dictionary value for created Meeting view
         """
         self.ensure_one()
         action = self.env.ref("calendar.action_calendar_event").read()[0]
@@ -51,7 +51,8 @@ class FleetVehicleLogServices(models.Model):
             fields.Datetime.context_timestamp(self, meet_date)
         )
         html_time = "<time datetime='{}+00:00'>{}</time>".format(
-            meeting_date, meeting_usertime,
+            meeting_date,
+            meeting_usertime,
         )
         message = _(
             "Meeting scheduled at '%s'<br> Subject: %s <br> Duration: %s hours"
