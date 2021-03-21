@@ -6,7 +6,7 @@
     "summary": """
         This module extends the Fleet module allowing the registration
         of vehicle entry and exit inspections.""",
-    "version": "14.0.1.0.0",
+    "version": "14.0.2.0.0",
     "license": "AGPL-3",
     "category": "Human Resources",
     "author": "Escodoo,Odoo Community Association (OCA)",
@@ -15,6 +15,8 @@
     "website": "https://github.com/OCA/fleet",
     "depends": ["fleet"],
     "data": [
+        "security/fleet_vehicle_inspection_line_image.xml",
+        "views/assets_backend.xml",
         "views/fleet_vehicle.xml",
         "security/fleet_vehicle_inspection_line.xml",
         "views/fleet_vehicle_inspection_line.xml",
