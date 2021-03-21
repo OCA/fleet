@@ -1,2 +1,2 @@
 * Add Inspection Report
-* Add Inspection Photographs
+* Add Video URL along with the images of the inspection lines
