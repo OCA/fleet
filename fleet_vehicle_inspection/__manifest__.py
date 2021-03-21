@@ -15,6 +15,8 @@
     "website": "https://github.com/OCA/fleet",
     "depends": ["fleet"],
     "data": [
+        "security/fleet_vehicle_inspection_line_image.xml",
+        "views/assets_backend.xml",
         "views/fleet_vehicle.xml",
         "security/fleet_vehicle_inspection_line.xml",
         "views/fleet_vehicle_inspection_line.xml",

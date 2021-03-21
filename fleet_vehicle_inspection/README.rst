@@ -44,7 +44,6 @@ Known issues / Roadmap
 ======================
 
 * Add Inspection Report
-* Add Inspection Photographs
 
 Bug Tracker
 ===========
