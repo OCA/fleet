@@ -55,6 +55,10 @@ class FleetVehicleInspectionLine(models.Model):
         store=True,
     )
 
+    inspection_line_image_ids = fields.One2many(
+        "fleet.vehicle.inspection.line.image", "inspection_line_id", string="Images"
+    )
+
     def action_item_success(self):
         return self.write({"result": "success"})
 
