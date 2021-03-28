@@ -1,0 +1,65 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fleet_product
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-28 17:22+0000\n"
+"PO-Revision-Date: 2021-03-28 14:23-0300\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 2.4.1\n"
+"Last-Translator: Marcel Savegnago <marcel.savegnago@gmail.com>\n"
+"Language: pt_BR\n"
+
+#. module: fleet_product
+#: model:ir.model.fields,field_description:fleet_product.field_product_product__fleet_ok
+#: model:ir.model.fields,field_description:fleet_product.field_product_template__fleet_ok
+msgid "Can be used by Fleet"
+msgstr "Pode ser usado pela Frota"
+
+#. module: fleet_product
+#: model_terms:ir.actions.act_window,help:fleet_product.fleet_product_action
+msgid "Create a new product"
+msgstr "Criar um novo produto"
+
+#. module: fleet_product
+#: model:ir.model.fields,field_description:fleet_product.field_product_template__display_name
+msgid "Display Name"
+msgstr "Nome Exibido"
+
+#. module: fleet_product
+#: model_terms:ir.ui.view,arch_db:fleet_product.product_product_form_view
+msgid "Fleet"
+msgstr "Frota"
+
+#. module: fleet_product
+#: model:ir.model.fields,field_description:fleet_product.field_product_template__id
+msgid "ID"
+msgstr "ID"
+
+#. module: fleet_product
+#: model:ir.model.fields,field_description:fleet_product.field_product_template____last_update
+msgid "Last Modified on"
+msgstr "Última Modificação em"
+
+#. module: fleet_product
+#: model:ir.model,name:fleet_product.model_product_template
+msgid "Product Template"
+msgstr "Modelo de Produto"
+
+#. module: fleet_product
+#: model:ir.actions.act_window,name:fleet_product.fleet_product_action
+#: model:ir.ui.menu,name:fleet_product.fleet_product_menu
+msgid "Products"
+msgstr "Produtos"
+
+#. module: fleet_product
+#: model_terms:ir.actions.act_window,help:fleet_product.fleet_product_action
+msgid "You can add multiple products for use with the fleet module."
+msgstr "Você pode adicionar vários produtos para uso com o módulo da frota."
