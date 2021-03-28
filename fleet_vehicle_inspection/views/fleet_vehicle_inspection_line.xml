@@ -48,10 +48,14 @@
                     </div>
                     <group>
                         <field name="inspection_item_id" />
-                        <field name="inspection_item_instruction" />
-                        <field name="result_description" />
                     </group>
                     <notebook>
+                        <page name="instruction" string="Instruction">
+                            <field name="inspection_item_instruction" />
+                        </page>
+                        <page name="result" string="Result">
+                            <field name="result_description" />
+                        </page>
                         <page name="images_page" string="Images">
                             <group name="images" string="Images">
                                 <field
