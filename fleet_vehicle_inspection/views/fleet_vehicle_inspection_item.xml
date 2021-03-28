@@ -18,10 +18,21 @@
                             <field name="name" />
                         </h1>
                     </div>
-                    <group>
-                        <field name="instruction" />
-                    </group>
+                    <notebook>
+                        <page name="instruction" string="Instruction">
+                            <field name="instruction" />
+                        </page>
+                    </notebook>
                 </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" />
+                    <field name="activity_ids" widget="mail_activity" />
+                    <field
+                        name="message_ids"
+                        widget="mail_thread"
+                        options="{'post_refresh': 'recipients'}"
+                    />
+                </div>
             </form>
         </field>
     </record>
