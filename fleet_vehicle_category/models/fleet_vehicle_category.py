@@ -13,6 +13,5 @@ class VehicleCategory(models.Model):
     _name = "fleet.vehicle.category"
     _description = "Classification of vehicle, eg. tow truck, ambulance, trailer, boat"
 
-    # fields
-    # name
     name = fields.Char("Category", help="Eg. Tow truck, Ambulance, Trailer, Boat",)
+    description = fields.Html(string='Description')
