@@ -15,12 +15,18 @@ msgstr ""
 
 #. module: fleet_vehicle_category
 #: model:ir.model.fields,field_description:fleet_vehicle_category.field_fleet_vehicle_category__name
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_category.fleet_vehicle_category_view_tree
 msgid "Category"
 msgstr ""
 
 #. module: fleet_vehicle_category
 #: model:ir.model,name:fleet_vehicle_category.model_fleet_vehicle_category
 msgid "Classification of vehicle, eg. tow truck, ambulance, trailer, boat"
+msgstr ""
+
+#. module: fleet_vehicle_category
+#: model_terms:ir.actions.act_window,help:fleet_vehicle_category.fleet_vehicle_category_act_window
+msgid "Create a new vehicle category"
 msgstr ""
 
 #. module: fleet_vehicle_category
@@ -31,6 +37,12 @@ msgstr ""
 #. module: fleet_vehicle_category
 #: model:ir.model.fields,field_description:fleet_vehicle_category.field_fleet_vehicle_category__create_date
 msgid "Created on"
+msgstr ""
+
+#. module: fleet_vehicle_category
+#: model:ir.model.fields,field_description:fleet_vehicle_category.field_fleet_vehicle_category__description
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_category.fleet_vehicle_category_view_form
+msgid "Description"
 msgstr ""
 
 #. module: fleet_vehicle_category
@@ -73,6 +85,16 @@ msgid "Vehicle"
 msgstr ""
 
 #. module: fleet_vehicle_category
+#: model:ir.actions.act_window,name:fleet_vehicle_category.fleet_vehicle_category_act_window
 #: model:ir.model.fields,field_description:fleet_vehicle_category.field_fleet_vehicle__vehicle_category_id
+#: model:ir.ui.menu,name:fleet_vehicle_category.fleet_vehicle_category_menu
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_category.fleet_vehicle_category_view_form
 msgid "Vehicle Category"
+msgstr ""
+
+#. module: fleet_vehicle_category
+#: model_terms:ir.actions.act_window,help:fleet_vehicle_category.fleet_vehicle_category_act_window
+msgid ""
+"You can define several categories (e.g. tow truck, ambulance, trailer, boat)"
+" for each vehicle."
 msgstr ""
