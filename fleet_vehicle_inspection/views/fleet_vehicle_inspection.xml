@@ -62,7 +62,7 @@
 									<field name="inspection_item_instruction"/>
 									<field name="result_description"/>
 									<field name="result" widget="label_selection"
-                                           options="{'classes': {'failure': 'danger', 'success': 'success'}}"/>
+                                           options="{'classes': {'todo': 'info', 'failure': 'danger', 'success': 'success'}}"/>
 									<button name="action_item_success"
                                             states="draft"
                                             string="Approve"
@@ -115,7 +115,7 @@
 													</div>
 													<span class="float-right">
 														<field name="result" widget="label_selection"
-                                                               options="{'classes': {'failure': 'danger', 'success': 'success'}}"/>
+                                                               options="{'classes': {'todo': 'info', 'failure': 'danger', 'success': 'success'}}"/>
 													</span>
 												</div>
 												<div class="row">
@@ -181,8 +181,14 @@
 				<field name="vehicle_id"/>
 				<field name="direction"/>
 				<field name="inspected_by"/>
-				<field name="state"/>
-				<field name="result"/>
+                <field name="state"
+                       widget="label_selection"
+                       options="{'classes': {'draft': 'info', 'confirmed': 'success', 'cancel': 'danger'}}"
+                />
+				<field name="result"
+                       widget="label_selection"
+                       options="{'classes': {'todo': 'info', 'failure': 'danger', 'success': 'success'}}"
+                />
 			</tree>
 		</field>
 	</record>

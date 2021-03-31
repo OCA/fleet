@@ -140,7 +140,10 @@
                 <field name="inspection_item_id"/>
                 <field name="inspection_item_instruction"/>
                 <field name="result_description"/>
-                <field name="result"/>
+                <field name="result"
+                       widget="label_selection"
+                       options="{'classes': {'failure': 'danger', 'success': 'success'}}"
+                />
                 <field name="state"/>
             </tree>
         </field>
