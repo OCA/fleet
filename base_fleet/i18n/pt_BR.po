@@ -1,0 +1,114 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* base_fleet
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-31 03:40+0000\n"
+"PO-Revision-Date: 2021-03-31 00:43-0300\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 2.4.1\n"
+"Last-Translator: Marcel Savegnago <marcel.savegnago@gmail.com>\n"
+"Language: pt_BR\n"
+
+#. module: base_fleet
+#: model_terms:ir.ui.view,arch_db:base_fleet.fleet_vehicle_form_view
+msgid "Additional Properties"
+msgstr "Propriedades Adicionais"
+
+#. module: base_fleet
+#: model:ir.model.fields,field_description:base_fleet.field_fleet_vehicle__calendar_year
+msgid "Calendar Year"
+msgstr "Ano Calendário"
+
+#. module: base_fleet
+#: model:ir.model.fields,help:base_fleet.field_fleet_vehicle__calendar_year
+msgid "Calendar year of the model"
+msgstr "Ano calendário do modelo"
+
+#. module: base_fleet
+#: model_terms:ir.ui.view,arch_db:base_fleet.fleet_vehicle_form_view
+msgid "Description"
+msgstr "Descrição"
+
+#. module: base_fleet
+#: selection:fleet.vehicle,fuel_type:0
+msgid "Diesel"
+msgstr "Diesel"
+
+#. module: base_fleet
+#: selection:fleet.vehicle,fuel_type:0
+msgid "Electric"
+msgstr "Elétrico"
+
+#. module: base_fleet
+#: model_terms:ir.ui.view,arch_db:base_fleet.fleet_vehicle_form_view
+msgid "Engine Parameters"
+msgstr "Parâmetros do Motor"
+
+#. module: base_fleet
+#: model_terms:ir.ui.view,arch_db:base_fleet.fleet_vehicle_form_view
+msgid "Engine Specifications"
+msgstr "Especificações do Motor"
+
+#. module: base_fleet
+#: selection:fleet.vehicle,fuel_type:0
+msgid "Ethanol"
+msgstr "Ethanol"
+
+#. module: base_fleet
+#: selection:fleet.vehicle,fuel_type:0
+msgid "Flex (Gasoline/Ethanol)"
+msgstr "Flex (Gasolina/Etanol)"
+
+#. module: base_fleet
+#: model:ir.model.fields,field_description:base_fleet.field_fleet_vehicle__fuel_capacity
+msgid "Fuel Capacity(l)"
+msgstr "Capacidade de Combustível(l)"
+
+#. module: base_fleet
+#: model:ir.model.fields,field_description:base_fleet.field_fleet_vehicle__fuel_type
+msgid "Fuel Type"
+msgstr "Tipo de Combustível"
+
+#. module: base_fleet
+#: model:ir.model.fields,help:base_fleet.field_fleet_vehicle__fuel_type
+msgid "Fuel Used by the vehicle"
+msgstr "Combustível Usado pelo veículo"
+
+#. module: base_fleet
+#: selection:fleet.vehicle,fuel_type:0
+msgid "Gasoline"
+msgstr "Gasolina"
+
+#. module: base_fleet
+#: selection:fleet.vehicle,fuel_type:0
+msgid "Hybrid"
+msgstr "Híbrido"
+
+#. module: base_fleet
+#: selection:fleet.vehicle,fuel_type:0
+msgid "LPG"
+msgstr "GPL"
+
+#. module: base_fleet
+#: model:ir.model,name:base_fleet.model_fleet_vehicle
+msgid "Vehicle"
+msgstr "Veículo"
+
+#. module: base_fleet
+#: model:ir.model.fields,field_description:base_fleet.field_fleet_vehicle__description
+msgid "Vehicle Description"
+msgstr "Descrição do Veículo"
+
+#. module: base_fleet
+#: model_terms:ir.ui.view,arch_db:base_fleet.fleet_vehicle__graph_view
+#: model_terms:ir.ui.view,arch_db:base_fleet.fleet_vehicle_pivot_view
+msgid "Vehicles"
+msgstr "Veículos"

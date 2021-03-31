@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2021 - TODAY, Marcel Savegnago <marcel.savegnago@escodoo.com.br>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record model="ir.ui.view" id="fleet_vehicle_form_view">
+        <field name="name">fleet.vehicle.form (in base_fleet)</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/>
+        <field name="arch" type="xml">
+            <field name="model_year" position="before">
+                <field name="calendar_year"/>
+            </field>
+            <xpath expr="//form/sheet/group[@col='2'][2]" position="replace">
+                <notebook colspan="4">
+                    <page name="description" string="Description">
+                        <field name="description"/>
+                    </page>
+                    <page name="additional_properties" string="Additional Properties">
+                        <group string="Engine Parameters">
+                            <group colspan="2" col="4">
+                                <field name="seats"/>
+                                <field name="doors"/>
+                                <field name="color"/>
+                                <field name="fuel_capacity"/>
+                            </group>
+                        </group>
+                    </page>
+                    <page name="engine_specifications" string="Engine Specifications">
+                        <group string="Engine Parameters">
+                            <group colspan="2" col="4">
+                                <field name="transmission"/>
+                                <field name="fuel_type"/>
+                                <field name="co2"/>
+                                <field name="horsepower"/>
+                                <field name="horsepower_tax"/>
+                                <field name="power"/>
+                             </group>
+                         </group>
+                    </page>
+                </notebook>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="fleet_vehicle_pivot_view" >
+        <field name="name">fleet.vehicle.pivot (in base_fleet)</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="type">pivot</field>
+        <field name="arch" type="xml">
+            <pivot string="Vehicles" display_quantity="true">
+                <field name="state_id" type="row"/>
+                <field name="car_value" type="measure"/>
+                <field name="residual_value" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="fleet_vehicle__graph_view">
+		<field name="name">fleet.vehicle.graph (in base_fleet)</field>
+		<field name="model">fleet.vehicle</field>
+		<field name="arch" type="xml">
+			<graph string="Vehicles">
+				<field name="state_id" type="row"/>
+			</graph>
+		</field>
+	</record>
+
+    <record id="fleet.fleet_vehicle_action" model="ir.actions.act_window">
+        <field name="view_mode">kanban,tree,pivot,graph,activity,form</field>
+    </record>
+
+</odoo>
