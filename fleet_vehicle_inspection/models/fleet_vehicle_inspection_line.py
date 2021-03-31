@@ -61,6 +61,10 @@ class FleetVehicleInspectionLine(models.Model):
         default='draft'
     )
 
+    inspection_line_image_ids = fields.One2many(
+        'fleet.vehicle.inspection.line.image', 'inspection_line_id', string='Images'
+    )
+
     @api.multi
     def action_item_success(self):
         return self.write({'result': 'success'})

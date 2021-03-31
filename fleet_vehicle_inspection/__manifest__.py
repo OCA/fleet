@@ -8,7 +8,7 @@
         of vehicle entry and exit inspections.""",
     'version': '12.0.2.0.0',
     'license': 'AGPL-3',
-    'category': 'Human Resources',
+    'category': 'Human Resources/Fleet',
     'author': 'Escodoo,Odoo Community Association (OCA)',
     'maintainers': ['marcelsavegnago'],
     'images': ['static/description/banner.png'],
@@ -17,6 +17,8 @@
         'fleet',
     ],
     'data': [
+        'security/fleet_vehicle_inspection_line_image.xml',
+        'views/assets_backend.xml',
         'views/fleet_vehicle.xml',
         'security/fleet_vehicle_inspection_line.xml',
         'views/fleet_vehicle_inspection_line.xml',
