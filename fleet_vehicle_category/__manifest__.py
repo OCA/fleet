@@ -4,7 +4,7 @@
 {
     "name": "Fleet Vehicle Category",
     "summary": "Add category definition for vehicles.",
-    "version": "12.0.1.0.0",
+    "version": "12.0.1.1.0",
     "category": "Human Resources",
     "author": "Stefano Consolaro, Associazione PNLUG - Gruppo Odoo, "
     "Odoo Community Association (OCA)",
