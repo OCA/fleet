@@ -156,9 +156,12 @@
 				<filter string="Direction IN" name="direction" domain="[('direction','=','in')]"/>
 				<filter string="Direction OUT" name="direction" domain="[('direction','=','out')]"/>
 				<separator/>
-				<filter string="Inspection Todo" name="result" domain="[('result','=','todo')]"/>
-				<filter string="Inspection Success" name="result" domain="[('result','=','success')]"/>
-				<filter string="Inspection Failure" name="result" domain="[('result','=','failure')]"/>
+                <filter string="Inspection Not Completed" name="state" domain="[('state','=','draft')]"/>
+                <filter string="Inspection Completed" name="result" domain="[('state','=','completed')]"/>
+                <filter string="Inspection Cancelled" name="result" domain="[('result','=','cancel')]"/>
+                <separator />
+                <filter string="Successful Inspections" name="result" domain="[('result','=','success')]"/>
+                <filter string="Failed Inspections" name="result" domain="[('result','=','failure')]"/>
 				<group expand="0" string="Group By">
 					<filter string="Vehicle" name="vehicle_id" domain="[]" context="{'group_by':'vehicle_id'}"/>
 					<filter string="Direction" name="direction" domain="[]" context="{'group_by':'direction'}"/>
