@@ -27,24 +27,32 @@ msgid "# Inspection Count"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_kanban_view
+msgid "<i class=\"fa fa-clock-o\" aria-label=\"Date Inspected\" role=\"img\" title=\"Date\"/>"
+msgstr ""
+
+#. module: fleet_vehicle_inspection
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_form_view
 msgid "<span class=\"o_stat_text\"> Inspection</span>"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__message_needaction
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__message_needaction
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__message_needaction
 msgid "Action Needed"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__activity_ids
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__activity_ids
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__activity_ids
 msgid "Activities"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__activity_state
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__activity_state
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__activity_state
 msgid "Activity State"
 msgstr ""
@@ -57,6 +65,7 @@ msgstr ""
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__message_attachment_count
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__message_attachment_count
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__message_attachment_count
 msgid "Attachment Count"
 msgstr ""
@@ -85,6 +94,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__create_uid
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__create_uid
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__create_uid
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line_image__create_uid
 msgid "Created by"
 msgstr ""
 
@@ -92,6 +102,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__create_date
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__create_date
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__create_date
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line_image__create_date
 msgid "Created on"
 msgstr ""
 
@@ -120,6 +131,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__display_name
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__display_name
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__display_name
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line_image__display_name
 msgid "Display Name"
 msgstr ""
 
@@ -134,9 +146,14 @@ msgid "Dropdown menu"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
-#: code:addons/fleet_vehicle_inspection/models/fleet_vehicle_inspection.py:183
+#: code:addons/fleet_vehicle_inspection/models/fleet_vehicle_inspection.py:173
 #, python-format
 msgid "Emptying the odometer value of a vehicle is not allowed."
+msgstr ""
+
+#. module: fleet_vehicle_inspection
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_search_view
+msgid "Failed Inspections"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
@@ -154,6 +171,7 @@ msgstr ""
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model,name:fleet_vehicle_inspection.model_fleet_vehicle_inspection
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_calendar_view
 msgid "Fleet Vehicle Inspection"
 msgstr ""
 
@@ -168,19 +186,27 @@ msgid "Fleet Vehicle Inspection Line"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
+#: model:ir.model,name:fleet_vehicle_inspection.model_fleet_vehicle_inspection_line_image
+msgid "Fleet Vehicle Inspection Line Image"
+msgstr ""
+
+#. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__message_follower_ids
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__message_follower_ids
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__message_follower_ids
 msgid "Followers"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__message_channel_ids
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__message_channel_ids
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__message_channel_ids
 msgid "Followers (Channels)"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__message_partner_ids
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__message_partner_ids
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__message_partner_ids
 msgid "Followers (Partners)"
 msgstr ""
@@ -194,6 +220,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__id
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__id
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__id
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line_image__id
 msgid "ID"
 msgstr ""
 
@@ -204,20 +231,39 @@ msgstr ""
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection__message_unread
+#: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__message_unread
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__message_unread
 msgid "If checked new messages require your attention."
 msgstr ""
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection__message_needaction
+#: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__message_needaction
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__message_needaction
 msgid "If checked, new messages require your attention."
 msgstr ""
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection__message_has_error
+#: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__message_has_error
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__message_has_error
 msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: fleet_vehicle_inspection
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line_image__image_1920
+msgid "Image"
+msgstr ""
+
+#. module: fleet_vehicle_inspection
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_line_image_form_view
+msgid "Image Name"
+msgstr ""
+
+#. module: fleet_vehicle_inspection
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__inspection_line_image_ids
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_line_form_view
+msgid "Images"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
@@ -231,13 +277,18 @@ msgid "Inspected Date"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__date_inspected
-msgid "Inspection Date"
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_search_view
+msgid "Inspection Cancelled"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_search_view
-msgid "Inspection Failure"
+msgid "Inspection Completed"
+msgstr ""
+
+#. module: fleet_vehicle_inspection
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__date_inspected
+msgid "Inspection Date"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
@@ -257,6 +308,12 @@ msgid "Inspection Line"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_line_form_view
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_line_image_form_view
+msgid "Inspection Line Images"
+msgstr ""
+
+#. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__inspection_line_ids
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_form_view
 msgid "Inspection Lines"
@@ -265,6 +322,11 @@ msgstr ""
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle__inspection_ids
 msgid "Inspection Logs"
+msgstr ""
+
+#. module: fleet_vehicle_inspection
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_search_view
+msgid "Inspection Not Completed"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
@@ -289,23 +351,7 @@ msgid "Inspection Status"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
-#: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_search_view
-msgid "Inspection Success"
-msgstr ""
-
-#. module: fleet_vehicle_inspection
-#: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_search_view
-msgid "Inspection Todo"
-msgstr ""
-
-#. module: fleet_vehicle_inspection
-#: code:addons/fleet_vehicle_inspection/models/fleet_vehicle_inspection.py:163
-#, python-format
-msgid "Inspection cannot be completed. There are no inspected items."
-msgstr ""
-
-#. module: fleet_vehicle_inspection
-#: code:addons/fleet_vehicle_inspection/models/fleet_vehicle_inspection.py:158
+#: code:addons/fleet_vehicle_inspection/models/fleet_vehicle_inspection.py:150
 #, python-format
 msgid "Inspection cannot be completed. There are uninspected items."
 msgstr ""
@@ -318,11 +364,14 @@ msgstr ""
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__instruction
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__inspection_item_instruction
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_item_form_view
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_line_form_view
 msgid "Instruction"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__message_is_follower
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__message_is_follower
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__message_is_follower
 msgid "Is Follower"
 msgstr ""
@@ -336,6 +385,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection____last_update
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item____last_update
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line____last_update
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line_image____last_update
 msgid "Last Modified on"
 msgstr ""
 
@@ -348,6 +398,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__write_uid
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__write_uid
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__write_uid
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line_image__write_uid
 msgid "Last Updated by"
 msgstr ""
 
@@ -355,23 +406,27 @@ msgstr ""
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__write_date
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__write_date
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__write_date
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line_image__write_date
 msgid "Last Updated on"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__message_main_attachment_id
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__message_main_attachment_id
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__message_main_attachment_id
 msgid "Main Attachment"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__message_has_error
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__message_has_error
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__message_has_error
 msgid "Message Delivery error"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__message_ids
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__message_ids
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__message_ids
 msgid "Messages"
 msgstr ""
@@ -383,23 +438,27 @@ msgstr ""
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__name
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line_image__name
 msgid "Name"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__activity_date_deadline
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__activity_date_deadline
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__activity_date_deadline
 msgid "Next Activity Deadline"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__activity_summary
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__activity_summary
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__activity_summary
 msgid "Next Activity Summary"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__activity_type_id
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__activity_type_id
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__activity_type_id
 msgid "Next Activity Type"
 msgstr ""
@@ -412,30 +471,35 @@ msgstr ""
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__message_needaction_counter
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__message_needaction_counter
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__message_needaction_counter
 msgid "Number of Actions"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__message_has_error_counter
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__message_has_error_counter
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__message_has_error_counter
 msgid "Number of error"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection__message_needaction_counter
+#: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__message_needaction_counter
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__message_needaction_counter
 msgid "Number of messages which requires an action"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection__message_has_error_counter
+#: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__message_has_error_counter
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__message_has_error_counter
 msgid "Number of messages with delivery error"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection__message_unread_counter
+#: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__message_unread_counter
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__message_unread_counter
 msgid "Number of unread messages"
 msgstr ""
@@ -462,13 +526,21 @@ msgid "Odometer measure of the vehicle at the moment of this log"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
+#: code:addons/fleet_vehicle_inspection/models/fleet_vehicle_inspection.py:154
+#, python-format
+msgid "Only inspections in 'draft' or 'cancel' states can be confirmed"
+msgstr ""
+
+#. module: fleet_vehicle_inspection
 #: selection:fleet.vehicle.inspection,activity_state:0
+#: selection:fleet.vehicle.inspection.item,activity_state:0
 #: selection:fleet.vehicle.inspection.line,activity_state:0
 msgid "Overdue"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
 #: selection:fleet.vehicle.inspection,activity_state:0
+#: selection:fleet.vehicle.inspection.item,activity_state:0
 #: selection:fleet.vehicle.inspection.line,activity_state:0
 msgid "Planned"
 msgstr ""
@@ -485,19 +557,31 @@ msgid "Refuse"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line_image__inspection_line_id
+msgid "Related Inspection Line"
+msgstr ""
+
+#. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__activity_user_id
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__activity_user_id
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__activity_user_id
 msgid "Responsible User"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__result
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_line_form_view
 msgid "Result"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__result_description
 msgid "Result Description"
+msgstr ""
+
+#. module: fleet_vehicle_inspection
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line_image__sequence
+msgid "Sequence"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
@@ -512,6 +596,7 @@ msgstr ""
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection__activity_state
+#: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__activity_state
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__activity_state
 msgid "Status based on activities\n"
 "Overdue: Due date is already passed\n"
@@ -528,7 +613,13 @@ msgid "Success"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_search_view
+msgid "Successful Inspections"
+msgstr ""
+
+#. module: fleet_vehicle_inspection
 #: selection:fleet.vehicle.inspection,activity_state:0
+#: selection:fleet.vehicle.inspection.item,activity_state:0
 #: selection:fleet.vehicle.inspection.line,activity_state:0
 msgid "Today"
 msgstr ""
@@ -542,12 +633,14 @@ msgstr ""
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__message_unread
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__message_unread
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__message_unread
 msgid "Unread Messages"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__message_unread_counter
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__message_unread_counter
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__message_unread_counter
 msgid "Unread Messages Counter"
 msgstr ""
