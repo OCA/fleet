@@ -192,6 +192,75 @@
 			</tree>
 		</field>
 	</record>
+    <record model="ir.ui.view" id="fleet_vehicle_inspection_kanban_view">
+        <field
+            name="name"
+        >fleet.vehicle.inspection.kanban (in fleet_vehicle_inspection)</field>
+        <field name="model">fleet.vehicle.inspection</field>
+        <field name="arch" type="xml">
+            <kanban
+                class="o_kanban_mobile"
+                default_order="date_inspected desc"
+                group_create="0"
+                group_delete="0"
+                quick_create="false"
+            >
+                <field name="name" />
+                <field name="vehicle_id" />
+                <field name="state" />
+                <field name="result" />
+                <field name="date_inspected" />
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="row mb4">
+                                <div class="col-6 o_kanban_record_headings">
+                                    <strong>
+                                        <span>
+                                            <field
+                                                name="name"
+                                                attrs="{'invisible': [('name', '=', False)]}"
+                                            />
+                                        </span>
+                                    </strong>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <strong>
+                                        <i
+                                            class="fa fa-clock-o"
+                                            aria-label="Date Inspected"
+                                            role="img"
+                                            title="Date"
+                                        />
+                                        <t t-esc="record.date_inspected.value" />
+                                    </strong>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <span><field name="vehicle_id" /></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <span class="float-right">
+                                        <field name="state"
+                                               widget="label_selection"
+                                               options="{'classes': {'draft': 'info', 'confirmed': 'success', 'cancel': 'danger'}}"
+                                        />
+                                        <field name="result"
+                                               widget="label_selection"
+                                               options="{'classes': {'todo': 'info', 'failure': 'danger', 'success': 'success'}}"
+                                        />
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
 	<record model='ir.ui.view' id='fleet_vehicle_inspection_pivot_view'>
 		<field name="name">fleet.vehicle.inspection.pivot (in fleet_vehicle_inspection)</field>
 		<field name="model">fleet.vehicle.inspection</field>
@@ -215,7 +284,7 @@
 	<record model="ir.actions.act_window" id="fleet_vehicle_inspection_act_window">
 		<field name="name">Vehicle Inspection</field>
 		<field name="res_model">fleet.vehicle.inspection</field>
-		<field name="view_mode">tree,pivot,graph,form</field>
+		<field name="view_mode">kanban,tree,pivot,graph,form</field>
 		<field name="domain">[]</field>
 		<field name="context">{}</field>
 	</record>
