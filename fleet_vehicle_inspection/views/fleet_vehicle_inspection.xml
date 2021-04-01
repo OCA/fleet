@@ -272,6 +272,22 @@
 			</pivot>
 		</field>
 	</record>
+    <record model="ir.ui.view" id="fleet_vehicle_inspection_calendar_view">
+        <field
+            name="name"
+        >fleet.vehicle.inspection.calendar (in fleet_vehicle_inspection)</field>
+        <field name="model">fleet.vehicle.inspection</field>
+        <field name="arch" type="xml">
+            <calendar
+                string="Fleet Vehicle Inspection"
+                date_start="date_inspected"
+                color="state"
+            >
+                <field name="vehicle_id" />
+                <field name="inspected_by" avatar_field="image_small"/>
+            </calendar>
+        </field>
+    </record>
 	<record model="ir.ui.view" id="fleet_vehicle_inspection_graph_view">
 		<field name="name">fleet.vehicle.inspection.graph (in fleet_vehicle_inspection)</field>
 		<field name="model">fleet.vehicle.inspection</field>
@@ -284,7 +300,7 @@
 	<record model="ir.actions.act_window" id="fleet_vehicle_inspection_act_window">
 		<field name="name">Vehicle Inspection</field>
 		<field name="res_model">fleet.vehicle.inspection</field>
-		<field name="view_mode">kanban,tree,pivot,graph,form</field>
+		<field name="view_mode">kanban,tree,calendar,pivot,graph,form</field>
 		<field name="domain">[]</field>
 		<field name="context">{}</field>
 	</record>
