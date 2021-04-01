@@ -8,6 +8,7 @@ class FleetVehicleInspectionItem(models.Model):
 
     _name = 'fleet.vehicle.inspection.item'
     _description = 'Fleet Vehicle Inspection Item'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(required=True)
     instruction = fields.Text(string='Instruction')

@@ -39,15 +39,82 @@
                         </h1>
                     </div>
                     <group>
-                        <field name="inspection_item_id"/>
-                        <field name="inspection_item_instruction"/>
-                        <field name="result_description"/>
+                        <field name="inspection_item_id" />
                     </group>
+                    <notebook>
+                        <page name="instruction" string="Instruction">
+                            <field name="inspection_item_instruction" />
+                        </page>
+                        <page name="result" string="Result">
+                            <field name="result_description" />
+                        </page>
+                        <page name="images_page" string="Images">
+                            <group name="images" string="Images">
+                                <field name="inspection_line_image_ids" class="o_inspection_image_list" context="{'default_inspection_line_id': active_id}" nolabel="1">
+                                    <kanban string="Inspection Line Images" class="o_attachments_previews">
+                                        <field name="id"/>
+                                        <field name="name"/>
+                                        <field name="image_1920"/>
+                                        <templates>
+                                            <t t-name="kanban-box">
+                                                <div class="o_attachment oe_kanban_global_click o_inspection_image_card">
+                                                    <div class="o_attachment_wrap">
+                                                        <div class="o_image_box">
+                                                            <div class="o_attachment_image" t-attf-style="background-image:url({{kanban_image('fleet.vehicle.inspection.line.image', 'image_1920', record.id.raw_value)}});"/>
+                                                            <div t-attf-class="o_image_overlay" t-att-title="record.name.value"/>
+                                                            <div class="o_inspection_image_card_title" t-att-title="record.name.value">
+                                                                <field name="name"/>
+                                                            </div>
+                                                        </div>
+
+                                                        <t t-set="size" t-value="[record.image_1920.value][0]"/>
+                                                        <t t-set="size_status" t-value="'normal'" t-if="size.indexOf('Bytes') !== -1 or ( size.indexOf('Kb') !== -1 and size[2]=='.')"/>
+                                                        <t t-set="size_status" t-value="'warning'" t-elif="( size.indexOf('Kb') !== -1 and size[3]=='.')"/>
+                                                        <t t-set="size_status" t-value="'danger'"  t-else=""/>
+                                                        <t t-set="message" t-value="'Acceptable file size'" t-if="size_status == 'normal'"></t>
+                                                        <t t-set="message" t-value="'Huge file size. The image should be optimized/reduced.'" t-elif="size_status == 'warning'"></t>
+                                                        <t t-set="message" t-value="'Optimization required! Reduce the image size or increase your compression settings.'" t-else=""></t>
+
+                                                        <span t-attf-class="o_inspection_image_card_size badge badge-#{size_status}" t-att-title="message">
+                                                            <t t-esc="record.image_1920.value"/>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </t>
+                                        </templates>
+                                    </kanban>
+                                </field>
+                            </group>
+                        </page>
+                    </notebook>
                 </sheet>
                 <div class="oe_chatter">
                     <field name="message_follower_ids" widget="mail_followers"/>
                     <field name="activity_ids" widget="mail_activity"/>
                     <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+        <record model="ir.ui.view" id="fleet_vehicle_inspection_line_image_form_view">
+        <field
+            name="name"
+        >fleet.vehicle.inspection.line.image.form (in fleet_vehicle_inspection)</field>
+        <field name="model">fleet.vehicle.inspection.line.image</field>
+        <field name="arch" type="xml">
+            <form string="Inspection Line Images">
+                <div class="row o_inspection_image_modal">
+                    <div class="col-md-6 col-xl-5">
+                        <div class="oe_title">
+                            <label class="small text-muted" for="name" string="Image Name"/>
+                            <h2><field name="name" placeholder="Image Name"/></h2>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-7 text-center o_inspection_image_modal_container">
+                        <field name="image_1920" widget="image"/>
+                        <field name="inspection_line_id" invisible="1"/>
+                    </div>
                 </div>
             </form>
         </field>
@@ -73,7 +140,10 @@
                 <field name="inspection_item_id"/>
                 <field name="inspection_item_instruction"/>
                 <field name="result_description"/>
-                <field name="result"/>
+                <field name="result"
+                       widget="label_selection"
+                       options="{'classes': {'failure': 'danger', 'success': 'success'}}"
+                />
                 <field name="state"/>
             </tree>
         </field>
