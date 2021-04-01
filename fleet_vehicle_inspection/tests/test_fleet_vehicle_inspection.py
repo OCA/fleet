@@ -74,12 +74,6 @@ class TestFleetVehicleInspection(SavepointCase):
         self.inspection.button_confirm()
         self.assertEqual(self.inspection.state, 'confirmed')
 
-        self.inspection.button_confirm()
-        self.assertEqual(self.inspection.state, 'confirmed')
-
-        self.inspection.button_cancel()
-        self.assertEqual(self.inspection.state, 'cancel')
-
         self.inspection.button_cancel()
         self.assertEqual(self.inspection.state, 'cancel')
 
