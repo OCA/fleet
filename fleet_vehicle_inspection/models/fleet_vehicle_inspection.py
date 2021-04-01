@@ -1,8 +1,8 @@
 # Copyright 2020 - TODAY, Marcel Savegnago - Escodoo https://www.escodoo.com.br
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError
+from odoo import _, api, fields, models
+from odoo.exceptions import UserError, ValidationError
 
 
 class FleetVehicleInspection(models.Model):
@@ -50,8 +50,8 @@ class FleetVehicleInspection(models.Model):
     )
 
     odometer = fields.Float(
-        compute="_get_odometer",
-        inverse='_set_odometer',
+        compute="_compute_odometer",
+        inverse='_inverse_odometer',
         string='Last Odometer',
         help='Odometer measure of the vehicle at the moment of this log',
         stored=True,
@@ -114,19 +114,16 @@ class FleetVehicleInspection(models.Model):
 
     @api.depends('inspection_line_ids', 'state')
     def _compute_inspection_result(self):
-        for inspection in self:
-            if inspection.inspection_line_ids:
-                if (inspection.inspection_line_ids.filtered(
-                        lambda x: x.result == 'todo')):
-                    inspection.result = 'todo'
-                    continue
-                elif (inspection.inspection_line_ids.filtered(
-                        lambda x: x.result == 'failure')):
-                    inspection.result = 'failure'
+        for rec in self:
+            if rec.inspection_line_ids:
+                if any(line.result == "todo" for line in rec.inspection_line_ids):
+                    rec.result = "todo"
+                elif any(line.result == "failure" for line in rec.inspection_line_ids):
+                    rec.result = "failure"
                 else:
-                    inspection.result = 'success'
+                    rec.result = "success"
             else:
-                inspection.result = 'todo'
+                rec.result = "todo"
 
     @api.model
     def create(self, vals):
@@ -141,50 +138,45 @@ class FleetVehicleInspection(models.Model):
 
     @api.multi
     def button_cancel(self):
-        for inspection in self:
-            if inspection.state not in ['draft', 'confirmed']:
-                continue
-            inspection.write({'state': 'cancel'})
-        return True
+        records = self.filtered(lambda rec: rec.state in ["draft", "confirmed"])
+        return records.write({"state": "cancel"})
 
     @api.multi
     def button_confirm(self):
-        for inspection in self:
-            if inspection.inspection_line_ids:
-                if inspection.state not in ['draft', 'cancel']:
-                    continue
-                if (inspection.inspection_line_ids.filtered(
-                        lambda x: x.result == 'todo')):
-                    raise UserError(_(
-                        'Inspection cannot be completed. There are uninspected items.'
-                    ))
-                inspection.write({'state': 'confirmed'})
-            else:
-                raise UserError(_(
-                    'Inspection cannot be completed. There are no inspected items.'
-                ))
-        return True
+        if any(not rec.inspection_line_ids for rec in self) or any(
+            line.result == "todo" for line in self.mapped("inspection_line_ids")
+        ):
+            raise UserError(
+                _("Inspection cannot be completed. " "There are uninspected items.")
+            )
+        if any(rec.state not in ["draft", "cancel"] for rec in self):
+            raise ValidationError(
+                _("Only inspections in 'draft' or 'cancel' states can be confirmed")
+            )
+        return self.write({"state": "confirmed"})
 
     @api.multi
     def button_draft(self):
-        for inspection in self:
-            inspection.write({'state': 'draft'})
-            inspection.write({'result': 'todo'})
-        return True
+        return self.write({"state": "draft", "result": "todo"})
 
-    def _get_odometer(self):
-        for record in self:
-            if record.odometer_id:
-                record.odometer = record.odometer_id.value
+    def _compute_odometer(self):
+        self.odometer = 0.0
+        for rec in self:
+            rec.odometer = False
+            if rec.odometer_id:
+                rec.odometer = rec.odometer_id.value
 
-    def _set_odometer(self):
-        for record in self:
-            if not record.odometer:
-                raise UserError(_('Emptying the odometer value of a '
-                                  'vehicle is not allowed.'))
-            odometer = self.env['fleet.vehicle.odometer'].create({
-                'value': record.odometer,
-                'date': record.date_inspected or fields.Date.context_today(record),
-                'vehicle_id': record.vehicle_id.id
-            })
+    def _inverse_odometer(self):
+        for rec in self:
+            if not rec.odometer:
+                raise UserError(
+                    _("Emptying the odometer value of a " "vehicle is not allowed.")
+                )
+            odometer = self.env["fleet.vehicle.odometer"].create(
+                {
+                    "value": rec.odometer,
+                    "date": rec.date_inspected or fields.Date.context_today(rec),
+                    "vehicle_id": rec.vehicle_id.id,
+                }
+            )
             self.odometer_id = odometer
