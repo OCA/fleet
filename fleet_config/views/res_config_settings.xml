@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2021 - TODAY, Marcel Savegnago - Escodoo (<https://www.escodoo.com.br>)
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]" position="inside">
+                <div data-key="fleet"
+                     class="app_settings_block"
+                     data-string="Fleet"
+                     string="Fleet"
+                     groups="fleet.fleet_group_manager">
+                    <h2>Fleet</h2>
+                    <div id="configure_fleet" class="row mt16 o_settings_container" title="Configure Fleet">
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_fleet_config_settings" model="ir.actions.act_window">
+        <field name="name">General Settings</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module' : 'fleet'}</field>
+    </record>
+
+    <menuitem id="menu_fleet_config_settings"
+              parent="fleet.fleet_configuration"
+              sequence="0"
+              action="action_fleet_config_settings"
+              groups="fleet.fleet_group_manager"/>
+
+</odoo>
