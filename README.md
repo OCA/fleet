@@ -22,6 +22,7 @@ addon | version | summary
 [fleet_vehicle_inspection_template](fleet_vehicle_inspection_template/) | 12.0.1.0.0 | This module extend module fleet_vehicle_inspection enable inspection templates feature
 [fleet_vehicle_license_plate_alt](fleet_vehicle_license_plate_alt/) | 12.0.1.0.0 | Add a new field in the vehicle, to store an alternative license plate.
 [fleet_vehicle_model_compatible_product](fleet_vehicle_model_compatible_product/) | 12.0.1.0.0 | This module extends the fleet management functionality. Allows you to define which products are compatible with the vehicle model.
+[fleet_vehicle_notebook](fleet_vehicle_notebook/) | 12.0.1.0.0 | This module provides an empty notebook for the vehicle form.
 [fleet_vehicle_pivot_graph](fleet_vehicle_pivot_graph/) | 12.0.1.0.0 | This module extends the fleet management functionality. Adds the pivot table and graph view to the fleet vehicles.
 [fleet_vehicle_service_calendar](fleet_vehicle_service_calendar/) | 12.0.1.0.1 | Add a smart button in services to schedule meetings.
 [fleet_vehicle_service_kanban](fleet_vehicle_service_kanban/) | 12.0.1.0.1 | Add features of kanban to logs of vehicle services.
