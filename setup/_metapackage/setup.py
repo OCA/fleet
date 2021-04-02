@@ -17,6 +17,7 @@ setuptools.setup(
         'odoo12-addon-fleet_vehicle_inspection_template',
         'odoo12-addon-fleet_vehicle_license_plate_alt',
         'odoo12-addon-fleet_vehicle_model_compatible_product',
+        'odoo12-addon-fleet_vehicle_notebook',
         'odoo12-addon-fleet_vehicle_pivot_graph',
         'odoo12-addon-fleet_vehicle_service_calendar',
         'odoo12-addon-fleet_vehicle_service_kanban',
