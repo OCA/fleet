@@ -13,6 +13,7 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
+[fleet_vehicle_calendar_year](fleet_vehicle_calendar_year/) | 12.0.1.0.0 | This module extends the fleet management functionality. Allows the registration of the vehicle's calendar year.
 [fleet_vehicle_category](fleet_vehicle_category/) | 12.0.1.1.0 | Add category definition for vehicles.
 [fleet_vehicle_history_date_end](fleet_vehicle_history_date_end/) | 12.0.1.0.0 | Automatically assign date end in vehicle history when a new driver is assigned.
 [fleet_vehicle_inspection](fleet_vehicle_inspection/) | 12.0.3.0.0 | This module extends the Fleet module allowing the registration of vehicle entry and exit inspections.
