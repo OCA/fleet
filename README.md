@@ -13,6 +13,7 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
+[fleet_config](fleet_config/) | 12.0.1.0.0 | Provides general settings for the Fleet App
 [fleet_vehicle_calendar_year](fleet_vehicle_calendar_year/) | 12.0.1.0.0 | This module extends the fleet management functionality. Allows the registration of the vehicle's calendar year.
 [fleet_vehicle_category](fleet_vehicle_category/) | 12.0.1.1.0 | Add category definition for vehicles.
 [fleet_vehicle_fuel_type_ethanol](fleet_vehicle_fuel_type_ethanol/) | 12.0.1.0.0 | This module extends the fleet management functionality. This adds ethanol as another type of fuel to be used by a vehicle in the fleet.
