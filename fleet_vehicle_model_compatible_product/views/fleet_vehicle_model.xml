@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2021 - TODAY, Marcel Savegnago <marcel.savegnago@escodoo.com.br>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record model="ir.ui.view" id="fleet_vehicle_model_form_view">
+        <field
+            name="name"
+        >fleet.vehicle.model.form (in fleet_vehicle_model_compatible_product)</field>
+        <field name="model">fleet.vehicle.model</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_model_view_form" />
+        <field name="arch" type="xml">
+            <page name="vendors" position="after">
+                <page string="Compatible Products" name="compatible_products">
+                    <field name="compatible_product_ids">
+                        <tree>
+                            <field name="categ_id" />
+                            <field name="name" />
+                            <field name="attribute_value_ids" widget="many2many_tags" groups="product.group_product_variant"/>
+                            <field name="type" />
+                            <field name="lst_price" />
+                            <field name="standard_price" />
+                        </tree>
+                    </field>
+                </page>
+            </page>
+        </field>
+    </record>
+
+</odoo>

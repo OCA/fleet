@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2021 - TODAY, Marcel Savegnago <marcel.savegnago@escodoo.com.br>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record model="ir.ui.view" id="product_product_form_view">
+        <field name="name">product.product.form (in fleet_vehicle_model_compatible_product)</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page name="compatible_vehicle_models" string="Compatible Vehicle Models" attrs="{'invisible': [('is_fleet_vehicle_product', '=', False)]}">
+                    <group string="Compatible Vehicle Models" name="compatible_vehicle_models">
+                        <field name="compatible_vehicle_model_ids" nolabel="1">
+                            <tree>
+                                <field name="name" />
+                            </tree>
+                        </field>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record model='ir.actions.act_window' id='product_product_action' >
+        <field name="name">Products</field>
+        <field name="res_model">product.product</field>
+        <field name="search_view_id" ref="product.product_search_form_view" />
+        <field name="context">{'default_is_fleet_vehicle_product': True}</field>
+        <field name="domain">[('is_fleet_vehicle_product', '=', True)]</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new product
+          </p><p>
+            You can add multiple products for use with the fleet module.
+          </p>
+        </field>
+    </record>
+
+    <menuitem
+        action="product_product_action"
+        parent="fleet.fleet_vehicles"
+        id="fleet_product_menu"
+        groups="fleet.fleet_group_user"
+        sequence="99"
+    />
+
+</odoo>
