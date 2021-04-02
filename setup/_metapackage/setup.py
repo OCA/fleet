@@ -10,6 +10,7 @@ setuptools.setup(
     install_requires=[
         'odoo12-addon-fleet_vehicle_calendar_year',
         'odoo12-addon-fleet_vehicle_category',
+        'odoo12-addon-fleet_vehicle_fuel_type_ethanol',
         'odoo12-addon-fleet_vehicle_history_date_end',
         'odoo12-addon-fleet_vehicle_inspection',
         'odoo12-addon-fleet_vehicle_inspection_template',
