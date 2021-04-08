@@ -9,6 +9,7 @@ class FleetVehicleInspectionLine(models.Model):
     _name = 'fleet.vehicle.inspection.line'
     _description = 'Fleet Vehicle Inspection Line'
     _inherit = ['mail.thread', 'mail.activity.mixin']
+    _rec_name = 'inspection_item_id'
 
     READONLY_STATES = {
         'confirmed': [('readonly', True)],
