@@ -27,6 +27,7 @@ addon | version | summary
 [fleet_vehicle_pivot_graph](fleet_vehicle_pivot_graph/) | 12.0.1.0.0 | This module extends the fleet management functionality. Adds the pivot table and graph view to the fleet vehicles.
 [fleet_vehicle_service_calendar](fleet_vehicle_service_calendar/) | 12.0.1.0.1 | Add a smart button in services to schedule meetings.
 [fleet_vehicle_service_kanban](fleet_vehicle_service_kanban/) | 12.0.1.0.1 | Add features of kanban to logs of vehicle services.
+[fleet_vehicle_stock](fleet_vehicle_stock/) | 12.0.1.0.0 | This module is an add-on for the Fleet application in Odoo. It allows you to track your Fleet Vehicles in stock moves.
 
 [//]: # (end addons)
 <!-- prettier-ignore-end -->
