@@ -15,6 +15,7 @@ setuptools.setup(
         'odoo12-addon-fleet_vehicle_fuel_type_ethanol',
         'odoo12-addon-fleet_vehicle_history_date_end',
         'odoo12-addon-fleet_vehicle_inspection',
+        'odoo12-addon-fleet_vehicle_inspection_item_compatible_product',
         'odoo12-addon-fleet_vehicle_inspection_template',
         'odoo12-addon-fleet_vehicle_license_plate_alt',
         'odoo12-addon-fleet_vehicle_model_compatible_product',
