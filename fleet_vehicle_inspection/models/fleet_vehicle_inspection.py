@@ -143,6 +143,10 @@ class FleetVehicleInspection(models.Model):
 
     @api.multi
     def button_confirm(self):
+        if any(not rec.odometer for rec in self):
+            raise UserError(
+                _("Emptying the odometer value of a " "vehicle is not allowed.")
+            )
         if any(not rec.inspection_line_ids for rec in self) or any(
             line.result == "todo" for line in self.mapped("inspection_line_ids")
         ):
@@ -160,7 +164,6 @@ class FleetVehicleInspection(models.Model):
         return self.write({"state": "draft", "result": "todo"})
 
     def _compute_odometer(self):
-        self.odometer = 0.0
         for rec in self:
             rec.odometer = False
             if rec.odometer_id:
@@ -168,15 +171,12 @@ class FleetVehicleInspection(models.Model):
 
     def _inverse_odometer(self):
         for rec in self:
-            if not rec.odometer:
-                raise UserError(
-                    _("Emptying the odometer value of a " "vehicle is not allowed.")
+            if rec.odometer:
+                odometer = self.env["fleet.vehicle.odometer"].create(
+                    {
+                        "value": rec.odometer,
+                        "date": rec.date_inspected or fields.Date.context_today(rec),
+                        "vehicle_id": rec.vehicle_id.id,
+                    }
                 )
-            odometer = self.env["fleet.vehicle.odometer"].create(
-                {
-                    "value": rec.odometer,
-                    "date": rec.date_inspected or fields.Date.context_today(rec),
-                    "vehicle_id": rec.vehicle_id.id,
-                }
-            )
-            self.odometer_id = odometer
+                self.odometer_id = odometer
