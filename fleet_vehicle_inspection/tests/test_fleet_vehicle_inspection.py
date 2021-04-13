@@ -27,6 +27,7 @@ class TestFleetVehicleInspection(SavepointCase):
 
         cls.inspection = cls.inspection.create({
             'vehicle_id': cls.vehicle,
+            'odometer': 100,
             'inspection_line_ids': [
                 (0, 0,
                     {
