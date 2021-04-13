@@ -156,7 +156,7 @@ msgid "Dropdown menu"
 msgstr "Menu suspenso"
 
 #. module: fleet_vehicle_inspection
-#: code:addons/fleet_vehicle_inspection/models/fleet_vehicle_inspection.py:173
+#: code:addons/fleet_vehicle_inspection/models/fleet_vehicle_inspection.py:148
 #, python-format
 msgid "Emptying the odometer value of a vehicle is not allowed."
 msgstr "Zerar o valor do odômetro de um veículo não é permitido."
@@ -361,7 +361,7 @@ msgid "Inspection Status"
 msgstr "Status da inspeção"
 
 #. module: fleet_vehicle_inspection
-#: code:addons/fleet_vehicle_inspection/models/fleet_vehicle_inspection.py:150
+#: code:addons/fleet_vehicle_inspection/models/fleet_vehicle_inspection.py:154
 #, python-format
 msgid "Inspection cannot be completed. There are uninspected items."
 msgstr "A inspeção não pode ser concluída. Há itens não inspecionados."
@@ -536,7 +536,7 @@ msgid "Odometer measure of the vehicle at the moment of this log"
 msgstr "Medida do odômetro do veículo no momento deste registro"
 
 #. module: fleet_vehicle_inspection
-#: code:addons/fleet_vehicle_inspection/models/fleet_vehicle_inspection.py:154
+#: code:addons/fleet_vehicle_inspection/models/fleet_vehicle_inspection.py:158
 #, python-format
 msgid "Only inspections in 'draft' or 'cancel' states can be confirmed"
 msgstr ""
