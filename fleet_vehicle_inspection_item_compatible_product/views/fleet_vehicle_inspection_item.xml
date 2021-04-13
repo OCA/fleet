@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2021 - TODAY, Marcel Savegnago <marcel.savegnago@escodoo.com.br>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record model="ir.ui.view" id="fleet_vehicle_inspection_item_form_view">
+        <field name="name">fleet.vehicle.inspection.item.form (in fleet_vehicle_inspection_item_product)</field>
+        <field name="model">fleet.vehicle.inspection.item</field>
+        <field name="inherit_id" ref="fleet_vehicle_inspection.fleet_vehicle_inspection_item_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page name="products" string="Compatible Products">
+                    <field name="compatible_product_ids">
+                        <tree>
+                            <field name="categ_id" />
+                            <field name="name" />
+                            <field name="attribute_value_ids" widget="many2many_tags" groups="product.group_product_variant"/>
+                            <field name="type" />
+                            <field name="lst_price" />
+                            <field name="standard_price" />
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

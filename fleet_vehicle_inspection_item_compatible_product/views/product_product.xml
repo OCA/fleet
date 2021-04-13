@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2021 - TODAY, Marcel Savegnago <marcel.savegnago@escodoo.com.br
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record model="ir.ui.view" id="product_product_form_view">
+        <field name="name">product.product.form (in fleet_vehicle_inspection_item_product)</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view" />
+        <field name="arch" type="xml">
+             <xpath expr="//notebook" position="inside">
+                <page name="compatible_vehicle_inspection_items" string="Compatible Vehicle Inspection Items" attrs="{'invisible': [('is_fleet_vehicle_product', '=', False)]}">
+                    <group name="compatible_vehicle_inspection_items" string="Compatible Vehicle Inspection Items" >
+                        <field name="vehicle_inspection_item_ids" nolabel="1" />
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
