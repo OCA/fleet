@@ -20,6 +20,7 @@ addon | version | summary
 [fleet_vehicle_fuel_type_ethanol](fleet_vehicle_fuel_type_ethanol/) | 12.0.1.0.0 | This module extends the fleet management functionality. This adds ethanol as another type of fuel to be used by a vehicle in the fleet.
 [fleet_vehicle_history_date_end](fleet_vehicle_history_date_end/) | 12.0.1.0.0 | Automatically assign date end in vehicle history when a new driver is assigned.
 [fleet_vehicle_inspection](fleet_vehicle_inspection/) | 12.0.3.0.2 | This module extends the Fleet module allowing the registration of vehicle entry and exit inspections.
+[fleet_vehicle_inspection_item_compatible_product](fleet_vehicle_inspection_item_compatible_product/) | 12.0.1.0.0 | This module extends the fleet management functionality. Allows you to define which products are compatible with inspection itens.
 [fleet_vehicle_inspection_template](fleet_vehicle_inspection_template/) | 12.0.1.0.0 | This module extend module fleet_vehicle_inspection enable inspection templates feature
 [fleet_vehicle_license_plate_alt](fleet_vehicle_license_plate_alt/) | 12.0.1.0.0 | Add a new field in the vehicle, to store an alternative license plate.
 [fleet_vehicle_model_compatible_product](fleet_vehicle_model_compatible_product/) | 12.0.1.0.0 | This module extends the fleet management functionality. Allows you to define which products are compatible with the vehicle model.
