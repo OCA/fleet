@@ -39,8 +39,16 @@ class FleetVehicleInspection(models.Model):
         'fleet.vehicle',
         'Vehicle',
         help='Fleet Vehicle',
+        track_visibility="onchange",
         required=True,
         states=READONLY_STATES
+    )
+
+    driver_id = fields.Many2one(
+        'res.partner',
+        'Driver',
+        track_visibility="onchange",
+        help='Driver of the vehicle'
     )
 
     odometer_id = fields.Many2one(
@@ -54,6 +62,7 @@ class FleetVehicleInspection(models.Model):
         inverse='_inverse_odometer',
         string='Last Odometer',
         help='Odometer measure of the vehicle at the moment of this log',
+        track_visibility="onchange",
         stored=True,
         states=READONLY_STATES,
     )
@@ -63,7 +72,7 @@ class FleetVehicleInspection(models.Model):
         ('miles', 'Miles')
     ], 'Odometer Unit', default='kilometers',
         required=True,
-        states=READONLY_STATES,
+        readonly=True,
     )
 
     date_inspected = fields.Datetime(
@@ -71,6 +80,7 @@ class FleetVehicleInspection(models.Model):
         required=True,
         default=fields.Datetime.now,
         help='Date when the vehicle has been inspected',
+        track_visibility="onchange",
         copy=False,
         states=READONLY_STATES,
     )
@@ -111,6 +121,12 @@ class FleetVehicleInspection(models.Model):
         copy=False,
         store=True,
     )
+
+    @api.onchange('vehicle_id')
+    def _onchange_vehicle_id(self):
+        if self.vehicle_id:
+            self.driver_id = self.vehicle_id.driver_id
+            self.odometer_unit = self.vehicle_id.odometer_unit
 
     @api.depends('inspection_line_ids', 'state')
     def _compute_inspection_result(self):
