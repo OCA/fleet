@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-22 02:10+0000\n"
-"PO-Revision-Date: 2021-03-30 19:46+0000\n"
+"PO-Revision-Date: 2021-04-27 19:59+0000\n"
 "Last-Translator: Marcel Savegnago <marcel.savegnago@gmail.com>\n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -40,6 +40,8 @@ msgid ""
 "<i class=\"fa fa-clock-o\" aria-label=\"Date Inspected\" role=\"img\" title="
 "\"Date\"/>"
 msgstr ""
+"<i class=\"fa fa-clock-o\" aria-label=\"Data Inspeção\" role=\"img\" title="
+"\"Data\"/>"
 
 #. module: fleet_vehicle_inspection
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_form_view
@@ -153,12 +155,12 @@ msgstr "Provisório"
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__driver_id
 msgid "Driver"
-msgstr ""
+msgstr "Motorista"
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection__driver_id
 msgid "Driver of the vehicle"
-msgstr ""
+msgstr "Motorista do veículo"
 
 #. module: fleet_vehicle_inspection
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_form_view
@@ -174,7 +176,7 @@ msgstr "Zerar o valor do odômetro de um veículo não é permitido."
 #. module: fleet_vehicle_inspection
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_search_view
 msgid "Failed Inspections"
-msgstr ""
+msgstr "Inspeções com Falhas"
 
 #. module: fleet_vehicle_inspection
 #: selection:fleet.vehicle.inspection,result:0
@@ -208,7 +210,7 @@ msgstr "Linha de Inspeção de Veículos da Frota"
 #. module: fleet_vehicle_inspection
 #: model:ir.model,name:fleet_vehicle_inspection.model_fleet_vehicle_inspection_line_image
 msgid "Fleet Vehicle Inspection Line Image"
-msgstr ""
+msgstr "Imagem da Linha de Inspeção de Veículos da Frota"
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__message_follower_ids
@@ -273,18 +275,18 @@ msgstr "Se marcado, algumas mensagens tem erro de entrega."
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line_image__image_1920
 msgid "Image"
-msgstr ""
+msgstr "Imagem"
 
 #. module: fleet_vehicle_inspection
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_line_image_form_view
 msgid "Image Name"
-msgstr ""
+msgstr "Nome da imagem"
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__inspection_line_image_ids
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_line_form_view
 msgid "Images"
-msgstr ""
+msgstr "Imagens"
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__inspected_by
@@ -299,12 +301,12 @@ msgstr "Data da Inspeção"
 #. module: fleet_vehicle_inspection
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_search_view
 msgid "Inspection Cancelled"
-msgstr ""
+msgstr "Inspeção Cancelada"
 
 #. module: fleet_vehicle_inspection
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_search_view
 msgid "Inspection Completed"
-msgstr ""
+msgstr "Inspeção Concluída"
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__date_inspected
@@ -331,7 +333,7 @@ msgstr "Linha de Inspeção"
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_line_form_view
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_line_image_form_view
 msgid "Inspection Line Images"
-msgstr ""
+msgstr "Imagens da Linha de Inspeção"
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__inspection_line_ids
@@ -347,7 +349,7 @@ msgstr "Registros de Inspeção"
 #. module: fleet_vehicle_inspection
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_search_view
 msgid "Inspection Not Completed"
-msgstr ""
+msgstr "Inspeção Não Concluída"
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__inspection_id
@@ -550,6 +552,7 @@ msgstr "Medida do odômetro do veículo no momento deste registro"
 #, python-format
 msgid "Only inspections in 'draft' or 'cancel' states can be confirmed"
 msgstr ""
+"Apenas inspeções em estados 'rascunho' ou ‘cancelada’ podem ser confirmadas"
 
 #. module: fleet_vehicle_inspection
 #: selection:fleet.vehicle.inspection,activity_state:0
@@ -579,7 +582,7 @@ msgstr "Reprovado"
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line_image__inspection_line_id
 msgid "Related Inspection Line"
-msgstr ""
+msgstr "Linha de Inspeção Relacionada"
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__activity_user_id
@@ -602,7 +605,7 @@ msgstr "Descrição do Resultado"
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line_image__sequence
 msgid "Sequence"
-msgstr ""
+msgstr "Sequência"
 
 #. module: fleet_vehicle_inspection
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_form_view
@@ -640,7 +643,7 @@ msgstr "Sucesso"
 #. module: fleet_vehicle_inspection
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_search_view
 msgid "Successful Inspections"
-msgstr ""
+msgstr "Inspeções Bem Sucedidas"
 
 #. module: fleet_vehicle_inspection
 #: selection:fleet.vehicle.inspection,activity_state:0
