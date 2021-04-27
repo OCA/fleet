@@ -6,26 +6,28 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2021-04-27 19:59+0000\n"
+"Last-Translator: Marcel Savegnago <marcel.savegnago@gmail.com>\n"
 "Language-Team: none\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.3.2\n"
 
 #. module: fleet_config
 #: model_terms:ir.ui.view,arch_db:fleet_config.res_config_settings_view_form
 msgid "Configure Fleet"
-msgstr ""
+msgstr "Configurar Frota"
 
 #. module: fleet_config
 #: model_terms:ir.ui.view,arch_db:fleet_config.res_config_settings_view_form
 msgid "Fleet"
-msgstr ""
+msgstr "Frota"
 
 #. module: fleet_config
 #: model:ir.actions.act_window,name:fleet_config.action_fleet_config_settings
 #: model:ir.ui.menu,name:fleet_config.menu_fleet_config_settings
 msgid "General Settings"
-msgstr ""
+msgstr "Configurações Gerais"
