@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2021 - TODAY, Marcel Savegnago <marcel.savegnago@escodoo.com.br>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<!--<odoo>-->
+
+<!--    <record model="ir.ui.view" id="maintenance_equipment_form_view">-->
+<!--        <field name="name">maintenance.equipment.form (in fleet_vehicle_maintenance)</field>-->
+<!--        <field name="model">maintenance.equipment</field>-->
+<!--        <field name="inherit_id" ref="TODO othermodule.form_view"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            &lt;!&ndash; TODO &ndash;&gt;-->
+<!--        </field>-->
+<!--    </record>-->
+
+
+
+<!--</odoo>-->
+
+<odoo>
+
+    <!-- equiment : views -->
+    <record id="hr_equipment_view_form" model="ir.ui.view">
+        <field name="name">equipment.form.repair</field>
+        <field name="model">maintenance.equipment</field>
+        <field name="inherit_id" ref="maintenance.hr_equipment_view_form"/>
+        <field name="arch" type="xml">
+            <field name="maintenance_team_id" position="attributes">
+                <attribute name="required">True</attribute>
+            </field>
+            <xpath expr="//notebook/page[3]" position="after">
+                <page string="Others">
+                    <group>
+                        <group>
+                            <field name="is_fleet_vehicle" readonly="1"/>
+                        </group>
+                    </group>"
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

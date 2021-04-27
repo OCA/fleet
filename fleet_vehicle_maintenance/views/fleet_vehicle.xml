@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2021 - TODAY, Marcel Savegnago <marcel.savegnago@escodoo.com.br>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record model="ir.ui.view" id="fleet_vehicle_form_view">
+        <field name="name">fleet.vehicle.form (in fleet_vehicle_maintenance)</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page name="maintenance" string="Maintenance">
+                    <group>
+                        <field name="maintenance_equipment_id" readonly="1"/>
+                    </group>
+                </page>
+            </notebook>
+            <div class="oe_button_box" position="inside">
+                <button name="action_view_maintenance"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-ticket"
+                        attrs="{'invisible': [('maintenance_equipment_id', '=', False)]}">
+                    <field name="maintenance_count"
+                           widget="statinfo"
+                           string="Maintenance Requests"/>
+                </button>
+            </div>
+        </field>
+    </record>
+
+
+</odoo>
