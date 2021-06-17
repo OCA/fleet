@@ -6,280 +6,287 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2021-06-17 10:14+0000\n"
+"Last-Translator: Houzéfa Abbasbhay <houzefa.abba@xcg-consulting.fr>\n"
 "Language-Team: none\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.3.2\n"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__active
 msgid "Active"
-msgstr ""
+msgstr "Actif"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.actions.act_window,name:fleet_vehicle_service_kanban.mail_activity_type_action_config_fleet_services
 #: model:ir.ui.menu,name:fleet_vehicle_service_kanban.mail_activity_type_menu_config_fleet_services
 msgid "Activity Types"
-msgstr ""
+msgstr "Types d'activité"
 
 #. module: fleet_vehicle_service_kanban
 #: model_terms:ir.actions.act_window,help:fleet_vehicle_service_kanban.fleet_vehicle_log_services_tag_action
 msgid "Add a new tag"
-msgstr ""
+msgstr "Ajouter une nouvelle étiquette"
 
 #. module: fleet_vehicle_service_kanban
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_service_kanban.fleet_vehicle_log_services_view_form
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_service_kanban.fleet_vehicle_log_services_view_search
 msgid "Archived"
-msgstr ""
+msgstr "Archivé"
 
 #. module: fleet_vehicle_service_kanban
 #: model:mail.message.subtype,description:fleet_vehicle_service_kanban.mail_message_subtype_fleet_service_purchaser_updated
 #: model:mail.message.subtype,name:fleet_vehicle_service_kanban.mail_message_subtype_fleet_service_purchaser_updated
 msgid "Changed Purchaser"
-msgstr ""
+msgstr "Acheteur modifié"
 
 #. module: fleet_vehicle_service_kanban
 #: model:mail.message.subtype,description:fleet_vehicle_service_kanban.mail_message_subtype_fleet_service_user_updated
 #: model:mail.message.subtype,name:fleet_vehicle_service_kanban.mail_message_subtype_fleet_service_user_updated
 msgid "Changed Responsible"
-msgstr ""
+msgstr "Responsable modifié"
 
 #. module: fleet_vehicle_service_kanban
 #: model:mail.message.subtype,description:fleet_vehicle_service_kanban.mail_message_subtype_fleet_service_vendor_updated
 #: model:mail.message.subtype,name:fleet_vehicle_service_kanban.mail_message_subtype_fleet_service_vendor_updated
 msgid "Changed Vendor"
-msgstr ""
+msgstr "Vendeur modifié"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,help:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__tag_ids
 msgid ""
 "Classify and analyze your services categories like: Repair, Maintenance"
 msgstr ""
+"Classifiez et analysez vos catégories de service telles que : Réparation, "
+"Maintenance"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services_tag__color
 msgid "Color Index"
-msgstr ""
+msgstr "Index couleur"
 
 #. module: fleet_vehicle_service_kanban
 #: model_terms:ir.actions.act_window,help:fleet_vehicle_service_kanban.fleet_vehicle_log_services_stage_action
 msgid "Create a new stage for vehicle services"
-msgstr ""
+msgstr "Créer une nouvelle étape pour les services véhicule"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services_stage__create_uid
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services_tag__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Créé par"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services_stage__create_date
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services_tag__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Créé le"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,help:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__stage_id
 msgid "Current state of the vehicle"
-msgstr ""
+msgstr "État actuel du véhicule"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services_stage__display_name
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services_tag__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nom affiché"
 
 #. module: fleet_vehicle_service_kanban
 #: model:fleet.vehicle.log.services.stage,name:fleet_vehicle_service_kanban.fleet_vehicle_log_services_stage_draft
 msgid "Draft"
-msgstr ""
+msgstr "Brouillon"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services_stage__fold
 msgid "Folded in Kanban"
-msgstr ""
+msgstr "Replié dans la vue kanban"
 
 #. module: fleet_vehicle_service_kanban
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_service_kanban.fleet_vehicle_log_services_view_search
 msgid "Future Activities"
-msgstr ""
+msgstr "Activités futures"
 
 #. module: fleet_vehicle_service_kanban
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_service_kanban.fleet_vehicle_log_services_view_search
 msgid "Group By"
-msgstr ""
+msgstr "Grouper par"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services_stage__id
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services_tag__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,help:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services_stage__fold
 msgid "If True this stage is folded in the kanban view."
 msgstr ""
+"Lorsque cette option est activée, l'étape est repliée dans la vue kanban."
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields.selection,name:fleet_vehicle_service_kanban.selection__fleet_vehicle_log_services__priority__1
 msgid "Important"
-msgstr ""
+msgstr "Important"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services_stage____last_update
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services_tag____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Dernière modification le"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services_stage__write_uid
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services_tag__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Dernière mise à jour par"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services_stage__write_date
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services_tag__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Dernière mise à jour le"
 
 #. module: fleet_vehicle_service_kanban
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_service_kanban.fleet_vehicle_log_services_view_search
 msgid "Late Activities"
-msgstr ""
+msgstr "Dernières activités"
 
 #. module: fleet_vehicle_service_kanban
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_service_kanban.fleet_vehicle_log_services_view_search
 msgid "My Services"
-msgstr ""
+msgstr "Mes services"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services_stage__name
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields.selection,name:fleet_vehicle_service_kanban.selection__fleet_vehicle_log_services__priority__0
 msgid "Normal"
-msgstr ""
+msgstr "Normal"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__priority
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_service_kanban.fleet_vehicle_log_services_view_form
 msgid "Priority"
-msgstr ""
+msgstr "Priorité"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__purchaser_id
 msgid "Purchaser"
-msgstr ""
+msgstr "Acheteur"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__user_id
 msgid "Responsible"
-msgstr ""
+msgstr "Responsable"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services_stage__sequence
 msgid "Sequence"
-msgstr ""
+msgstr "Séquence"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.ui.menu,name:fleet_vehicle_service_kanban.fleet_vehicle_log_services_conf_menu
 msgid "Services Logs"
-msgstr ""
+msgstr "Journaux des services"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model,name:fleet_vehicle_service_kanban.model_fleet_vehicle_log_services_tag
 msgid "Services Tags"
-msgstr ""
+msgstr "Étiquettes des services"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model,name:fleet_vehicle_service_kanban.model_fleet_vehicle_log_services
 msgid "Services for vehicles"
-msgstr ""
+msgstr "Services véhicule"
 
 #. module: fleet_vehicle_service_kanban
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_service_kanban.fleet_vehicle_log_services_view_search
 msgid "Show all records which has next action date is before today"
 msgstr ""
+"Afficher tous les enregistrements dont la date de prochaine action est avant "
+"aujourd'hui"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__stage_id
 msgid "Stage"
-msgstr ""
+msgstr "Étape"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.constraint,message:fleet_vehicle_service_kanban.constraint_fleet_vehicle_log_services_stage_fleet_service_stage_name_unique
 msgid "Stage name already exists"
-msgstr ""
+msgstr "Ce nom d'étape existe déjà"
 
 #. module: fleet_vehicle_service_kanban
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_service_kanban.fleet_vehicle_log_services_view_search
 msgid "Status"
-msgstr ""
+msgstr "Statut"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services_tag__name
 msgid "Tag Name"
-msgstr ""
+msgstr "Nom de l'étiquette"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.constraint,message:fleet_vehicle_service_kanban.constraint_fleet_vehicle_log_services_tag_name_uniq
 msgid "Tag name already exists !"
-msgstr ""
+msgstr "Ce nom d'étiquette existe déjà !"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__tag_ids
 msgid "Tags"
-msgstr ""
+msgstr "Étiquettes"
 
 #. module: fleet_vehicle_service_kanban
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_service_kanban.fleet_vehicle_log_services_view_search
 msgid "Today Activities"
-msgstr ""
+msgstr "Activités du jour"
 
 #. module: fleet_vehicle_service_kanban
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_service_kanban.fleet_vehicle_log_services_view_search
 msgid "Unread Messages"
-msgstr ""
+msgstr "Messages non-lus"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,help:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services_stage__sequence
 msgid "Used to order the stages"
-msgstr ""
+msgstr "Utilisé pour trier les étapes"
 
 #. module: fleet_vehicle_service_kanban
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_service_kanban.fleet_vehicle_log_services_view_kanban
 msgid "Vehicle"
-msgstr ""
+msgstr "Véhicule"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.actions.act_window,name:fleet_vehicle_service_kanban.fleet_vehicle_log_services_stage_action
 #: model:ir.model,name:fleet_vehicle_service_kanban.model_fleet_vehicle_log_services_stage
 #: model:ir.ui.menu,name:fleet_vehicle_service_kanban.fleet_vehicle_log_services_stage_menu
 msgid "Vehicle Services Stages"
-msgstr ""
+msgstr "Étapes des services véhicule"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.actions.act_window,name:fleet_vehicle_service_kanban.fleet_vehicle_log_services_tag_action
 #: model:ir.ui.menu,name:fleet_vehicle_service_kanban.fleet_vehicle_log_services_tag_menu
 msgid "Vehicle Services Tags"
-msgstr ""
+msgstr "Étiquettes de services véhicule"
 
 #. module: fleet_vehicle_service_kanban
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_service_kanban.fleet_vehicle_log_services_view_activity
 msgid "Vehicles Services"
-msgstr ""
+msgstr "Services véhicule"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__vendor_id
 msgid "Vendor"
-msgstr ""
+msgstr "Vendeur"
 
 #. module: fleet_vehicle_service_kanban
 #: model_terms:ir.actions.act_window,help:fleet_vehicle_service_kanban.fleet_vehicle_log_services_stage_action
@@ -287,3 +294,5 @@ msgid ""
 "You can customize available stages to track the evolution of\n"
 "                each service. Example: registered, finished, etc."
 msgstr ""
+"Vous pouvez personnaliser les étapes disponibles pour suivre l'évolution de\n"
+"                chaque service. Exemple : enregistré, terminé, etc."
