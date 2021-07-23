@@ -6,8 +6,8 @@ generate_requirements_txt: true
 include_wkhtmltopdf: false
 odoo_version: 14.0
 rebel_module_groups: []
-repo_description: "TODO: add repo description."
-repo_name: fleet
+repo_description: Addons for Fleet management
+repo_name: Fleet
 repo_slug: fleet
 travis_apt_packages: []
 travis_apt_sources: []
