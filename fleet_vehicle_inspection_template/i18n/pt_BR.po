@@ -199,6 +199,11 @@ msgid "Messages"
 msgstr "Mensagens"
 
 #. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: fleet_vehicle_inspection_template
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__name
 msgid "Name"
 msgstr "Nome"
