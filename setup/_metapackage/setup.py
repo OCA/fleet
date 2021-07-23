@@ -12,6 +12,7 @@ setuptools.setup(
         'odoo14-addon-fleet_vehicle_history_date_end',
         'odoo14-addon-fleet_vehicle_inspection',
         'odoo14-addon-fleet_vehicle_inspection_template',
+        'odoo14-addon-fleet_vehicle_service_calendar',
         'odoo14-addon-fleet_vehicle_service_kanban',
     ],
     classifiers=[
