@@ -5,9 +5,9 @@
 
 <!-- /!\ do not modify above this line -->
 
-# fleet
+# Fleet
 
-TODO: add repo description.
+Addons for Fleet management
 
 <!-- /!\ do not modify below this line -->
 
