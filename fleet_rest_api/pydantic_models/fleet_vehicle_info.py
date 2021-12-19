@@ -5,9 +5,14 @@ from datetime import date, datetime
 
 import pydantic
 
+from typing import List
 from odoo.addons.pydantic import models, utils
 
 from .fleet_vehicle_state_info import FleetVehicleStateInfo
+from .fleet_vehicle_log_contract_info import FleetVehicleLogContractInfo
+from .fleet_vehicle_log_services_info import FleetVehicleLogServicesInfo
+from .fleet_vehicle_assignation_log_info import FleetVehicleAssignationLogInfo
+from .fleet_vehicle_tag_info import FleetVehicleTagInfo
 
 
 class FleetVehicleInfo(models.BaseModel):
@@ -24,9 +29,9 @@ class FleetVehicleInfo(models.BaseModel):
     model_id: int
     manager_id: int
     brand_id: int
-    # log_drivers
-    # log_services
-    # log_contracts
+    log_drivers: List[FleetVehicleAssignationLogInfo] = pydantic.Field([], alias="log_drivers")
+    log_services: List[FleetVehicleLogServicesInfo] = pydantic.Field([], alias="log_services")
+    log_contracts: List[FleetVehicleLogContractInfo] = pydantic.Field([], alias="log_contracts")
     contract_count: int
     service_count: int
     odometer_count: int
@@ -39,7 +44,7 @@ class FleetVehicleInfo(models.BaseModel):
     location: str
     seats: int
     model_year: str
-    # tag_ids
+    tag_ids: List[FleetVehicleTagInfo] = pydantic.Field([], alias="tag_ids")
     odometer: float
     odometer_unit: str
     transmission: str

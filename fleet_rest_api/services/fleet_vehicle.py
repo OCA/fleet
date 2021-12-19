@@ -8,12 +8,6 @@ from odoo.addons.base_rest_pydantic.restapi import PydanticModel, PydanticModelL
 from odoo.addons.component.core import Component
 
 from ..pydantic_models.fleet_vehicle_info import FleetVehicleInfo
-
-# from ..pydantic_models.fleet_vehicle_registration_info import FleetVehicleRegistrationInfo
-# from ..pydantic_models.fleet_vehicle_registration_request import (
-#     FleetVehicleRegistrationRequest,
-#     FleetVehicleRegistrationRequestList,
-# )
 from ..pydantic_models.fleet_vehicle_search_filter import FleetVehicleSearchFilter
 
 

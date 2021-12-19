@@ -31,7 +31,7 @@ class FleetVehicleLogContractInfo(models.BaseModel):
     notes: str
     cost_generated: float
     cost_frequency: str
-    services_ids: List[FleetServiceTypeInfo] = pydantic.Field(alias="service_ids")
+    services_ids: List[FleetServiceTypeInfo] = pydantic.Field([], alias="service_ids")
     write_date: datetime
 
     class Config:
