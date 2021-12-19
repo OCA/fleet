@@ -2,7 +2,6 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from datetime import date, datetime
-from typing import List
 
 from odoo.addons.pydantic import models, utils
 

@@ -7,7 +7,9 @@ from odoo.addons.base_rest import restapi
 from odoo.addons.base_rest_pydantic.restapi import PydanticModel, PydanticModelList
 from odoo.addons.component.core import Component
 
-from ..pydantic_models.fleet_vehicle_assignation_log_info import FleetVehicleAssignationLogInfo
+from ..pydantic_models.fleet_vehicle_assignation_log_info import (
+    FleetVehicleAssignationLogInfo,
+)
 from ..pydantic_models.fleet_vehicle_assignation_log_search_filter import (
     FleetVehicleAssignationLogSearchFilter,
 )
@@ -47,7 +49,8 @@ class FleetVehicleAssignationLogService(Component):
         auth="public",
     )
     def search(
-        self, fleet_vehicle_assignation_log_search_filter: FleetVehicleAssignationLogSearchFilter
+        self,
+        fleet_vehicle_assignation_log_search_filter: FleetVehicleAssignationLogSearchFilter,
     ) -> List[FleetVehicleAssignationLogInfo]:
         domain = self._get_search_domain(fleet_vehicle_assignation_log_search_filter)
         res: List[FleetVehicleAssignationLogInfo] = []

@@ -7,7 +7,9 @@ from odoo.addons.base_rest import restapi
 from odoo.addons.base_rest_pydantic.restapi import PydanticModel, PydanticModelList
 from odoo.addons.component.core import Component
 
-from ..pydantic_models.fleet_vehicle_log_contract_info import FleetVehicleLogContractInfo
+from ..pydantic_models.fleet_vehicle_log_contract_info import (
+    FleetVehicleLogContractInfo,
+)
 from ..pydantic_models.fleet_vehicle_log_contract_search_filter import (
     FleetVehicleLogContractSearchFilter,
 )
@@ -49,7 +51,8 @@ class FleetVehicleLogContractService(Component):
         auth="public",
     )
     def search(
-        self, fleet_vehicle_log_contract_search_filter: FleetVehicleLogContractSearchFilter
+        self,
+        fleet_vehicle_log_contract_search_filter: FleetVehicleLogContractSearchFilter,
     ) -> List[FleetVehicleLogContractInfo]:
         domain = self._get_search_domain(fleet_vehicle_log_contract_search_filter)
         res: List[FleetVehicleLogContractInfo] = []

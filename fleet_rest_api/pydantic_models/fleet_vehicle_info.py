@@ -2,16 +2,16 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from datetime import date, datetime
+from typing import List
 
 import pydantic
 
-from typing import List
 from odoo.addons.pydantic import models, utils
 
-from .fleet_vehicle_state_info import FleetVehicleStateInfo
+from .fleet_vehicle_assignation_log_info import FleetVehicleAssignationLogInfo
 from .fleet_vehicle_log_contract_info import FleetVehicleLogContractInfo
 from .fleet_vehicle_log_services_info import FleetVehicleLogServicesInfo
-from .fleet_vehicle_assignation_log_info import FleetVehicleAssignationLogInfo
+from .fleet_vehicle_state_info import FleetVehicleStateInfo
 from .fleet_vehicle_tag_info import FleetVehicleTagInfo
 
 
@@ -29,9 +29,15 @@ class FleetVehicleInfo(models.BaseModel):
     model_id: int
     manager_id: int
     brand_id: int
-    log_drivers: List[FleetVehicleAssignationLogInfo] = pydantic.Field([], alias="log_drivers")
-    log_services: List[FleetVehicleLogServicesInfo] = pydantic.Field([], alias="log_services")
-    log_contracts: List[FleetVehicleLogContractInfo] = pydantic.Field([], alias="log_contracts")
+    log_drivers: List[FleetVehicleAssignationLogInfo] = pydantic.Field(
+        [], alias="log_drivers"
+    )
+    log_services: List[FleetVehicleLogServicesInfo] = pydantic.Field(
+        [], alias="log_services"
+    )
+    log_contracts: List[FleetVehicleLogContractInfo] = pydantic.Field(
+        [], alias="log_contracts"
+    )
     contract_count: int
     service_count: int
     odometer_count: int
