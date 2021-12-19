@@ -12,3 +12,5 @@ from . import fleet_vehicle_log_contract_info
 from . import fleet_vehicle_log_contract_search_filter
 from . import fleet_vehicle_log_services_info
 from . import fleet_vehicle_log_services_search_filter
+from . import fleet_vehicle_assignation_log_info
+from . import fleet_vehicle_assignation_log_search_filter
