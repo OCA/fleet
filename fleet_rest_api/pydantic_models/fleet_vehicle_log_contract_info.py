@@ -1,10 +1,13 @@
 # Copyright 2021 - TODAY, Marcel Savegnago <marcel.savegnago@escodoo.com.br>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
+import pydantic
+
 from datetime import date, datetime
 from typing import List
 
 from odoo.addons.pydantic import models, utils
+from .fleet_service_type_info import FleetServiceTypeInfo
 
 
 class FleetVehicleLogContractInfo(models.BaseModel):
@@ -28,7 +31,7 @@ class FleetVehicleLogContractInfo(models.BaseModel):
     notes: str
     cost_generated: float
     cost_frequency: str
-    # services_ids: List[int]
+    services_ids: List[FleetServiceTypeInfo] = pydantic.Field(alias="service_ids")
     write_date: datetime
 
     class Config:
