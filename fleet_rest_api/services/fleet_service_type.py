@@ -15,7 +15,7 @@ from ..pydantic_models.fleet_service_type_search_filter import (
 
 class FleetServiceTypeService(Component):
     _inherit = "base.fleet.rest.service"
-    _name = "fleet.service.ype.rest.service"
+    _name = "fleet.service.type.rest.service"
     _usage = "service_type"
     _expose_model = "fleet.service.type"
     _collection = "fleet.rest.services"
