@@ -36,10 +36,10 @@ class FleetVehicleService(Component):
 
     def _get_search_domain(self, filters):
         domain = []
-        if filters.name:
-            domain.append(("name", "like", filters.name))
         if filters.id:
             domain.append(("id", "=", filters.id))
+        if filters.name:
+            domain.append(("name", "like", filters.name))
         return domain
 
     @restapi.method(

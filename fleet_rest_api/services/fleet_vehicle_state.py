@@ -32,12 +32,10 @@ class FleetVehicleStateService(Component):
 
     def _get_search_domain(self, filters):
         domain = []
-        if filters.name:
-            domain.append(("name", "like", filters.name))
         if filters.id:
             domain.append(("id", "=", filters.id))
-        if filters.pipe_end is not None:
-            domain.append(("pipe_end", "=", filters.pipe_end))
+        if filters.name:
+            domain.append(("name", "like", filters.name))
         return domain
 
     @restapi.method(
