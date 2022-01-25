@@ -13,6 +13,7 @@ setuptools.setup(
         'odoo13-addon-fleet_vehicle_inspection',
         'odoo13-addon-fleet_vehicle_inspection_template',
         'odoo13-addon-fleet_vehicle_license_plate_alt',
+        'odoo13-addon-fleet_vehicle_notebook',
         'odoo13-addon-fleet_vehicle_service_calendar',
         'odoo13-addon-fleet_vehicle_service_kanban',
     ],
