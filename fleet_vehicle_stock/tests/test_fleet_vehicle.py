@@ -5,26 +5,26 @@ from odoo.tests.common import TransactionCase
 
 
 class TestFleetVehicle(TransactionCase):
-
     def setUp(self):
         super(TestFleetVehicle, self).setUp()
-        self.vehicle = self.env['fleet.vehicle']
-        self.vehicle_model = self.env['fleet.vehicle.model']
-        self.brand = self.env.ref('fleet.brand_opel')
-        self.stock_location = self.env.ref('stock.stock_location_customers')
-        self.product = self.env['product.template']
+        self.vehicle = self.env["fleet.vehicle"]
+        self.vehicle_model = self.env["fleet.vehicle.model"]
+        self.brand = self.env.ref("fleet.brand_opel")
+        self.stock_location = self.env.ref("stock.stock_location_customers")
+        self.product = self.env["product.template"]
 
-        self.vehicle_model = self.vehicle_model.create({
-            'name': 'Test Vehicle Model',
-            'brand_id': self.brand.id,
-        })
+        self.vehicle_model = self.vehicle_model.create(
+            {"name": "Test Vehicle Model", "brand_id": self.brand.id}
+        )
 
-        product1 = self.env['product.product'].create({
-            'name': 'Product A',
-            'type': 'product',
-            'fleet_vehicle_model_id': self.vehicle_model.id,
-            'tracking': 'serial',
-        })
+        product1 = self.env["product.product"].create(
+            {
+                "name": "Product A",
+                "type": "product",
+                "fleet_vehicle_model_id": self.vehicle_model.id,
+                "tracking": "serial",
+            }
+        )
 
         lot1 = self.env['stock.production.lot'].create({
             'name': 'serial1',
@@ -36,37 +36,44 @@ class TestFleetVehicle(TransactionCase):
             'product_id': product1.id,
         })
 
-        self.env['stock.quant'].create({
-            'product_id': product1.id,
-            'location_id': self.stock_location.id,
-            'quantity': 1.0,
-            'lot_id': lot1.id,
-        })
+        self.env["stock.quant"].create(
+            {
+                "product_id": product1.id,
+                "location_id": self.stock_location.id,
+                "quantity": 1.0,
+                "lot_id": lot1.id,
+            }
+        )
 
-        self.vehicle = self.vehicle.create({
-            'model_id': self.vehicle_model.id,
-            'product_id': product1.id,
-            'lot_id': lot1.id,
-            'current_stock_location_id': self.stock_location.id,
-        })
+        self.vehicle = self.vehicle.create(
+            {
+                "model_id": self.vehicle_model.id,
+                "product_id": product1.id,
+                "lot_id": lot1.id,
+                "current_stock_location_id": self.stock_location.id,
+            }
+        )
 
-        self.vehicle_without_quant = self.vehicle.create({
-            'model_id': self.vehicle_model.id,
-            'product_id': product1.id,
-            'lot_id': lot2.id,
-        })
+        self.vehicle_without_quant = self.vehicle.create(
+            {
+                "model_id": self.vehicle_model.id,
+                "product_id": product1.id,
+                "lot_id": lot2.id,
+            }
+        )
 
-        self.vehicle_without_lot_id = self.vehicle.create({
-            'model_id': self.vehicle_model.id,
-            'product_id': product1.id,
-        })
+        self.vehicle_without_lot_id = self.vehicle.create(
+            {"model_id": self.vehicle_model.id, "product_id": product1.id}
+        )
 
-        self.product2 = self.product.create({
-            'name': 'Product B',
-            'type': 'product',
-            'fleet_vehicle_model_id': self.vehicle_model.id,
-            'tracking': 'serial',
-        })
+        self.product2 = self.product.create(
+            {
+                "name": "Product B",
+                "type": "product",
+                "fleet_vehicle_model_id": self.vehicle_model.id,
+                "tracking": "serial",
+            }
+        )
 
     def test_onchange_product(self):
         vehicle = self.vehicle
@@ -94,5 +101,7 @@ class TestFleetVehicle(TransactionCase):
     def test_set_fleet_vehicle_model_id(self):
         product2 = self.product2
         product2._set_fleet_vehicle_model_id()
-        self.assertTrue(product2.product_variant_ids.fleet_vehicle_model_id ==
-                        product2.fleet_vehicle_model_id)
+        self.assertTrue(
+            product2.product_variant_ids.fleet_vehicle_model_id
+            == product2.fleet_vehicle_model_id
+        )
