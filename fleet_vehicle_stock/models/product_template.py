@@ -2,7 +2,6 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import api, fields, models
-from odoo.tools import pycompat
 
 
 class ProductTemplate(models.Model):
@@ -30,8 +29,7 @@ class ProductTemplate(models.Model):
         for template in self - unique_variants:
             template.fleet_vehicle_model_id = False
 
-    @api.one
-    def _set_fleet_vehicle_model_id(self):
+    def _inverse_fleet_vehicle_model_id(self):
         if len(self.product_variant_ids) == 1:
             self.product_variant_ids.fleet_vehicle_model_id = (
                 self.fleet_vehicle_model_id
@@ -40,7 +38,7 @@ class ProductTemplate(models.Model):
     @api.model_create_multi
     def create(self, vals_list):
         templates = super(ProductTemplate, self).create(vals_list)
-        for template, vals in pycompat.izip(templates, vals_list):
+        for template, vals in zip(templates, vals_list):
             related_vals = {}
             if vals.get("fleet_vehicle_model_id"):
                 related_vals["fleet_vehicle_model_id"] = vals["fleet_vehicle_model_id"]
