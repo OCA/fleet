@@ -26,15 +26,21 @@ class TestFleetVehicle(TransactionCase):
             }
         )
 
-        lot1 = self.env['stock.production.lot'].create({
-            'name': 'serial1',
-            'product_id': product1.id,
-        })
+        lot1 = self.env["stock.production.lot"].create(
+            {
+                "name": "serial1",
+                "product_id": product1.id,
+                "company_id": self.env.user.company_id.id,
+            }
+        )
 
-        lot2 = self.env['stock.production.lot'].create({
-            'name': 'serial2',
-            'product_id': product1.id,
-        })
+        lot2 = self.env["stock.production.lot"].create(
+            {
+                "name": "serial2",
+                "product_id": product1.id,
+                "company_id": self.env.user.company_id.id,
+            }
+        )
 
         self.env["stock.quant"].create(
             {
@@ -98,9 +104,9 @@ class TestFleetVehicle(TransactionCase):
         vehicle_without_lot_id._compute_current_stock_loc_id()
         self.assertTrue(vehicle_without_lot_id.current_stock_location_id.id is False)
 
-    def test_set_fleet_vehicle_model_id(self):
+    def test_inverse_fleet_vehicle_model_id(self):
         product2 = self.product2
-        product2._set_fleet_vehicle_model_id()
+        product2._inverse_fleet_vehicle_model_id()
         self.assertTrue(
             product2.product_variant_ids.fleet_vehicle_model_id
             == product2.fleet_vehicle_model_id
