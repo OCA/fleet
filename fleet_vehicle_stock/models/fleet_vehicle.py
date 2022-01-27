@@ -49,7 +49,6 @@ class FleetVehicle(models.Model):
                 res.lot_id.fleet_vehicle_id = res.id
         return res
 
-    @api.multi
     def write(self, vals):
         for rec in self:
             prev_lot = rec.lot_id
