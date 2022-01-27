@@ -6,10 +6,10 @@ from odoo import fields, models
 
 class StockPickingType(models.Model):
 
-    _inherit = 'stock.picking.type'
+    _inherit = "stock.picking.type"
 
     create_fleet_vehicle = fields.Boolean(
-        name='Create Fleet Vehicle',
+        name="Create Fleet Vehicle",
         help='Products with the "Creates a Fleet Vehicle" flag'
-             'will automatically be converted to an Fleet Vehicle.'
+        "will automatically be converted to an Fleet Vehicle.",
     )
