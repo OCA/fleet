@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo13-addon-fleet_vehicle_category',
+        'odoo13-addon-fleet_vehicle_fuel_capacity',
         'odoo13-addon-fleet_vehicle_fuel_type_ethanol',
         'odoo13-addon-fleet_vehicle_history_date_end',
         'odoo13-addon-fleet_vehicle_inspection',
