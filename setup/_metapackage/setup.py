@@ -13,6 +13,7 @@ setuptools.setup(
         'odoo14-addon-fleet_vehicle_inspection',
         'odoo14-addon-fleet_vehicle_inspection_template',
         'odoo14-addon-fleet_vehicle_notebook',
+        'odoo14-addon-fleet_vehicle_pivot_graph',
         'odoo14-addon-fleet_vehicle_service_calendar',
         'odoo14-addon-fleet_vehicle_service_kanban',
     ],
