@@ -6,9 +6,11 @@ from odoo import fields, models
 
 class FleetVehicle(models.Model):
 
-    _inherit = 'fleet.vehicle'
+    _inherit = "fleet.vehicle"
 
-    fuel_type = fields.Selection(selection_add=[
-        ('ethanol', 'Ethanol'),
-        ('flex', 'Flex (Gasoline/Ethanol)'),
-    ])
+    fuel_type = fields.Selection(
+        selection_add=[
+            ("ethanol", "Ethanol"),
+            ("flex", "Flex (Gasoline/Ethanol)"),
+        ]
+    )
