@@ -6,10 +6,10 @@ from odoo import fields, models
 
 class FleetVehicle(models.Model):
 
-    _inherit = 'fleet.vehicle'
+    _inherit = "fleet.vehicle"
 
     calendar_year = fields.Char(
-        'Calendar Year',
+        "Calendar Year",
         track_visibility="onchange",
-        help='Calendar year of the vehicle'
+        help="Calendar year of the vehicle",
     )
