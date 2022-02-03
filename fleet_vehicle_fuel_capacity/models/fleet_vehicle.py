@@ -6,14 +6,16 @@ from odoo import fields, models
 
 class FleetVehicle(models.Model):
 
-    _inherit = 'fleet.vehicle'
+    _inherit = "fleet.vehicle"
 
     fuel_capacity = fields.Float(
-        string='Fuel Capacity (L)',
-        track_visibility='onchange'
+        string="Fuel Capacity (L)", track_visibility="onchange"
     )
 
     _sql_constraints = [
-        ('check_fuel_capacity', 'CHECK(fuel_capacity >= 0)',
-         'Fuel capacity must be greater than or equal to 0')
+        (
+            "check_fuel_capacity",
+            "CHECK(fuel_capacity >= 0)",
+            "Fuel capacity must be greater than or equal to 0",
+        )
     ]
