@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="fleet_vehicle_configuration_view_form" model="ir.ui.view">
+        <field name="name">fleet.vehicle.configuration.form</field>
+        <field name="model">fleet.vehicle.configuration</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name" />
+                    <field name="max_seats" />
+                    <field name="sequence" />
+                    <field name="vehicle_id" invisible="1" />
+                </group>
+            </form>
+        </field>
+    </record>
+    <record id="fleet_vehicle_configuration_view_tree" model="ir.ui.view">
+        <field name="name">fleet.vehicle.configuration.tree</field>
+        <field name="model">fleet.vehicle.configuration</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="sequence" widget="handle" />
+                <field name="name" />
+                <field name="max_seats" />
+                <field name="vehicle_id" invisible="1" />
+            </tree>
+        </field>
+    </record>
+
+</odoo>
