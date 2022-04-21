@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="fleet_vehicle_view_form" model="ir.ui.view">
+        <field name="name">fleet.vehicle.form</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_form" />
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page name="configurations" string="Configurations">
+                    <group>
+                        <field name="configuration_ids" nolabel="1" />
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+</odoo>

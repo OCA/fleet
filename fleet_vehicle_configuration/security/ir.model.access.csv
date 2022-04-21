@@ -1,0 +1,3 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_vehicle_configuration_manager","access.vehicle.configuration manager","model_fleet_vehicle_configuration","fleet.fleet_group_manager",1,1,1,1
+"access_vehicle_configuration_user","access.vehicle.configuration user","model_fleet_vehicle_configuration","fleet.fleet_group_user",1,0,0,0
