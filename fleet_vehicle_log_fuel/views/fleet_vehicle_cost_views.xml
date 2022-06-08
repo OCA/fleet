@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id='fleet_vehicle_log_fuel_view_form' model='ir.ui.view'>
+        <field name="name">fleet.vehicle.log.fuel.form</field>
+        <field name="model">fleet.vehicle.log.fuel</field>
+        <field name="arch" type="xml">
+            <form string="Fuel Logs">
+                <field name="active" invisible="1" />
+                <field name="currency_id" invisible="1" />
+                <header>
+                    <field
+                        name="state"
+                        widget="statusbar"
+                        options="{'clickable': '1'}"
+                    />
+                </header>
+                <sheet>
+                    <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="bg-danger"
+                        attrs="{'invisible': [('active', '=', True)]}"
+                    />
+                    <group col="2">
+                        <group>
+                            <field name="description" />
+                            <field name="service_type_id" />
+                            <field name="date" />
+                            <field name="amount" widget="monetary" />
+                            <field name="vendor_id" />
+                        </group>
+                        <group>
+                            <field name="liter" />
+                            <field name="price_per_liter" />
+                            <field name="vehicle_id" />
+                            <field name="purchaser_id" />
+                            <label for="odometer" />
+                            <div class="o_row">
+                                <field name="odometer" />
+                                <field name="odometer_unit" />
+                            </div>
+                        </group>
+                    </group>
+                    <group string="Notes">
+                        <field
+                            nolabel="1"
+                            name="notes"
+                            placeholder="Write here any other information related to the service completed."
+                        />
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" />
+                    <field name="activity_ids" />
+                    <field name="message_ids" />
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id='fleet_vehicle_log_fuel_view_tree' model='ir.ui.view'>
+        <field name="name">fleet.vehicle.log.fuel.tree</field>
+        <field name="model">fleet.vehicle.log.fuel</field>
+        <field name="arch" type="xml">
+            <tree string="Fuel Logs" multi_edit="1">
+                <field name="date" readonly="1" />
+                <field name="description" />
+                <field name="service_type_id" />
+                <field name="vehicle_id" readonly="1" widget="many2one_avatar" />
+                <field name="purchaser_id" readonly="1" widget="many2one_avatar" />
+                <field name="vendor_id" optional="show" />
+                <field name="inv_ref" invisible="1" />
+                <field name="liter" />
+                <field name="price_per_liter" invisible="1" />
+                <field name="notes" optional="show" />
+                <field name="amount" sum="Total" widget="monetary" />
+                <field name="currency_id" invisible="1" />
+                <field
+                    name="state"
+                    readonly="1"
+                    widget="badge"
+                    decoration-success="state == 'done'"
+                    decoration-warning="state == 'todo'"
+                    decoration-info="state == 'running'"
+                />
+            </tree>
+        </field>
+    </record>
+
+    <record id='fleet_vehicle_log_fuel_view_kanban' model='ir.ui.view'>
+        <field name="name">fleet.vehicle.log.fuel.kanban</field>
+        <field name="model">fleet.vehicle.log.fuel</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile">
+                <field name="currency_id" />
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div>
+                                <strong>
+                                    <field
+                                        name="vehicle_id"
+                                        widget="res_partner_many2one"
+                                    />
+                                    <span class="float-right"><field
+                                            name="date"
+                                        /></span>
+                                </strong>
+                            </div>
+                            <div>
+                                <field
+                                    name="purchaser_id"
+                                    widget="res_partner_many2one"
+                                />
+                            </div>
+                            <div>
+                                <span><field
+                                        name="vendor_id"
+                                        widget="res_partner_many2one"
+                                    /></span>
+                                <span><field name="liter" /> Liter</span>
+                                <span class="float-right"><field
+                                        name="amount"
+                                        widget="monetary"
+                                    /></span>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="fleet_vehicle_log_fuel_view_graph" model="ir.ui.view">
+       <field name="name">fleet.vehicle.log.fuel.graph</field>
+       <field name="model">fleet.vehicle.log.fuel</field>
+       <field name="arch" type="xml">
+            <graph string="Fuel Costs Per Month" stacked="True" sample="1">
+                <field name="date" type="row" />
+                <field name="vehicle_id" type="row" />
+                <field name="amount" type="measure" />
+            </graph>
+        </field>
+    </record>
+
+    <record id='fleet_vehicle_log_fuel_view_search' model='ir.ui.view'>
+        <field name="name">fleet.vehicle.log.fuel.search</field>
+        <field name="model">fleet.vehicle.log.fuel</field>
+        <field name="arch" type="xml">
+            <search string="Fuel Logs">
+                <field name="vehicle_id" />
+                <field name="liter" />
+                <field name="service_type_id" />
+                <separator />
+                <filter
+                    string="Archived"
+                    name="inactive"
+                    domain="[('active', '=', False)]"
+                />
+            </search>
+        </field>
+    </record>
+
+    <record id='fleet_vehicle_log_fuel_action' model='ir.actions.act_window'>
+        <field name="name">Fuel Logs</field>
+        <field name="res_model">fleet.vehicle.log.fuel</field>
+        <field name="view_mode">tree,kanban,form,graph</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new fuel log entry
+          </p><p>
+            Here you can add refuelling entries for all vehicles.
+          </p>
+        </field>
+    </record>
+
+    <menuitem
+        action="fleet_vehicle_log_fuel_action"
+        parent="fleet.fleet_vehicles"
+        id="fleet_vehicle_log_fuel_menu"
+        groups="fleet.fleet_group_user"
+        sequence="4"
+    />
+
+</odoo>
