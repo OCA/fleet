@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Copyright 2022 ForgeFlow S.L.  <https://www.forgeflow.com>
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl)
+-->
+<odoo>
+    <record id='fleet_vehicle_log_services_view_form' model='ir.ui.view'>
+        <field name="name">fleet.vehicle.log.services.form</field>
+        <field name="model">fleet.vehicle.log.services</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_log_services_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='notes']/.." position="before">
+                <group string="Included Services">
+                    <field name="service_ids" widget="many2many_tags" nolabel="1" />
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
