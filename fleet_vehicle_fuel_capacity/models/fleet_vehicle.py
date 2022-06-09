@@ -8,9 +8,7 @@ class FleetVehicle(models.Model):
 
     _inherit = "fleet.vehicle"
 
-    fuel_capacity = fields.Float(
-        string="Fuel Capacity (L)", track_visibility="onchange"
-    )
+    fuel_capacity = fields.Float(string="Fuel Capacity (L)", tracking=True)
 
     _sql_constraints = [
         (

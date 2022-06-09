@@ -10,6 +10,6 @@ class FleetVehicle(models.Model):
 
     calendar_year = fields.Char(
         "Calendar Year",
-        track_visibility="onchange",
+        tracking=True,
         help="Calendar year of the vehicle",
     )
