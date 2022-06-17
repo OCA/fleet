@@ -8,6 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -32,9 +33,12 @@ msgstr "Contador de inspecciones"
 
 #. module: fleet_vehicle_inspection
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_kanban_view
-msgid "<i class=\"fa fa-clock-o\" aria-label=\"Date Inspected\" role=\"img\" title=\"Date\"/>"
+msgid ""
+"<i class=\"fa fa-clock-o\" aria-label=\"Date Inspected\" role=\"img\" title="
+"\"Date\"/>"
 msgstr ""
-"<i class=\"fa fa-clock-o\" aria-label=\"Date Inspected\" role=\"img\" title=\"Fecha\"/>"
+"<i class=\"fa fa-clock-o\" aria-label=\"Date Inspected\" role=\"img\" title="
+"\"Fecha\"/>"
 
 #. module: fleet_vehicle_inspection
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_form_view
@@ -608,15 +612,17 @@ msgstr "Medida del cuentakilómetros del vehículo al momento de este registro"
 #: code:addons/fleet_vehicle_inspection/models/fleet_vehicle_inspection.py:0
 #, python-format
 msgid "Only inspections in 'draft' or 'cancel' states can be confirmed"
-msgstr "Solo se pueden confirmar las inspecciones en estado 'borrador' o 'cancelar'"
+msgstr ""
+"Solo se pueden confirmar las inspecciones en estado 'borrador' o 'cancelar'"
 
 #. module: fleet_vehicle_inspection
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_line_form_view
 msgid ""
 "Optimization required! Reduce the image size or increase your compression "
 "settings."
-msgstr "¡Se requiere optimización! Reduzca el tamaño de la imagen o aumente la configuración"
-"de compresión."
+msgstr ""
+"¡Se requiere optimización! Reduzca el tamaño de la imagen o aumente la "
+"configuraciónde compresión."
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__name
@@ -752,3 +758,17 @@ msgstr "Línea de Inspección de Vehículo"
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_pivot_view
 msgid "Vehicles Inspections"
 msgstr "Inspección de Vehículos"
+
+#. module: fleet_vehicle_inspection
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__website_message_ids
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__website_message_ids
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: fleet_vehicle_inspection
+#: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection__website_message_ids
+#: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__website_message_ids
+#: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__website_message_ids
+msgid "Website communication history"
+msgstr ""

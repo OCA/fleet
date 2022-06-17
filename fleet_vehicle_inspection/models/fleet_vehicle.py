@@ -22,9 +22,11 @@ class FleetVehicle(models.Model):
             rec.inspection_count = len(rec.inspection_ids)
 
     def action_view_inspection(self):
-        action = self.env.ref(
-            "fleet_vehicle_inspection.fleet_vehicle_inspection_act_window"
-        ).read()[0]
+        action = (
+            self.env.ref("fleet_vehicle_inspection.fleet_vehicle_inspection_act_window")
+            .sudo()
+            .read()[0]
+        )
         if self.inspection_count > 1:
             action["domain"] = [("id", "in", self.inspection_ids.ids)]
         else:
