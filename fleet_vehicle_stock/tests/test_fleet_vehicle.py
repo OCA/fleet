@@ -1,83 +1,69 @@
 # Copyright (C) 2021 - TODAY, Marcel Savegnago <marcel.savegnago@escodoo.com.br>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo.tests.common import TransactionCase
+from odoo.tests.common import SavepointCase
 
 
-class TestFleetVehicle(TransactionCase):
-    def setUp(self):
-        super(TestFleetVehicle, self).setUp()
-        self.vehicle = self.env["fleet.vehicle"]
-        self.vehicle_model = self.env["fleet.vehicle.model"]
-        self.brand = self.env.ref("fleet.brand_opel")
-        self.stock_location = self.env.ref("stock.stock_location_customers")
-        self.product = self.env["product.template"]
+class TestFleetVehicle(SavepointCase):
+    @classmethod
+    def setUpClass(cls):
+        super(TestFleetVehicle, cls).setUpClass()
+        cls.brand = cls.env.ref("fleet.brand_opel")
+        cls.stock_location = cls.env.ref("stock.stock_location_customers")
 
-        self.vehicle_model = self.vehicle_model.create(
-            {"name": "Test Vehicle Model", "brand_id": self.brand.id}
+        cls.vehicle_model1 = cls.env["fleet.vehicle.model"].create(
+            {"name": "Test Vehicle Model 1", "brand_id": cls.brand.id}
+        )
+        cls.vehicle_model2 = cls.env["fleet.vehicle.model"].create(
+            {"name": "Test Vehicle Model 2", "brand_id": cls.brand.id}
         )
 
-        product1 = self.env["product.product"].create(
+        cls.product1 = cls.env["product.template"].create(
             {
-                "name": "Product A",
+                "name": "Product 1",
                 "type": "product",
-                "fleet_vehicle_model_id": self.vehicle_model.id,
+                "fleet_vehicle_model_id": cls.vehicle_model1.id,
+                "tracking": "serial",
+            }
+        )
+        cls.product2 = cls.env["product.template"].create(
+            {
+                "name": "Product 2",
+                "type": "product",
+                "fleet_vehicle_model_id": cls.vehicle_model1.id,
                 "tracking": "serial",
             }
         )
 
-        lot1 = self.env["stock.production.lot"].create(
+        cls.lot1 = cls.env["stock.production.lot"].create(
             {
                 "name": "serial1",
-                "product_id": product1.id,
-                "company_id": self.env.user.company_id.id,
+                "product_id": cls.product1.id,
+                "company_id": cls.env.user.company_id.id,
             }
         )
-
-        lot2 = self.env["stock.production.lot"].create(
+        cls.lot2 = cls.env["stock.production.lot"].create(
             {
                 "name": "serial2",
-                "product_id": product1.id,
-                "company_id": self.env.user.company_id.id,
+                "product_id": cls.product1.id,
+                "company_id": cls.env.user.company_id.id,
             }
         )
 
-        self.env["stock.quant"].create(
+        cls.quant = cls.env["stock.quant"].create(
             {
-                "product_id": product1.id,
-                "location_id": self.stock_location.id,
+                "product_id": cls.product1.id,
+                "location_id": cls.stock_location.id,
                 "quantity": 1.0,
-                "lot_id": lot1.id,
+                "lot_id": cls.lot1.id,
             }
         )
 
-        self.vehicle = self.vehicle.create(
+        cls.vehicle = cls.env["fleet.vehicle"].create(
             {
-                "model_id": self.vehicle_model.id,
-                "product_id": product1.id,
-                "lot_id": lot1.id,
-                "current_stock_location_id": self.stock_location.id,
-            }
-        )
-
-        self.vehicle_without_quant = self.vehicle.create(
-            {
-                "model_id": self.vehicle_model.id,
-                "product_id": product1.id,
-                "lot_id": lot2.id,
-            }
-        )
-
-        self.vehicle_without_lot_id = self.vehicle.create(
-            {"model_id": self.vehicle_model.id, "product_id": product1.id}
-        )
-
-        self.product2 = self.product.create(
-            {
-                "name": "Product B",
-                "type": "product",
-                "fleet_vehicle_model_id": self.vehicle_model.id,
-                "tracking": "serial",
+                "model_id": cls.vehicle_model1.id,
+                "product_id": cls.product1.id,
+                "lot_id": cls.lot1.id,
             }
         )
 
@@ -89,25 +75,22 @@ class TestFleetVehicle(TransactionCase):
     def test_onchange_model(self):
         vehicle = self.vehicle
         vehicle._onchange_model()
-        self.assertTrue(vehicle.product_id == vehicle.model_id.product_id)
+        self.assertEqual(vehicle.product_id, vehicle.model_id.product_id)
 
     def test_compute_current_stock_loc_id(self):
         vehicle = self.vehicle
-        vehicle._compute_current_stock_loc_id()
-        self.assertTrue(vehicle.current_stock_location_id == self.stock_location)
+        self.assertEqual(vehicle.current_stock_location_id, self.stock_location)
 
-        vehicle_without_quant = self.vehicle_without_quant
-        vehicle_without_quant._compute_current_stock_loc_id()
-        self.assertTrue(vehicle_without_quant.current_stock_location_id.id is False)
+        vehicle.lot_id = self.lot2
+        self.assertTrue(vehicle.current_stock_location_id.id is False)
 
-        vehicle_without_lot_id = self.vehicle_without_lot_id
-        vehicle_without_lot_id._compute_current_stock_loc_id()
-        self.assertTrue(vehicle_without_lot_id.current_stock_location_id.id is False)
+        vehicle.lot_id = False
+        self.assertTrue(vehicle.current_stock_location_id.id is False)
 
     def test_inverse_fleet_vehicle_model_id(self):
         product2 = self.product2
-        product2._inverse_fleet_vehicle_model_id()
-        self.assertTrue(
-            product2.product_variant_ids.fleet_vehicle_model_id
-            == product2.fleet_vehicle_model_id
+        product2.fleet_vehicle_model_id = self.vehicle_model2
+        self.assertEqual(
+            product2.product_variant_ids.fleet_vehicle_model_id,
+            product2.fleet_vehicle_model_id,
         )
