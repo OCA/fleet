@@ -9,5 +9,7 @@ class StockProductionLot(models.Model):
     _inherit = "stock.production.lot"
 
     fleet_vehicle_id = fields.Many2one(
-        "fleet.vehicle", string="Fleet Vehicle", readonly=True,
+        "fleet.vehicle",
+        string="Fleet Vehicle",
+        readonly=True,
     )
