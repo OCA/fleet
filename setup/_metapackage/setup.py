@@ -15,6 +15,7 @@ setuptools.setup(
         'odoo14-addon-fleet_vehicle_history_date_end',
         'odoo14-addon-fleet_vehicle_inspection',
         'odoo14-addon-fleet_vehicle_inspection_template',
+        'odoo14-addon-fleet_vehicle_license_plate_alt',
         'odoo14-addon-fleet_vehicle_log_fuel',
         'odoo14-addon-fleet_vehicle_notebook',
         'odoo14-addon-fleet_vehicle_pivot_graph',
