@@ -20,6 +20,7 @@ setuptools.setup(
         'odoo13-addon-fleet_vehicle_pivot_graph',
         'odoo13-addon-fleet_vehicle_service_calendar',
         'odoo13-addon-fleet_vehicle_service_kanban',
+        'odoo13-addon-fleet_vehicle_stock',
     ],
     classifiers=[
         'Programming Language :: Python',
