@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2021 - TODAY, Marcel Savegnago <marcel.savegnago@escodoo.com.br>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="product_normal_form_view" model="ir.ui.view">
+        <field name="name">product.product.form (in fleet_vehicle_stock)</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view" />
+        <field name="arch" type="xml">
+            <page name="fleet" position="inside">
+                <field name="tracking" invisible="1" />
+                <field name="create_fleet_vehicle" invisible="1" />
+                <group>
+                    <field
+                        name="fleet_vehicle_model_id"
+                        attrs="{'invisible': [('tracking', '!=', 'serial')], 'required': [('create_fleet_vehicle', '=', True)]}"
+                    />
+                </group>
+            </page>
+        </field>
+    </record>
+    <record id="product_variant_easy_edit_view" model="ir.ui.view">
+        <field
+            name="name"
+        >product.product.view.form.easy (in fleet_vehicle_stock)</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_variant_easy_edit_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+                <field name="tracking" invisible="1" />
+                <field name="create_fleet_vehicle" invisible="1" />
+                <group
+                    name="fleet"
+                    string="Fleet"
+                    colspan="4"
+                    groups="fleet.fleet_group_manager"
+                >
+                    <field
+                        name="fleet_vehicle_model_id"
+                        attrs="{'invisible': [('tracking', '!=', 'serial')], 'required': [('create_fleet_vehicle', '=', True)]}"
+                    />
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
