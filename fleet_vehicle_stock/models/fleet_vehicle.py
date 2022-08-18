@@ -8,8 +8,14 @@ class FleetVehicle(models.Model):
 
     _inherit = "fleet.vehicle"
 
-    product_id = fields.Many2one("product.product", string="Product",)
-    lot_id = fields.Many2one("stock.production.lot", string="Serial #",)
+    product_id = fields.Many2one(
+        "product.product",
+        string="Product",
+    )
+    lot_id = fields.Many2one(
+        "stock.production.lot",
+        string="Serial #",
+    )
     current_stock_location_id = fields.Many2one(
         "stock.location",
         string="Current Inventory Location",
