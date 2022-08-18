@@ -9,5 +9,6 @@ class ProductProduct(models.Model):
     _inherit = "product.product"
 
     fleet_vehicle_model_id = fields.Many2one(
-        "fleet.vehicle.model", string="Vehicle Model",
+        "fleet.vehicle.model",
+        string="Vehicle Model",
     )
