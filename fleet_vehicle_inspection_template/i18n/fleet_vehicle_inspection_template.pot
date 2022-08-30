@@ -283,3 +283,13 @@ msgstr ""
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_unread_counter
 msgid "Unread Messages Counter"
 msgstr ""
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,help:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__website_message_ids
+msgid "Website communication history"
+msgstr ""
