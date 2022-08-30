@@ -447,6 +447,16 @@ msgid "Vendor Reference"
 msgstr ""
 
 #. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: fleet_vehicle_log_fuel
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_view_form
 msgid "Write here any other information related to the service completed."
 msgstr ""
