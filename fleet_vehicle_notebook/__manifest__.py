@@ -5,7 +5,7 @@
     "name": "Fleet Vehicle Notebook",
     "summary": """
         This module provides an empty notebook for the vehicle form.""",
-    "version": "14.0.1.0.0",
+    "version": "15.0.1.0.0",
     "license": "AGPL-3",
     "category": "Human Resources/Fleet",
     "author": "Escodoo,Odoo Community Association (OCA)",
