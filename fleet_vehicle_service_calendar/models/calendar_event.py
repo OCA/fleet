@@ -39,6 +39,7 @@ class CalendarEvent(models.Model):
             for event in self:
                 if event.vehicle_service_id.id == vehicle_service_id:
                     event.is_highlighted = True
+        return True
 
     @api.model
     def create(self, vals):
