@@ -16,7 +16,7 @@ class TestVehicleServiceCalendar(TestVehicleLogServicesCommon):
         smartbutton_action = self.service_repair.action_schedule_meeting()
         service_meeting = (
             self.env["calendar.event"]
-            .with_context(smartbutton_action["context"])
+            .with_context(**smartbutton_action["context"])
             .create(
                 {
                     "start": datetime.now(),

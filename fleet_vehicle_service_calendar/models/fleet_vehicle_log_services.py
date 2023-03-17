@@ -59,6 +59,8 @@ class FleetVehicleLogServices(models.Model):
             meeting_usertime,
         )
         message = _(
-            "Meeting scheduled at '%s'<br> Subject: %s <br> Duration: %s hours"
+            "Meeting scheduled at '%(html_time)s'<br> "
+            + "Subject: %(meeting_subject)s <br> "
+            + "Duration: %(duration)s hours"
         ) % (html_time, meeting_subject, duration)
         return self.message_post(body=message)
