@@ -4,7 +4,7 @@
 {
     "name": "Fleet Vehicle Service Services",
     "summary": "Add subservices in Services.",
-    "version": "14.0.1.0.0",
+    "version": "15.0.1.0.0",
     "category": "Human Resources/Fleet",
     "author": "ForgeFlow, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/fleet",
