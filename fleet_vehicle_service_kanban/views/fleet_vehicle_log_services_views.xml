@@ -6,6 +6,7 @@
         <field name="inherit_id" ref="fleet.fleet_vehicle_log_services_view_form" />
         <field name="arch" type="xml">
             <xpath expr="//sheet/group[1]" position="before">
+
                 <div class="oe_button_box" name="button_box">
                 </div>
                 <widget
@@ -60,29 +61,31 @@
             </templates>
             <kanban position="attributes">
                 <attribute name="default_group_by">stage_id</attribute>
+
+                <xpath
+                    expr="//div[contains(@class, 'oe_kanban_details')]"
+                    position="after"
+                >
+                    <div class="o_kanban_tags_section">
+                        <field name="tag_ids" widget="many2many_tags" />
+                    </div>
+
+                </xpath>
+                <xpath
+                    expr="//div[contains(@class, 'oe_kanban_details')]"
+                    position="inside"
+                >
+                    <div class="o_kanban_inline_block" t-if="!selection_mode">
+                        <field name="activity_ids" widget="kanban_activity" />
+                    </div>
+                    <div class="o_kanban_image float-right">
+                        <img
+                            t-att-src="kanban_image('fleet.vehicle', 'image_128', record.vehicle_id.raw_value)"
+                            alt="Vehicle"
+                        />
+                    </div>
+                </xpath>
             </kanban>
-            <xpath
-                expr="//div[contains(@t-attf-class, 'oe_kanban_global_click')]/div[2]"
-                position="after"
-            >
-                <div class="o_kanban_tags_section">
-                    <field name="tag_ids" widget="many2many_tags" />
-                </div>
-            </xpath>
-            <xpath
-                expr="//div[contains(@t-attf-class, 'oe_kanban_global_click')]"
-                position="inside"
-            >
-                <div class="o_kanban_inline_block" t-if="!selection_mode">
-                    <field name="activity_ids" widget="kanban_activity" />
-                </div>
-                <div class="o_kanban_image float-right">
-                    <img
-                        t-att-src="kanban_image('fleet.vehicle', 'image_128', record.vehicle_id.raw_value)"
-                        alt="Vehicle"
-                    />
-                </div>
-            </xpath>
         </field>
     </record>
     <record id="fleet_vehicle_log_services_view_activity" model="ir.ui.view">

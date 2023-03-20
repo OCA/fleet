@@ -10,7 +10,7 @@
         <field name="view_mode">tree,form</field>
         <field
             name="domain"
-        >['|', ('res_model_id', '=', False), ('res_model_id.model', '=', 'fleet.vehicle.log.services')]</field>
+        >['|', ('res_model', '=', False), ('res_model', '=', 'fleet.vehicle.log.services')]</field>
         <field
             name="context"
         >{'default_res_model': 'fleet.vehicle.log.services'}</field>
