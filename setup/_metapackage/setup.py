@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo-addon-fleet_vehicle_configuration>=15.0dev,<15.1dev',
+        'odoo-addon-fleet_vehicle_fuel_capacity>=15.0dev,<15.1dev',
         'odoo-addon-fleet_vehicle_fuel_type_ethanol>=15.0dev,<15.1dev',
     ],
     classifiers=[
