@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* fleet_vehicle_fuel_type_ethanol
+# 	* fleet_vehicle_fuel_type_ethanol
 #
 msgid ""
 msgstr ""
@@ -17,22 +17,12 @@ msgstr ""
 "X-Generator: Weblate 4.3.2\n"
 
 #. module: fleet_vehicle_fuel_type_ethanol
-#: selection:fleet.vehicle,fuel_type:0
-msgid "Diesel"
-msgstr "Diesel"
-
-#. module: fleet_vehicle_fuel_type_ethanol
-#: selection:fleet.vehicle,fuel_type:0
-msgid "Electric"
-msgstr "Elétrico"
-
-#. module: fleet_vehicle_fuel_type_ethanol
-#: selection:fleet.vehicle,fuel_type:0
+#: model:ir.model.fields.selection,name:fleet_vehicle_fuel_type_ethanol.selection__fleet_vehicle__fuel_type__ethanol
 msgid "Ethanol"
 msgstr "Etanol"
 
 #. module: fleet_vehicle_fuel_type_ethanol
-#: selection:fleet.vehicle,fuel_type:0
+#: model:ir.model.fields.selection,name:fleet_vehicle_fuel_type_ethanol.selection__fleet_vehicle__fuel_type__flex
 msgid "Flex (Gasoline/Ethanol)"
 msgstr "Flex (Gasolina/Etanol)"
 
@@ -47,21 +37,21 @@ msgid "Fuel Used by the vehicle"
 msgstr "Combustível Usado pelo veículo"
 
 #. module: fleet_vehicle_fuel_type_ethanol
-#: selection:fleet.vehicle,fuel_type:0
-msgid "Gasoline"
-msgstr "Gasolina"
-
-#. module: fleet_vehicle_fuel_type_ethanol
-#: selection:fleet.vehicle,fuel_type:0
-msgid "Hybrid"
-msgstr "Híbrido"
-
-#. module: fleet_vehicle_fuel_type_ethanol
-#: selection:fleet.vehicle,fuel_type:0
-msgid "LPG"
-msgstr "GPL"
-
-#. module: fleet_vehicle_fuel_type_ethanol
 #: model:ir.model,name:fleet_vehicle_fuel_type_ethanol.model_fleet_vehicle
 msgid "Vehicle"
 msgstr "Veículo"
+
+#~ msgid "Diesel"
+#~ msgstr "Diesel"
+
+#~ msgid "Electric"
+#~ msgstr "Elétrico"
+
+#~ msgid "Gasoline"
+#~ msgstr "Gasolina"
+
+#~ msgid "Hybrid"
+#~ msgstr "Híbrido"
+
+#~ msgid "LPG"
+#~ msgstr "GPL"
