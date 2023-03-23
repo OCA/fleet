@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2021 - TODAY, Marcel Savegnago
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record model="ir.ui.view" id="fleet_vehicle_form_view">
+        <field name="name">fleet.vehicle.form (in fleet_vehicle_fuel_capacity)</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_form" />
+        <field name="arch" type="xml">
+            <field name="color" position="after">
+                <field name="fuel_capacity" />
+            </field>
+        </field>
+    </record>
+
+</odoo>
