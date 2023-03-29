@@ -5,7 +5,7 @@
     <record model="ir.ui.view" id="fleet_vehicle_form_view">
         <field name="name">fleet.vehicle.form (in fleet_vehicle_stock)</field>
         <field name="model">fleet.vehicle</field>
-        <field name="inherit_id" ref="fleet_vehicle_notebook.fleet_vehicle_form_view" />
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_form" />
         <field name="arch" type="xml">
             <xpath expr="//notebook" position="inside">
                 <page
@@ -24,6 +24,7 @@
                     </group>
                 </page>
             </xpath>
+
         </field>
     </record>
     <record model="ir.ui.view" id="fleet_vehicle_search_view">
