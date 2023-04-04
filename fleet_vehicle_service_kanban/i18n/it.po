@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-04-03 22:27+0000\n"
+"PO-Revision-Date: 2023-04-04 15:22+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -188,7 +188,7 @@ msgstr "Icona"
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,help:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr "Icona per indicare un'attività anomala."
+msgstr "Icona per indicare una attività eccezione."
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,help:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services_stage__fold
@@ -205,7 +205,7 @@ msgstr "Se selezionata, nuovi messaggi richiedono attenzione."
 #: model:ir.model.fields,help:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__message_has_error
 #: model:ir.model.fields,help:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
-msgstr "Se selezionata, alcuni messaggi presentano un errore di consegna."
+msgstr "Se selezionata, alcuni messaggi hanno un errore di consegna."
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields.selection,name:fleet_vehicle_service_kanban.selection__fleet_vehicle_log_services__priority__1
@@ -249,7 +249,7 @@ msgstr "Allegato principale"
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__message_has_error
 msgid "Message Delivery error"
-msgstr "Messaggio errore consegna"
+msgstr "Errore consegna messaggio"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__message_ids
@@ -274,12 +274,12 @@ msgstr "Nome"
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr "Scadenza attivià successiva"
+msgstr "Scadenza attività successiva"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__activity_summary
 msgid "Next Activity Summary"
-msgstr "RIepilogo prossima attività"
+msgstr "Sommario attività successiva"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__activity_type_id
