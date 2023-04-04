@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<odoo>
+    <!-- Activity types config -->
+    <record
+        id="mail_activity_type_action_config_fleet_services"
+        model="ir.actions.act_window"
+    >
+        <field name="name">Activity Types</field>
+        <field name="res_model">mail.activity.type</field>
+        <field name="view_mode">tree,form</field>
+        <field
+            name="domain"
+        >['|', ('res_model', '=', False), ('res_model', '=', 'fleet.vehicle.log.services')]</field>
+        <field
+            name="context"
+        >{'default_res_model': 'fleet.vehicle.log.services'}</field>
+    </record>
+    <menuitem
+        id="mail_activity_type_menu_config_fleet_services"
+        action="mail_activity_type_action_config_fleet_services"
+        parent="fleet_vehicle_log_services_conf_menu"
+        sequence="99"
+        groups="base.group_no_one"
+    />
+</odoo>
