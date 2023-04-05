@@ -17,6 +17,11 @@ msgstr ""
 "X-Generator: Weblate 4.3.2\n"
 
 #. module: fleet_vehicle_service_kanban
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_service_kanban.fleet_vehicle_log_services_view_activity
+msgid "/&gt;"
+msgstr ""
+
+#. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__message_needaction
 msgid "Action Needed"
 msgstr ""
@@ -120,7 +125,6 @@ msgid "Current state of the vehicle"
 msgstr "Estágio atual do veículo"
 
 #. module: fleet_vehicle_service_kanban
-#: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__display_name
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services_stage__display_name
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services_tag__display_name
 msgid "Display Name"
@@ -147,11 +151,6 @@ msgid "Followers"
 msgstr ""
 
 #. module: fleet_vehicle_service_kanban
-#: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__message_channel_ids
-msgid "Followers (Channels)"
-msgstr ""
-
-#. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__message_partner_ids
 msgid "Followers (Partners)"
 msgstr ""
@@ -172,7 +171,11 @@ msgid "Group By"
 msgstr "Agrupar por"
 
 #. module: fleet_vehicle_service_kanban
-#: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__id
+#: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services_stage__id
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services_tag__id
 msgid "ID"
@@ -216,7 +219,6 @@ msgid "Is Follower"
 msgstr ""
 
 #. module: fleet_vehicle_service_kanban
-#: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services____last_update
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services_stage____last_update
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services_tag____last_update
 msgid "Last Modified on"
