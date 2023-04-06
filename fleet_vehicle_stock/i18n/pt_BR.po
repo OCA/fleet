@@ -44,7 +44,7 @@ msgid "Fleet"
 msgstr "Frota"
 
 #. module: fleet_vehicle_stock
-#: model:ir.model.fields,field_description:fleet_vehicle_stock.field_stock_production_lot__fleet_vehicle_id
+#: model:ir.model.fields,field_description:fleet_vehicle_stock.field_stock_lot__fleet_vehicle_id
 msgid "Fleet Vehicle"
 msgstr "Veículo da Frota"
 
@@ -64,7 +64,7 @@ msgstr ""
 "configurar o modelo de veículo da frota neste produto."
 
 #. module: fleet_vehicle_stock
-#: model:ir.model,name:fleet_vehicle_stock.model_stock_production_lot
+#: model:ir.model,name:fleet_vehicle_stock.model_stock_lot
 msgid "Lot/Serial"
 msgstr "Lote/Série"
 
@@ -79,15 +79,15 @@ msgid "Picking Type"
 msgstr "Tipo de Separação"
 
 #. module: fleet_vehicle_stock
-#: model:ir.model,name:fleet_vehicle_stock.model_product_product
+#: model:ir.model,name:fleet_vehicle_stock.model_product_template
 #: model:ir.model.fields,field_description:fleet_vehicle_stock.field_fleet_vehicle__product_id
 msgid "Product"
 msgstr "Produto"
 
 #. module: fleet_vehicle_stock
-#: model:ir.model,name:fleet_vehicle_stock.model_product_template
-msgid "Product Template"
-msgstr "Modelo de Produto"
+#: model:ir.model,name:fleet_vehicle_stock.model_product_product
+msgid "Product Variant"
+msgstr ""
 
 #. module: fleet_vehicle_stock
 #: model:ir.model.fields,help:fleet_vehicle_stock.field_stock_picking_type__create_fleet_vehicle
@@ -109,6 +109,7 @@ msgid "Stock Move"
 msgstr "Movimento de Estoque"
 
 #. module: fleet_vehicle_stock
+#. odoo-python
 #: code:addons/fleet_vehicle_stock/models/stock_move.py:0
 #, python-format
 msgid ""
@@ -128,3 +129,6 @@ msgstr "Veículo"
 #: model:ir.model.fields,field_description:fleet_vehicle_stock.field_product_template__fleet_vehicle_model_id
 msgid "Vehicle Model"
 msgstr "Modelo"
+
+#~ msgid "Product Template"
+#~ msgstr "Modelo de Produto"
