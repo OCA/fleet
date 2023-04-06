@@ -9,6 +9,6 @@ class FleetVehicle(models.Model):
     _inherit = "fleet.vehicle"
 
     calendar_year = fields.Char(
-        track_visibility="onchange",
+        tracking=True,
         help="Calendar year of the vehicle",
     )
