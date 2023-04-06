@@ -1,10 +1,10 @@
 # Copyright (C) 2021 - TODAY, Marcel Savegnago <marcel.savegnago@escodoo.com.br>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo.tests.common import SavepointCase
+from odoo.tests.common import TransactionCase
 
 
-class TestFleetVehicle(SavepointCase):
+class TestFleetVehicle(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super(TestFleetVehicle, cls).setUpClass()
@@ -18,7 +18,7 @@ class TestFleetVehicle(SavepointCase):
             {"name": "Test Vehicle Model 2", "brand_id": cls.brand.id}
         )
 
-        cls.product1 = cls.env["product.template"].create(
+        cls.product1 = cls.env["product.product"].create(
             {
                 "name": "Product 1",
                 "type": "product",
@@ -26,7 +26,7 @@ class TestFleetVehicle(SavepointCase):
                 "tracking": "serial",
             }
         )
-        cls.product2 = cls.env["product.template"].create(
+        cls.product2 = cls.env["product.product"].create(
             {
                 "name": "Product 2",
                 "type": "product",
@@ -35,14 +35,14 @@ class TestFleetVehicle(SavepointCase):
             }
         )
 
-        cls.lot1 = cls.env["stock.production.lot"].create(
+        cls.lot1 = cls.env["stock.lot"].create(
             {
                 "name": "serial1",
                 "product_id": cls.product1.id,
                 "company_id": cls.env.user.company_id.id,
             }
         )
-        cls.lot2 = cls.env["stock.production.lot"].create(
+        cls.lot2 = cls.env["stock.lot"].create(
             {
                 "name": "serial2",
                 "product_id": cls.product1.id,
