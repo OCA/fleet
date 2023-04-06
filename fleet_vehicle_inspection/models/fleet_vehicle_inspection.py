@@ -22,7 +22,6 @@ class FleetVehicleInspection(models.Model):
 
     state = fields.Selection(
         [("draft", "Draft"), ("confirmed", "Confirmed"), ("cancel", "Canceled")],
-        string="Status",
         copy=False,
         index=True,
         readonly=True,
@@ -50,7 +49,6 @@ class FleetVehicleInspection(models.Model):
     odometer = fields.Float(
         compute="_compute_odometer",
         inverse="_inverse_odometer",
-        string="Odometer",
         help="Odometer measure of the vehicle at the moment of this log",
         store=True,
         states=READONLY_STATES,
@@ -58,7 +56,6 @@ class FleetVehicleInspection(models.Model):
 
     odometer_unit = fields.Selection(
         [("kilometers", "Kilometers"), ("miles", "Miles")],
-        "Odometer Unit",
         default="kilometers",
         required=True,
         states=READONLY_STATES,
@@ -75,7 +72,6 @@ class FleetVehicleInspection(models.Model):
 
     inspected_by = fields.Many2one(
         "res.partner",
-        "Inspected By",
         tracking=True,
         states=READONLY_STATES,
     )
@@ -91,7 +87,6 @@ class FleetVehicleInspection(models.Model):
     inspection_line_ids = fields.One2many(
         "fleet.vehicle.inspection.line",
         "inspection_id",
-        string="Inspection Lines",
         copy=True,
         auto_join=True,
         states=READONLY_STATES,

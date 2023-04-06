@@ -11,4 +11,4 @@ class FleetVehicleInspectionItem(models.Model):
     _inherit = ["mail.thread", "mail.activity.mixin"]
 
     name = fields.Char(required=True)
-    instruction = fields.Text(string="Instruction")
+    instruction = fields.Text()

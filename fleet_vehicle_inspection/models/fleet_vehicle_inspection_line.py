@@ -17,7 +17,6 @@ class FleetVehicleInspectionLine(models.Model):
 
     inspection_id = fields.Many2one(
         "fleet.vehicle.inspection",
-        string="Inspection Reference",
         required=True,
         ondelete="cascade",
         index=True,
@@ -40,7 +39,6 @@ class FleetVehicleInspectionLine(models.Model):
 
     result = fields.Selection(
         [("todo", "Todo"), ("success", "Success"), ("failure", "Failure")],
-        "Result",
         default="todo",
         readonly=True,
         required=True,

@@ -73,7 +73,7 @@
                                 mode="tree,kanban"
                                 context="{'default_inspection_id': active_id}"
                             >
-                                <tree string="Inspection Line">
+                                <tree>
                                     <field name="state" invisible="1" />
                                     <field name="inspection_item_id" />
                                     <field name="inspection_item_instruction" />
