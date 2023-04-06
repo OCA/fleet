@@ -32,11 +32,9 @@ msgid "Fuel Type"
 msgstr "Tipo carburante"
 
 #. module: fleet_vehicle_fuel_type_ethanol
-#: model:ir.model.fields,help:fleet_vehicle_fuel_type_ethanol.field_fleet_vehicle__fuel_type
-msgid "Fuel Used by the vehicle"
-msgstr "Carburante utilizzato dal veicolo"
-
-#. module: fleet_vehicle_fuel_type_ethanol
 #: model:ir.model,name:fleet_vehicle_fuel_type_ethanol.model_fleet_vehicle
 msgid "Vehicle"
 msgstr "Veicolo"
+
+#~ msgid "Fuel Used by the vehicle"
+#~ msgstr "Carburante utilizzato dal veicolo"
