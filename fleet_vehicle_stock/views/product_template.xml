@@ -31,7 +31,7 @@
                 <group>
                     <field
                         name="fleet_vehicle_model_id"
-                        attrs="{'invisible': ['|',('product_variant_count', '>', 1),('tracking', '!=', 'serial')], 'required': [('create_fleet_vehicle', '=', True),('product_variant_count', '=', 1)]}"
+                        attrs="{'invisible': [('product_variant_count', '>', 1)], 'required': [('product_variant_count', '=', 1)]}"
                     />
                 </group>
             </page>

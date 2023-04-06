@@ -13,7 +13,7 @@ class FleetVehicle(models.Model):
         string="Product",
     )
     lot_id = fields.Many2one(
-        "stock.production.lot",
+        "stock.lot",
         string="Serial #",
     )
     current_stock_location_id = fields.Many2one(
