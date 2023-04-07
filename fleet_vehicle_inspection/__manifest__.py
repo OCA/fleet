@@ -13,7 +13,7 @@
     "maintainers": ["marcelsavegnago"],
     "images": ["static/description/banner.png"],
     "website": "https://github.com/OCA/fleet",
-    "depends": ["fleet", "web"],
+    "depends": ["fleet"],
     "data": [
         "security/fleet_vehicle_inspection_line_image.xml",
         "views/fleet_vehicle.xml",

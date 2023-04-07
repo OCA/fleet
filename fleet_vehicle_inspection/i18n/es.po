@@ -161,7 +161,6 @@ msgid "Direction OUT"
 msgstr "Dirección SALIDA"
 
 #. module: fleet_vehicle_inspection
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle__display_name
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__display_name
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__display_name
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__display_name
@@ -232,13 +231,6 @@ msgid "Followers"
 msgstr "Seguidores"
 
 #. module: fleet_vehicle_inspection
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__message_channel_ids
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__message_channel_ids
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__message_channel_ids
-msgid "Followers (Channels)"
-msgstr "Seguidores (Canales)"
-
-#. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__message_partner_ids
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__message_partner_ids
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__message_partner_ids
@@ -258,12 +250,18 @@ msgid "Group By"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__has_message
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__has_message
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: fleet_vehicle_inspection
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_line_form_view
 msgid "Huge file size. The image should be optimized/reduced."
 msgstr "Gran tamaño de archivo. La imagen debe ser optimizada/reducida."
 
 #. module: fleet_vehicle_inspection
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle__id
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__id
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__id
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__id
@@ -357,6 +355,11 @@ msgid "Inspected Date"
 msgstr "Fecha Inspeccionado"
 
 #. module: fleet_vehicle_inspection
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__inspection_id
+msgid "Inspection"
+msgstr ""
+
+#. module: fleet_vehicle_inspection
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_search_view
 msgid "Inspection Canceled"
 msgstr "Inspección Cancelada"
@@ -383,7 +386,7 @@ msgid "Inspection Items"
 msgstr "Artículos de Inspección"
 
 #. module: fleet_vehicle_inspection
-#: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_form_view
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__inspection_line_ids
 msgid "Inspection Line"
 msgstr "Línea de Inspección"
 
@@ -394,7 +397,6 @@ msgid "Inspection Line Images"
 msgstr "Imágenes de Línea de Inspección"
 
 #. module: fleet_vehicle_inspection
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__inspection_line_ids
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_form_view
 msgid "Inspection Lines"
 msgstr "Líneas de Inspección"
@@ -408,11 +410,6 @@ msgstr "Registros de Inspección"
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_search_view
 msgid "Inspection Not Completed"
 msgstr "Inspección No Completada"
-
-#. module: fleet_vehicle_inspection
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__inspection_id
-msgid "Inspection Reference"
-msgstr "Referencia de Inspección"
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__result
@@ -457,7 +454,6 @@ msgid "Kilometers"
 msgstr "Kilómetros"
 
 #. module: fleet_vehicle_inspection
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle____last_update
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection____last_update
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item____last_update
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line____last_update
@@ -678,8 +674,8 @@ msgstr "Establecer como borrador"
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__state
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__state
-msgid "Status"
-msgstr "Estado"
+msgid "State"
+msgstr ""
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection__activity_state
@@ -772,3 +768,12 @@ msgstr ""
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__website_message_ids
 msgid "Website communication history"
 msgstr ""
+
+#~ msgid "Followers (Channels)"
+#~ msgstr "Seguidores (Canales)"
+
+#~ msgid "Inspection Reference"
+#~ msgstr "Referencia de Inspección"
+
+#~ msgid "Status"
+#~ msgstr "Estado"
