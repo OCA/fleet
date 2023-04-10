@@ -17,11 +17,6 @@ msgstr ""
 "X-Generator: Weblate 4.3.2\n"
 
 #. module: fleet_vehicle_service_kanban
-#: model_terms:ir.ui.view,arch_db:fleet_vehicle_service_kanban.fleet_vehicle_log_services_view_activity
-msgid "/&gt;"
-msgstr ""
-
-#. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__message_needaction
 msgid "Action Needed"
 msgstr ""
@@ -198,7 +193,6 @@ msgstr "Se For verdade, este estágio é dobrado na visão kanban."
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,help:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__message_needaction
-#: model:ir.model.fields,help:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__message_unread
 msgid "If checked, new messages require your attention."
 msgstr ""
 
@@ -312,11 +306,6 @@ msgid "Number of messages with delivery error"
 msgstr ""
 
 #. module: fleet_vehicle_service_kanban
-#: model:ir.model.fields,help:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__message_unread_counter
-msgid "Number of unread messages"
-msgstr ""
-
-#. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__priority
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_service_kanban.fleet_vehicle_log_services_view_form
 msgid "Priority"
@@ -412,15 +401,9 @@ msgid "Type of the exception activity on record."
 msgstr ""
 
 #. module: fleet_vehicle_service_kanban
-#: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__message_unread
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_service_kanban.fleet_vehicle_log_services_view_search
 msgid "Unread Messages"
 msgstr "Mensagens Não Lidas"
-
-#. module: fleet_vehicle_service_kanban
-#: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__message_unread_counter
-msgid "Unread Messages Counter"
-msgstr ""
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,help:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services_stage__sequence
