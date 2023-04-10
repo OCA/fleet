@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-03-30 14:26+0000\n"
+"PO-Revision-Date: 2023-04-10 16:37+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -55,7 +55,7 @@ msgstr "Ultima modifica il"
 #. module: fleet_vehicle_configuration
 #: model:ir.model.fields,field_description:fleet_vehicle_configuration.field_fleet_vehicle_configuration__write_uid
 msgid "Last Updated by"
-msgstr "Ultimo aggiormento di"
+msgstr "Ultimo aggiornamento di"
 
 #. module: fleet_vehicle_configuration
 #: model:ir.model.fields,field_description:fleet_vehicle_configuration.field_fleet_vehicle_configuration__write_date
