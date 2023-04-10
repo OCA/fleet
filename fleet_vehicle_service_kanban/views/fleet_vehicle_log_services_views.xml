@@ -62,19 +62,13 @@
             <kanban position="attributes">
                 <attribute name="default_group_by">stage_id</attribute>
 
-                <xpath
-                    expr="//div[contains(@class, 'oe_kanban_details')]"
-                    position="after"
-                >
+                <xpath expr="//div[hasclass('oe_kanban_details')]" position="after">
                     <div class="o_kanban_tags_section">
                         <field name="tag_ids" widget="many2many_tags" />
                     </div>
 
                 </xpath>
-                <xpath
-                    expr="//div[contains(@class, 'oe_kanban_details')]"
-                    position="inside"
-                >
+                <xpath expr="//div[hasclass('oe_kanban_details')]" position="inside">
                     <div class="o_kanban_inline_block" t-if="!selection_mode">
                         <field name="activity_ids" widget="kanban_activity" />
                     </div>
@@ -103,7 +97,7 @@
                             t-att-alt="record.vehicle_id.value"
                         />
                         <div>
-                            <field name="vehicle_id" />/>
+                            <field name="vehicle_id" />
                         </div>
                     </div>
                 </templates>
