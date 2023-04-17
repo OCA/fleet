@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 - TODAY, Marcel Savegnago - Escodoo https://www.escodoo.com.br
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record model="ir.ui.view" id="fleet_vehicle_form_view">
+        <field name="name">fleet.vehicle.form (in fleet_vehicle_inspection)</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_form" />
+        <field name="arch" type="xml">
+            <div class="oe_button_box" name="button_box" position="inside">
+                <button
+                    class="oe_stat_button"
+                    type="object"
+                    name="action_view_inspection"
+                    icon="fa-th-list"
+                    context="{'default_vehicle_id': id}"
+                >
+                    <div class="o_stat_info">
+                        <field name="inspection_count" class="o_stat_value" />
+                        <span class="o_stat_text"> Inspection</span>
+                    </div>
+                </button>
+            </div>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 - TODAY, Marcel Savegnago - Escodoo https://www.escodoo.com.br
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record model="ir.ui.view" id="fleet_vehicle_inspection_line_form_view">
+        <field
+            name="name"
+        >fleet.vehicle.inspection.line.form (in fleet_vehicle_inspection)</field>
+        <field name="model">fleet.vehicle.inspection.line</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button
+                        name="action_item_success"
+                        states="draft"
+                        string="Approve"
+                        type="object"
+                        class="oe_highlight btn-success"
+                        groups="fleet.fleet_group_manager"
+                    />
+                    <button
+                        name="action_item_failure"
+                        states="draft"
+                        string="Refuse"
+                        type="object"
+                        class="oe_highlight btn-danger"
+                        groups="fleet.fleet_group_manager"
+                    />
+                </header>
+                <sheet>
+                    <field name="result" invisible="1" />
+                    <div
+                        class="badge-pill badge-primary float-right"
+                        attrs="{'invisible': [('result', 'not in', ['todo'])]}"
+                    >Todo</div>
+                    <div
+                        class="badge-pill badge-danger float-right"
+                        attrs="{'invisible': [('result', 'not in', ['failure'])]}"
+                    >Failure</div>
+                    <div
+                        class="badge-pill badge-success float-right"
+                        attrs="{'invisible': [('result', 'not in', ['success'])]}"
+                    >Success</div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="inspection_item_id" readonly="1" />
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="inspection_item_id" />
+                    </group>
+                    <notebook>
+                        <page name="instruction" string="Instruction">
+                            <field name="inspection_item_instruction" />
+                        </page>
+                        <page name="result" string="Result">
+                            <field name="result_description" />
+                        </page>
+                        <page name="images_page" string="Images">
+                            <group name="images" string="Images">
+                                <field
+                                    name="inspection_line_image_ids"
+                                    class="o_inspection_image_list"
+                                    context="{'default_inspection_line_id': active_id}"
+                                    nolabel="1"
+                                >
+                                    <kanban
+                                        string="Inspection Line Images"
+                                        default_order="sequence"
+                                    >
+                                        <field name="id" />
+                                        <field name="name" />
+                                        <field name="image_1920" />
+                                        <field name="sequence" widget="handle" />
+                                        <templates>
+                                            <t t-name="kanban-box">
+                                                <div
+                                                    class="card oe_kanban_global_click p-0"
+                                                >
+                                                    <div class="o_squared_image">
+                                                        <img
+                                                            class="card-img-top"
+                                                            t-att-src="kanban_image('fleet.vehicle.inspection.line.image', 'image_1920', record.id.raw_value)"
+                                                            t-att-alt="record.name.value"
+                                                        />
+                                                    </div>
+                                                    <div class="card-body p-0">
+                                                        <h4
+                                                            class="card-title p-2 m-0 bg-200"
+                                                        >
+                                                            <small><field
+                                                                    name="name"
+                                                                /></small>
+                                                        </h4>
+                                                    </div>
+                                                    <!-- below 100 Kb: good -->
+                                                    <t
+                                                        t-if="record.image_1920.raw_value.length &lt; 100*1000"
+                                                    >
+                                                        <t
+                                                            t-set="size_status"
+                                                            t-value="'badge-success'"
+                                                        />
+                                                        <t
+                                                            t-set="message"
+                                                        >Acceptable file size</t>
+                                                    </t>
+                                                    <!-- below 1000 Kb: decent -->
+                                                    <t
+                                                        t-elif="record.image_1920.raw_value.length &lt; 1000*1000"
+                                                    >
+                                                        <t
+                                                            t-set="size_status"
+                                                            t-value="'badge-warning'"
+                                                        />
+                                                        <t
+                                                            t-set="message"
+                                                        >Huge file size. The image should be optimized/reduced.</t>
+                                                    </t>
+                                                    <!-- above 1000 Kb: bad -->
+                                                    <t t-else="1">
+                                                        <t
+                                                            t-set="size_status"
+                                                            t-value="'badge-danger'"
+                                                        />
+                                                        <t
+                                                            t-set="message"
+                                                        >Optimization required! Reduce the image size or increase your compression settings.</t>
+                                                    </t>
+                                                    <span
+                                                        t-attf-class="badge #{size_status} o_inspection_image_size"
+                                                        t-esc="record.image_1920.value"
+                                                        t-att-title="message"
+                                                    />
+                                                </div>
+                                            </t>
+                                        </templates>
+                                    </kanban>
+                                </field>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" />
+                    <field name="activity_ids" widget="mail_activity" />
+                    <field name="message_ids" widget="mail_thread" />
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="fleet_vehicle_inspection_line_image_form_view">
+        <field
+            name="name"
+        >fleet.vehicle.inspection.line.image.form (in fleet_vehicle_inspection)</field>
+        <field name="model">fleet.vehicle.inspection.line.image</field>
+        <field name="arch" type="xml">
+            <form string="Inspection Line Images">
+                <field name="sequence" invisible="1" />
+                <div class="row o_inspection_image_modal">
+                    <div class="col-md-6 col-xl-5">
+                        <label for="name" string="Image Name" />
+                        <h2><field name="name" placeholder="Image Name" /></h2>
+                    </div>
+                    <div
+                        class="col-md-6 col-xl-7 text-center o_inspection_image_modal_container"
+                    >
+                        <div class="row">
+                            <div class="col">
+                                <field name="image_1920" widget="image" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="fleet_vehicle_inspection_line_search_view">
+        <field
+            name="name"
+        >fleet.vehicle.inspection.line.search (in fleet_vehicle_inspection)</field>
+        <field name="model">fleet.vehicle.inspection.line</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="inspection_id" />
+                <field name="inspection_item_id" />
+            </search>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="fleet_vehicle_inspection_line_tree_view">
+        <field
+            name="name"
+        >fleet.vehicle.inspection.line.tree (in fleet_vehicle_inspection)</field>
+        <field name="model">fleet.vehicle.inspection.line</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="inspection_id" />
+                <field name="inspection_item_id" />
+                <field name="inspection_item_instruction" />
+                <field name="result_description" />
+                <field
+                    name="state"
+                    widget="badge"
+                    decoration-info="state == 'draft'"
+                    decoration-success="state == 'confirmed'"
+                    decoration-danger="state == 'cancel'"
+                />
+                <field
+                    name="result"
+                    widget="badge"
+                    decoration-info="result == 'todo'"
+                    decoration-success="result == 'success'"
+                    decoration-danger="result == 'failure'"
+                />
+            </tree>
+        </field>
+    </record>
+    <record model='ir.ui.view' id='fleet_vehicle_inspection_line_pivot_view'>
+        <field
+            name="name"
+        >fleet.vehicle.inspection.line.pivot (in fleet_vehicle_inspection)</field>
+        <field name="model">fleet.vehicle.inspection.line</field>
+        <field name="arch" type="xml">
+            <pivot string="Vehicles Inspections">
+                <field name="inspection_item_id" type="row" />
+                <field name="result" type="col" />
+            </pivot>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="fleet_vehicle_inspection_line_act_window">
+        <field name="name">Vehicle Inspection Line</field>
+        <field name="res_model">fleet.vehicle.inspection.line</field>
+        <field name="view_mode">tree,pivot,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+</odoo>
