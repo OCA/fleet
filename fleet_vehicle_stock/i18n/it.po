@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-04-05 09:14+0000\n"
+"PO-Revision-Date: 2023-04-17 09:51+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -30,7 +30,7 @@ msgstr "Crea un veicolo flotta"
 #. module: fleet_vehicle_stock
 #: model:ir.model.fields,field_description:fleet_vehicle_stock.field_fleet_vehicle__current_stock_location_id
 msgid "Current Inventory Location"
-msgstr "Ubicazione inventario attuale"
+msgstr "Ubicazione giacenza attuale"
 
 #. module: fleet_vehicle_stock
 #: model:ir.model.fields,field_description:fleet_vehicle_stock.field_fleet_vehicle_model__product_id
@@ -99,7 +99,7 @@ msgstr "Ultima modifica il"
 #. module: fleet_vehicle_stock
 #: model:ir.model,name:fleet_vehicle_stock.model_stock_production_lot
 msgid "Lot/Serial"
-msgstr "Lotto/seriale"
+msgstr "Lotto/Seriale"
 
 #. module: fleet_vehicle_stock
 #: model:ir.model,name:fleet_vehicle_stock.model_fleet_vehicle_model
