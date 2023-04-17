@@ -26,11 +26,11 @@
                             name="inspection_template_lines"
                         >
                             <field name="inspection_template_line_ids">
-                                <tree
-                                    string="Inspection Template Line"
-                                    editable="bottom"
-                                >
-                                    <field name="inspection_template_item_id" />
+                                <tree editable="bottom">
+                                    <field
+                                        name="inspection_template_item_id"
+                                        string="Inspection Template Line"
+                                    />
                                 </tree>
                             </field>
                         </page>
