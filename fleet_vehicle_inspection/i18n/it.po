@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-04-17 16:34+0000\n"
+"PO-Revision-Date: 2023-04-18 23:00+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -25,7 +25,7 @@ msgid ""
 " * Canceled: has been canceled, can't be confirmed anymore."
 msgstr ""
 " * Bozza: non ancora confermata.\n"
-" * Confermata: l'ispezione è stataconfermata.\n"
+" * Confermata: l'ispezione è stata confermata.\n"
 " * Annullata: è stata annlullate, non può essere più confermata."
 
 #. module: fleet_vehicle_inspection
@@ -142,7 +142,7 @@ msgstr "Creato il"
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection__date_inspected
 msgid "Date when the vehicle has been inspected"
-msgstr "Data dell'ispezione del veicolo"
+msgstr "Data in cui il veicolo è stato ispezionato"
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__direction
@@ -313,7 +313,7 @@ msgstr "Se selezionata, alcuni messaggi hanno un errore di consegna."
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line_image__image_1920
 msgid "Image"
-msgstr "Immgine"
+msgstr "Immagine"
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line_image__image_1024
@@ -359,7 +359,7 @@ msgstr "Data ispezione"
 #. module: fleet_vehicle_inspection
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_search_view
 msgid "Inspection Canceled"
-msgstr "Ispezione allullata"
+msgstr "Ispezione annullata"
 
 #. module: fleet_vehicle_inspection
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_search_view
