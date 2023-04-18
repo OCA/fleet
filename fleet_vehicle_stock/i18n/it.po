@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-04-17 09:51+0000\n"
+"PO-Revision-Date: 2023-04-18 12:33+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -35,7 +35,7 @@ msgstr "Ubicazione giacenza attuale"
 #. module: fleet_vehicle_stock
 #: model:ir.model.fields,field_description:fleet_vehicle_stock.field_fleet_vehicle_model__product_id
 msgid "Default Product"
-msgstr "Progetto predefinito"
+msgstr "Prodotto predefinito"
 
 #. module: fleet_vehicle_stock
 #: model:ir.model.fields,field_description:fleet_vehicle_stock.field_fleet_vehicle__display_name
