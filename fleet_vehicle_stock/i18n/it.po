@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-04-17 09:51+0000\n"
+"PO-Revision-Date: 2023-04-18 12:33+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -52,7 +52,7 @@ msgstr "Veicolo flotta"
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_stock.fleet_vehicle_form_view
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_stock.fleet_vehicle_model_form_view
 msgid "Inventory"
-msgstr "Giacenza"
+msgstr "Inventario"
 
 #. module: fleet_vehicle_stock
 #: model:ir.model.constraint,message:fleet_vehicle_stock.constraint_product_template_non_product_tracking_for_vehicle_model
