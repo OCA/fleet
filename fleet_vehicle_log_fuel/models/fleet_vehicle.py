@@ -12,10 +12,11 @@ class FleetVehicle(models.Model):
     fuel_count = fields.Integer(compute="_compute_count_all", string="Fuel Log Count")
 
     def _compute_count_all(self):
-        super()._compute_count_all()
+        ret = super()._compute_count_all()
         LogFuel = self.env["fleet.vehicle.log.fuel"]
         for record in self:
             record.fuel_count = LogFuel.search_count([("vehicle_id", "=", record.id)])
+        return ret
 
     def action_view_log_fuel(self):
         action = self.env["ir.actions.act_window"]._for_xml_id(
