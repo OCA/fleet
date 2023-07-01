@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2021-03-26 17:40+0000\n"
+"PO-Revision-Date: 2023-07-01 02:27+0000\n"
 "Last-Translator: Marcel Savegnago <marcel.savegnago@gmail.com>\n"
 "Language-Team: none\n"
 "Language: pt_BR\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.3.2\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: fleet_vehicle_category
 #: model:ir.model.fields,field_description:fleet_vehicle_category.field_fleet_vehicle_category__name
@@ -31,12 +31,12 @@ msgstr ""
 #. module: fleet_vehicle_category
 #: model_terms:ir.actions.act_window,help:fleet_vehicle_category.fleet_vehicle_category_act_window
 msgid "Create a new vehicle category"
-msgstr ""
+msgstr "Crie uma nova categoria de veículos"
 
 #. module: fleet_vehicle_category
 #: model:ir.model.fields,field_description:fleet_vehicle_category.field_fleet_vehicle_category__create_uid
 msgid "Created by"
-msgstr "Criado Por"
+msgstr "Criado por"
 
 #. module: fleet_vehicle_category
 #: model:ir.model.fields,field_description:fleet_vehicle_category.field_fleet_vehicle_category__create_date
@@ -47,13 +47,13 @@ msgstr "Criado em"
 #: model:ir.model.fields,field_description:fleet_vehicle_category.field_fleet_vehicle_category__description
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_category.fleet_vehicle_category_view_form
 msgid "Description"
-msgstr ""
+msgstr "Descrição"
 
 #. module: fleet_vehicle_category
 #: model:ir.model.fields,field_description:fleet_vehicle_category.field_fleet_vehicle__display_name
 #: model:ir.model.fields,field_description:fleet_vehicle_category.field_fleet_vehicle_category__display_name
 msgid "Display Name"
-msgstr "Exibir Nome"
+msgstr "Nome Exibido"
 
 #. module: fleet_vehicle_category
 #: model:ir.model.fields,help:fleet_vehicle_category.field_fleet_vehicle__vehicle_category_id
@@ -102,3 +102,5 @@ msgid ""
 "You can define several categories (e.g. tow truck, ambulance, trailer, boat) "
 "for each vehicle."
 msgstr ""
+"Você pode definir várias categorias (por exemplo, reboque, ambulância, "
+"reboque, barco) para cada veículo."
