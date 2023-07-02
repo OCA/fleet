@@ -6,20 +6,12 @@
         <field name="inherit_id" ref="fleet.fleet_vehicle_log_services_view_form" />
         <field name="arch" type="xml">
             <xpath expr="//sheet/group[1]" position="before">
-                <div class="oe_button_box" name="button_box">
-                </div>
-                <widget
-                    name="web_ribbon"
-                    title="Archived"
-                    bg_color="bg-danger"
-                    attrs="{'invisible': [('active', '=', True)]}"
-                />
+                <div class="oe_button_box" name="button_box" />
             </xpath>
             <field name="service_type_id" position="after">
                 <field name="stage_id" />
             </field>
             <field name="date" position="after">
-                <field name="active" invisible="1" />
                 <field name="user_id" />
             </field>
             <xpath expr="//sheet/group[@col='2']" position="inside">
@@ -32,17 +24,6 @@
                     />
                 </group>
             </xpath>
-            <form position="inside">
-                <div class="oe_chatter">
-                    <field name="message_follower_ids" widget="mail_followers" />
-                    <field name="activity_ids" widget="mail_activity" />
-                    <field
-                        name="message_ids"
-                        widget="mail_thread"
-                        options='{"thread_level": 1}'
-                    />
-                </div>
-            </form>
         </field>
     </record>
     <record id="fleet_vehicle_log_services_view_kanban" model="ir.ui.view">
