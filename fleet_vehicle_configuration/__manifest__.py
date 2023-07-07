@@ -3,7 +3,7 @@
 
 {
     "name": "Fleet Vehicle Configuration",
-    "version": "15.0.1.0.0",
+    "version": "16.0.1.0.0",
     "depends": ["fleet"],
     "author": "Camptocamp,Odoo Community Association (OCA)",
     "summary": "add vehicle configuration capacity",
