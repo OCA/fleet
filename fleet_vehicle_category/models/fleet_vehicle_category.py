@@ -17,4 +17,4 @@ class VehicleCategory(models.Model):
         "Category",
         help="Eg. Tow truck, Ambulance, Trailer, Boat",
     )
-    description = fields.Html(string="Description")
+    description = fields.Html()
