@@ -55,7 +55,6 @@ msgid "Add a new tag"
 msgstr ""
 
 #. module: fleet_vehicle_service_kanban
-#: model_terms:ir.ui.view,arch_db:fleet_vehicle_service_kanban.fleet_vehicle_log_services_view_form
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_service_kanban.fleet_vehicle_log_services_view_search
 msgid "Archived"
 msgstr ""
