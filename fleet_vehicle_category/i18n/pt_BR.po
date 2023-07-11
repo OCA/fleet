@@ -18,7 +18,6 @@ msgstr ""
 
 #. module: fleet_vehicle_category
 #: model:ir.model.fields,field_description:fleet_vehicle_category.field_fleet_vehicle_category__name
-#: model_terms:ir.ui.view,arch_db:fleet_vehicle_category.fleet_vehicle_category_view_tree
 msgid "Category"
 msgstr "Categoria"
 
@@ -50,7 +49,6 @@ msgid "Description"
 msgstr "Descrição"
 
 #. module: fleet_vehicle_category
-#: model:ir.model.fields,field_description:fleet_vehicle_category.field_fleet_vehicle__display_name
 #: model:ir.model.fields,field_description:fleet_vehicle_category.field_fleet_vehicle_category__display_name
 msgid "Display Name"
 msgstr "Nome Exibido"
@@ -62,13 +60,11 @@ msgid "Eg. Tow truck, Ambulance, Trailer, Boat"
 msgstr "Eg. Reboque, Ambulância, Reboque, Barco"
 
 #. module: fleet_vehicle_category
-#: model:ir.model.fields,field_description:fleet_vehicle_category.field_fleet_vehicle__id
 #: model:ir.model.fields,field_description:fleet_vehicle_category.field_fleet_vehicle_category__id
 msgid "ID"
 msgstr "ID"
 
 #. module: fleet_vehicle_category
-#: model:ir.model.fields,field_description:fleet_vehicle_category.field_fleet_vehicle____last_update
 #: model:ir.model.fields,field_description:fleet_vehicle_category.field_fleet_vehicle_category____last_update
 msgid "Last Modified on"
 msgstr "Última Modificação Feita em"
