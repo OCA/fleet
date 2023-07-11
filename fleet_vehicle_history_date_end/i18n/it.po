@@ -17,21 +17,15 @@ msgstr ""
 "X-Generator: Weblate 4.14.1\n"
 
 #. module: fleet_vehicle_history_date_end
-#: model:ir.model.fields,field_description:fleet_vehicle_history_date_end.field_fleet_vehicle_assignation_log__display_name
-msgid "Display Name"
-msgstr "Nome visualizzato"
-
-#. module: fleet_vehicle_history_date_end
 #: model:ir.model,name:fleet_vehicle_history_date_end.model_fleet_vehicle_assignation_log
 msgid "Drivers history on a vehicle"
 msgstr "Storico autisti di un veicolo"
 
-#. module: fleet_vehicle_history_date_end
-#: model:ir.model.fields,field_description:fleet_vehicle_history_date_end.field_fleet_vehicle_assignation_log__id
-msgid "ID"
-msgstr "ID"
+#~ msgid "Display Name"
+#~ msgstr "Nome visualizzato"
 
-#. module: fleet_vehicle_history_date_end
-#: model:ir.model.fields,field_description:fleet_vehicle_history_date_end.field_fleet_vehicle_assignation_log____last_update
-msgid "Last Modified on"
-msgstr "Ultima modifica il"
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Ultima modifica il"
