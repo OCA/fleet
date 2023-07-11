@@ -1,0 +1,106 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fleet_vehicle_category
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2023-07-01 02:27+0000\n"
+"Last-Translator: Marcel Savegnago <marcel.savegnago@gmail.com>\n"
+"Language-Team: none\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.17\n"
+
+#. module: fleet_vehicle_category
+#: model:ir.model.fields,field_description:fleet_vehicle_category.field_fleet_vehicle_category__name
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_category.fleet_vehicle_category_view_tree
+msgid "Category"
+msgstr "Categoria"
+
+#. module: fleet_vehicle_category
+#: model:ir.model,name:fleet_vehicle_category.model_fleet_vehicle_category
+msgid "Classification of vehicle, eg. tow truck, ambulance, trailer, boat"
+msgstr ""
+"Classificação do veículo, por exemplo. reboque, ambulância, reboque, barco"
+
+#. module: fleet_vehicle_category
+#: model_terms:ir.actions.act_window,help:fleet_vehicle_category.fleet_vehicle_category_act_window
+msgid "Create a new vehicle category"
+msgstr "Crie uma nova categoria de veículos"
+
+#. module: fleet_vehicle_category
+#: model:ir.model.fields,field_description:fleet_vehicle_category.field_fleet_vehicle_category__create_uid
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: fleet_vehicle_category
+#: model:ir.model.fields,field_description:fleet_vehicle_category.field_fleet_vehicle_category__create_date
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: fleet_vehicle_category
+#: model:ir.model.fields,field_description:fleet_vehicle_category.field_fleet_vehicle_category__description
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_category.fleet_vehicle_category_view_form
+msgid "Description"
+msgstr "Descrição"
+
+#. module: fleet_vehicle_category
+#: model:ir.model.fields,field_description:fleet_vehicle_category.field_fleet_vehicle__display_name
+#: model:ir.model.fields,field_description:fleet_vehicle_category.field_fleet_vehicle_category__display_name
+msgid "Display Name"
+msgstr "Nome Exibido"
+
+#. module: fleet_vehicle_category
+#: model:ir.model.fields,help:fleet_vehicle_category.field_fleet_vehicle__vehicle_category_id
+#: model:ir.model.fields,help:fleet_vehicle_category.field_fleet_vehicle_category__name
+msgid "Eg. Tow truck, Ambulance, Trailer, Boat"
+msgstr "Eg. Reboque, Ambulância, Reboque, Barco"
+
+#. module: fleet_vehicle_category
+#: model:ir.model.fields,field_description:fleet_vehicle_category.field_fleet_vehicle__id
+#: model:ir.model.fields,field_description:fleet_vehicle_category.field_fleet_vehicle_category__id
+msgid "ID"
+msgstr "ID"
+
+#. module: fleet_vehicle_category
+#: model:ir.model.fields,field_description:fleet_vehicle_category.field_fleet_vehicle____last_update
+#: model:ir.model.fields,field_description:fleet_vehicle_category.field_fleet_vehicle_category____last_update
+msgid "Last Modified on"
+msgstr "Última Modificação Feita em"
+
+#. module: fleet_vehicle_category
+#: model:ir.model.fields,field_description:fleet_vehicle_category.field_fleet_vehicle_category__write_uid
+msgid "Last Updated by"
+msgstr "Ultima atualização por"
+
+#. module: fleet_vehicle_category
+#: model:ir.model.fields,field_description:fleet_vehicle_category.field_fleet_vehicle_category__write_date
+msgid "Last Updated on"
+msgstr "Ultima Atualização em"
+
+#. module: fleet_vehicle_category
+#: model:ir.model,name:fleet_vehicle_category.model_fleet_vehicle
+msgid "Vehicle"
+msgstr "Veículo"
+
+#. module: fleet_vehicle_category
+#: model:ir.actions.act_window,name:fleet_vehicle_category.fleet_vehicle_category_act_window
+#: model:ir.model.fields,field_description:fleet_vehicle_category.field_fleet_vehicle__vehicle_category_id
+#: model:ir.ui.menu,name:fleet_vehicle_category.fleet_vehicle_category_menu
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_category.fleet_vehicle_category_view_form
+msgid "Vehicle Category"
+msgstr "Categoria do Veículo"
+
+#. module: fleet_vehicle_category
+#: model_terms:ir.actions.act_window,help:fleet_vehicle_category.fleet_vehicle_category_act_window
+msgid ""
+"You can define several categories (e.g. tow truck, ambulance, trailer, boat) "
+"for each vehicle."
+msgstr ""
+"Você pode definir várias categorias (por exemplo, reboque, ambulância, "
+"reboque, barco) para cada veículo."
