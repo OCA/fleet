@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -56,7 +56,6 @@ msgid "Created on"
 msgstr ""
 
 #. module: fleet_vehicle_inspection_template
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection__display_name
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__display_name
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template_line__display_name
 msgid "Display Name"
@@ -83,11 +82,6 @@ msgid "Followers"
 msgstr ""
 
 #. module: fleet_vehicle_inspection_template
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_channel_ids
-msgid "Followers (Channels)"
-msgstr ""
-
-#. module: fleet_vehicle_inspection_template
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_partner_ids
 msgid "Followers (Partners)"
 msgstr ""
@@ -98,7 +92,11 @@ msgid "Font awesome icon e.g. fa-tasks"
 msgstr ""
 
 #. module: fleet_vehicle_inspection_template
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection__id
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: fleet_vehicle_inspection_template
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__id
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template_line__id
 msgid "ID"
@@ -161,7 +159,6 @@ msgid "Is Follower"
 msgstr ""
 
 #. module: fleet_vehicle_inspection_template
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection____last_update
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template____last_update
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template_line____last_update
 msgid "Last Modified on"
@@ -202,6 +199,11 @@ msgstr ""
 #. module: fleet_vehicle_inspection_template
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__name
 msgid "Name"
+msgstr ""
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
 msgstr ""
 
 #. module: fleet_vehicle_inspection_template
