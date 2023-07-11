@@ -58,7 +58,6 @@ msgid "Add a new tag"
 msgstr "Aggiungi nuova etichetta"
 
 #. module: fleet_vehicle_service_kanban
-#: model_terms:ir.ui.view,arch_db:fleet_vehicle_service_kanban.fleet_vehicle_log_services_view_form
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_service_kanban.fleet_vehicle_log_services_view_search
 msgid "Archived"
 msgstr "In archivio"
@@ -88,8 +87,7 @@ msgstr "Venditore modificato"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,help:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__tag_ids
-msgid ""
-"Classify and analyze your services categories like: Repair, Maintenance"
+msgid "Classify and analyze your services categories like: Repair, Maintenance"
 msgstr ""
 "Classifica e analizza le tue categorie servizi come: riparazione, "
 "manutenzione"
