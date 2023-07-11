@@ -1,0 +1,89 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fleet_vehicle_configuration
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2023-04-10 16:37+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.14.1\n"
+
+#. module: fleet_vehicle_configuration
+#: model:ir.model.fields,field_description:fleet_vehicle_configuration.field_fleet_vehicle__configuration_ids
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_configuration.fleet_vehicle_view_form
+msgid "Configurations"
+msgstr "Configurazioni"
+
+#. module: fleet_vehicle_configuration
+#: model:ir.model.fields,field_description:fleet_vehicle_configuration.field_fleet_vehicle_configuration__create_uid
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: fleet_vehicle_configuration
+#: model:ir.model.fields,field_description:fleet_vehicle_configuration.field_fleet_vehicle_configuration__create_date
+msgid "Created on"
+msgstr "Creato il"
+
+#. module: fleet_vehicle_configuration
+#: model:ir.model.fields,help:fleet_vehicle_configuration.field_fleet_vehicle__configuration_ids
+msgid "Define several configurations for a vehicle"
+msgstr "Definisce diverse configurazioni per un veicolo"
+
+#. module: fleet_vehicle_configuration
+#: model:ir.model.fields,field_description:fleet_vehicle_configuration.field_fleet_vehicle_configuration__display_name
+msgid "Display Name"
+msgstr "Nome visualizzato"
+
+#. module: fleet_vehicle_configuration
+#: model:ir.model.fields,field_description:fleet_vehicle_configuration.field_fleet_vehicle_configuration__id
+msgid "ID"
+msgstr "ID"
+
+#. module: fleet_vehicle_configuration
+#: model:ir.model.fields,field_description:fleet_vehicle_configuration.field_fleet_vehicle_configuration____last_update
+msgid "Last Modified on"
+msgstr "Ultima modifica il"
+
+#. module: fleet_vehicle_configuration
+#: model:ir.model.fields,field_description:fleet_vehicle_configuration.field_fleet_vehicle_configuration__write_uid
+msgid "Last Updated by"
+msgstr "Ultimo aggiornamento di"
+
+#. module: fleet_vehicle_configuration
+#: model:ir.model.fields,field_description:fleet_vehicle_configuration.field_fleet_vehicle_configuration__write_date
+msgid "Last Updated on"
+msgstr "Ultimo aggiornamento il"
+
+#. module: fleet_vehicle_configuration
+#: model:ir.model,name:fleet_vehicle_configuration.model_fleet_vehicle_configuration
+msgid "Manage vehicle configuration"
+msgstr "Gestione configurazione veicolo"
+
+#. module: fleet_vehicle_configuration
+#: model:ir.model.fields,field_description:fleet_vehicle_configuration.field_fleet_vehicle_configuration__max_seats
+msgid "Max Seats"
+msgstr "Posti massimi"
+
+#. module: fleet_vehicle_configuration
+#: model:ir.model.fields,field_description:fleet_vehicle_configuration.field_fleet_vehicle_configuration__name
+msgid "Name"
+msgstr "Nome"
+
+#. module: fleet_vehicle_configuration
+#: model:ir.model.fields,field_description:fleet_vehicle_configuration.field_fleet_vehicle_configuration__sequence
+msgid "Sequence"
+msgstr "Sequenza"
+
+#. module: fleet_vehicle_configuration
+#: model:ir.model,name:fleet_vehicle_configuration.model_fleet_vehicle
+#: model:ir.model.fields,field_description:fleet_vehicle_configuration.field_fleet_vehicle_configuration__vehicle_id
+msgid "Vehicle"
+msgstr "Veicolo"
