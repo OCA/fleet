@@ -13,6 +13,7 @@ setuptools.setup(
         'odoo-addon-fleet_vehicle_configuration>=15.0dev,<15.1dev',
         'odoo-addon-fleet_vehicle_fuel_capacity>=15.0dev,<15.1dev',
         'odoo-addon-fleet_vehicle_fuel_type_ethanol>=15.0dev,<15.1dev',
+        'odoo-addon-fleet_vehicle_history_date_end>=15.0dev,<15.1dev',
         'odoo-addon-fleet_vehicle_inspection>=15.0dev,<15.1dev',
         'odoo-addon-fleet_vehicle_service_calendar>=15.0dev,<15.1dev',
         'odoo-addon-fleet_vehicle_service_kanban>=15.0dev,<15.1dev',
