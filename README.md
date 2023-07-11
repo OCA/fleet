@@ -22,6 +22,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [fleet_vehicle_calendar_year](fleet_vehicle_calendar_year/) | 16.0.1.0.0 | [![marcelsavegnago](https://github.com/marcelsavegnago.png?size=30px)](https://github.com/marcelsavegnago) | This module extends the fleet management functionality. Allows the registration of the vehicle's calendar year.
+[fleet_vehicle_configuration](fleet_vehicle_configuration/) | 16.0.1.0.0 |  | add vehicle configuration capacity
 [fleet_vehicle_fuel_capacity](fleet_vehicle_fuel_capacity/) | 16.0.1.0.0 | [![marcelsavegnago](https://github.com/marcelsavegnago.png?size=30px)](https://github.com/marcelsavegnago) | This module extends the functionality of fleet management. It allows the registration of a vehicle's fuel capacity.
 [fleet_vehicle_fuel_type_ethanol](fleet_vehicle_fuel_type_ethanol/) | 16.0.1.0.0 | [![marcelsavegnago](https://github.com/marcelsavegnago.png?size=30px)](https://github.com/marcelsavegnago) | This module extends the fleet management functionality. This adds ethanol as another type of fuel to be used by a vehicle in the fleet.
 [fleet_vehicle_service_kanban](fleet_vehicle_service_kanban/) | 16.0.1.0.0 | [![mamcode](https://github.com/mamcode.png?size=30px)](https://github.com/mamcode) [![ivantodorovich](https://github.com/ivantodorovich.png?size=30px)](https://github.com/ivantodorovich) | Add features of kanban to logs of vehicle services.
