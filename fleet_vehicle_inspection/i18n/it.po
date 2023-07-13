@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-06-20 11:11+0000\n"
+"PO-Revision-Date: 2023-07-13 11:11+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -524,7 +524,7 @@ msgstr "Nome"
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__activity_calendar_event_id
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__activity_calendar_event_id
 msgid "Next Activity Calendar Event"
-msgstr ""
+msgstr "Evento calendario attività successiva"
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__activity_date_deadline
