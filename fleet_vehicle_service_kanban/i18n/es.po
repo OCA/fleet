@@ -88,8 +88,7 @@ msgstr "Vendedor Cambiado"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,help:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__tag_ids
-msgid ""
-"Classify and analyze your services categories like: Repair, Maintenance"
+msgid "Classify and analyze your services categories like: Repair, Maintenance"
 msgstr ""
 "Clasifique y analice sus categorías de servicios como: Reparación, "
 "Mantenimiento"
@@ -299,8 +298,8 @@ msgstr "Número de errores"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,help:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__message_needaction_counter
-msgid "Number of messages which requires an action"
-msgstr "Números de mensajes que requieren una acción"
+msgid "Number of messages requiring action"
+msgstr ""
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,help:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__message_has_error_counter
@@ -464,3 +463,6 @@ msgid ""
 msgstr ""
 "Puede personalizar las etapas disponibles para seguir la evolución de\n"
 "                cada servicio. Ejemplo: registrado, finalizado, etc."
+
+#~ msgid "Number of messages which requires an action"
+#~ msgstr "Números de mensajes que requieren una acción"
