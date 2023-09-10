@@ -25,7 +25,10 @@ class CalendarEvent(models.Model):
         # sync res_model / res_id to service id
         # (aka creating meeting from service chatter)
         ctx = self.env.context
-        if "vehicle_service_id" not in defaults:
+        if (
+            "vehicle_service_id" not in defaults
+            and defaults.get("res_model") == "fleet.vehicle.log.services"
+        ):
             defaults["vehicle_service_id"] = defaults.get("res_id", False) or ctx.get(
                 "default_res_id", False
             )
