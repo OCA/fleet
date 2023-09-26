@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-09-20 21:46+0000\n"
+"PO-Revision-Date: 2023-10-09 09:14+0000\n"
 "Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -249,14 +249,14 @@ msgstr "Icono de Font Awesome ej. fa-tasks"
 #. module: fleet_vehicle_inspection
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_search_view
 msgid "Group By"
-msgstr ""
+msgstr "Grupo por"
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__has_message
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__has_message
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__has_message
 msgid "Has Message"
-msgstr ""
+msgstr "Tiene mensajes"
 
 #. module: fleet_vehicle_inspection
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_line_form_view
@@ -269,7 +269,7 @@ msgstr "Gran tamaño de archivo. La imagen debe ser optimizada/reducida."
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__id
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line_image__id
 msgid "ID"
-msgstr ""
+msgstr "ID (identificación)"
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields.selection,name:fleet_vehicle_inspection.selection__fleet_vehicle_inspection__direction__in
@@ -359,7 +359,7 @@ msgstr "Fecha Inspeccionado"
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__inspection_id
 msgid "Inspection"
-msgstr ""
+msgstr "Inspección"
 
 #. module: fleet_vehicle_inspection
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_search_view
@@ -510,7 +510,7 @@ msgstr "Millas"
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__my_activity_date_deadline
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr ""
+msgstr "Fecha limite de Mi Actividad"
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__name
@@ -523,7 +523,7 @@ msgstr "Nombre"
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__activity_calendar_event_id
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__activity_calendar_event_id
 msgid "Next Activity Calendar Event"
-msgstr ""
+msgstr "Próximo Evento del Calendario de Actividades"
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__activity_date_deadline
@@ -684,7 +684,7 @@ msgstr "Establecer como borrador"
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__state
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__state
 msgid "State"
-msgstr ""
+msgstr "Estado"
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection__activity_state
@@ -696,6 +696,10 @@ msgid ""
 "Today: Activity date is today\n"
 "Planned: Future activities."
 msgstr ""
+"Estado basado en actividades\n"
+"Atrasado: La fecha ya ha pasado\n"
+"Hoy: La actividad es para hoy\n"
+"Planeada: Actividades futuras."
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields.selection,name:fleet_vehicle_inspection.selection__fleet_vehicle_inspection__result__success
@@ -715,7 +719,7 @@ msgstr "Inspecciones Exitosas"
 #: model:ir.model.fields.selection,name:fleet_vehicle_inspection.selection__fleet_vehicle_inspection_line__result__todo
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_line_form_view
 msgid "Todo"
-msgstr ""
+msgstr "Todo"
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection__activity_exception_decoration
@@ -769,14 +773,14 @@ msgstr "Inspección de Vehículos"
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__website_message_ids
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__website_message_ids
 msgid "Website Messages"
-msgstr ""
+msgstr "Mensajes de la Página web"
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection__website_message_ids
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__website_message_ids
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Historial de comunicación del sitio web"
 
 #~ msgid "Followers (Channels)"
 #~ msgstr "Seguidores (Canales)"
