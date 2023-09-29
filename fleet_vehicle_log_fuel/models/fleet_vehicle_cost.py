@@ -16,7 +16,7 @@ class FleetVehicleLogFuel(models.Model):
         "fleet.vehicle", "Vehicle", required=True, help="Vehicle concerned by this log"
     )
     amount = fields.Monetary("Cost")
-    description = fields.Char("Description")
+    description = fields.Char()
     odometer_id = fields.Many2one(
         "fleet.vehicle.odometer",
         "Odometer",
