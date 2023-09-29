@@ -16,6 +16,7 @@ class FleetVehicle(models.Model):
         LogFuel = self.env["fleet.vehicle.log.fuel"]
         for record in self:
             record.fuel_count = LogFuel.search_count([("vehicle_id", "=", record.id)])
+        return
 
     def action_view_log_fuel(self):
         action = self.env["ir.actions.act_window"]._for_xml_id(
