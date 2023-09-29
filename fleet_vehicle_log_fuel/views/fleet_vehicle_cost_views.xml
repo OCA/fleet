@@ -58,11 +58,11 @@
         </field>
     </record>
 
-    <record id='fleet_vehicle_log_fuel_view_tree' model='ir.ui.view'>
+    <record id="fleet_vehicle_log_fuel_view_tree" model="ir.ui.view">
         <field name="name">fleet.vehicle.log.fuel.tree</field>
         <field name="model">fleet.vehicle.log.fuel</field>
         <field name="arch" type="xml">
-            <tree string="Fuel Logs" multi_edit="1">
+            <tree multi_edit="1">
                 <field name="date" readonly="1" />
                 <field name="description" />
                 <field name="service_type_id" />
