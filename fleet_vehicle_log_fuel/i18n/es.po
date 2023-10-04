@@ -1,0 +1,479 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fleet_vehicle_log_fuel
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-14 10:08+0000\n"
+"PO-Revision-Date: 2022-06-14 10:08+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_needaction
+msgid "Action Needed"
+msgstr "Acción requerida"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decoración de Actividad  de Excepción"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__activity_state
+msgid "Activity State"
+msgstr "Estado de la actividad"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Ícono de tipo de actividad"
+
+#. module: fleet_vehicle_log_fuel
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_view_form
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_view_search
+msgid "Archived"
+msgstr "Archivado"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_attachment_count
+msgid "Attachment Count"
+msgstr "Conteo de archivos adjuntos"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields.selection,name:fleet_vehicle_log_fuel.selection__fleet_vehicle_log_fuel__state__cancelled
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_service_type__category
+msgid "Category"
+msgstr "Categoría"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_service_type__category
+msgid "Choose whether the service refer to contracts, vehicle services or both"
+msgstr ""
+"Elige si el servicio se refiere a contratos, servicios de vehículos o ambos"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__amount
+msgid "Cost"
+msgstr "Coste"
+
+#. module: fleet_vehicle_log_fuel
+#: model_terms:ir.actions.act_window,help:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_action
+msgid "Create a new fuel log entry"
+msgstr "Crear un nuevo registro de combustible"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__date
+msgid "Date when the cost has been executed"
+msgstr "Fecha en la que se ha ejecutado el coste"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_service_type__display_name
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle__display_name
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_cost_report__display_name
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields.selection,name:fleet_vehicle_log_fuel.selection__fleet_vehicle_log_fuel__state__done
+msgid "Done"
+msgstr "Hecho"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__purchaser_id
+msgid "Driver"
+msgstr "Conductor"
+
+#. module: fleet_vehicle_log_fuel
+#: code:addons/fleet_vehicle_log_fuel/models/fleet_vehicle_cost.py:0
+#, python-format
+msgid "Emptying the odometer value of a vehicle is not allowed."
+msgstr "Vaciar el valor del odómetro de un vehículo no está permitido."
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model,name:fleet_vehicle_log_fuel.model_fleet_vehicle_cost_report
+msgid "Fleet Analysis Report"
+msgstr "Informe de análisis de flota"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model,name:fleet_vehicle_log_fuel.model_fleet_service_type
+msgid "Fleet Service Type"
+msgstr "Tipo de servicio de flota"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Seguidores (Canales)"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Empresas)"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Icono de Font Awesome ej. fa-tasks"
+
+#. module: fleet_vehicle_log_fuel
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_costs_report_view_search
+msgid "Fuel"
+msgstr "Combustible"
+
+#. module: fleet_vehicle_log_fuel
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_view_graph
+msgid "Fuel Costs Per Month"
+msgstr "Costes de combustible por mes"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields.selection,name:fleet_vehicle_log_fuel.selection__fleet_service_type__category__fuel
+msgid "Fuel Log"
+msgstr "Registro de combustible"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle__fuel_count
+msgid "Fuel Log Count"
+msgstr "Cuenta de Registros de combustible"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.actions.act_window,name:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_action
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle__log_fuels
+#: model:ir.ui.menu,name:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_menu
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_view_form
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_view_search
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_view_tree
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_view_form
+msgid "Fuel Logs"
+msgstr "Registros de combustible"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model,name:fleet_vehicle_log_fuel.model_fleet_vehicle_log_fuel
+msgid "Fuel log for vehicles"
+msgstr "Registro de combustible para los vehículos"
+
+#. module: fleet_vehicle_log_fuel
+#: model_terms:ir.actions.act_window,help:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_action
+msgid "Here you can add refuelling entries for all vehicles."
+msgstr ""
+"Aquí puede agregar entradas de reabastecimiento de combustible para todos "
+"los vehículos."
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_service_type__id
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle__id
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_cost_report__id
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__id
+msgid "ID"
+msgstr ""
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__activity_exception_icon
+msgid "Icon"
+msgstr "Icono"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icono para indicar una actividad de excepción."
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_needaction
+#: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado hay nuevos mensajes que requieren su atención."
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_has_error
+#: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si se encuentra marcado, algunos mensajes tienen error de envío."
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_is_follower
+msgid "Is Follower"
+msgstr "Es un seguidor"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_service_type____last_update
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle____last_update
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_cost_report____last_update
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__liter
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_view_kanban
+msgid "Liter"
+msgstr "Litro"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Adjuntos principales"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de Envío de Mensaje"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Siguiente plazo de actividad"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de la siguiente actividad"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__activity_type_id
+msgid "Next Activity Type"
+msgstr "Siguiente tipo de actividad"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__notes
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_view_form
+msgid "Notes"
+msgstr "Notas"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de errores"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de envío"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Número de mensajes no leidos"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__odometer_id
+msgid "Odometer"
+msgstr "Odómetro"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__odometer
+msgid "Odometer Value"
+msgstr "Valor del odómetro"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__odometer
+#: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__odometer_id
+msgid "Odometer measure of the vehicle at the moment of this log"
+msgstr "Medida del odómetro del vehículo en el momento de registro"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__price_per_liter
+msgid "Price Per Liter"
+msgstr "Precio por litro"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario responsable"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields.selection,name:fleet_vehicle_log_fuel.selection__fleet_vehicle_log_fuel__state__running
+msgid "Running"
+msgstr "En proceso"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_has_sms_error
+#, fuzzy
+msgid "SMS Delivery error"
+msgstr "Error de Envío de Mensaje"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__service_type_id
+msgid "Service Type"
+msgstr "Tipo de Servicio"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__state
+msgid "Stage"
+msgstr "Etapa"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Estado basado en actividades\n"
+"Vencida: la fecha tope ya ha pasado\n"
+"Hoy: La fecha tope es hoy\n"
+"Planificada: futuras actividades."
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields.selection,name:fleet_vehicle_log_fuel.selection__fleet_vehicle_log_fuel__state__todo
+msgid "To Do"
+msgstr "Por hacer"
+
+#. module: fleet_vehicle_log_fuel
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_view_tree
+msgid "Total"
+msgstr ""
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo de actividad de excepción registrada."
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__odometer_unit
+msgid "Unit"
+msgstr "Unidad"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__odometer_unit
+msgid "Unit of the odometer "
+msgstr "Unidad del odómetro "
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_unread
+msgid "Unread Messages"
+msgstr "Mensajes sin leer"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Contador de mensajes sin leer"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model,name:fleet_vehicle_log_fuel.model_fleet_vehicle
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__vehicle_id
+msgid "Vehicle"
+msgstr "Vehículo"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__vehicle_id
+msgid "Vehicle concerned by this log"
+msgstr "Vehículo afectado por este registro"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__vendor_id
+msgid "Vendor"
+msgstr "Proveedor"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__inv_ref
+msgid "Vendor Reference"
+msgstr "Referencia de proveedor"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: fleet_vehicle_log_fuel
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_view_form
+msgid "Write here any other information related to the service completed."
+msgstr ""
+"Escriba aquí cualquier otra información relacionada con el servicio "
+"completado."
+
+#. module: fleet_vehicle_log_fuel
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_view_form
+msgid "show the fuel logs for this vehicle"
+msgstr "mostrar los registros de combustible para este vehículo"
