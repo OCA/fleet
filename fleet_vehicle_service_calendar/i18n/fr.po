@@ -24,13 +24,15 @@ msgstr "# rendez-vous"
 #. module: fleet_vehicle_service_calendar
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_service_calendar.fleet_vehicle_log_services_view_form
 msgid ""
-"<span class=\"o_stat_text\" attrs=\"{'invisible': [('meeting_count', '&lt;', 2)]}\"> Meetings</span>\n"
-"                        <span class=\"o_stat_text\" attrs=\"{'invisible': [('meeting_count', '&gt;', 1)]}\"> Meeting</span>"
+"<span class=\"o_stat_text\" attrs=\"{'invisible': [('meeting_count', '&lt;', "
+"2)]}\"> Meetings</span>\n"
+"                        <span class=\"o_stat_text\" attrs=\"{'invisible': "
+"[('meeting_count', '&gt;', 1)]}\"> Meeting</span>"
 msgstr ""
 "<span class=\"o_stat_text\" attrs=\"{'invisible': [('meeting_count', '&lt;', "
 "2)]}\"> Rendez-vous</span>\n"
-"                        <span class=\"o_stat_text\" attrs=\"{'invisible': [("
-"'meeting_count', '&gt;', 1)]}\"> Rendez-vous</span>"
+"                        <span class=\"o_stat_text\" attrs=\"{'invisible': "
+"[('meeting_count', '&gt;', 1)]}\"> Rendez-vous</span>"
 
 #. module: fleet_vehicle_service_calendar
 #: model:ir.model,name:fleet_vehicle_service_calendar.model_calendar_event
