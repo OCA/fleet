@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* fleet_vehicle_stock
+# 	* fleet_vehicle_stock
 #
 msgid ""
 msgstr ""
@@ -56,7 +56,9 @@ msgstr "Inventario"
 
 #. module: fleet_vehicle_stock
 #: sql_constraint:product.template:0
-msgid "It is mandatory to configure the traceability by serial number in order to be able to configure the vehicle model of the fleet in this product."
+msgid ""
+"It is mandatory to configure the traceability by serial number in order to "
+"be able to configure the vehicle model of the fleet in this product."
 msgstr ""
 "È necessario configurare la tracciabilità per numero seriale per poter "
 "configurare in questo prodotto il modello veicolo della flotta."
@@ -89,7 +91,9 @@ msgstr "Modello prodotto"
 
 #. module: fleet_vehicle_stock
 #: model:ir.model.fields,help:fleet_vehicle_stock.field_stock_picking_type__create_fleet_vehicle
-msgid "Products with the \"Creates a Fleet Vehicle\" flagwill automatically be converted to an Fleet Vehicle."
+msgid ""
+"Products with the \"Creates a Fleet Vehicle\" flagwill automatically be "
+"converted to an Fleet Vehicle."
 msgstr ""
 "I prodotti con la spunta \"Crea un veicolo flotta\" verranno automaticamente "
 "convertiti in un veicolo flotta."
@@ -107,7 +111,9 @@ msgstr "Movimento di magazzino"
 #. module: fleet_vehicle_stock
 #: code:addons/fleet_vehicle_stock/models/stock_move.py:28
 #, python-format
-msgid "The product '%s' is configure to create a fleet vehicle but vehicle model is not configured in the product."
+msgid ""
+"The product '%s' is configure to create a fleet vehicle but vehicle model is "
+"not configured in the product."
 msgstr ""
 "Il prodotto '%s' è configurato per creare una veicolo flotta ma il modello "
 "veicolo non è configurato nel prodotto."
