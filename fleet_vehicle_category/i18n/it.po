@@ -99,8 +99,8 @@ msgstr "Categoria veicolo"
 #. module: fleet_vehicle_category
 #: model_terms:ir.actions.act_window,help:fleet_vehicle_category.fleet_vehicle_category_act_window
 msgid ""
-"You can define several categories (e.g. tow truck, ambulance, trailer, boat)"
-" for each vehicle."
+"You can define several categories (e.g. tow truck, ambulance, trailer, boat) "
+"for each vehicle."
 msgstr ""
 "Si possono definire diverse categorie(es. carro attrezzi, ambulanza, "
 "rimorchio, barca) per ogni veicolo."
