@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* fleet_vehicle_fuel_type_ethanol
+# 	* fleet_vehicle_fuel_type_ethanol
 #
 msgid ""
 msgstr ""
