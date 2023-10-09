@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* fleet_vehicle_license_plate_alt
+# 	* fleet_vehicle_license_plate_alt
 #
 msgid ""
 msgstr ""
