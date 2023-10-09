@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* fleet_vehicle_inspection
+# 	* fleet_vehicle_inspection
 #
 msgid ""
 msgstr ""
@@ -19,7 +19,8 @@ msgstr ""
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection__state
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__state
-msgid " * Draft: not confirmed yet.\n"
+msgid ""
+" * Draft: not confirmed yet.\n"
 " * Confirmed: inspection has been confirmed.\n"
 " * Cancelled: has been cancelled, can't be confirmed anymore."
 msgstr ""
@@ -34,7 +35,9 @@ msgstr "N° conteggio ispezione"
 
 #. module: fleet_vehicle_inspection
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_kanban_view
-msgid "<i class=\"fa fa-clock-o\" aria-label=\"Date Inspected\" role=\"img\" title=\"Date\"/>"
+msgid ""
+"<i class=\"fa fa-clock-o\" aria-label=\"Date Inspected\" role=\"img\" title="
+"\"Date\"/>"
 msgstr ""
 "<i class=\"fa fa-clock-o\" aria-label=\"Data ispezione\" role=\"img\" title="
 "\"Date\"/>"
@@ -618,7 +621,8 @@ msgstr "Stato"
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection__activity_state
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__activity_state
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__activity_state
-msgid "Status based on activities\n"
+msgid ""
+"Status based on activities\n"
 "Overdue: Due date is already passed\n"
 "Today: Activity date is today\n"
 "Planned: Future activities."
