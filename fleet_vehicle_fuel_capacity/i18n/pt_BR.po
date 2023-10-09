@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* fleet_vehicle_fuel_capacity
+# 	* fleet_vehicle_fuel_capacity
 #
 msgid ""
 msgstr ""
@@ -22,7 +22,7 @@ msgid "Fuel Capacity (L)"
 msgstr "Capacidade de Combustível(L)"
 
 #. module: fleet_vehicle_fuel_capacity
-#: sql_constraint:fleet.vehicle:0
+#: model:ir.model.constraint,message:fleet_vehicle_fuel_capacity.constraint_fleet_vehicle_check_fuel_capacity
 msgid "Fuel capacity must be greater than or equal to 0"
 msgstr "A capacidade do combustível deve ser maior ou igual a 0"
 
