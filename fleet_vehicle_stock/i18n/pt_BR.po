@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* fleet_vehicle_stock
+# 	* fleet_vehicle_stock
 #
 msgid ""
 msgstr ""
@@ -38,6 +38,17 @@ msgid "Default Product"
 msgstr "Produto Padrão"
 
 #. module: fleet_vehicle_stock
+#: model:ir.model.fields,field_description:fleet_vehicle_stock.field_fleet_vehicle__display_name
+#: model:ir.model.fields,field_description:fleet_vehicle_stock.field_fleet_vehicle_model__display_name
+#: model:ir.model.fields,field_description:fleet_vehicle_stock.field_product_product__display_name
+#: model:ir.model.fields,field_description:fleet_vehicle_stock.field_product_template__display_name
+#: model:ir.model.fields,field_description:fleet_vehicle_stock.field_stock_move__display_name
+#: model:ir.model.fields,field_description:fleet_vehicle_stock.field_stock_picking_type__display_name
+#: model:ir.model.fields,field_description:fleet_vehicle_stock.field_stock_production_lot__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: fleet_vehicle_stock
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_stock.product_template_form_view
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_stock.product_variant_easy_edit_view
 msgid "Fleet"
@@ -49,17 +60,41 @@ msgid "Fleet Vehicle"
 msgstr "Veículo da Frota"
 
 #. module: fleet_vehicle_stock
+#: model:ir.model.fields,field_description:fleet_vehicle_stock.field_fleet_vehicle__id
+#: model:ir.model.fields,field_description:fleet_vehicle_stock.field_fleet_vehicle_model__id
+#: model:ir.model.fields,field_description:fleet_vehicle_stock.field_product_product__id
+#: model:ir.model.fields,field_description:fleet_vehicle_stock.field_product_template__id
+#: model:ir.model.fields,field_description:fleet_vehicle_stock.field_stock_move__id
+#: model:ir.model.fields,field_description:fleet_vehicle_stock.field_stock_picking_type__id
+#: model:ir.model.fields,field_description:fleet_vehicle_stock.field_stock_production_lot__id
+msgid "ID"
+msgstr ""
+
+#. module: fleet_vehicle_stock
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_stock.fleet_vehicle_form_view
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_stock.fleet_vehicle_model_form_view
 msgid "Inventory"
 msgstr "Inventário"
 
 #. module: fleet_vehicle_stock
-#: sql_constraint:product.template:0
-msgid "It is mandatory to configure the traceability by serial number in order to be able to configure the vehicle model of the fleet in this product."
+#: model:ir.model.constraint,message:fleet_vehicle_stock.constraint_product_template_non_product_tracking_for_vehicle_model
+msgid ""
+"It is mandatory to configure the traceability by serial number in order to "
+"be able to configure the vehicle model of the fleet in this product."
 msgstr ""
 "É obrigatório configurar a rastreabilidade por número de série para poder "
 "configurar o modelo de veículo da frota neste produto."
+
+#. module: fleet_vehicle_stock
+#: model:ir.model.fields,field_description:fleet_vehicle_stock.field_fleet_vehicle____last_update
+#: model:ir.model.fields,field_description:fleet_vehicle_stock.field_fleet_vehicle_model____last_update
+#: model:ir.model.fields,field_description:fleet_vehicle_stock.field_product_product____last_update
+#: model:ir.model.fields,field_description:fleet_vehicle_stock.field_product_template____last_update
+#: model:ir.model.fields,field_description:fleet_vehicle_stock.field_stock_move____last_update
+#: model:ir.model.fields,field_description:fleet_vehicle_stock.field_stock_picking_type____last_update
+#: model:ir.model.fields,field_description:fleet_vehicle_stock.field_stock_production_lot____last_update
+msgid "Last Modified on"
+msgstr ""
 
 #. module: fleet_vehicle_stock
 #: model:ir.model,name:fleet_vehicle_stock.model_stock_production_lot
@@ -89,7 +124,9 @@ msgstr "Modelo de Produto"
 
 #. module: fleet_vehicle_stock
 #: model:ir.model.fields,help:fleet_vehicle_stock.field_stock_picking_type__create_fleet_vehicle
-msgid "Products with the \"Creates a Fleet Vehicle\" flagwill automatically be converted to an Fleet Vehicle."
+msgid ""
+"Products with the \"Creates a Fleet Vehicle\" flagwill automatically be "
+"converted to an Fleet Vehicle."
 msgstr ""
 "Os produtos com marcados com \"Cria um Veículo da Frota\" serão "
 "automaticamente convertidos em um Veículo da Frota."
@@ -105,9 +142,11 @@ msgid "Stock Move"
 msgstr "Movimento de Estoque"
 
 #. module: fleet_vehicle_stock
-#: code:addons/fleet_vehicle_stock/models/stock_move.py:28
+#: code:addons/fleet_vehicle_stock/models/stock_move.py:0
 #, python-format
-msgid "The product '%s' is configure to create a fleet vehicle but vehicle model is not configured in the product."
+msgid ""
+"The product '%s' is configure to create a fleet vehicle but vehicle model is "
+"not configured in the product."
 msgstr ""
 "O produto '%s' é configurado para criar um veículo da frota, mas o modelo do "
 "veículo não está configurado no produto."
