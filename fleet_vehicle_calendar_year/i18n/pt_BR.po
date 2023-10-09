@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* fleet_vehicle_calendar_year
+# 	* fleet_vehicle_calendar_year
 #
 msgid ""
 msgstr ""
@@ -25,6 +25,21 @@ msgstr "Ano Calendário"
 #: model:ir.model.fields,help:fleet_vehicle_calendar_year.field_fleet_vehicle__calendar_year
 msgid "Calendar year of the vehicle"
 msgstr "Ano calendário do veículo"
+
+#. module: fleet_vehicle_calendar_year
+#: model:ir.model.fields,field_description:fleet_vehicle_calendar_year.field_fleet_vehicle__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: fleet_vehicle_calendar_year
+#: model:ir.model.fields,field_description:fleet_vehicle_calendar_year.field_fleet_vehicle__id
+msgid "ID"
+msgstr ""
+
+#. module: fleet_vehicle_calendar_year
+#: model:ir.model.fields,field_description:fleet_vehicle_calendar_year.field_fleet_vehicle____last_update
+msgid "Last Modified on"
+msgstr ""
 
 #. module: fleet_vehicle_calendar_year
 #: model:ir.model,name:fleet_vehicle_calendar_year.model_fleet_vehicle
