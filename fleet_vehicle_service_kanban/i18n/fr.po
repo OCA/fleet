@@ -58,8 +58,7 @@ msgstr "Vendeur modifié"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,help:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__tag_ids
-msgid ""
-"Classify and analyze your services categories like: Repair, Maintenance"
+msgid "Classify and analyze your services categories like: Repair, Maintenance"
 msgstr ""
 "Classifiez et analysez vos catégories de service telles que : Réparation, "
 "Maintenance"
