@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* fleet_vehicle_service_kanban
+# 	* fleet_vehicle_service_kanban
 #
 msgid ""
 msgstr ""
@@ -284,7 +284,8 @@ msgstr "Fornecedor"
 
 #. module: fleet_vehicle_service_kanban
 #: model_terms:ir.actions.act_window,help:fleet_vehicle_service_kanban.fleet_vehicle_log_services_stage_action
-msgid "You can customize available stages to track the evolution of\n"
+msgid ""
+"You can customize available stages to track the evolution of\n"
 "                each service. Example: registered, finished, etc."
 msgstr ""
 "Você pode personalizar os estágios disponíveis para acompanhar a evolução "
