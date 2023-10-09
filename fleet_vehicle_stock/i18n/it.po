@@ -113,8 +113,8 @@ msgstr "Movimento di magazzino"
 #: code:addons/fleet_vehicle_stock/models/stock_move.py:0
 #, python-format
 msgid ""
-"The product '%s' is configure to create a fleet vehicle but vehicle model is"
-" not configured in the product."
+"The product '%s' is configure to create a fleet vehicle but vehicle model is "
+"not configured in the product."
 msgstr ""
 "Il prodotto '%s' è configurato per creare una veicolo flotta ma il modello "
 "veicolo non è configurato nel prodotto."
