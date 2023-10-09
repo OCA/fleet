@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* fleet_vehicle_history_date_end
+# 	* fleet_vehicle_history_date_end
 #
 msgid ""
 msgstr ""
