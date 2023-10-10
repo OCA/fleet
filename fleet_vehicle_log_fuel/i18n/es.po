@@ -120,9 +120,6 @@ msgid "Description"
 msgstr "Descripción"
 
 #. module: fleet_vehicle_log_fuel
-#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_service_type__display_name
-#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle__display_name
-#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_cost_report__display_name
 #: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__display_name
 msgid "Display Name"
 msgstr "Nombre mostrado"
@@ -157,11 +154,6 @@ msgstr "Tipo de servicio de flota"
 #: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_follower_ids
 msgid "Followers"
 msgstr "Seguidores"
-
-#. module: fleet_vehicle_log_fuel
-#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_channel_ids
-msgid "Followers (Channels)"
-msgstr "Seguidores (Canales)"
 
 #. module: fleet_vehicle_log_fuel
 #: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_partner_ids
@@ -199,7 +191,6 @@ msgstr "Cuenta de Registros de combustible"
 #: model:ir.ui.menu,name:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_menu
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_view_form
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_view_search
-#: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_view_tree
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_view_form
 msgid "Fuel Logs"
 msgstr "Registros de combustible"
@@ -210,6 +201,11 @@ msgid "Fuel log for vehicles"
 msgstr "Registro de combustible para los vehículos"
 
 #. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: fleet_vehicle_log_fuel
 #: model_terms:ir.actions.act_window,help:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_action
 msgid "Here you can add refuelling entries for all vehicles."
 msgstr ""
@@ -217,9 +213,6 @@ msgstr ""
 "los vehículos."
 
 #. module: fleet_vehicle_log_fuel
-#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_service_type__id
-#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle__id
-#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_cost_report__id
 #: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__id
 msgid "ID"
 msgstr "ID (identificación)"
@@ -252,9 +245,6 @@ msgid "Is Follower"
 msgstr "Es un seguidor"
 
 #. module: fleet_vehicle_log_fuel
-#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_service_type____last_update
-#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle____last_update
-#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_cost_report____last_update
 #: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel____last_update
 msgid "Last Modified on"
 msgstr "Última modificación el"
@@ -294,6 +284,11 @@ msgstr "Mensajes"
 #: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__my_activity_date_deadline
 msgid "My Activity Deadline"
 msgstr "Fecha Límite de Mi Actividad"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
 
 #. module: fleet_vehicle_log_fuel
 #: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__activity_date_deadline
@@ -477,3 +472,6 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_view_form
 msgid "show the fuel logs for this vehicle"
 msgstr "mostrar los registros de combustible para este vehículo"
+
+#~ msgid "Followers (Channels)"
+#~ msgstr "Seguidores (Canales)"
