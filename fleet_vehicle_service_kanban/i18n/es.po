@@ -199,7 +199,6 @@ msgstr "Si está marcado, nuevos mensajes necesitan su atención."
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,help:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__message_has_error
-#: model:ir.model.fields,help:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Si está marcado, algunos mensajes tienen un error de entrega."
 
@@ -321,11 +320,6 @@ msgstr "Responsable"
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__activity_user_id
 msgid "Responsible User"
 msgstr "Usuario Responsable"
-
-#. module: fleet_vehicle_service_kanban
-#: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "Error en la entrega de sms"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services_stage__sequence
@@ -463,6 +457,9 @@ msgid ""
 msgstr ""
 "Puede personalizar las etapas disponibles para seguir la evolución de\n"
 "                cada servicio. Ejemplo: registrado, finalizado, etc."
+
+#~ msgid "SMS Delivery error"
+#~ msgstr "Error en la entrega de sms"
 
 #~ msgid "Number of messages which requires an action"
 #~ msgstr "Números de mensajes que requieren una acción"
