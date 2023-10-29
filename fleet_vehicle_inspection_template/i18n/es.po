@@ -123,7 +123,6 @@ msgstr "Si está marcado, nuevos mensajes requieren su atención."
 
 #. module: fleet_vehicle_inspection_template
 #: model:ir.model.fields,help:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_has_error
-#: model:ir.model.fields,help:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "si está marcada, algunos mensajes tienen un error de entrega."
 
@@ -261,11 +260,6 @@ msgid "Responsible User"
 msgstr "Usuario Responsable"
 
 #. module: fleet_vehicle_inspection_template
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "Error en la entrega del SMS"
-
-#. module: fleet_vehicle_inspection_template
 #: model:ir.model.fields,help:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__activity_state
 msgid ""
 "Status based on activities\n"
@@ -302,3 +296,6 @@ msgstr "Mensajes de la Página web"
 #: model:ir.model.fields,help:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__website_message_ids
 msgid "Website communication history"
 msgstr "Historial de la comunicación en la web"
+
+#~ msgid "SMS Delivery error"
+#~ msgstr "Error en la entrega del SMS"
