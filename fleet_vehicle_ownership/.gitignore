@@ -73,3 +73,9 @@ docs/_build/
 
 # OCA rules
 !static/lib/
+.github/workflows/test.ymlst
+.copier-answers.yml
+.github/workflows/pre-commit.yml
+.github/workflows/stale.yml
+.prettierrc.yml
+.eslintrc.yml
