@@ -302,11 +302,8 @@ msgstr "Si está marcado, los nuevos mensajes requieren su atención."
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection__message_has_error
-#: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection__message_has_sms_error
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__message_has_error
-#: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__message_has_sms_error
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__message_has_error
-#: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Si está marcada, algunos mensajes tienen un error de entrega."
 
@@ -381,11 +378,6 @@ msgstr "Artículo de Inspección"
 #: model:ir.ui.menu,name:fleet_vehicle_inspection.fleet_vehicle_inspection_item_menu
 msgid "Inspection Items"
 msgstr "Artículos de Inspección"
-
-#. module: fleet_vehicle_inspection
-#: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_form_view
-msgid "Inspection Line"
-msgstr "Línea de Inspección"
 
 #. module: fleet_vehicle_inspection
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_line_form_view
@@ -659,13 +651,6 @@ msgid "Result Description"
 msgstr "Descripción del Resultado"
 
 #. module: fleet_vehicle_inspection
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__message_has_sms_error
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__message_has_sms_error
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "Error de entrega de SMS"
-
-#. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line_image__sequence
 msgid "Sequence"
 msgstr "Secuencia"
@@ -772,3 +757,9 @@ msgstr ""
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__website_message_ids
 msgid "Website communication history"
 msgstr ""
+
+#~ msgid "Inspection Line"
+#~ msgstr "Línea de Inspección"
+
+#~ msgid "SMS Delivery error"
+#~ msgstr "Error de entrega de SMS"
