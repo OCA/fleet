@@ -26,10 +26,7 @@
                             name="inspection_template_lines"
                         >
                             <field name="inspection_template_line_ids">
-                                <tree
-                                    string="Inspection Template Line"
-                                    editable="bottom"
-                                >
+                                <tree editable="bottom">
                                     <field name="inspection_template_item_id" />
                                 </tree>
                             </field>
