@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 RPSJR
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+
+    <record id="vehicle_29" model="fleet.vehicle">
+        <field name="license_plate">4-LH-44</field>
+        <field name="vin_sn">44444</field>
+        <field name="model_id">1</field>
+        <field name="color">Silver</field>
+        <field name="location">Silverstone</field>
+        <field name="owner_id" ref="base.partner_demo" />
+        <field
+            name="acquisition_date"
+            eval="(DateTime.now() - timedelta(days=336)).strftime('%Y-%m-%d')"
+        />
+        <field name="odometer_unit">kilometers</field>
+        <field name="car_value">44000</field>
+    </record>
+
+</odoo>
