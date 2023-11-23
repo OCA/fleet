@@ -198,7 +198,6 @@ msgstr "Cuenta de Registros de combustible"
 #: model:ir.ui.menu,name:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_menu
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_view_form
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_view_search
-#: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_view_tree
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_view_form
 msgid "Fuel Logs"
 msgstr "Registros de combustible"
@@ -241,7 +240,6 @@ msgstr "Si está marcado hay nuevos mensajes que requieren su atención."
 
 #. module: fleet_vehicle_log_fuel
 #: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_has_error
-#: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Si se encuentra marcado, algunos mensajes tienen error de envío."
 
@@ -372,12 +370,6 @@ msgid "Running"
 msgstr "En proceso"
 
 #. module: fleet_vehicle_log_fuel
-#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_has_sms_error
-#, fuzzy
-msgid "SMS Delivery error"
-msgstr "Error de Envío de Mensaje"
-
-#. module: fleet_vehicle_log_fuel
 #: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__service_type_id
 msgid "Service Type"
 msgstr "Tipo de Servicio"
@@ -477,3 +469,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_view_form
 msgid "show the fuel logs for this vehicle"
 msgstr "mostrar los registros de combustible para este vehículo"
+
+#, fuzzy
+#~ msgid "SMS Delivery error"
+#~ msgstr "Error de Envío de Mensaje"
