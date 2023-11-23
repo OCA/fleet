@@ -1,0 +1,23 @@
+# Do NOT update manually; changes here will be overwritten by Copier
+_commit: v1.18
+_src_path: https://github.com/OCA/oca-addons-repo-template.git
+ci: GitHub
+generate_requirements_txt: true
+github_check_license: true
+github_ci_extra_env: {}
+github_enable_codecov: true
+github_enable_makepot: true
+github_enable_stale_action: true
+github_enforce_dev_status_compatibility: true
+include_wkhtmltopdf: true
+odoo_test_flavor: Both
+odoo_version: 14.0
+org_name: Odoo Community Association (OCA)
+org_slug: OCA
+rebel_module_groups: []
+repo_description: Add vehicle ownership, linking partners to vehicles
+repo_name: Vehicle Ownership
+repo_slug: fleet
+repo_website: https://github.com/OCA/fleet
+use_pyproject_toml: false
+use_ruff: false
