@@ -18,7 +18,6 @@ msgstr ""
 
 #. module: fleet_vehicle_category
 #: model:ir.model.fields,field_description:fleet_vehicle_category.field_fleet_vehicle_category__name
-#: model_terms:ir.ui.view,arch_db:fleet_vehicle_category.fleet_vehicle_category_view_tree
 msgid "Category"
 msgstr "Categoria"
 
