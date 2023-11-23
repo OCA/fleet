@@ -195,7 +195,6 @@ msgstr ""
 #: model:ir.ui.menu,name:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_menu
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_view_form
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_view_search
-#: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_view_tree
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_view_form
 msgid "Fuel Logs"
 msgstr ""
@@ -236,7 +235,6 @@ msgstr ""
 
 #. module: fleet_vehicle_log_fuel
 #: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_has_error
-#: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
 
@@ -364,11 +362,6 @@ msgstr ""
 #. module: fleet_vehicle_log_fuel
 #: model:ir.model.fields.selection,name:fleet_vehicle_log_fuel.selection__fleet_vehicle_log_fuel__state__running
 msgid "Running"
-msgstr ""
-
-#. module: fleet_vehicle_log_fuel
-#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_has_sms_error
-msgid "SMS Delivery error"
 msgstr ""
 
 #. module: fleet_vehicle_log_fuel
