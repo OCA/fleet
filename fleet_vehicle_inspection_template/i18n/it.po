@@ -125,7 +125,6 @@ msgstr "Se selezionata, nuovi messaggi richiedono attenzione."
 
 #. module: fleet_vehicle_inspection_template
 #: model:ir.model.fields,help:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_has_error
-#: model:ir.model.fields,help:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Se selezionata, alcuni messaggi hanno un errore di consegna."
 
@@ -143,7 +142,6 @@ msgstr "Elemento modello ispezione"
 
 #. module: fleet_vehicle_inspection_template
 #: model:ir.actions.act_window,name:fleet_vehicle_inspection_template.fleet_vehicle_inspection_template_line_act_window
-#: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection_template.fleet_vehicle_inspection_template_form_view
 msgid "Inspection Template Line"
 msgstr "Riga modello ispezione"
 
@@ -259,11 +257,6 @@ msgid "Responsible User"
 msgstr "Utente responsabile"
 
 #. module: fleet_vehicle_inspection_template
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "Errore consegna SMS"
-
-#. module: fleet_vehicle_inspection_template
 #: model:ir.model.fields,help:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__activity_state
 msgid ""
 "Status based on activities\n"
@@ -300,3 +293,6 @@ msgstr "Messaggi sito web"
 #: model:ir.model.fields,help:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__website_message_ids
 msgid "Website communication history"
 msgstr "Cronologia comunicazioni sito web"
+
+#~ msgid "SMS Delivery error"
+#~ msgstr "Errore consegna SMS"
