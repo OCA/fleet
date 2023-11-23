@@ -6,7 +6,7 @@
     "summary": """
         This module extend module fleet_vehicle_inspection enable
         inspection templates feature""",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.0.1",
     "license": "AGPL-3",
     "author": "Escodoo, Odoo Community Association (OCA)",
     "category": "Human Resources",
