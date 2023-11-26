@@ -23,5 +23,5 @@ class TestVehicleLicensePlatAlt(TransactionCase):
 
     def test_search_vehicle_by_license_plate_alt(self):
         """Check correct searching of vehicles by license_plate_alt."""
-        vehicle_search = self.env["fleet.vehicle"]._name_search("1-ACK-556")
+        vehicle_search = self.env["fleet.vehicle"].name_search("1-ACK-556")
         self.assertEqual(vehicle_search[0][1], self.vehicle.display_name)
