@@ -29,7 +29,6 @@ class FleetVehicle(models.Model):
                 ("driver_id.name", operator, name),
                 ("license_plate_alt", operator, name),
             ]
-        rec = self._search(
+        return self._search(
             expression.AND([domain, args]), limit=limit, access_rights_uid=name_get_uid
         )
-        return models.lazy_name_get(self.browse(rec).with_user(name_get_uid))
