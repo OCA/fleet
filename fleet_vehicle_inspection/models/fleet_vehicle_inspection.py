@@ -1,4 +1,5 @@
 # Copyright 2020 - TODAY, Marcel Savegnago - Escodoo https://www.escodoo.com.br
+# Copyright 2023 Tecnativa - Carolina Fernandez
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import _, api, fields, models
@@ -102,6 +103,21 @@ class FleetVehicleInspection(models.Model):
         store=True,
     )
 
+    amount = fields.Monetary("Cost")
+    service_type_id = fields.Many2one(
+        comodel_name="fleet.service.type",
+        string="Service Type",
+        domain=[("category", "=", "service")],
+    )
+    vendor_id = fields.Many2one("res.partner", "Vendor")
+    service_id = fields.Many2one(
+        comodel_name="fleet.vehicle.log.services", readonly=True, copy=False
+    )
+    company_id = fields.Many2one(
+        "res.company", "Company", default=lambda self: self.env.company
+    )
+    currency_id = fields.Many2one("res.currency", related="company_id.currency_id")
+
     @api.depends("inspection_line_ids", "state")
     def _compute_inspection_result(self):
         for rec in self:
@@ -132,6 +148,9 @@ class FleetVehicleInspection(models.Model):
 
     def button_cancel(self):
         records = self.filtered(lambda rec: rec.state in ["draft", "confirmed"])
+        services = records.service_id
+        if services:
+            services.sudo().unlink()
         return records.write({"state": "cancel"})
 
     def button_confirm(self):
@@ -145,6 +164,21 @@ class FleetVehicleInspection(models.Model):
             raise ValidationError(
                 _("Only inspections in 'draft' or 'cancel' states can be confirmed")
             )
+        if self.amount:
+            if not self.service_type_id:
+                raise ValidationError(_("Must select service type"))
+            self.service_id = self.env["fleet.vehicle.log.services"].create(
+                {
+                    "service_type_id": self.service_type_id.id,
+                    "description": self.name,
+                    "vehicle_id": self.vehicle_id.id,
+                    "amount": self.amount,
+                    "odometer": self.odometer,
+                    "vendor_id": self.vendor_id.id if self.vendor_id else False,
+                    "state": "done",
+                }
+            )
+
         return self.write({"state": "confirmed"})
 
     def button_draft(self):
