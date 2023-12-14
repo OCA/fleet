@@ -1,0 +1,59 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fleet_vehicle_service_activity
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2024-03-04 09:34+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
+
+#. module: fleet_vehicle_service_activity
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_service_activity.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Date Service Activity</span>"
+msgstr "<span class=\"o_form_label\">Data attività servizio</span>"
+
+#. module: fleet_vehicle_service_activity
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_service_activity.res_config_settings_view_form
+msgid "<span> days before date service</span>"
+msgstr "<span> giorni prima del dervizio</span>"
+
+#. module: fleet_vehicle_service_activity
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_service_activity.res_config_settings_view_form
+msgid "<span>Create an activity </span>"
+msgstr "<span>Crea un'attività </span>"
+
+#. module: fleet_vehicle_service_activity
+#: model:ir.model,name:fleet_vehicle_service_activity.model_res_config_settings
+msgid "Config Settings"
+msgstr "Impostazioni configurazione"
+
+#. module: fleet_vehicle_service_activity
+#: model:ir.model.fields,field_description:fleet_vehicle_service_activity.field_res_config_settings__delay_alert_service
+msgid "Delay activity service outdated"
+msgstr "Ritardo servizio attività scaduto"
+
+#. module: fleet_vehicle_service_activity
+#: model:ir.actions.server,name:fleet_vehicle_service_activity.ir_cron_service_date_activity_generator_ir_actions_server
+#: model:ir.cron,cron_name:fleet_vehicle_service_activity.ir_cron_service_date_activity_generator
+#: model:ir.cron,name:fleet_vehicle_service_activity.ir_cron_service_date_activity_generator
+msgid "Fleet: Generate service date activity"
+msgstr "Flotta: genera attività data servizio"
+
+#. module: fleet_vehicle_service_activity
+#: model:mail.activity.type,name:fleet_vehicle_service_activity.mail_act_fleet_service_to_check
+msgid "Service to Check"
+msgstr "Servizio da controllare"
+
+#. module: fleet_vehicle_service_activity
+#: model:ir.model,name:fleet_vehicle_service_activity.model_fleet_vehicle_log_services
+msgid "Services for vehicles"
+msgstr "Servizi per veicoli"
