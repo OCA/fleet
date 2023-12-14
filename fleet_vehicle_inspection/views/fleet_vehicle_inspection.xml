@@ -64,6 +64,16 @@
                         <group>
                             <field name="date_inspected" />
                             <field name="inspected_by" />
+                            <field name="vendor_id" />
+                            <field name="service_type_id" />
+                            <field name="currency_id" invisible="1" />
+                            <field name="company_id" invisible="1" />
+                            <field name="service_id" invisible="1" />
+                            <field
+                                name="amount"
+                                widget="monetary"
+                                options="{'currency_field': 'currency_id'}"
+                            />
                         </group>
                     </group>
                     <notebook>

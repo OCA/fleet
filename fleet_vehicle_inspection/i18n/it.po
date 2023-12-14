@@ -116,6 +116,11 @@ msgid "Canceled"
 msgstr "Annullata"
 
 #. module: fleet_vehicle_inspection
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__company_id
+msgid "Company"
+msgstr ""
+
+#. module: fleet_vehicle_inspection
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_form_view
 msgid "Confirm Inspection"
 msgstr "Conferma ispezione"
@@ -124,6 +129,11 @@ msgstr "Conferma ispezione"
 #: model:ir.model.fields.selection,name:fleet_vehicle_inspection.selection__fleet_vehicle_inspection__state__confirmed
 msgid "Confirmed"
 msgstr "Confermata"
+
+#. module: fleet_vehicle_inspection
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__amount
+msgid "Cost"
+msgstr ""
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__create_uid
@@ -140,6 +150,11 @@ msgstr "Creato da"
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line_image__create_date
 msgid "Created on"
 msgstr "Creato il"
+
+#. module: fleet_vehicle_inspection
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__currency_id
+msgid "Currency"
+msgstr ""
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection__date_inspected
@@ -504,6 +519,12 @@ msgid "Miles"
 msgstr "Miglia"
 
 #. module: fleet_vehicle_inspection
+#: code:addons/fleet_vehicle_inspection/models/fleet_vehicle_inspection.py:0
+#, python-format
+msgid "Must select service type"
+msgstr ""
+
+#. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__my_activity_date_deadline
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__my_activity_date_deadline
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__my_activity_date_deadline
@@ -667,6 +688,16 @@ msgid "Sequence"
 msgstr "Sequenza"
 
 #. module: fleet_vehicle_inspection
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__service_id
+msgid "Service"
+msgstr ""
+
+#. module: fleet_vehicle_inspection
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__service_type_id
+msgid "Service Type"
+msgstr ""
+
+#. module: fleet_vehicle_inspection
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_form_view
 msgid "Set to Draft"
 msgstr "Imposta a bozza"
@@ -758,6 +789,11 @@ msgstr "Riga ispezione veicolo"
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_pivot_view
 msgid "Vehicles Inspections"
 msgstr "Ispezioni veicoli"
+
+#. module: fleet_vehicle_inspection
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__vendor_id
+msgid "Vendor"
+msgstr ""
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__website_message_ids
