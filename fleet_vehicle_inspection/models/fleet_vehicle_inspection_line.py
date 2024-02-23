@@ -49,7 +49,7 @@ class FleetVehicleInspectionLine(models.Model):
 
     result_description = fields.Char()
 
-    sequence = fields.Integer(string='Sequence', default=10)
+    sequence = fields.Integer(string="Sequence", default=10)
 
     state = fields.Selection(
         related="inspection_id.state",
