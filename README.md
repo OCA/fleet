@@ -28,6 +28,7 @@ addon | version | maintainers | summary
 [fleet_vehicle_service_kanban](fleet_vehicle_service_kanban/) | 16.0.1.0.0 | [![mamcode](https://github.com/mamcode.png?size=30px)](https://github.com/mamcode) [![ivantodorovich](https://github.com/ivantodorovich.png?size=30px)](https://github.com/ivantodorovich) | Add features of kanban to logs of vehicle services.
 [fleet_vehicle_service_services](fleet_vehicle_service_services/) | 16.0.1.0.0 |  | Add subservices in Services.
 [fleet_vehicle_stock](fleet_vehicle_stock/) | 16.0.1.0.0 | [![marcelsavegnago](https://github.com/marcelsavegnago.png?size=30px)](https://github.com/marcelsavegnago) | This module is an add-on for the Fleet application in Odoo. It allows you to track your Fleet Vehicles in stock moves.
+[fleet_vehicle_usage](fleet_vehicle_usage/) | 16.0.1.0.0 | [![victoralmau](https://github.com/victoralmau.png?size=30px)](https://github.com/victoralmau) | Fleet Vehicle Usage
 
 [//]: # (end addons)
 

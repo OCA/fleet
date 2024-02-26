@@ -15,6 +15,7 @@ setuptools.setup(
         'odoo-addon-fleet_vehicle_service_kanban>=16.0dev,<16.1dev',
         'odoo-addon-fleet_vehicle_service_services>=16.0dev,<16.1dev',
         'odoo-addon-fleet_vehicle_stock>=16.0dev,<16.1dev',
+        'odoo-addon-fleet_vehicle_usage>=16.0dev,<16.1dev',
     ],
     classifiers=[
         'Programming Language :: Python',
