@@ -393,3 +393,13 @@ msgstr "Vehículo"
 #: model:ir.model,name:fleet_vehicle_usage.model_fleet_vehicle_usage
 msgid "Vehicle Usage"
 msgstr "Uso de vehículo"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,help:fleet_vehicle_usage.field_fleet_vehicle_usage__website_message_ids
+msgid "Website communication history"
+msgstr ""
