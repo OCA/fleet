@@ -17,6 +17,7 @@ setuptools.setup(
         'odoo-addon-fleet_vehicle_inspection>=15.0dev,<15.1dev',
         'odoo-addon-fleet_vehicle_inspection_template>=15.0dev,<15.1dev',
         'odoo-addon-fleet_vehicle_log_fuel>=15.0dev,<15.1dev',
+        'odoo-addon-fleet_vehicle_service_activity>=15.0dev,<15.1dev',
         'odoo-addon-fleet_vehicle_service_calendar>=15.0dev,<15.1dev',
         'odoo-addon-fleet_vehicle_service_kanban>=15.0dev,<15.1dev',
         'odoo-addon-fleet_vehicle_service_services>=15.0dev,<15.1dev',
