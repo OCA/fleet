@@ -20,6 +20,7 @@ setuptools.setup(
         'odoo14-addon-fleet_vehicle_notebook',
         'odoo14-addon-fleet_vehicle_ownership',
         'odoo14-addon-fleet_vehicle_pivot_graph',
+        'odoo14-addon-fleet_vehicle_purchase',
         'odoo14-addon-fleet_vehicle_service_calendar',
         'odoo14-addon-fleet_vehicle_service_kanban',
         'odoo14-addon-fleet_vehicle_service_services',
