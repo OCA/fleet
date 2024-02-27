@@ -233,6 +233,11 @@ msgid "New"
 msgstr ""
 
 #. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+#. module: fleet_vehicle_usage
 #: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__activity_date_deadline
 msgid "Next Activity Deadline"
 msgstr ""
