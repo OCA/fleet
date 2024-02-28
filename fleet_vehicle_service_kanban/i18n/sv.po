@@ -88,8 +88,7 @@ msgstr "Bytt leverantör"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,help:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__tag_ids
-msgid ""
-"Classify and analyze your services categories like: Repair, Maintenance"
+msgid "Classify and analyze your services categories like: Repair, Maintenance"
 msgstr ""
 "Klassificera och analysera dina tjänstekategorier som: Reparation, Underhåll"
 
@@ -264,6 +263,11 @@ msgstr "Mina tjänster"
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services_stage__name
 msgid "Name"
 msgstr "Namn"
+
+#. module: fleet_vehicle_service_kanban
+#: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__activity_date_deadline

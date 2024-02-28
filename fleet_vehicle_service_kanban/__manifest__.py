@@ -10,7 +10,7 @@
     "development_status": "Production/Stable",
     "website": "https://github.com/OCA/fleet",
     "license": "AGPL-3",
-    "version": "16.0.1.0.0",
+    "version": "16.0.1.1.0",
     "depends": ["fleet", "mail"],
     "data": [
         "security/ir.model.access.csv",

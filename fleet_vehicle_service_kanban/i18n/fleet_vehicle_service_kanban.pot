@@ -262,6 +262,11 @@ msgid "Name"
 msgstr ""
 
 #. module: fleet_vehicle_service_kanban
+#: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+#. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__activity_date_deadline
 msgid "Next Activity Deadline"
 msgstr ""
