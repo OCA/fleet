@@ -6,3 +6,7 @@
 * `Escodoo <https://www.escodoo.com.br>`_:
 
   * Marcel Savegnago <marcel.savegnago@escodoo.com.br>
+  
+* `Tecnativa <https://www.tecnativa.com>`_:
+
+  * Carolina Fernandez
