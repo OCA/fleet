@@ -33,17 +33,6 @@
                     />
                 </group>
             </xpath>
-            <form position="inside">
-                <div class="oe_chatter">
-                    <field name="message_follower_ids" widget="mail_followers" />
-                    <field name="activity_ids" widget="mail_activity" />
-                    <field
-                        name="message_ids"
-                        widget="mail_thread"
-                        options='{"thread_level": 1}'
-                    />
-                </div>
-            </form>
         </field>
     </record>
     <record id="fleet_vehicle_log_services_view_kanban" model="ir.ui.view">
