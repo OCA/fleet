@@ -1,1 +1,2 @@
-from . import fleet_vehicle_cost, fleet_vehicle
+from . import fleet_vehicle_log_fuel
+from . import fleet_vehicle
