@@ -85,6 +85,11 @@ msgid "Cost"
 msgstr "Costo"
 
 #. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_cost_report__cost_type
+msgid "Cost Type"
+msgstr ""
+
+#. module: fleet_vehicle_log_fuel
 #: model_terms:ir.actions.act_window,help:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_action
 msgid "Create a new fuel log entry"
 msgstr "Crea una nuova voce del registro carburante"
@@ -138,7 +143,7 @@ msgid "Driver"
 msgstr "Autista"
 
 #. module: fleet_vehicle_log_fuel
-#: code:addons/fleet_vehicle_log_fuel/models/fleet_vehicle_cost.py:0
+#: code:addons/fleet_vehicle_log_fuel/models/fleet_vehicle_log_fuel.py:0
 #, python-format
 msgid "Emptying the odometer value of a vehicle is not allowed."
 msgstr "Non è consentito svuotare il valore del contachilometri del veicolo."
@@ -174,6 +179,7 @@ msgid "Font awesome icon e.g. fa-tasks"
 msgstr "Icona Font Awesome es. fa-tasks"
 
 #. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields.selection,name:fleet_vehicle_log_fuel.selection__fleet_vehicle_cost_report__cost_type__fuel
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_costs_report_view_search
 msgid "Fuel"
 msgstr "Carburante"
