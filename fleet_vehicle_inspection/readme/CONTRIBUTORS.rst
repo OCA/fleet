@@ -1,3 +1,7 @@
 * Marcel Savegnago <marcel.savegnago@escodoo.com.br>
 * Brian McMaster <brian@mcmpest.com>
-* Tecnativa - Carolina Fernandez
+
+* `Tecnativa <https://www.tecnativa.com>`_:
+
+  * Carolina Fernandez
+  * Víctor Martínez
