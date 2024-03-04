@@ -1,4 +1,4 @@
-# Copyright 2020 - TODAY, Marcel Savegnago - Escodoo https://www.escodoo.com.br
+# Copyright 2020 - 2024, Marcel Savegnago - Escodoo https://www.escodoo.com.br
 # Copyright 2023 Tecnativa - Carolina Fernandez
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
@@ -7,7 +7,6 @@ from odoo.exceptions import UserError, ValidationError
 
 
 class FleetVehicleInspection(models.Model):
-
     _name = "fleet.vehicle.inspection"
     _description = "Fleet Vehicle Inspection"
     _inherit = ["mail.thread", "mail.activity.mixin"]
@@ -20,7 +19,6 @@ class FleetVehicleInspection(models.Model):
     name = fields.Char(
         "Reference", required=True, index=True, copy=False, default="New"
     )
-
     state = fields.Selection(
         [("draft", "Draft"), ("confirmed", "Confirmed"), ("cancel", "Canceled")],
         copy=False,
@@ -32,7 +30,6 @@ class FleetVehicleInspection(models.Model):
         " * Confirmed: inspection has been confirmed.\n"
         " * Canceled: has been canceled, can't be confirmed anymore.",
     )
-
     vehicle_id = fields.Many2one(
         "fleet.vehicle",
         "Vehicle",
@@ -40,13 +37,11 @@ class FleetVehicleInspection(models.Model):
         required=True,
         states=READONLY_STATES,
     )
-
     odometer_id = fields.Many2one(
         "fleet.vehicle.odometer",
         "Odometer ID",
         help="Odometer measure of the vehicle at the moment of this log",
     )
-
     odometer = fields.Float(
         compute="_compute_odometer",
         inverse="_inverse_odometer",
@@ -54,14 +49,12 @@ class FleetVehicleInspection(models.Model):
         store=True,
         states=READONLY_STATES,
     )
-
     odometer_unit = fields.Selection(
         [("kilometers", "Kilometers"), ("miles", "Miles")],
         default="kilometers",
         required=True,
         states=READONLY_STATES,
     )
-
     date_inspected = fields.Datetime(
         "Inspection Date",
         required=True,
@@ -70,21 +63,17 @@ class FleetVehicleInspection(models.Model):
         copy=False,
         states=READONLY_STATES,
     )
-
     inspected_by = fields.Many2one(
         "res.partner",
         tracking=True,
         states=READONLY_STATES,
     )
-
     direction = fields.Selection(
         selection=[("in", "IN"), ("out", "OUT")],
         default="out",
         states=READONLY_STATES,
     )
-
     note = fields.Html("Notes", states=READONLY_STATES)
-
     inspection_line_ids = fields.One2many(
         "fleet.vehicle.inspection.line",
         "inspection_id",
@@ -92,7 +81,6 @@ class FleetVehicleInspection(models.Model):
         auto_join=True,
         states=READONLY_STATES,
     )
-
     result = fields.Selection(
         [("todo", "Todo"), ("success", "Success"), ("failure", "Failure")],
         "Inspection Result",
@@ -102,7 +90,6 @@ class FleetVehicleInspection(models.Model):
         copy=False,
         store=True,
     )
-
     amount = fields.Monetary("Cost")
     service_type_id = fields.Many2one(
         comodel_name="fleet.service.type",
@@ -118,7 +105,7 @@ class FleetVehicleInspection(models.Model):
     )
     currency_id = fields.Many2one("res.currency", related="company_id.currency_id")
 
-    @api.depends("inspection_line_ids", "state")
+    @api.depends("inspection_line_ids", "inspection_line_ids.result", "state")
     def _compute_inspection_result(self):
         for rec in self:
             if rec.inspection_line_ids:
@@ -131,27 +118,31 @@ class FleetVehicleInspection(models.Model):
             else:
                 rec.result = "todo"
 
-    @api.model
-    def create(self, vals):
-        if vals.get("name", "New") == "New":
-            if vals.get("direction") == "out":
-                vals["name"] = (
-                    self.env["ir.sequence"].next_by_code("fleet.vehicle.inspection.out")
-                    or "/"
-                )
-            else:
-                vals["name"] = (
-                    self.env["ir.sequence"].next_by_code("fleet.vehicle.inspection.in")
-                    or "/"
-                )
-        return super(FleetVehicleInspection, self).create(vals)
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if vals.get("name", "New") == "New":
+                prefix_code = "out" if vals.get("direction") == "out" else "in"
+                code = "fleet.vehicle.inspection.%s" % (prefix_code)
+                vals["name"] = self.env["ir.sequence"].next_by_code(code) or "/"
+        return super().create(vals_list)
 
     def button_cancel(self):
         records = self.filtered(lambda rec: rec.state in ["draft", "confirmed"])
-        services = records.service_id
-        if services:
-            services.sudo().unlink()
-        return records.write({"state": "cancel"})
+        records.mapped("service_id").sudo().unlink()
+        records.state = "cancel"
+        return True
+
+    def _prepare_fleet_vehicle_log_services_vals(self):
+        return {
+            "service_type_id": self.service_type_id.id,
+            "description": self.name,
+            "vehicle_id": self.vehicle_id.id,
+            "amount": self.amount,
+            "odometer": self.odometer,
+            "vendor_id": self.vendor_id.id if self.vendor_id else False,
+            "state": "done",
+        }
 
     def button_confirm(self):
         if any(not rec.inspection_line_ids for rec in self) or any(
@@ -168,40 +159,34 @@ class FleetVehicleInspection(models.Model):
             if not self.service_type_id:
                 raise ValidationError(_("Must select service type"))
             self.service_id = self.env["fleet.vehicle.log.services"].create(
-                {
-                    "service_type_id": self.service_type_id.id,
-                    "description": self.name,
-                    "vehicle_id": self.vehicle_id.id,
-                    "amount": self.amount,
-                    "odometer": self.odometer,
-                    "vendor_id": self.vendor_id.id if self.vendor_id else False,
-                    "state": "done",
-                }
+                self._prepare_fleet_vehicle_log_services_vals()
             )
-
-        return self.write({"state": "confirmed"})
+        self.state = "confirmed"
+        return True
 
     def button_draft(self):
-        return self.write({"state": "draft", "result": "todo"})
+        self.state = "draft"
+        self.result = "todo"
+        return True
 
+    @api.depends("odometer_id", "odometer_id.value")
     def _compute_odometer(self):
-        self.odometer = 0.0
-        for rec in self:
-            rec.odometer = False
-            if rec.odometer_id:
-                rec.odometer = rec.odometer_id.value
+        for rec in self.filtered("odometer_id"):
+            rec.odometer = rec.odometer_id.value
+
+    def _prepare_fleet_vehicle_odometer_vals(self):
+        return {
+            "value": self.odometer,
+            "date": self.date_inspected or fields.Date.context_today(self),
+            "vehicle_id": self.vehicle_id.id,
+        }
 
     def _inverse_odometer(self):
-        for rec in self:
-            if not rec.odometer:
-                raise UserError(
-                    _("Emptying the odometer value of a " "vehicle is not allowed.")
-                )
-            odometer = self.env["fleet.vehicle.odometer"].create(
-                {
-                    "value": rec.odometer,
-                    "date": rec.date_inspected or fields.Date.context_today(rec),
-                    "vehicle_id": rec.vehicle_id.id,
-                }
+        if any(not rec.odometer for rec in self):
+            raise UserError(
+                _("Emptying the odometer value of a " "vehicle is not allowed.")
             )
-            self.odometer_id = odometer
+        for rec in self:
+            rec.odometer_id = self.env["fleet.vehicle.odometer"].create(
+                rec._prepare_fleet_vehicle_odometer_vals()
+            )

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- Copyright 2020 - TODAY, Marcel Savegnago - Escodoo https://www.escodoo.com.br
+<!-- Copyright 2020 - 2024, Marcel Savegnago - Escodoo https://www.escodoo.com.br
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 <odoo>
-    <record model="ir.ui.view" id="fleet_vehicle_inspection_form_view">
+    <record id="fleet_vehicle_inspection_form_view" model="ir.ui.view">
         <field
             name="name"
         >fleet.vehicle.inspection.form (in fleet_vehicle_inspection)</field>
@@ -42,11 +42,11 @@
                 <sheet>
                     <field name="result" invisible="1" />
                     <div
-                        class="badge-pill badge-danger float-right"
+                        class="badge rounded-pill bg-danger float-end text-white"
                         attrs="{'invisible': [('result', 'not in', ['failure'])]}"
                     >Failure</div>
                     <div
-                        class="badge-pill badge-success float-right"
+                        class=" badge rounded-pill bg-success float-end text-white"
                         attrs="{'invisible': [('result', 'not in', ['success'])]}"
                     >Success</div>
                     <div class="oe_title">
@@ -101,6 +101,7 @@
                                         type="object"
                                         class="oe_highlight btn-success"
                                         icon="fa-check-circle"
+                                        title="Success"
                                         groups="fleet.fleet_group_manager"
                                     />
                                     <button
@@ -109,6 +110,7 @@
                                         type="object"
                                         class="oe_highlight btn-danger"
                                         icon="fa-times-circle"
+                                        title="Failure"
                                         groups="fleet.fleet_group_manager"
                                     />
                                 </tree>
@@ -209,7 +211,7 @@
             </form>
         </field>
     </record>
-    <record model="ir.ui.view" id="fleet_vehicle_inspection_search_view">
+    <record id="fleet_vehicle_inspection_search_view" model="ir.ui.view">
         <field
             name="name"
         >fleet.vehicle.inspection.search (in fleet_vehicle_inspection)</field>
@@ -299,7 +301,7 @@
             </search>
         </field>
     </record>
-    <record model="ir.ui.view" id="fleet_vehicle_inspection_tree_view">
+    <record id="fleet_vehicle_inspection_tree_view" model="ir.ui.view">
         <field
             name="name"
         >fleet.vehicle.inspection.tree (in fleet_vehicle_inspection)</field>
@@ -328,7 +330,7 @@
             </tree>
         </field>
     </record>
-    <record model="ir.ui.view" id="fleet_vehicle_inspection_kanban_view">
+    <record id="fleet_vehicle_inspection_kanban_view" model="ir.ui.view">
         <field
             name="name"
         >fleet.vehicle.inspection.kanban (in fleet_vehicle_inspection)</field>
@@ -403,7 +405,7 @@
             </kanban>
         </field>
     </record>
-    <record model='ir.ui.view' id='fleet_vehicle_inspection_pivot_view'>
+    <record id="fleet_vehicle_inspection_pivot_view" model="ir.ui.view">
         <field
             name="name"
         >fleet.vehicle.inspection.pivot (in fleet_vehicle_inspection)</field>
@@ -416,7 +418,7 @@
             </pivot>
         </field>
     </record>
-    <record model="ir.ui.view" id="fleet_vehicle_inspection_calendar_view">
+    <record id="fleet_vehicle_inspection_calendar_view" model="ir.ui.view">
         <field
             name="name"
         >fleet.vehicle.inspection.calendar (in fleet_vehicle_inspection)</field>
@@ -437,7 +439,7 @@
             </calendar>
         </field>
     </record>
-    <record model="ir.ui.view" id="fleet_vehicle_inspection_graph_view">
+    <record id="fleet_vehicle_inspection_graph_view" model="ir.ui.view">
         <field
             name="name"
         >fleet.vehicle.inspection.graph (in fleet_vehicle_inspection)</field>
@@ -448,17 +450,18 @@
             </graph>
         </field>
     </record>
-    <record model="ir.actions.act_window" id="fleet_vehicle_inspection_act_window">
+    <record id="fleet_vehicle_inspection_act_window" model="ir.actions.act_window">
         <field name="name">Vehicle Inspection</field>
         <field name="res_model">fleet.vehicle.inspection</field>
         <field name="view_mode">kanban,tree,calendar,pivot,graph,form</field>
         <field name="domain">[]</field>
         <field name="context">{}</field>
     </record>
-    <record model="ir.ui.menu" id="fleet_vehicle_inspection_menu">
-        <field name="name">Vehicles Inspections</field>
-        <field name="parent_id" ref="fleet.fleet_vehicles" />
-        <field name="action" ref="fleet_vehicle_inspection_act_window" />
-        <field name="sequence" eval="16" />
-    </record>
+    <menuitem
+        id="fleet_vehicle_inspection_menu"
+        name="Vehicles Inspections"
+        parent="fleet.fleet_vehicles"
+        action="fleet_vehicle_inspection_act_window"
+        sequence="16"
+    />
 </odoo>

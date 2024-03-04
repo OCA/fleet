@@ -808,6 +808,3 @@ msgstr "Messaggi sito web"
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__website_message_ids
 msgid "Website communication history"
 msgstr "Cronologia comunicazioni sito web"
-
-#~ msgid "SMS Delivery error"
-#~ msgstr "Errore consegna SMS"
