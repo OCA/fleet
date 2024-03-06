@@ -6,16 +6,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-14 10:08+0000\n"
-"PO-Revision-Date: 2023-10-12 11:38+0000\n"
+"POT-Creation-Date: 2024-03-07 07:33+0000\n"
+"PO-Revision-Date: 2024-03-07 08:35+0100\n"
 "Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
 "Language-Team: \n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #. module: fleet_vehicle_log_fuel
 #: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_needaction
@@ -59,6 +59,11 @@ msgid "Attachment Count"
 msgstr "Conteo de archivos adjuntos"
 
 #. module: fleet_vehicle_log_fuel
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_view_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: fleet_vehicle_log_fuel
 #: model:ir.model.fields.selection,name:fleet_vehicle_log_fuel.selection__fleet_vehicle_log_fuel__state__cancelled
 msgid "Cancelled"
 msgstr "Cancelado"
@@ -87,7 +92,7 @@ msgstr "Coste"
 #. module: fleet_vehicle_log_fuel
 #: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_cost_report__cost_type
 msgid "Cost Type"
-msgstr ""
+msgstr "Tipo de coste"
 
 #. module: fleet_vehicle_log_fuel
 #: model_terms:ir.actions.act_window,help:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_action
@@ -131,6 +136,7 @@ msgstr "Nombre mostrado"
 
 #. module: fleet_vehicle_log_fuel
 #: model:ir.model.fields.selection,name:fleet_vehicle_log_fuel.selection__fleet_vehicle_log_fuel__state__done
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_view_form
 msgid "Done"
 msgstr "Hecho"
 
@@ -140,6 +146,7 @@ msgid "Driver"
 msgstr "Conductor"
 
 #. module: fleet_vehicle_log_fuel
+#. odoo-python
 #: code:addons/fleet_vehicle_log_fuel/models/fleet_vehicle_log_fuel.py:0
 #, python-format
 msgid "Emptying the odometer value of a vehicle is not allowed."
@@ -235,7 +242,6 @@ msgstr "Icono para indicar una actividad de excepción."
 
 #. module: fleet_vehicle_log_fuel
 #: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_needaction
-#: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_unread
 msgid "If checked, new messages require your attention."
 msgstr "Si está marcado hay nuevos mensajes que requieren su atención."
 
@@ -291,11 +297,6 @@ msgid "My Activity Deadline"
 msgstr "Fecha Límite de Mi Actividad"
 
 #. module: fleet_vehicle_log_fuel
-#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__activity_calendar_event_id
-msgid "Next Activity Calendar Event"
-msgstr "Próximo evento del calendario de actividades"
-
-#. module: fleet_vehicle_log_fuel
 #: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__activity_date_deadline
 msgid "Next Activity Deadline"
 msgstr "Siguiente plazo de actividad"
@@ -328,18 +329,13 @@ msgstr "Número de errores"
 
 #. module: fleet_vehicle_log_fuel
 #: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_needaction_counter
-msgid "Number of messages which requires an action"
+msgid "Number of messages requiring action"
 msgstr "Número de mensajes que requieren una acción"
 
 #. module: fleet_vehicle_log_fuel
 #: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_has_error_counter
 msgid "Number of messages with delivery error"
 msgstr "Número de mensajes con error de envío"
-
-#. module: fleet_vehicle_log_fuel
-#: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_unread_counter
-msgid "Number of unread messages"
-msgstr "Número de mensajes no leidos"
 
 #. module: fleet_vehicle_log_fuel
 #: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__odometer_id
@@ -369,13 +365,24 @@ msgstr "Usuario responsable"
 
 #. module: fleet_vehicle_log_fuel
 #: model:ir.model.fields.selection,name:fleet_vehicle_log_fuel.selection__fleet_vehicle_log_fuel__state__running
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_view_form
 msgid "Running"
 msgstr "En proceso"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__service_id
+msgid "Service"
+msgstr "Servicio"
 
 #. module: fleet_vehicle_log_fuel
 #: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__service_type_id
 msgid "Service Type"
 msgstr "Tipo de Servicio"
+
+#. module: fleet_vehicle_log_fuel
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_view_form
+msgid "Set to Todo"
+msgstr "Marcar como Por hacer"
 
 #. module: fleet_vehicle_log_fuel
 #: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__state
@@ -416,21 +423,6 @@ msgid "Unit"
 msgstr "Unidad"
 
 #. module: fleet_vehicle_log_fuel
-#: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__odometer_unit
-msgid "Unit of the odometer "
-msgstr "Unidad del odómetro "
-
-#. module: fleet_vehicle_log_fuel
-#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_unread
-msgid "Unread Messages"
-msgstr "Mensajes sin leer"
-
-#. module: fleet_vehicle_log_fuel
-#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_unread_counter
-msgid "Unread Messages Counter"
-msgstr "Contador de mensajes sin leer"
-
-#. module: fleet_vehicle_log_fuel
 #: model:ir.model,name:fleet_vehicle_log_fuel.model_fleet_vehicle
 #: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__vehicle_id
 msgid "Vehicle"
@@ -452,16 +444,6 @@ msgid "Vendor Reference"
 msgstr "Referencia de proveedor"
 
 #. module: fleet_vehicle_log_fuel
-#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__website_message_ids
-msgid "Website Messages"
-msgstr "Mensajes de la Página web"
-
-#. module: fleet_vehicle_log_fuel
-#: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__website_message_ids
-msgid "Website communication history"
-msgstr "Historial de la comunicación en la web"
-
-#. module: fleet_vehicle_log_fuel
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_view_form
 msgid "Write here any other information related to the service completed."
 msgstr ""
@@ -472,9 +454,3 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_view_form
 msgid "show the fuel logs for this vehicle"
 msgstr "mostrar los registros de combustible para este vehículo"
-
-#~ msgid "SMS Delivery error"
-#~ msgstr "Error en la entrega del SMS"
-
-#~ msgid "Followers (Channels)"
-#~ msgstr "Seguidores (Canales)"

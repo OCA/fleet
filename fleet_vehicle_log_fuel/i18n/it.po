@@ -468,9 +468,3 @@ msgstr "Indicare qui ogni altra informazione relativa al servizio completato."
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_view_form
 msgid "show the fuel logs for this vehicle"
 msgstr "visualizza i registri carburante per questo veicolo"
-
-#~ msgid "SMS Delivery error"
-#~ msgstr "Errore consegna SMS"
-
-#~ msgid "Followers (Channels)"
-#~ msgstr "Seguito da (canali)"

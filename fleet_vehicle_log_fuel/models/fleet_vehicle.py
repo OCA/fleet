@@ -2,21 +2,26 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class FleetVehicle(models.Model):
     _inherit = "fleet.vehicle"
 
     log_fuels = fields.One2many("fleet.vehicle.log.fuel", "vehicle_id", "Fuel Logs")
-    fuel_count = fields.Integer(compute="_compute_count_all", string="Fuel Log Count")
+    fuel_count = fields.Integer(compute="_compute_fuel_count", string="Fuel Log Count")
 
-    def _compute_count_all(self):
-        super()._compute_count_all()
-        LogFuel = self.env["fleet.vehicle.log.fuel"]
+    @api.depends("log_fuels")
+    def _compute_fuel_count(self):
+        res = self.env["fleet.vehicle.log.fuel"].read_group(
+            domain=[("vehicle_id", "in", self.ids)],
+            fields=["vehicle_id"],
+            groupby=["vehicle_id"],
+        )
+        res_dict = {x["vehicle_id"][0]: x["vehicle_id_count"] for x in res}
         for record in self:
-            record.fuel_count = LogFuel.search_count([("vehicle_id", "=", record.id)])
-        return
+            record.fuel_count = res_dict.get(record.id, 0)
+        return res
 
     def action_view_log_fuel(self):
         action = self.env["ir.actions.act_window"]._for_xml_id(
