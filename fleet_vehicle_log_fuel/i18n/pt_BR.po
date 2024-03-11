@@ -58,6 +58,11 @@ msgid "Attachment Count"
 msgstr "Contagem de Anexos"
 
 #. module: fleet_vehicle_log_fuel
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_view_form
+msgid "Cancel"
+msgstr ""
+
+#. module: fleet_vehicle_log_fuel
 #: model:ir.model.fields.selection,name:fleet_vehicle_log_fuel.selection__fleet_vehicle_log_fuel__state__cancelled
 msgid "Cancelled"
 msgstr "Cancelado"
@@ -130,6 +135,7 @@ msgstr "Nome exibido"
 
 #. module: fleet_vehicle_log_fuel
 #: model:ir.model.fields.selection,name:fleet_vehicle_log_fuel.selection__fleet_vehicle_log_fuel__state__done
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_view_form
 msgid "Done"
 msgstr "Concluído"
 
@@ -139,6 +145,7 @@ msgid "Driver"
 msgstr "Motorista"
 
 #. module: fleet_vehicle_log_fuel
+#. odoo-python
 #: code:addons/fleet_vehicle_log_fuel/models/fleet_vehicle_log_fuel.py:0
 #, python-format
 msgid "Emptying the odometer value of a vehicle is not allowed."
@@ -233,7 +240,6 @@ msgstr "Ícone para indicar uma atividade excepcional."
 
 #. module: fleet_vehicle_log_fuel
 #: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_needaction
-#: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_unread
 msgid "If checked, new messages require your attention."
 msgstr "Se marcado, novas mensagens solicitarão sua atenção."
 
@@ -326,18 +332,13 @@ msgstr "Número de erros"
 
 #. module: fleet_vehicle_log_fuel
 #: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_needaction_counter
-msgid "Number of messages which requires an action"
-msgstr "Número de mensagens que requer uma ação"
+msgid "Number of messages requiring action"
+msgstr ""
 
 #. module: fleet_vehicle_log_fuel
 #: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_has_error_counter
 msgid "Number of messages with delivery error"
 msgstr "Número de mensagens com erro de entrega"
-
-#. module: fleet_vehicle_log_fuel
-#: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_unread_counter
-msgid "Number of unread messages"
-msgstr "Número de mensagens não lidas"
 
 #. module: fleet_vehicle_log_fuel
 #: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__odometer_id
@@ -367,13 +368,24 @@ msgstr "Usuário Responsável"
 
 #. module: fleet_vehicle_log_fuel
 #: model:ir.model.fields.selection,name:fleet_vehicle_log_fuel.selection__fleet_vehicle_log_fuel__state__running
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_view_form
 msgid "Running"
 msgstr "Em Uso"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__service_id
+msgid "Service"
+msgstr ""
 
 #. module: fleet_vehicle_log_fuel
 #: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__service_type_id
 msgid "Service Type"
 msgstr "Tipo de Serviço"
+
+#. module: fleet_vehicle_log_fuel
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_view_form
+msgid "Set to Todo"
+msgstr ""
 
 #. module: fleet_vehicle_log_fuel
 #: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__state
@@ -412,21 +424,6 @@ msgstr "Tipo da atividade de exceção no registro."
 #: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__odometer_unit
 msgid "Unit"
 msgstr "Unidade"
-
-#. module: fleet_vehicle_log_fuel
-#: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__odometer_unit
-msgid "Unit of the odometer "
-msgstr "Unidade de medida do odômetro "
-
-#. module: fleet_vehicle_log_fuel
-#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_unread
-msgid "Unread Messages"
-msgstr "Mensagens Não Lidas"
-
-#. module: fleet_vehicle_log_fuel
-#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_unread_counter
-msgid "Unread Messages Counter"
-msgstr "Contador de Mensagens Não Lidas"
 
 #. module: fleet_vehicle_log_fuel
 #: model:ir.model,name:fleet_vehicle_log_fuel.model_fleet_vehicle
@@ -469,3 +466,18 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_view_form
 msgid "show the fuel logs for this vehicle"
 msgstr "mostrar os registros de combustível para este veículo"
+
+#~ msgid "Number of messages which requires an action"
+#~ msgstr "Número de mensagens que requer uma ação"
+
+#~ msgid "Number of unread messages"
+#~ msgstr "Número de mensagens não lidas"
+
+#~ msgid "Unit of the odometer "
+#~ msgstr "Unidade de medida do odômetro "
+
+#~ msgid "Unread Messages"
+#~ msgstr "Mensagens Não Lidas"
+
+#~ msgid "Unread Messages Counter"
+#~ msgstr "Contador de Mensagens Não Lidas"
