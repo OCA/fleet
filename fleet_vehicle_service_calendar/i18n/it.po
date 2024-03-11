@@ -40,6 +40,7 @@ msgid "Calendar Event"
 msgstr "Evento calendario"
 
 #. module: fleet_vehicle_service_calendar
+#. odoo-python
 #: code:addons/fleet_vehicle_service_calendar/models/fleet_vehicle_log_services.py:0
 #, python-format
 msgid ""
@@ -60,6 +61,7 @@ msgid "Vehicle Service"
 msgstr "Servizio veicolo"
 
 #. module: fleet_vehicle_service_calendar
+#. odoo-python
 #: code:addons/fleet_vehicle_service_calendar/models/fleet_vehicle_log_services.py:0
 #, python-format
 msgid "unknown"
