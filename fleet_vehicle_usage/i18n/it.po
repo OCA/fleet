@@ -230,12 +230,15 @@ msgstr "Scadenza mia attività"
 #. module: fleet_vehicle_usage
 #. odoo-python
 #: code:addons/fleet_vehicle_usage/models/fleet_vehicle_usage.py:0
-#: code:addons/fleet_vehicle_usage/models/fleet_vehicle_usage.py:0
-#: code:addons/fleet_vehicle_usage/models/fleet_vehicle_usage.py:0
 #: model:ir.model.fields.selection,name:fleet_vehicle_usage.selection__fleet_vehicle_usage__state__draft
 #, python-format
 msgid "New"
 msgstr "Nuovo"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
 
 #. module: fleet_vehicle_usage
 #: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__activity_date_deadline
