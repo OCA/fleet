@@ -1,0 +1,55 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fleet_vehicle_service_calendar
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: fleet_vehicle_service_calendar
+#: model:ir.model.fields,field_description:fleet_vehicle_service_calendar.field_fleet_vehicle_log_services__meeting_count
+msgid "# Meetings"
+msgstr ""
+
+#. module: fleet_vehicle_service_calendar
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_service_calendar.fleet_vehicle_log_services_view_form
+msgid ""
+"<span class=\"o_stat_text\" attrs=\"{'invisible': [('meeting_count', '&lt;', 2)]}\"> Meetings</span>\n"
+"                        <span class=\"o_stat_text\" attrs=\"{'invisible': [('meeting_count', '&gt;', 1)]}\"> Meeting</span>"
+msgstr ""
+
+#. module: fleet_vehicle_service_calendar
+#: model:ir.model,name:fleet_vehicle_service_calendar.model_calendar_event
+msgid "Calendar Event"
+msgstr ""
+
+#. module: fleet_vehicle_service_calendar
+#: code:addons/fleet_vehicle_service_calendar/models/fleet_vehicle_log_services.py:0
+#, python-format
+msgid ""
+"Meeting scheduled at '%(html_time)s'<br> Subject: %(meeting_subject)s <br> "
+"Duration: %(duration)s hours"
+msgstr ""
+
+#. module: fleet_vehicle_service_calendar
+#: model:ir.model,name:fleet_vehicle_service_calendar.model_fleet_vehicle_log_services
+msgid "Services for vehicles"
+msgstr ""
+
+#. module: fleet_vehicle_service_calendar
+#: model:ir.model.fields,field_description:fleet_vehicle_service_calendar.field_calendar_event__vehicle_service_id
+msgid "Vehicle Service"
+msgstr ""
+
+#. module: fleet_vehicle_service_calendar
+#: code:addons/fleet_vehicle_service_calendar/models/fleet_vehicle_log_services.py:0
+#, python-format
+msgid "unknown"
+msgstr ""
