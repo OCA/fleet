@@ -2,13 +2,16 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 
+
 from odoo import fields, models
+
 
 
 class FleetVehicle(models.Model):
     _inherit = "fleet.vehicle"
 
     log_fuels = fields.One2many("fleet.vehicle.log.fuel", "vehicle_id", "Fuel Logs")
+
     fuel_count = fields.Integer(compute="_compute_count_all", string="Fuel Log Count")
 
     def _compute_count_all(self):
@@ -17,6 +20,7 @@ class FleetVehicle(models.Model):
         for record in self:
             record.fuel_count = LogFuel.search_count([("vehicle_id", "=", record.id)])
         return
+
 
     def action_view_log_fuel(self):
         action = self.env["ir.actions.act_window"]._for_xml_id(

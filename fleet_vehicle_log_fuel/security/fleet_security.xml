@@ -16,5 +16,6 @@
         <field name="name">Administrator has all rights on vehicle's fuel log</field>
         <field name="model_id" ref="model_fleet_vehicle_log_fuel" />
         <field name="groups" eval="[(4, ref('fleet.fleet_group_manager'))]" />
+
     </record>
 </odoo>

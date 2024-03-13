@@ -1,4 +1,6 @@
 # Copyright 2022 ForgeFlow S.L.  <https://www.forgeflow.com>
+
+
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 from odoo import _, api, fields, models
@@ -11,16 +13,19 @@ class FleetVehicleLogFuel(models.Model):
     _rec_name = "service_type_id"
     _description = "Fuel log for vehicles"
 
+
     active = fields.Boolean(default=True)
     vehicle_id = fields.Many2one(
         "fleet.vehicle", "Vehicle", required=True, help="Vehicle concerned by this log"
     )
     amount = fields.Monetary("Cost")
     description = fields.Char()
+
     odometer_id = fields.Many2one(
         "fleet.vehicle.odometer",
         "Odometer",
         help="Odometer measure of the vehicle at the moment of this log",
+
     )
     odometer = fields.Float(
         compute="_compute_odometer",
@@ -33,6 +38,7 @@ class FleetVehicleLogFuel(models.Model):
     )
     date = fields.Date(
         help="Date when the cost has been executed", default=fields.Date.context_today
+
     )
     company_id = fields.Many2one(
         "res.company", "Company", default=lambda self: self.env.company
@@ -42,11 +48,13 @@ class FleetVehicleLogFuel(models.Model):
         "res.partner",
         string="Driver",
         compute="_compute_purchaser_id",
+
         readonly=False,
         store=True,
     )
     inv_ref = fields.Char("Vendor Reference")
     vendor_id = fields.Many2one("res.partner", "Vendor")
+
     notes = fields.Text()
     service_type_id = fields.Many2one(
         "fleet.service.type",
@@ -55,6 +63,7 @@ class FleetVehicleLogFuel(models.Model):
         default=lambda self: self.env.ref(
             "fleet.type_service_refueling", raise_if_not_found=False
         ),
+
     )
     state = fields.Selection(
         [
@@ -66,8 +75,10 @@ class FleetVehicleLogFuel(models.Model):
         default="todo",
         string="Stage",
     )
+
     liter = fields.Float()
     price_per_liter = fields.Float()
+
 
     @api.onchange("liter", "price_per_liter", "amount")
     def _onchange_liter_price_amount(self):
@@ -88,6 +99,7 @@ class FleetVehicleLogFuel(models.Model):
             and round(amount / price_per_liter, 2) != liter
         ):
             self.liter = round(amount / price_per_liter, 2)
+
 
     def _compute_odometer(self):
         self.odometer = 0
@@ -124,3 +136,4 @@ class FleetVehicleLogFuel(models.Model):
     def _compute_purchaser_id(self):
         for service in self:
             service.purchaser_id = service.vehicle_id.driver_id
+
