@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <record id="mail_act_fleet_service_to_check" model="mail.activity.type">
+        <field name="name">Service to Check</field>
+        <field name="icon">fa-car</field>
+        <field name="res_model">fleet.vehicle.log.services</field>
+    </record>
+</odoo>

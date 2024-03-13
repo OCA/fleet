@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.hr.fleet</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="90" />
+        <field name="inherit_id" ref="base.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <div id="end_contract_setting" position="after">
+                <div class="row mt16 o_settings_container" id="end_service_setting">
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane" />
+                        <div class="o_setting_right_pane">
+                            <span class="o_form_label">Date Service Activity</span>
+                            <div class="text-muted content-group mt16">
+                                <span>Create an activity </span>
+                                <field
+                                    name="delay_alert_service"
+                                    class="text-center oe_inline"
+                                />
+                                <span> days before date service</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </field>
+    </record>
+</odoo>
