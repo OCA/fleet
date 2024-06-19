@@ -2,6 +2,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 from odoo import api, models
+from odoo.tools import date_utils
 
 
 class FleetVehicleAssignationLog(models.Model):
@@ -18,5 +19,5 @@ class FleetVehicleAssignationLog(models.Model):
             ]
         )
         if history:
-            history.write({"date_end": res.date_start})
+            history.write({"date_end": date_utils.subtract(res.date_start, days=1)})
         return res
