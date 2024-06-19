@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-11-02 14:36+0000\n"
+"PO-Revision-Date: 2024-06-19 12:51+0000\n"
 "Last-Translator: jakobkrabbe <jakob@syscare.se>\n"
 "Language-Team: none\n"
 "Language: sv\n"
@@ -267,7 +267,7 @@ msgstr "Namn"
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__activity_calendar_event_id
 msgid "Next Activity Calendar Event"
-msgstr ""
+msgstr "Nästa aktivitetskalenderhändelse"
 
 #. module: fleet_vehicle_service_kanban
 #: model:ir.model.fields,field_description:fleet_vehicle_service_kanban.field_fleet_vehicle_log_services__activity_date_deadline
