@@ -10,7 +10,7 @@
     "development_status": "Production/Stable",
     "website": "https://github.com/OCA/fleet",
     "license": "AGPL-3",
-    "version": "16.0.1.0.0",
+    "version": "16.0.1.0.1",
     "depends": ["calendar", "fleet_vehicle_service_kanban"],
     "data": [
         "views/fleet_vehicle_log_services_views.xml",
