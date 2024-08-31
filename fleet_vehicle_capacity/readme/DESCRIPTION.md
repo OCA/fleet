@@ -1,0 +1,1 @@
+This module adds fields to manage the weight and volume capacity in the vehicle model. It is also designed to be easily expandable, allowing the addition of other vehicle-specific capacities in the future as needed.
