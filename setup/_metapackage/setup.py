@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo14-addon-fleet_vehicle_calendar_year',
+        'odoo14-addon-fleet_vehicle_capacity',
         'odoo14-addon-fleet_vehicle_category',
         'odoo14-addon-fleet_vehicle_fuel_capacity',
         'odoo14-addon-fleet_vehicle_fuel_type_ethanol',
