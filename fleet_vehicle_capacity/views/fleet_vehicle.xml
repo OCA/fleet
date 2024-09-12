@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2024 - TODAY, Marcel Savegnago <marcel.savegnago@escodoo.com.br>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record model="ir.ui.view" id="fleet_vehicle_form_view">
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_form" />
+        <field name="arch" type="xml">
+            <field name="color" position="after">
+                <field name="vehicle_weight" />
+                <field name="weight_capacity" />
+                <field name="weight_uom_id" />
+                <field name="volume_capacity" />
+                <field name="volume_uom_id" />
+                <field name="passenger_capacity" />
+                <field name="passenger_uom_id" />
+            </field>
+        </field>
+    </record>
+
+
+</odoo>

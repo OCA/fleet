@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2024 - TODAY, Marcel Savegnago <marcel.savegnago@escodoo.com.br>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+    <record model="ir.ui.view" id="fleet_vehicle_model_form_view">
+        <field name="model">fleet.vehicle.model</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_model_view_form" />
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page string="Capacities" name="capacities">
+                    <group>
+                        <group>
+                            <field name="vehicle_weight" />
+                            <field name="weight_capacity" />
+                            <field name="weight_uom_id" />
+                        </group>
+                        <group>
+                            <field name="volume_capacity" />
+                            <field name="volume_uom_id" />
+                        </group>
+                        <group>
+                            <field name="passenger_capacity" />
+                            <field name="passenger_uom_id" />
+                        </group>
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="fleet_vehicle_model_tree_view">
+        <field name="model">fleet.vehicle.model</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_model_view_tree" />
+        <field name="arch" type="xml">
+            <field name="vehicle_type" position="after">
+                <field name="vehicle_weight" optional="show" />
+                <field name="weight_capacity" optional="show" />
+                <field name="weight_uom_id" optional="show" />
+                <field name="volume_capacity" optional="show" />
+                <field name="volume_uom_id" optional="show" />
+                <field name="passenger_capacity" optional="show" />
+                <field name="passenger_uom_id" optional="show" />
+            </field>
+        </field>
+    </record>
+
+</odoo>
