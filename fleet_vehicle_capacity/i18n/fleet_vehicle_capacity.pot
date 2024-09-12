@@ -1,0 +1,166 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fleet_vehicle_capacity
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: fleet_vehicle_capacity
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_capacity.fleet_vehicle_model_form_view
+msgid "Capacities"
+msgstr ""
+
+#. module: fleet_vehicle_capacity
+#: model:ir.model,name:fleet_vehicle_capacity.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: fleet_vehicle_capacity
+#: model:ir.model.fields,help:fleet_vehicle_capacity.field_res_config_settings__vehicle_passenger_uom_id
+msgid "Default Unit of measure for vehicle passenger capacity."
+msgstr ""
+
+#. module: fleet_vehicle_capacity
+#: model:ir.model.fields,help:fleet_vehicle_capacity.field_res_config_settings__vehicle_volume_uom_id
+msgid "Default Unit of measure for vehicle volume capacity."
+msgstr ""
+
+#. module: fleet_vehicle_capacity
+#: model:ir.model.fields,help:fleet_vehicle_capacity.field_res_config_settings__vehicle_weight_uom_id
+msgid "Default Unit of measure for vehicle weight and capacity."
+msgstr ""
+
+#. module: fleet_vehicle_capacity
+#: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_res_config_settings__vehicle_passenger_uom_id
+msgid "Default Vehicle Passenger Capacity UOM"
+msgstr ""
+
+#. module: fleet_vehicle_capacity
+#: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_res_config_settings__vehicle_volume_uom_id
+msgid "Default Vehicle Volume Capacity UOM"
+msgstr ""
+
+#. module: fleet_vehicle_capacity
+#: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_res_config_settings__vehicle_weight_uom_id
+msgid "Default Vehicle Weight and Capacity UOM"
+msgstr ""
+
+#. module: fleet_vehicle_capacity
+#: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle__display_name
+#: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle_model__display_name
+#: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_res_config_settings__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: fleet_vehicle_capacity
+#: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle__id
+#: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle_model__id
+#: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_res_config_settings__id
+msgid "ID"
+msgstr ""
+
+#. module: fleet_vehicle_capacity
+#: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle____last_update
+#: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle_model____last_update
+#: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_res_config_settings____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: fleet_vehicle_capacity
+#: model:ir.model,name:fleet_vehicle_capacity.model_fleet_vehicle_model
+msgid "Model of a vehicle"
+msgstr ""
+
+#. module: fleet_vehicle_capacity
+#: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle__passenger_capacity
+#: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle_model__passenger_capacity
+msgid "Passenger Capacity"
+msgstr ""
+
+#. module: fleet_vehicle_capacity
+#: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle__passenger_uom_id
+#: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle_model__passenger_uom_id
+msgid "Passenger Capacity UOM"
+msgstr ""
+
+#. module: fleet_vehicle_capacity
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_capacity.res_config_settings_form_view
+msgid "Set the passenger unit of measure for vehicles capacity"
+msgstr ""
+
+#. module: fleet_vehicle_capacity
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_capacity.res_config_settings_form_view
+msgid "Set the volume unit of measure for vehicles capacity"
+msgstr ""
+
+#. module: fleet_vehicle_capacity
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_capacity.res_config_settings_form_view
+msgid "Set the weight unit of measure for vehicles and capacity"
+msgstr ""
+
+#. module: fleet_vehicle_capacity
+#: model:ir.model.fields,help:fleet_vehicle_capacity.field_fleet_vehicle__passenger_capacity
+#: model:ir.model.fields,help:fleet_vehicle_capacity.field_fleet_vehicle_model__passenger_capacity
+msgid "The maximum passenger capacity the vehicle can support."
+msgstr ""
+
+#. module: fleet_vehicle_capacity
+#: model:ir.model.fields,help:fleet_vehicle_capacity.field_fleet_vehicle__volume_capacity
+#: model:ir.model.fields,help:fleet_vehicle_capacity.field_fleet_vehicle_model__volume_capacity
+msgid "The maximum volume capacity the vehicle can support."
+msgstr ""
+
+#. module: fleet_vehicle_capacity
+#: model:ir.model.fields,help:fleet_vehicle_capacity.field_fleet_vehicle__weight_capacity
+#: model:ir.model.fields,help:fleet_vehicle_capacity.field_fleet_vehicle_model__weight_capacity
+msgid "The maximum weight capacity the vehicle can support."
+msgstr ""
+
+#. module: fleet_vehicle_capacity
+#: model:ir.model.fields,help:fleet_vehicle_capacity.field_fleet_vehicle__vehicle_weight
+#: model:ir.model.fields,help:fleet_vehicle_capacity.field_fleet_vehicle_model__vehicle_weight
+msgid "The weight of the vehicle."
+msgstr ""
+
+#. module: fleet_vehicle_capacity
+#: model:ir.model,name:fleet_vehicle_capacity.model_fleet_vehicle
+msgid "Vehicle"
+msgstr ""
+
+#. module: fleet_vehicle_capacity
+#: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle__vehicle_weight
+#: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle_model__vehicle_weight
+msgid "Vehicle Weight"
+msgstr ""
+
+#. module: fleet_vehicle_capacity
+#: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle__volume_capacity
+#: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle_model__volume_capacity
+msgid "Volume Capacity"
+msgstr ""
+
+#. module: fleet_vehicle_capacity
+#: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle__volume_uom_id
+#: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle_model__volume_uom_id
+msgid "Volume Capacity UOM"
+msgstr ""
+
+#. module: fleet_vehicle_capacity
+#: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle__weight_capacity
+#: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle_model__weight_capacity
+msgid "Weight Capacity"
+msgstr ""
+
+#. module: fleet_vehicle_capacity
+#: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle__weight_uom_id
+#: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle_model__weight_uom_id
+msgid "Weight and Capacity UOM"
+msgstr ""
