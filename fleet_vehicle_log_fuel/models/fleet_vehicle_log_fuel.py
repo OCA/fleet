@@ -101,14 +101,17 @@ class FleetVehicleLogFuel(models.Model):
                 raise UserError(
                     _("Emptying the odometer value of a vehicle is not allowed.")
                 )
-            odometer = self.env["fleet.vehicle.odometer"].create(
-                {
-                    "value": record.odometer,
-                    "date": record.date or fields.Date.context_today(record),
-                    "vehicle_id": record.vehicle_id.id,
-                }
-            )
-            self.odometer_id = odometer
+            if not record.odometer_id:
+                odometer = self.env["fleet.vehicle.odometer"].create(
+                    {
+                        "value": record.odometer,
+                        "date": record.date or fields.Date.context_today(record),
+                        "vehicle_id": record.vehicle_id.id,
+                    }
+                )
+                record.odometer_id = odometer
+            else:
+                record.odometer_id.value = record.odometer
 
     @api.model_create_multi
     def create(self, vals_list):
