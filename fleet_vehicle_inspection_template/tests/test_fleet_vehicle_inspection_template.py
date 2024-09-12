@@ -1,10 +1,10 @@
 # Copyright 2021 - TODAY, Marcel Savegnago - Escodoo
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl
 
-from odoo.tests import SavepointCase
+from odoo.tests import TransactionCase
 
 
-class TestFleetVehicleInspectionTemplate(SavepointCase):
+class TestFleetVehicleInspectionTemplate(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super(TestFleetVehicleInspectionTemplate, cls).setUpClass()
