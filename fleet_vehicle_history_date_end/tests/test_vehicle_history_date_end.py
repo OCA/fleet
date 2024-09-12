@@ -12,7 +12,7 @@ class TestFleetVehicleDateEnd(TransactionCase):
 
     def test_change_driver_history_date_end(self):
         """Check correct assignation of date_end in history of previous driver."""
-        first_log = self.vehicle.log_drivers
+        first_log = self.vehicle.log_drivers[0]
         self.assertFalse(first_log.date_end)
         self.vehicle.write(
             {"driver_id": self.env.ref("base.res_partner_address_25").id}
@@ -23,7 +23,7 @@ class TestFleetVehicleDateEnd(TransactionCase):
     def test_apply_future_driver(self):
         """Check correct assignation of date_end in previos history log
         when press button to apply future driver."""
-        first_log = self.vehicle.log_drivers
+        first_log = self.vehicle.log_drivers[0]
         self.vehicle.write(
             {"future_driver_id": self.env.ref("base.res_partner_address_17").id}
         )
