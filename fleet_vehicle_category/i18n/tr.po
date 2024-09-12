@@ -17,6 +17,11 @@ msgstr ""
 "X-Generator: Weblate 4.3.2\n"
 
 #. module: fleet_vehicle_category
+#: model:ir.ui.menu,name:fleet_vehicle_category.fleet_vehicle_category_menu
+msgid "Categories"
+msgstr ""
+
+#. module: fleet_vehicle_category
 #: model:ir.model.fields,field_description:fleet_vehicle_category.field_fleet_vehicle_category__name
 msgid "Category"
 msgstr "Kategori"
@@ -86,7 +91,6 @@ msgstr ""
 #. module: fleet_vehicle_category
 #: model:ir.actions.act_window,name:fleet_vehicle_category.fleet_vehicle_category_act_window
 #: model:ir.model.fields,field_description:fleet_vehicle_category.field_fleet_vehicle__vehicle_category_id
-#: model:ir.ui.menu,name:fleet_vehicle_category.fleet_vehicle_category_menu
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_category.fleet_vehicle_category_view_form
 msgid "Vehicle Category"
 msgstr ""
