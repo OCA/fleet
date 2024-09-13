@@ -6,162 +6,165 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2024-09-13 23:06+0000\n"
+"Last-Translator: Marcel Savegnago <marcel.savegnago@gmail.com>\n"
 "Language-Team: none\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 5.6.2\n"
 
 #. module: fleet_vehicle_capacity
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_capacity.fleet_vehicle_model_form_view
 msgid "Capacities"
-msgstr ""
+msgstr "Capacidades"
 
 #. module: fleet_vehicle_capacity
 #: model:ir.model,name:fleet_vehicle_capacity.model_res_config_settings
 msgid "Config Settings"
-msgstr ""
+msgstr "Opções de Configuração"
 
 #. module: fleet_vehicle_capacity
 #: model:ir.model.fields,help:fleet_vehicle_capacity.field_res_config_settings__vehicle_passenger_uom_id
 msgid "Default Unit of measure for vehicle passenger capacity."
-msgstr ""
+msgstr "Unidade de medida padrão para a capacidade de passageiros do veículo."
 
 #. module: fleet_vehicle_capacity
 #: model:ir.model.fields,help:fleet_vehicle_capacity.field_res_config_settings__vehicle_volume_uom_id
 msgid "Default Unit of measure for vehicle volume capacity."
-msgstr ""
+msgstr "Unidade de medida padrão para a capacidade de volume do veículo."
 
 #. module: fleet_vehicle_capacity
 #: model:ir.model.fields,help:fleet_vehicle_capacity.field_res_config_settings__vehicle_weight_uom_id
 msgid "Default Unit of measure for vehicle weight and capacity."
-msgstr ""
+msgstr "Unidade de medida padrão para peso e capacidade do veículo."
 
 #. module: fleet_vehicle_capacity
 #: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_res_config_settings__vehicle_passenger_uom_id
 msgid "Default Vehicle Passenger Capacity UOM"
-msgstr ""
+msgstr "UM Padrão da Capacidade de Passageiros do Veículo"
 
 #. module: fleet_vehicle_capacity
 #: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_res_config_settings__vehicle_volume_uom_id
 msgid "Default Vehicle Volume Capacity UOM"
-msgstr ""
+msgstr "UM Padrão da Capacidade de Volume do Veículo"
 
 #. module: fleet_vehicle_capacity
 #: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_res_config_settings__vehicle_weight_uom_id
 msgid "Default Vehicle Weight and Capacity UOM"
-msgstr ""
+msgstr "UM Padrão da Peso e Capacidade do veículo"
 
 #. module: fleet_vehicle_capacity
 #: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle__display_name
 #: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle_model__display_name
 #: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_res_config_settings__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nome Exibido"
 
 #. module: fleet_vehicle_capacity
 #: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle__id
 #: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle_model__id
 #: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_res_config_settings__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: fleet_vehicle_capacity
 #: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle____last_update
 #: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle_model____last_update
 #: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_res_config_settings____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Última Modificação em"
 
 #. module: fleet_vehicle_capacity
 #: model:ir.model,name:fleet_vehicle_capacity.model_fleet_vehicle_model
 msgid "Model of a vehicle"
-msgstr ""
+msgstr "Modelo do veículo"
 
 #. module: fleet_vehicle_capacity
 #: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle__passenger_capacity
 #: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle_model__passenger_capacity
 msgid "Passenger Capacity"
-msgstr ""
+msgstr "Capacidade de Passageiros"
 
 #. module: fleet_vehicle_capacity
 #: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle__passenger_uom_id
 #: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle_model__passenger_uom_id
 msgid "Passenger Capacity UOM"
-msgstr ""
+msgstr "UM de Capacidade de Passageiros"
 
 #. module: fleet_vehicle_capacity
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_capacity.res_config_settings_form_view
 msgid "Set the passenger unit of measure for vehicles capacity"
 msgstr ""
+"Defina a unidade de medida de passageiros para a capacidade dos veículos"
 
 #. module: fleet_vehicle_capacity
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_capacity.res_config_settings_form_view
 msgid "Set the volume unit of measure for vehicles capacity"
-msgstr ""
+msgstr "Defina a unidade de medida de volume para a capacidade dos veículos"
 
 #. module: fleet_vehicle_capacity
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_capacity.res_config_settings_form_view
 msgid "Set the weight unit of measure for vehicles and capacity"
-msgstr ""
+msgstr "Defina a unidade de medida de peso para veículos e capacidade"
 
 #. module: fleet_vehicle_capacity
 #: model:ir.model.fields,help:fleet_vehicle_capacity.field_fleet_vehicle__passenger_capacity
 #: model:ir.model.fields,help:fleet_vehicle_capacity.field_fleet_vehicle_model__passenger_capacity
 msgid "The maximum passenger capacity the vehicle can support."
-msgstr ""
+msgstr "A capacidade máxima de passageiros que o veículo pode suportar."
 
 #. module: fleet_vehicle_capacity
 #: model:ir.model.fields,help:fleet_vehicle_capacity.field_fleet_vehicle__volume_capacity
 #: model:ir.model.fields,help:fleet_vehicle_capacity.field_fleet_vehicle_model__volume_capacity
 msgid "The maximum volume capacity the vehicle can support."
-msgstr ""
+msgstr "A capacidade máxima de volume que o veículo pode suportar."
 
 #. module: fleet_vehicle_capacity
 #: model:ir.model.fields,help:fleet_vehicle_capacity.field_fleet_vehicle__weight_capacity
 #: model:ir.model.fields,help:fleet_vehicle_capacity.field_fleet_vehicle_model__weight_capacity
 msgid "The maximum weight capacity the vehicle can support."
-msgstr ""
+msgstr "A capacidade máxima de peso que o veículo pode suportar."
 
 #. module: fleet_vehicle_capacity
 #: model:ir.model.fields,help:fleet_vehicle_capacity.field_fleet_vehicle__vehicle_weight
 #: model:ir.model.fields,help:fleet_vehicle_capacity.field_fleet_vehicle_model__vehicle_weight
 msgid "The weight of the vehicle."
-msgstr ""
+msgstr "O peso do veículo."
 
 #. module: fleet_vehicle_capacity
 #: model:ir.model,name:fleet_vehicle_capacity.model_fleet_vehicle
 msgid "Vehicle"
-msgstr ""
+msgstr "Veículo"
 
 #. module: fleet_vehicle_capacity
 #: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle__vehicle_weight
 #: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle_model__vehicle_weight
 msgid "Vehicle Weight"
-msgstr ""
+msgstr "Peso do Veículo"
 
 #. module: fleet_vehicle_capacity
 #: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle__volume_capacity
 #: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle_model__volume_capacity
 msgid "Volume Capacity"
-msgstr ""
+msgstr "Capacidade de Volume"
 
 #. module: fleet_vehicle_capacity
 #: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle__volume_uom_id
 #: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle_model__volume_uom_id
 msgid "Volume Capacity UOM"
-msgstr ""
+msgstr "UM de Capacidade de Volume"
 
 #. module: fleet_vehicle_capacity
 #: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle__weight_capacity
 #: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle_model__weight_capacity
 msgid "Weight Capacity"
-msgstr ""
+msgstr "Capacidade de Peso"
 
 #. module: fleet_vehicle_capacity
 #: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle__weight_uom_id
 #: model:ir.model.fields,field_description:fleet_vehicle_capacity.field_fleet_vehicle_model__weight_uom_id
 msgid "Weight and Capacity UOM"
-msgstr ""
+msgstr "UM de Peso e Capacidade"
