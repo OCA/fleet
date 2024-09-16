@@ -12,6 +12,7 @@ setuptools.setup(
         'odoo-addon-fleet_vehicle_configuration>=16.0dev,<16.1dev',
         'odoo-addon-fleet_vehicle_fuel_capacity>=16.0dev,<16.1dev',
         'odoo-addon-fleet_vehicle_fuel_type_ethanol>=16.0dev,<16.1dev',
+        'odoo-addon-fleet_vehicle_history_date_end>=16.0dev,<16.1dev',
         'odoo-addon-fleet_vehicle_inspection>=16.0dev,<16.1dev',
         'odoo-addon-fleet_vehicle_log_fuel>=16.0dev,<16.1dev',
         'odoo-addon-fleet_vehicle_service_activity>=16.0dev,<16.1dev',
