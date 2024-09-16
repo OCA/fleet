@@ -118,7 +118,6 @@ msgstr "Ícone para indicar uma atividade de exceção."
 
 #. module: fleet_vehicle_inspection_template
 #: model:ir.model.fields,help:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_needaction
-#: model:ir.model.fields,help:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_unread
 msgid "If checked, new messages require your attention."
 msgstr "Se marcado novas mensagens solicitarão sua atenção."
 
@@ -242,18 +241,13 @@ msgstr "Número de erros"
 
 #. module: fleet_vehicle_inspection_template
 #: model:ir.model.fields,help:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_needaction_counter
-msgid "Number of messages which requires an action"
-msgstr "Número de mensagens que requer uma ação"
+msgid "Number of messages requiring action"
+msgstr ""
 
 #. module: fleet_vehicle_inspection_template
 #: model:ir.model.fields,help:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_has_error_counter
 msgid "Number of messages with delivery error"
 msgstr "Número de mensagens com erro de entrega"
-
-#. module: fleet_vehicle_inspection_template
-#: model:ir.model.fields,help:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_unread_counter
-msgid "Number of unread messages"
-msgstr "Quantidade de mensagens não lidas"
 
 #. module: fleet_vehicle_inspection_template
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__activity_user_id
@@ -279,16 +273,6 @@ msgid "Type of the exception activity on record."
 msgstr "Tipo de atividade de exceção registrada."
 
 #. module: fleet_vehicle_inspection_template
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_unread
-msgid "Unread Messages"
-msgstr "Mensagens não lidas"
-
-#. module: fleet_vehicle_inspection_template
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_unread_counter
-msgid "Unread Messages Counter"
-msgstr "Contador de Mensagens Não Lidas"
-
-#. module: fleet_vehicle_inspection_template
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__website_message_ids
 msgid "Website Messages"
 msgstr ""
@@ -297,6 +281,18 @@ msgstr ""
 #: model:ir.model.fields,help:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__website_message_ids
 msgid "Website communication history"
 msgstr ""
+
+#~ msgid "Number of messages which requires an action"
+#~ msgstr "Número de mensagens que requer uma ação"
+
+#~ msgid "Number of unread messages"
+#~ msgstr "Quantidade de mensagens não lidas"
+
+#~ msgid "Unread Messages"
+#~ msgstr "Mensagens não lidas"
+
+#~ msgid "Unread Messages Counter"
+#~ msgstr "Contador de Mensagens Não Lidas"
 
 #~ msgid "SMS Delivery error"
 #~ msgstr "Erro de entrega de SMS"
