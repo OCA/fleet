@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2021 to TODAY, Marcel Savegnago - Escodoo
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record model="ir.ui.view" id="fleet_vehicle_inspection_form_view">
+        <field
+            name="name"
+        >fleet.vehicle.inspection.form (in fleet_vehicle_inspection_template)</field>
+        <field name="model">fleet.vehicle.inspection</field>
+        <field
+            name="inherit_id"
+            ref="fleet_vehicle_inspection.fleet_vehicle_inspection_form_view"
+        />
+        <field name="arch" type="xml">
+            <field name="vehicle_id" position="after">
+                <field name="inspection_template_id" />
+            </field>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,301 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fleet_vehicle_inspection_template
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2023-07-13 14:11+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_needaction
+msgid "Action Needed"
+msgstr "Azione richiesta"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__activity_ids
+msgid "Activities"
+msgstr "Attività"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decorazione eccezione attività"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__activity_state
+msgid "Activity State"
+msgstr "Stato attività"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Icona tipo attività"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_attachment_count
+msgid "Attachment Count"
+msgstr "Conteggio allegati"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__create_uid
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template_line__create_uid
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__create_date
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template_line__create_date
+msgid "Created on"
+msgstr "Creato il"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__display_name
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template_line__display_name
+msgid "Display Name"
+msgstr "Nome visualizzato"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model,name:fleet_vehicle_inspection_template.model_fleet_vehicle_inspection
+msgid "Fleet Vehicle Inspection"
+msgstr "Ispezione veicolo flotta"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model,name:fleet_vehicle_inspection_template.model_fleet_vehicle_inspection_template
+msgid "Fleet Vehicle Inspection Template"
+msgstr "Modello ispezione veicolo flotta"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model,name:fleet_vehicle_inspection_template.model_fleet_vehicle_inspection_template_line
+msgid "Fleet Vehicle Inspection Template Line"
+msgstr "Riga modello ispezione veicolo flotta"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_follower_ids
+msgid "Followers"
+msgstr "Seguito da"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguito da (partner)"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,help:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Icona Font Awesome es. fa-tasks"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__has_message
+msgid "Has Message"
+msgstr "Ha un messaggio"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__id
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template_line__id
+msgid "ID"
+msgstr "ID"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__activity_exception_icon
+msgid "Icon"
+msgstr "Icona"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,help:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icona per indicare un'attività eccezione."
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,help:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_needaction
+#: model:ir.model.fields,help:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "Se selezionata, nuovi messaggi richiedono attenzione."
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,help:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Se selezionata, alcuni messaggi hanno un errore di consegna."
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.actions.act_window,name:fleet_vehicle_inspection_template.fleet_vehicle_inspection_template_act_window
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection__inspection_template_id
+#: model:ir.ui.menu,name:fleet_vehicle_inspection_template.fleet_vehicle_inspection_template_menu
+msgid "Inspection Template"
+msgstr "Modello ispezione"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template_line__inspection_template_item_id
+msgid "Inspection Template Item"
+msgstr "Elemento modello ispezione"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.actions.act_window,name:fleet_vehicle_inspection_template.fleet_vehicle_inspection_template_line_act_window
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection_template.fleet_vehicle_inspection_template_form_view
+msgid "Inspection Template Line"
+msgstr "Riga modello ispezione"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__inspection_template_line_ids
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection_template.fleet_vehicle_inspection_template_form_view
+msgid "Inspection Template Lines"
+msgstr "Righe modello ispezione"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template_line__inspection_template_id
+msgid "Inspection Template Reference"
+msgstr "Riferimento modello ispezione"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_is_follower
+msgid "Is Follower"
+msgstr "Segue"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template____last_update
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template_line____last_update
+msgid "Last Modified on"
+msgstr "Ultima modifica il"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__write_uid
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template_line__write_uid
+msgid "Last Updated by"
+msgstr "Ultimo aggiornamento di"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__write_date
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template_line__write_date
+msgid "Last Updated on"
+msgstr "Ultimo aggiornamento il"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Allegato principale"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_has_error
+msgid "Message Delivery error"
+msgstr "Errore di consegna messaggio"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_ids
+msgid "Messages"
+msgstr "Messaggi"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Scadenza mia attività"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__name
+msgid "Name"
+msgstr "Nome"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Evento calendario attività successiva"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Scadenza prossima attività"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__activity_summary
+msgid "Next Activity Summary"
+msgstr "Riepilogo prossima attività"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__activity_type_id
+msgid "Next Activity Type"
+msgstr "Tipo prossima attività"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__note
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection_template.fleet_vehicle_inspection_template_form_view
+msgid "Notes"
+msgstr "Note"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Numero di azioni"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_has_error_counter
+msgid "Number of errors"
+msgstr "Numero di errori"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,help:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Numero di messaggi che richiedono un'azione"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,help:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Numero di messaggi con errore di consegna"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,help:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Numero di messaggi non letti"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__activity_user_id
+msgid "Responsible User"
+msgstr "Utente responsabile"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,help:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Stato in base alle attività\n"
+"Scaduto: la data richiesta è trascorsa\n"
+"Oggi: la data attività è oggi\n"
+"Pianificato: attività future."
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,help:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo di attività eccezione sul record."
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_unread
+msgid "Unread Messages"
+msgstr "Messaggi non letti"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Contatore messaggi non letti"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__website_message_ids
+msgid "Website Messages"
+msgstr "Messaggi sito web"
+
+#. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,help:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__website_message_ids
+msgid "Website communication history"
+msgstr "Cronologia comunicazioni sito web"
+
+#~ msgid "SMS Delivery error"
+#~ msgstr "Errore consegna SMS"

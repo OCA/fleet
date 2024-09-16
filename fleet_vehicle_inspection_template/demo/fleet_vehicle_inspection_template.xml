@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2021 to TODAY, Marcel Savegnago - Escodoo
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <!--Inspection Template-->
+    <record
+        model="fleet.vehicle.inspection.template"
+        id="fleet_vehicle_inspection_template_demo_1"
+    >
+        <field name="name">Template 1</field>
+    </record>
+    <record
+        model="fleet.vehicle.inspection.template"
+        id="fleet_vehicle_inspection_template_demo_2"
+    >
+        <field name="name">Template 2</field>
+    </record>
+    <record
+        model="fleet.vehicle.inspection.template"
+        id="fleet_vehicle_inspection_template_demo_3"
+    >
+        <field name="name">Template 3</field>
+    </record>
+    <!--Lines-->
+    <!--Inspection Template 1 - Lines-->
+    <record
+        model="fleet.vehicle.inspection.template.line"
+        id="fleet_vehicle_inspection_template_line_demo_1"
+    >
+        <field
+            name="inspection_template_id"
+            ref="fleet_vehicle_inspection_template_demo_1"
+        />
+        <field
+            name="inspection_template_item_id"
+            ref="fleet_vehicle_inspection.fleet_vehicle_inspection_item_demo_1"
+        />
+    </record>
+    <record
+        model="fleet.vehicle.inspection.template.line"
+        id="fleet_vehicle_inspection_template_line_demo_2"
+    >
+        <field
+            name="inspection_template_id"
+            ref="fleet_vehicle_inspection_template_demo_1"
+        />
+        <field
+            name="inspection_template_item_id"
+            ref="fleet_vehicle_inspection.fleet_vehicle_inspection_item_demo_2"
+        />
+    </record>
+    <!--Inspection Template 2 - Lines-->
+    <record
+        model="fleet.vehicle.inspection.template.line"
+        id="fleet_vehicle_inspection_template_line_demo_3"
+    >
+        <field
+            name="inspection_template_id"
+            ref="fleet_vehicle_inspection_template_demo_2"
+        />
+        <field
+            name="inspection_template_item_id"
+            ref="fleet_vehicle_inspection.fleet_vehicle_inspection_item_demo_1"
+        />
+    </record>
+    <!--Inspection Template 3 - Lines-->
+    <record
+        model="fleet.vehicle.inspection.template.line"
+        id="fleet_vehicle_inspection_template_line_demo_4"
+    >
+        <field
+            name="inspection_template_id"
+            ref="fleet_vehicle_inspection_template_demo_3"
+        />
+        <field
+            name="inspection_template_item_id"
+            ref="fleet_vehicle_inspection.fleet_vehicle_inspection_item_demo_2"
+        />
+    </record>
+</odoo>
