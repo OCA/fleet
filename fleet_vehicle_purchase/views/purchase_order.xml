@@ -11,6 +11,17 @@
             <field name="partner_ref" position="after">
                 <field name="fleet_vehicle_id" />
             </field>
+            <xpath
+                expr="//sheet//notebook//page[@name='products']//tree//field[@name='date_planned']"
+                position="after"
+            >
+                <field name="fleet_vehicle_from_po" invisible="1" />
+                <field
+                    name="fleet_vehicle_id"
+                    optional="hide"
+                    attrs="{'readonly': [('fleet_vehicle_from_po', '=', True)]}"
+                />
+            </xpath>
         </field>
     </record>
 

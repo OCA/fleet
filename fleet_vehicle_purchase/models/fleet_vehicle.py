@@ -15,8 +15,16 @@ class FleetVehicle(models.Model):
 
     @api.depends("purchase_order_ids")
     def _compute_purchase_order_count(self):
-        for record in self:
-            record.purchase_order_count = len(record.purchase_order_ids)
+        orders = self.env["purchase.order"].read_group(
+            [("fleet_vehicle_id", "in", self.ids)],
+            ["fleet_vehicle_id"],
+            ["fleet_vehicle_id"],
+        )
+        mapped_data = {
+            po["fleet_vehicle_id"][0]: po["fleet_vehicle_id_count"] for po in orders
+        }
+        for rec in self:
+            rec.purchase_order_count = mapped_data.get(rec.id, 0)
 
     def action_view_purchase_orders(self):
         self.ensure_one()
