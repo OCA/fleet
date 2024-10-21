@@ -41,6 +41,7 @@ class FleetVehicleInspectionLine(models.Model):
         copy=False,
     )
     result_description = fields.Char()
+    sequence = fields.Integer(default=10)
     state = fields.Selection(
         related="inspection_id.state",
         readonly=True,
