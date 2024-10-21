@@ -84,6 +84,7 @@
                                 context="{'default_inspection_id': active_id}"
                             >
                                 <tree>
+                                    <field name="sequence" widget="handle" />
                                     <field name="state" invisible="1" />
                                     <field name="inspection_item_id" />
                                     <field name="inspection_item_instruction" />
