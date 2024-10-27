@@ -26,7 +26,8 @@ class FleetVehicleInspection(models.Model):
             self.note = self.inspection_template_id.note
 
             inspection_lines = [(5, 0, 0)]
-            for line in self.inspection_template_id.inspection_template_line_ids:
+            # Sort the lines by sequence before appending
+            for line in sorted(self.inspection_template_id.inspection_template_line_ids, key=lambda l: l.sequence):
                 data = self._compute_line_data_for_template_change(line)
                 inspection_lines.append((0, 0, data))
 
