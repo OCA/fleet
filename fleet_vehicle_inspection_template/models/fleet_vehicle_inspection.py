@@ -27,7 +27,10 @@ class FleetVehicleInspection(models.Model):
 
             inspection_lines = [(5, 0, 0)]
             # Sort the lines by sequence before appending
-            for line in sorted(self.inspection_template_id.inspection_template_line_ids, key=lambda linei: linei.sequence):
+            for line in sorted(
+                self.inspection_template_id.inspection_template_line_ids,
+                key=lambda linei: linei.sequence,
+            ):
                 data = self._compute_line_data_for_template_change(line)
                 inspection_lines.append((0, 0, data))
 
