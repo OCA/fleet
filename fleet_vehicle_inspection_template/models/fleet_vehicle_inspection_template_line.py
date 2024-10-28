@@ -24,3 +24,5 @@ class FleetVehicleInspectionTemplateLine(models.Model):
         required=True,
         copy=True,
     )
+
+    sequence = fields.Integer(default=10)

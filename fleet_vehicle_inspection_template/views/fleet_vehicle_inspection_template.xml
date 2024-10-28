@@ -27,6 +27,7 @@
                         >
                             <field name="inspection_template_line_ids">
                                 <tree editable="bottom">
+                                    <field name="sequence" widget="handle" />
                                     <field
                                         name="inspection_template_item_id"
                                         string="Inspection Template Line"

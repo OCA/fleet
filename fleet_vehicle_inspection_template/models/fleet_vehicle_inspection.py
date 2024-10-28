@@ -15,6 +15,7 @@ class FleetVehicleInspection(models.Model):
     def _compute_line_data_for_template_change(self, line):
         return {
             "inspection_item_id": line.inspection_template_item_id.id,
+            "sequence": line.sequence,
             "state": "draft",
         }
 
@@ -25,7 +26,9 @@ class FleetVehicleInspection(models.Model):
             self.note = self.inspection_template_id.note
 
             inspection_lines = [(5, 0, 0)]
-            for line in self.inspection_template_id.inspection_template_line_ids:
+            for line in self.inspection_template_id.inspection_template_line_ids.sorted(
+                "sequence"
+            ):
                 data = self._compute_line_data_for_template_change(line)
                 inspection_lines.append((0, 0, data))
 
