@@ -663,6 +663,7 @@ msgid "Result Description"
 msgstr ""
 
 #. module: fleet_vehicle_inspection
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__sequence
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line_image__sequence
 msgid "Sequence"
 msgstr ""
