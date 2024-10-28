@@ -38,11 +38,11 @@ msgstr "# Contagem de Inspeções"
 #. module: fleet_vehicle_inspection
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_kanban_view
 msgid ""
-"<i class=\"fa fa-clock-o\" aria-label=\"Date Inspected\" role=\"img\" title="
-"\"Date\"/>"
+"<i class=\"fa fa-clock-o\" aria-label=\"Date Inspected\" role=\"img\" "
+"title=\"Date\"/>"
 msgstr ""
-"<i class=\"fa fa-clock-o\" aria-label=\"Date Inspected\" role=\"img\" title="
-"\"Data\"/>"
+"<i class=\"fa fa-clock-o\" aria-label=\"Date Inspected\" role=\"img\" "
+"title=\"Data\"/>"
 
 #. module: fleet_vehicle_inspection
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_form_view
@@ -678,6 +678,7 @@ msgid "Result Description"
 msgstr "Descrição do Resultado"
 
 #. module: fleet_vehicle_inspection
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__sequence
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line_image__sequence
 msgid "Sequence"
 msgstr "Sequência"
