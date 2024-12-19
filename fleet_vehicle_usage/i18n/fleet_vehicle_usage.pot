@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0\n"
+"Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -16,9 +16,7 @@ msgstr ""
 #. module: fleet_vehicle_usage
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_usage.fleet_vehicle_view_form
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_usage.fleet_vehicle_view_kanban
-msgid ""
-"<span class=\"label label-primary\" attrs=\"{'invisible': [('in_use', '=', "
-"False)]}\">In use</span>"
+msgid "<span class=\"label label-primary\" invisible=\"not in_use\">In use</span>"
 msgstr ""
 
 #. module: fleet_vehicle_usage
@@ -188,11 +186,6 @@ msgid "Is Follower"
 msgstr ""
 
 #. module: fleet_vehicle_usage
-#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage____last_update
-msgid "Last Modified on"
-msgstr ""
-
-#. module: fleet_vehicle_usage
 #: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__write_uid
 msgid "Last Updated by"
 msgstr ""
@@ -200,11 +193,6 @@ msgstr ""
 #. module: fleet_vehicle_usage
 #: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__write_date
 msgid "Last Updated on"
-msgstr ""
-
-#. module: fleet_vehicle_usage
-#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__message_main_attachment_id
-msgid "Main Attachment"
 msgstr ""
 
 #. module: fleet_vehicle_usage
@@ -230,11 +218,6 @@ msgstr ""
 #: model:ir.model.fields.selection,name:fleet_vehicle_usage.selection__fleet_vehicle_usage__state__draft
 #, python-format
 msgid "New"
-msgstr ""
-
-#. module: fleet_vehicle_usage
-#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__activity_calendar_event_id
-msgid "Next Activity Calendar Event"
 msgstr ""
 
 #. module: fleet_vehicle_usage
@@ -389,14 +372,4 @@ msgstr ""
 #. module: fleet_vehicle_usage
 #: model:ir.model,name:fleet_vehicle_usage.model_fleet_vehicle_usage
 msgid "Vehicle Usage"
-msgstr ""
-
-#. module: fleet_vehicle_usage
-#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__website_message_ids
-msgid "Website Messages"
-msgstr ""
-
-#. module: fleet_vehicle_usage
-#: model:ir.model.fields,help:fleet_vehicle_usage.field_fleet_vehicle_usage__website_message_ids
-msgid "Website communication history"
 msgstr ""

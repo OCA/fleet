@@ -36,63 +36,45 @@ class FleetVehicleUsage(models.Model):
         required=True,
         index=True,
         default=lambda self: self.env.company.id,
-        readonly=True,
-        states={"draft": [("readonly", False)], "reserved": [("readonly", False)]},
         tracking=True,
     )
     user_id = fields.Many2one(
         comodel_name="res.users",
         string="Driver",
         required=True,
-        readonly=True,
-        states={"draft": [("readonly", False)], "reserved": [("readonly", False)]},
         tracking=True,
     )
     picking_user_id = fields.Many2one(
         comodel_name="res.users",
         string="Picked up by",
-        readonly=True,
-        states={"draft": [("readonly", False)], "reserved": [("readonly", False)]},
         tracking=True,
     )
     return_user_id = fields.Many2one(
         comodel_name="res.users",
         string="Returned by",
-        states={
-            "in_use": [("required", True)],
-            "returned": [("readonly", True)],
-            "cancel": [("readonly", True)],
-        },
         tracking=True,
     )
     date_picking = fields.Datetime(
         string="Picking Date",
         copy=False,
         index=True,
-        readonly=True,
-        states={"draft": [("readonly", False)], "reserved": [("readonly", False)]},
         tracking=True,
     )
     date_return = fields.Datetime(
         string="Return Date",
         copy=False,
         index=True,
-        states={"returned": [("readonly", True)], "cancel": [("readonly", True)]},
         tracking=True,
     )
     vehicle_id = fields.Many2one(
         comodel_name="fleet.vehicle",
         string="Vehicle",
         required=True,
-        readonly=True,
-        states={"draft": [("readonly", False)], "reserved": [("readonly", False)]},
         tracking=True,
     )
     partner_id = fields.Many2one(
         comodel_name="res.partner",
         string="Destination",
-        readonly=True,
-        states={"draft": [("readonly", False)], "reserved": [("readonly", False)]},
         change_default=True,
         tracking=True,
     )

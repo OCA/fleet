@@ -24,10 +24,7 @@
                 <field name="in_use" />
             </templates>
             <xpath expr="//div[hasclass('oe_kanban_details')]" position="inside">
-                <span
-                    class="label label-primary"
-                    attrs="{'invisible': [('in_use', '=', False)]}"
-                >In use</span>
+                <span class="label label-primary" invisible="not in_use">In use</span>
             </xpath>
         </field>
     </record>
@@ -48,10 +45,7 @@
             </div>
             <field name="tag_ids" position="after">
                 <field name="in_use" invisible="1" />
-                <span
-                    class="label label-primary"
-                    attrs="{'invisible': [('in_use', '=', False)]}"
-                >In use</span>
+                <span class="label label-primary" invisible="not in_use">In use</span>
             </field>
         </field>
     </record>

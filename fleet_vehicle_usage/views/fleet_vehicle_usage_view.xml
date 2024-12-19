@@ -23,21 +23,21 @@
                 <header>
                     <button
                         name="action_pick"
-                        states="draft,reserved"
+                        invisible="state not in ('draft','reserved')"
                         string="Pick"
                         type="object"
                         class="oe_highlight"
                     />
                     <button
                         name="action_return"
-                        states="in_use"
+                        invisible="state!='in_use'"
                         string="Return"
                         type="object"
                         class="oe_highlight"
                     />
                     <button
                         name="action_cancel"
-                        states="draft,reserved,in_use"
+                        invisible="state not in ('draft','reserved','in_use')"
                         string="Cancel"
                         type="object"
                     />
@@ -51,13 +51,23 @@
                     </div>
                     <group>
                         <group>
-                            <field name="user_id" />
-                            <field name="vehicle_id" />
+                            <field
+                                name="user_id"
+                                readonly="state not in ('draft','reserved')"
+                            />
+                            <field
+                                name="vehicle_id"
+                                readonly="state not in ('draft','reserved')"
+                            />
                         </group>
                         <group>
-                            <field name="partner_id" />
+                            <field
+                                name="partner_id"
+                                readonly="state not in ('draft','reserved')"
+                            />
                             <field
                                 name="company_id"
+                                readonly="state not in ('draft','reserved')"
                                 groups="base.group_multi_company"
                             />
                         </group>
@@ -67,16 +77,26 @@
                             <field name="create_date" invisible="1" />
                             <field
                                 name="picking_user_id"
-                                attrs="{'required': [('create_date', '!=', False)]}"
+                                readonly="state not in ('draft','reserved')"
+                                required="not create_date"
                             />
                             <field
                                 name="return_user_id"
-                                states="in_use,returned,cancel"
+                                required="state=='in_use'"
+                                readonly="state in ('returned', 'cancel')"
+                                invisible="state not in ('in_use','returned','cancel')"
                             />
                         </group>
                         <group>
-                            <field name="date_picking" />
-                            <field name="date_return" states="in_use,returned,cancel" />
+                            <field
+                                name="date_picking"
+                                readonly="state not in ('draft','reserved')"
+                            />
+                            <field
+                                name="date_return"
+                                readonly="state in ('returned','cancel')"
+                                invisible="state not in ('in_use','returned','cancel')"
+                            />
                         </group>
                     </group>
                     <separator string="Notes" />
