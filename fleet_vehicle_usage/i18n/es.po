@@ -21,11 +21,8 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_usage.fleet_vehicle_view_form
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_usage.fleet_vehicle_view_kanban
 msgid ""
-"<span class=\"label label-primary\" attrs=\"{'invisible': [('in_use', '=', "
-"False)]}\">In use</span>"
+"<span class=\"label label-primary\" invisible=\"not in_use\">In use</span>"
 msgstr ""
-"<span class=\"label label-primary\" attrs=\"{'invisible': [('in_use', '=', "
-"False)]}\">En uso</span>"
 
 #. module: fleet_vehicle_usage
 #: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__message_needaction
@@ -194,11 +191,6 @@ msgid "Is Follower"
 msgstr "Es Seguidor"
 
 #. module: fleet_vehicle_usage
-#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage____last_update
-msgid "Last Modified on"
-msgstr "Última Modificación el"
-
-#. module: fleet_vehicle_usage
 #: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__write_uid
 msgid "Last Updated by"
 msgstr "Ultima actualización por"
@@ -207,11 +199,6 @@ msgstr "Ultima actualización por"
 #: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__write_date
 msgid "Last Updated on"
 msgstr "Fecha modificación"
-
-#. module: fleet_vehicle_usage
-#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__message_main_attachment_id
-msgid "Main Attachment"
-msgstr "Adjunto Principal"
 
 #. module: fleet_vehicle_usage
 #: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__message_has_error
@@ -235,11 +222,6 @@ msgstr "Mi fecha de límite de actividad"
 #, python-format
 msgid "New"
 msgstr "Nuevo"
-
-#. module: fleet_vehicle_usage
-#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__activity_calendar_event_id
-msgid "Next Activity Calendar Event"
-msgstr "Próximo Evento del Calendario de Actividades"
 
 #. module: fleet_vehicle_usage
 #: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__activity_date_deadline
@@ -399,12 +381,24 @@ msgstr "Vehículo"
 msgid "Vehicle Usage"
 msgstr "Uso de vehículo"
 
-#. module: fleet_vehicle_usage
-#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__website_message_ids
-msgid "Website Messages"
-msgstr "Mensajes de la Página Web"
+#~ msgid ""
+#~ "<span class=\"label label-primary\" attrs=\"{'invisible': [('in_use', "
+#~ "'=', False)]}\">In use</span>"
+#~ msgstr ""
+#~ "<span class=\"label label-primary\" attrs=\"{'invisible': [('in_use', "
+#~ "'=', False)]}\">En uso</span>"
 
-#. module: fleet_vehicle_usage
-#: model:ir.model.fields,help:fleet_vehicle_usage.field_fleet_vehicle_usage__website_message_ids
-msgid "Website communication history"
-msgstr "Historial de la comunicación en el sitio web"
+#~ msgid "Last Modified on"
+#~ msgstr "Última Modificación el"
+
+#~ msgid "Main Attachment"
+#~ msgstr "Adjunto Principal"
+
+#~ msgid "Next Activity Calendar Event"
+#~ msgstr "Próximo Evento del Calendario de Actividades"
+
+#~ msgid "Website Messages"
+#~ msgstr "Mensajes de la Página Web"
+
+#~ msgid "Website communication history"
+#~ msgstr "Historial de la comunicación en el sitio web"
