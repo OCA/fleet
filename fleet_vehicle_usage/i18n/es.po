@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-02-26 08:22+0000\n"
-"PO-Revision-Date: 2024-03-25 20:37+0000\n"
-"Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
+"PO-Revision-Date: 2024-12-20 09:06+0000\n"
+"Last-Translator: Víctor Martínez <victor.martinez@tecnativa.com>\n"
 "Language-Team: \n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.6.2\n"
 
 #. module: fleet_vehicle_usage
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_usage.fleet_vehicle_view_form
@@ -23,6 +23,7 @@ msgstr ""
 msgid ""
 "<span class=\"label label-primary\" invisible=\"not in_use\">In use</span>"
 msgstr ""
+"<span class=\"label label-primary\" invisible=\"not in_use\">En uso</span>"
 
 #. module: fleet_vehicle_usage
 #: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__message_needaction
