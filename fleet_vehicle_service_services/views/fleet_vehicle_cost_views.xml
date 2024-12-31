@@ -9,7 +9,7 @@
         <field name="model">fleet.vehicle.log.services</field>
         <field name="inherit_id" ref="fleet.fleet_vehicle_log_services_view_form" />
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='notes']/.." position="before">
+            <xpath expr="//sheet//separator" position="before">
                 <group string="Included Services">
                     <field name="service_ids" widget="many2many_tags" nolabel="1" />
                 </group>
