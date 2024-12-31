@@ -7,7 +7,7 @@ from odoo.tests.common import TransactionCase
 class TestFleetVehicleDateEnd(TransactionCase):
     @classmethod
     def setUpClass(cls):
-        super(TestFleetVehicleDateEnd, cls).setUpClass()
+        super().setUpClass()
         cls.vehicle = cls.env.ref("fleet.vehicle_1")
 
     def test_change_driver_history_date_end(self):
