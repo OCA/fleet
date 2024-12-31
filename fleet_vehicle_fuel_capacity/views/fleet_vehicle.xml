@@ -2,7 +2,6 @@
 <!-- Copyright 2021 - TODAY, Marcel Savegnago
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 <odoo>
-
     <record model="ir.ui.view" id="fleet_vehicle_form_view">
         <field name="name">fleet.vehicle.form (in fleet_vehicle_fuel_capacity)</field>
         <field name="model">fleet.vehicle</field>
@@ -13,5 +12,4 @@
             </field>
         </field>
     </record>
-
 </odoo>

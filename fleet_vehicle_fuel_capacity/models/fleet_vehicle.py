@@ -5,7 +5,6 @@ from odoo import fields, models
 
 
 class FleetVehicle(models.Model):
-
     _inherit = "fleet.vehicle"
 
     fuel_capacity = fields.Float(string="Fuel Capacity (L)", tracking=True)
