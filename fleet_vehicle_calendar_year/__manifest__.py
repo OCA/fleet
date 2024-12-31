@@ -6,7 +6,7 @@
     "summary": """
         This module extends the fleet management functionality. Allows the
         registration of the vehicle's calendar year.""",
-    "version": "16.0.1.0.0",
+    "version": "18.0.1.0.0",
     "license": "AGPL-3",
     "category": "Human Resources/Fleet",
     "author": "Escodoo,Odoo Community Association (OCA)",
