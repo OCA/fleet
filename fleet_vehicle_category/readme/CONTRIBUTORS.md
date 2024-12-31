@@ -1,0 +1,3 @@
+- Stefano Consolaro \<<stefano.consolaro@mymage.it>\>
+- [Escodoo](https://www.escodoo.com.br):
+  - Marcel Savegnago \<<marcel.savegnago@escodoo.com.br>\>

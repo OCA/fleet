@@ -21,12 +21,13 @@
         <field name="model">fleet.vehicle.category</field>
         <field name="arch" type="xml">
             <form string="Vehicle Category">
-                <header>
-                </header>
+                <header />
                 <sheet>
                     <div class="oe_title">
                         <label for="name" class="oe_edit_only" />
-                        <h1><field name="name" /></h1>
+                        <h1>
+                            <field name="name" />
+                        </h1>
                     </div>
                     <notebook>
                         <page name="description_page" string="Description">
@@ -54,9 +55,10 @@
         <field name="res_model">fleet.vehicle.category</field>
         <field name="view_mode">tree,form</field>
         <field name="help" type="html">
-          <p class="o_view_nocontent_smiling_face">
+            <p class="o_view_nocontent_smiling_face">
             Create a new vehicle category
-          </p><p>
+          </p>
+            <p>
             You can define several categories (e.g. tow truck, ambulance, trailer, boat) for each vehicle.
           </p>
         </field>
@@ -68,5 +70,4 @@
         <field name="action" ref="fleet_vehicle_category_act_window" />
         <field name="sequence" eval="30" />
     </record>
-
 </odoo>

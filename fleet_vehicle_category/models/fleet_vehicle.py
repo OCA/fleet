@@ -5,7 +5,6 @@ from odoo import fields, models
 
 
 class FleetVehicle(models.Model):
-
     _inherit = "fleet.vehicle"
 
     vehicle_category_id = fields.Many2one(
