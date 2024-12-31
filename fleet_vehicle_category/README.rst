@@ -85,6 +85,8 @@ Contributors
 
   - Marcel Savegnago <marcel.savegnago@escodoo.com.br>
 
+- `Heliconia Solutions Pvt. Ltd. <https://www.heliconia.io>`__
+
 Maintainers
 -----------
 
