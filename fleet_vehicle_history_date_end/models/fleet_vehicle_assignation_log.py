@@ -7,16 +7,19 @@ from odoo import api, models
 class FleetVehicleAssignationLog(models.Model):
     _inherit = "fleet.vehicle.assignation.log"
 
-    @api.model
-    def create(self, vals):
-        res = super().create(vals)
-        history = self.search(
-            [
-                ("vehicle_id", "=", res.vehicle_id.id),
-                ("date_end", "=", False),
-                ("id", "!=", res.id),
-            ]
-        )
-        if history:
-            history.write({"date_end": res.date_start})
+    @api.model_create_multi
+    def create(self, vals_list):
+        res = super().create(vals_list)
+
+        for res_item in res:
+            history = self.search(
+                [
+                    ("vehicle_id", "=", res_item.vehicle_id.id),
+                    ("date_end", "=", False),
+                    ("id", "!=", res_item.id),
+                ]
+            )
+            if history:
+                history.write({"date_end": res_item.date_start})
+
         return res
