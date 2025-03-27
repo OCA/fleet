@@ -789,15 +789,3 @@ msgstr "Messaggi sito web"
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__website_message_ids
 msgid "Website communication history"
 msgstr "Cronologia comunicazioni sito web"
-
-#~ msgid "Number of messages which requires an action"
-#~ msgstr "Numero di messaggi che richiedono un'azione"
-
-#~ msgid "Number of unread messages"
-#~ msgstr "Numero di messaggi non letti"
-
-#~ msgid "Unread Messages"
-#~ msgstr "Messaggi non letti"
-
-#~ msgid "Unread Messages Counter"
-#~ msgstr "Contatore messaggi non letti"
