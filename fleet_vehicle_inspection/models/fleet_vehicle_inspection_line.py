@@ -9,11 +9,6 @@ class FleetVehicleInspectionLine(models.Model):
     _description = "Fleet Vehicle Inspection Line"
     _inherit = ["mail.thread", "mail.activity.mixin"]
 
-    READONLY_STATES = {
-        "confirmed": [("readonly", True)],
-        "cancel": [("readonly", True)],
-    }
-
     inspection_id = fields.Many2one(
         "fleet.vehicle.inspection",
         required=True,
@@ -27,7 +22,6 @@ class FleetVehicleInspectionLine(models.Model):
         tracking=True,
         index=True,
         ondelete="cascade",
-        states=READONLY_STATES,
         copy=True,
     )
     inspection_item_instruction = fields.Text(

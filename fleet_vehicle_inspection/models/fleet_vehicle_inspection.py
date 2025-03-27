@@ -11,11 +11,6 @@ class FleetVehicleInspection(models.Model):
     _description = "Fleet Vehicle Inspection"
     _inherit = ["mail.thread", "mail.activity.mixin"]
 
-    READONLY_STATES = {
-        "confirmed": [("readonly", True)],
-        "cancel": [("readonly", True)],
-    }
-
     name = fields.Char(
         "Reference", required=True, index=True, copy=False, default="New"
     )
@@ -35,7 +30,6 @@ class FleetVehicleInspection(models.Model):
         "Vehicle",
         help="Fleet Vehicle",
         required=True,
-        states=READONLY_STATES,
     )
     odometer_id = fields.Many2one(
         "fleet.vehicle.odometer",
@@ -47,13 +41,11 @@ class FleetVehicleInspection(models.Model):
         inverse="_inverse_odometer",
         help="Odometer measure of the vehicle at the moment of this log",
         store=True,
-        states=READONLY_STATES,
     )
     odometer_unit = fields.Selection(
         [("kilometers", "Kilometers"), ("miles", "Miles")],
         default="kilometers",
         required=True,
-        states=READONLY_STATES,
     )
     date_inspected = fields.Datetime(
         "Inspection Date",
@@ -61,25 +53,21 @@ class FleetVehicleInspection(models.Model):
         default=fields.Datetime.now,
         help="Date when the vehicle has been inspected",
         copy=False,
-        states=READONLY_STATES,
     )
     inspected_by = fields.Many2one(
         "res.partner",
         tracking=True,
-        states=READONLY_STATES,
     )
     direction = fields.Selection(
         selection=[("in", "IN"), ("out", "OUT")],
         default="out",
-        states=READONLY_STATES,
     )
-    note = fields.Html("Notes", states=READONLY_STATES)
+    note = fields.Html("Notes")
     inspection_line_ids = fields.One2many(
         "fleet.vehicle.inspection.line",
         "inspection_id",
         copy=True,
         auto_join=True,
-        states=READONLY_STATES,
     )
     result = fields.Selection(
         [("todo", "Todo"), ("success", "Success"), ("failure", "Failure")],
@@ -123,7 +111,7 @@ class FleetVehicleInspection(models.Model):
         for vals in vals_list:
             if vals.get("name", "New") == "New":
                 prefix_code = "out" if vals.get("direction") == "out" else "in"
-                code = "fleet.vehicle.inspection.%s" % (prefix_code)
+                code = f"fleet.vehicle.inspection.{prefix_code}"
                 vals["name"] = self.env["ir.sequence"].next_by_code(code) or "/"
         return super().create(vals_list)
 

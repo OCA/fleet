@@ -1,10 +1,10 @@
 # Copyright 2020 - 2024, Marcel Savegnago - Escodoo
 # Copyright 2023 Tecnativa - Carolina Fernandez
-# Copyright 2024 Tecnativa - Víctor Martínez
+# Copyright 2024-2025 Tecnativa - Víctor Martínez
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl
-
-from odoo import fields
+from odoo import Command, fields
 from odoo.exceptions import UserError, ValidationError
+from odoo.tools import mute_logger
 
 from odoo.addons.base.tests.common import BaseCommon
 
@@ -40,14 +40,10 @@ class TestFleetVehicleInspection(BaseCommon):
             {
                 "vehicle_id": cls.vehicle.id,
                 "inspection_line_ids": [
-                    (
-                        0,
-                        0,
+                    Command.create(
                         {"inspection_item_id": cls.item_lights.id},
                     ),
-                    (
-                        0,
-                        0,
+                    Command.create(
                         {"inspection_item_id": cls.item_mirrors.id},
                     ),
                 ],
@@ -79,6 +75,7 @@ class TestFleetVehicleInspection(BaseCommon):
         )
         self.assertEqual(inspection.odometer_id.vehicle_id.id, self.vehicle.id)
 
+    @mute_logger("odoo.models.unlink")
     def test_fleet_vehicle_action_view_inspection(self):
         action = self.vehicle.action_view_inspection()
         self.assertEqual(len(action.get("domain")), 1)
@@ -105,9 +102,7 @@ class TestFleetVehicleInspection(BaseCommon):
                 "state": "draft",
                 "date_inspected": "2023-01-01",
                 "inspection_line_ids": [
-                    (
-                        0,
-                        0,
+                    Command.create(
                         {
                             "inspection_item_id": self.item_lights.id,
                             "result": "success",
@@ -155,6 +150,7 @@ class TestFleetVehicleInspection(BaseCommon):
         with self.assertRaises(UserError):
             self.inspection2.button_confirm()
 
+    @mute_logger("odoo.models.unlink")
     def test_fleet_vehicle_inspection_with_amount(self):
         self.inspection.inspection_line_ids.action_item_success()
         self.inspection.amount = 100

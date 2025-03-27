@@ -32,14 +32,10 @@ class FleetVehicle(models.Model):
         if self.inspection_count > 1:
             action["domain"] = [("id", "in", self.inspection_ids.ids)]
         else:
-            action["views"] = [
-                (
-                    self.env.ref(
-                        "fleet_vehicle_inspection.fleet_vehicle_inspection_form_view"
-                    ).id,
-                    "form",
-                )
-            ]
+            form_view = self.env.ref(
+                "fleet_vehicle_inspection.fleet_vehicle_inspection_form_view"
+            )
+            action["views"] = [(form_view.id, "form")]
             action["res_id"] = (
                 fields.first(self.inspection_ids).id if self.inspection_ids else False
             )
