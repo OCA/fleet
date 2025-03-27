@@ -377,7 +377,9 @@
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <span><field name="vehicle_id" /></span>
+                                    <span>
+                                        <field name="vehicle_id" />
+                                    </span>
                                 </div>
                             </div>
                             <div class="row">
