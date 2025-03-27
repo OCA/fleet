@@ -65,4 +65,4 @@ class FleetVehicleLogServices(models.Model):
                 "fleet_vehicle_service_kanban."
                 "mail_message_subtype_fleet_service_user_updated"
             )
-        return super(FleetVehicleLogServices, self)._track_subtype(init_values)
+        return super()._track_subtype(init_values)

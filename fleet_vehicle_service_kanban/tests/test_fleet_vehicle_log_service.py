@@ -3,7 +3,7 @@ from odoo.tests.common import TransactionCase
 
 class TestFleetVehicleLogServices(TransactionCase):
     def setUp(self):
-        super(TestFleetVehicleLogServices, self).setUp()
+        super().setUp()
 
         self.user = self.env["res.users"].create(
             {

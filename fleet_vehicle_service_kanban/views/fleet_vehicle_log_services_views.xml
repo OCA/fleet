@@ -6,9 +6,7 @@
         <field name="inherit_id" ref="fleet.fleet_vehicle_log_services_view_form" />
         <field name="arch" type="xml">
             <xpath expr="//sheet/group[1]" position="before">
-
-                <div class="oe_button_box" name="button_box">
-                </div>
+                <div class="oe_button_box" name="button_box" />
                 <widget
                     name="web_ribbon"
                     title="Archived"
@@ -55,7 +53,6 @@
                     <div class="o_kanban_tags_section">
                         <field name="tag_ids" widget="many2many_tags" />
                     </div>
-
                 </xpath>
                 <xpath expr="//div[hasclass('oe_kanban_details')]" position="inside">
                     <div class="o_kanban_inline_block" t-if="!selection_mode">
