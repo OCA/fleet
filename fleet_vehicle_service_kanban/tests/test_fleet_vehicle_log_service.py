@@ -1,86 +1,45 @@
-from odoo.tests.common import TransactionCase
+# Copyright 2020-Present Druidoo - Manuel Marquez <manuel.marquez@druidoo.io>
+# Copyright 2025 Tecnativa - Víctor Martínez
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+from .common import TestVehicleLogServicesCommon
 
 
-class TestFleetVehicleLogServices(TransactionCase):
-    def setUp(self):
-        super().setUp()
-
-        self.user = self.env["res.users"].create(
-            {
-                "name": "Test User",
-                "login": "testuser",
-                "email": "testuser@example.com",
-                "password": "password",
-            }
-        )
-
-        self.brand = self.env["fleet.vehicle.model.brand"].create(
-            {
-                "name": "Audi",
-            }
-        )
-        self.vehicle_model = self.env["fleet.vehicle.model"].create(
-            {"name": "Test Vehicle Model", "brand_id": self.brand.id}
-        )
-        self.vehicle = self.env["fleet.vehicle"].create(
-            {
-                "model_id": self.vehicle_model.id,
-                "license_plate": "ABC-1234",
-                "odometer": 1000,
-            }
-        )
-
-        self.service_type = self.env["fleet.service.type"].create(
-            {"name": "Fatura do Fornecedor", "category": "service"}
-        )
-
+class TestFleetVehicleLogServices(TestVehicleLogServicesCommon):
     def test__read_group_stage_ids(self):
-        stages = []
-        domain = []
-        order = "name asc"
-        api = self.env["fleet.vehicle.log.services"]
-        result = api._read_group_stage_ids(stages, domain, order)
-        self.assertTrue(result)
-
-    def test_create_service_entry(self):
-        service_entry = self.env["fleet.vehicle.log.services"].create(
-            {
-                "vehicle_id": self.vehicle.id,
-                "notes": "Test notes",
-                "service_type_id": self.service_type.id,
-            }
+        result = self.env["fleet.vehicle.log.services"]._read_group_stage_ids(
+            self.stage_draft, []
         )
-
-        self.assertEqual(service_entry.vehicle_id, self.vehicle)
-        self.assertEqual(service_entry.notes, "Test notes")
+        self.assertIn(self.stage_draft, result)
+        self.assertIn(self.stage_open, result)
+        self.assertIn(self.stage_done, result)
 
     def test_track_subtype(self):
-        service_entry = self.env["fleet.vehicle.log.services"].create(
-            {
-                "vehicle_id": self.vehicle.id,
-                "notes": "Test notes",
-                "service_type_id": self.service_type.id,
-            }
-        )
-
         self.assertEqual(
-            service_entry._track_subtype(init_values={"user_id": 1}),
+            self.service_repair._track_subtype(init_values={"user_id": 1}),
             self.env.ref(
                 "fleet_vehicle_service_kanban."
                 "mail_message_subtype_fleet_service_user_updated"
             ),
         )
         self.assertEqual(
-            service_entry._track_subtype(init_values={"purchaser_id": 1}),
+            self.service_repair._track_subtype(init_values={"purchaser_id": 1}),
             self.env.ref(
                 "fleet_vehicle_service_kanban."
                 "mail_message_subtype_fleet_service_purchaser_updated"
             ),
         )
         self.assertEqual(
-            service_entry._track_subtype(init_values={"vendor_id": 1}),
+            self.service_repair._track_subtype(init_values={"vendor_id": 1}),
             self.env.ref(
                 "fleet_vehicle_service_kanban."
                 "mail_message_subtype_fleet_service_vendor_updated"
             ),
         )
+
+    def test_vehicle_service_stages(self):
+        """Check workflow of services through stages."""
+        self.assertEqual(self.service_repair.stage_id, self.stage_draft)
+        self.service_repair.write({"stage_id": self.stage_open.id})
+        self.assertEqual(self.service_repair.stage_id, self.stage_open)
+        self.service_repair.write({"stage_id": self.stage_done.id})
+        self.assertEqual(self.service_repair.stage_id, self.stage_done)

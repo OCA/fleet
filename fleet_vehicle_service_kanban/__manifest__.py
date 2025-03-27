@@ -10,8 +10,8 @@
     "development_status": "Production/Stable",
     "website": "https://github.com/OCA/fleet",
     "license": "AGPL-3",
-    "version": "16.0.1.1.0",
-    "depends": ["fleet", "mail"],
+    "version": "18.0.1.0.0",
+    "depends": ["fleet"],
     "data": [
         "security/ir.model.access.csv",
         "data/fleet_vehicle_log_services_stage_data.xml",
@@ -19,7 +19,6 @@
         "views/fleet_vehicle_log_services_views.xml",
         "views/fleet_vehicle_log_services_stage_views.xml",
         "views/fleet_vehicle_log_services_tag_views.xml",
-        "views/fleet_service_type_views.xml",
         "views/mail_activity_type_views.xml",
     ],
     "installable": True,

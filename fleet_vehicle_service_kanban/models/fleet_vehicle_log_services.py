@@ -1,13 +1,12 @@
 # Copyright 2020-Present Druidoo - Manuel Marquez <manuel.marquez@druidoo.io>
+# Copyright 2025 Tecnativa - Víctor Martínez
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 from odoo import api, fields, models
 
 
 class FleetVehicleLogServices(models.Model):
-    _name = "fleet.vehicle.log.services"
-    _inherit = ["fleet.vehicle.log.services", "mail.thread", "mail.activity.mixin"]
-    _description = "Services for vehicles"
+    _inherit = "fleet.vehicle.log.services"
 
     def _default_stage(self):
         stage = self.env.ref(
@@ -42,11 +41,15 @@ class FleetVehicleLogServices(models.Model):
         string="Tags",
         help="Classify and analyze your services categories like: Repair, Maintenance",
     )
-    active = fields.Boolean(default=True, tracking=True)
+    active = fields.Boolean(tracking=True)
 
     @api.model
-    def _read_group_stage_ids(self, stages, domain, order):
-        return self.env["fleet.vehicle.log.services.stage"].search([], order=order)
+    def _read_group_stage_ids(self, stages, domain):
+        """Read group customization in order to display all the stages in the
+        kanban view, even if they are empty
+        """
+        stage_ids = stages.sudo()._search([], order=stages._order)
+        return stages.browse(stage_ids)
 
     def _track_subtype(self, init_values):
         self.ensure_one()

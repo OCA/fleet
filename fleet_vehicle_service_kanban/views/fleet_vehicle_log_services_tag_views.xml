@@ -8,6 +8,7 @@
                 <sheet>
                     <group>
                         <field name="name" />
+                        <field name="color" widget="color_picker" />
                     </group>
                 </sheet>
             </form>
@@ -17,9 +18,10 @@
         <field name="name">fleet.vehicle.log.services.tag.tree</field>
         <field name="model">fleet.vehicle.log.services.tag</field>
         <field name="arch" type="xml">
-            <tree editable="bottom">
+            <list editable="bottom">
                 <field name="name" />
-            </tree>
+                <field name="color" widget="color_picker" optional="show" />
+            </list>
         </field>
     </record>
     <record id="fleet_vehicle_log_services_tag_action" model="ir.actions.act_window">

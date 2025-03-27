@@ -460,9 +460,3 @@ msgid ""
 msgstr ""
 "Si possono personalizzare le fasi disponibili per tracciare l'evoluzione di\n"
 "                ogni servizio. Esempio: registrato, completato, ecc."
-
-#~ msgid "SMS Delivery error"
-#~ msgstr "Errore consegna SMS"
-
-#~ msgid "Number of messages which requires an action"
-#~ msgstr "Numero di messaggi che richiedono un'azione"

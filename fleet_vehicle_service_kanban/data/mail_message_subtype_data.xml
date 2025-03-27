@@ -4,11 +4,11 @@
         id="mail_message_subtype_fleet_service_purchaser_updated"
         model="mail.message.subtype"
     >
-        <field name="name">Changed Purchaser</field>
+        <field name="name">Changed Driver</field>
         <field name="sequence">0</field>
         <field name="res_model">fleet.vehicle.log.services</field>
         <field name="default" eval="True" />
-        <field name="description">Changed Purchaser</field>
+        <field name="description">Changed Driver</field>
     </record>
     <record
         id="mail_message_subtype_fleet_service_vendor_updated"

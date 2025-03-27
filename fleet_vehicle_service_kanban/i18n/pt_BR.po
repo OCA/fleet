@@ -461,9 +461,3 @@ msgstr ""
 "Você pode personalizar os estágios disponíveis para acompanhar a evolução "
 "de\n"
 "                cada serviço. Exemplo: registrado, finalizado, etc."
-
-#~ msgid "Purchaser"
-#~ msgstr "Comprador"
-
-#~ msgid "Status"
-#~ msgstr "Status"

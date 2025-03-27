@@ -462,9 +462,3 @@ msgid ""
 msgstr ""
 "Puede personalizar las etapas disponibles para seguir la evolución de\n"
 "                cada servicio. Ejemplo: registrado, finalizado, etc."
-
-#~ msgid "SMS Delivery error"
-#~ msgstr "Error en la entrega de sms"
-
-#~ msgid "Number of messages which requires an action"
-#~ msgstr "Números de mensajes que requieren una acción"

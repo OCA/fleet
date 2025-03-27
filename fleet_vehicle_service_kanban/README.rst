@@ -31,12 +31,10 @@ Kanban Features for Vehicle Services
 This module adds the following features to vehicle services
 (fleet.vehicle.log.service):
 
--  Kanban view.
--  Features of mail (chatter) and acitivities, includes a new activity
-   view.
+-  Add tags to kanban view.
 -  Configurable activity types. Menu under Fleet / Configuration /
    Services Logs / Activity Types.
--  New fields: Responsible, Priority, Tags, Active, Stage.
+-  New fields: Responsible, Priority, Tags, Stage.
 -  Configurable stages. Menu under Fleet / Configuration / Services Logs
    / Vehicle Services Stages.
 -  Configurable tags. Menu under Fleet / Configuration / Services Logs /
@@ -46,6 +44,12 @@ This module adds the following features to vehicle services
 
 .. contents::
    :local:
+
+Known issues / Roadmap
+======================
+
+Make a module similar to project_task_stage_state to link stages to
+states and avoid displaying 2 states.
 
 Bug Tracker
 ===========
@@ -85,6 +89,7 @@ Contributors
    ..
 
       -  Carolina Fernandez
+      -  Víctor Martínez
 
 Maintainers
 -----------
