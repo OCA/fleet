@@ -127,9 +127,9 @@
                                         name="vehicle_id"
                                         widget="res_partner_many2one"
                                     />
-                                    <span class="float-right"><field
-                                            name="date"
-                                        /></span>
+                                    <span class="float-right">
+                                        <field name="date" />
+                                    </span>
                                 </strong>
                             </div>
                             <div>
@@ -139,15 +139,16 @@
                                 />
                             </div>
                             <div>
-                                <span><field
+                                <span>
+                                    <field
                                         name="vendor_id"
                                         widget="res_partner_many2one"
-                                    /></span>
+                                    />
+                                </span>
                                 <span><field name="liter" /> Liter</span>
-                                <span class="float-right"><field
-                                        name="amount"
-                                        widget="monetary"
-                                    /></span>
+                                <span class="float-right">
+                                    <field name="amount" widget="monetary" />
+                                </span>
                             </div>
                         </div>
                     </t>
@@ -156,9 +157,9 @@
         </field>
     </record>
     <record id="fleet_vehicle_log_fuel_view_graph" model="ir.ui.view">
-       <field name="name">fleet.vehicle.log.fuel.graph</field>
-       <field name="model">fleet.vehicle.log.fuel</field>
-       <field name="arch" type="xml">
+        <field name="name">fleet.vehicle.log.fuel.graph</field>
+        <field name="model">fleet.vehicle.log.fuel</field>
+        <field name="arch" type="xml">
             <graph string="Fuel Costs Per Month" stacked="True" sample="1">
                 <field name="date" type="row" />
                 <field name="vehicle_id" type="row" />
@@ -188,9 +189,10 @@
         <field name="res_model">fleet.vehicle.log.fuel</field>
         <field name="view_mode">tree,kanban,form,graph</field>
         <field name="help" type="html">
-          <p class="o_view_nocontent_smiling_face">
+            <p class="o_view_nocontent_smiling_face">
             Create a new fuel log entry
-          </p><p>
+          </p>
+            <p>
             Here you can add refuelling entries for all vehicles.
           </p>
         </field>

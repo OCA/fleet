@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="fleet.fleet_vehicle_view_form" />
         <field name="arch" type="xml">
             <div name="button_box" position="inside">
-                 <button
+                <button
                     name="action_view_log_fuel"
                     type="object"
                     class="oe_stat_button"
