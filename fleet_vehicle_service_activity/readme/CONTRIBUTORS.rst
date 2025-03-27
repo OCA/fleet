@@ -1,3 +1,0 @@
-* `Tecnativa`:
-
-  * Carolina Fernandez
