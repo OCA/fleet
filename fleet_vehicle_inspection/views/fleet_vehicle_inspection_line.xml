@@ -88,9 +88,9 @@
                                                         <h4
                                                             class="card-title p-2 m-0 bg-200"
                                                         >
-                                                            <small><field
-                                                                    name="name"
-                                                                /></small>
+                                                            <small>
+                                                                <field name="name" />
+                                                            </small>
                                                         </h4>
                                                     </div>
                                                     <!-- below 100 Kb: good -->
@@ -160,7 +160,9 @@
                 <div class="row o_inspection_image_modal">
                     <div class="col-md-6 col-xl-5">
                         <label for="name" string="Image Name" />
-                        <h2><field name="name" placeholder="Image Name" /></h2>
+                        <h2>
+                            <field name="name" placeholder="Image Name" />
+                        </h2>
                     </div>
                     <div
                         class="col-md-6 col-xl-7 text-center o_inspection_image_modal_container"
