@@ -11,26 +11,26 @@
                     <button
                         name="button_running"
                         type="object"
-                        states="todo"
+                        invisible="state!='todo'"
                         string="Running"
                         class="oe_highlight"
                     />
                     <button
                         name="button_done"
                         type="object"
-                        states="running"
+                        invisible="state!='running'"
                         string="Done"
                         class="oe_highlight"
                     />
                     <button
                         name="button_todo"
-                        states="cancelled"
+                        invisible="state!='cancelled'"
                         string="Set to Todo"
                         type="object"
                     />
                     <button
                         name="button_cancel"
-                        states="todo,running,done"
+                        invisible="state not in ('todo','running','done')"
                         string="Cancel"
                         type="object"
                     />
@@ -41,46 +41,42 @@
                         name="web_ribbon"
                         title="Archived"
                         bg_color="bg-danger"
-                        attrs="{'invisible': [('active', '=', True)]}"
+                        invisible="active"
                     />
-                    <group col="2">
+                    <group>
                         <group>
-                            <field name="description" />
-                            <field name="service_type_id" />
-                            <field name="date" />
-                            <field name="amount" widget="monetary" />
-                            <field name="vendor_id" />
+                            <field name="description" readonly="state!='todo'" />
+                            <field name="service_type_id" readonly="state!='todo'" />
+                            <field name="date" readonly="state!='todo'" />
+                            <field
+                                name="amount"
+                                widget="monetary"
+                                readonly="state!='todo'"
+                            />
+                            <field name="vendor_id" readonly="state!='todo'" />
                         </group>
                         <group>
-                            <field name="liter" />
-                            <field name="price_per_liter" />
-                            <field name="vehicle_id" />
-                            <field name="purchaser_id" />
+                            <field name="liter" readonly="state!='todo'" />
+                            <field name="price_per_liter" readonly="state!='todo'" />
+                            <field name="vehicle_id" readonly="state!='todo'" />
+                            <field name="purchaser_id" readonly="state!='todo'" />
                             <field name="odometer_id" invisible="1" />
                             <label for="odometer" />
                             <div class="o_row">
-                                <field
-                                    name="odometer"
-                                    attrs="{'readonly': [('odometer_id', '!=', False)]}"
-                                />
+                                <field name="odometer" readonly="odometer_id" />
                                 <field name="odometer_unit" />
                             </div>
                         </group>
                     </group>
-                    <group string="Notes" col="2">
+                    <group string="Notes">
                         <field
                             nolabel="1"
-                            colspan="2"
                             name="notes"
                             placeholder="Write here any other information related to the service completed."
                         />
                     </group>
                 </sheet>
-                <div class="oe_chatter">
-                    <field name="message_follower_ids" />
-                    <field name="activity_ids" />
-                    <field name="message_ids" />
-                </div>
+                <chatter />
             </form>
         </field>
     </record>
@@ -88,19 +84,24 @@
         <field name="name">fleet.vehicle.log.fuel.tree</field>
         <field name="model">fleet.vehicle.log.fuel</field>
         <field name="arch" type="xml">
-            <tree multi_edit="1">
+            <list multi_edit="1">
                 <field name="date" readonly="1" />
-                <field name="description" />
-                <field name="service_type_id" />
+                <field name="description" readonly="state!='todo'" />
+                <field name="service_type_id" readonly="state!='todo'" />
                 <field name="vehicle_id" readonly="1" widget="many2one_avatar" />
                 <field name="purchaser_id" readonly="1" widget="many2one_avatar" />
-                <field name="vendor_id" optional="show" />
-                <field name="inv_ref" invisible="1" />
-                <field name="liter" />
-                <field name="price_per_liter" invisible="1" />
+                <field name="vendor_id" optional="show" readonly="state!='todo'" />
+                <field name="inv_ref" column_invisible="1" />
+                <field name="liter" readonly="state!='todo'" />
+                <field name="price_per_liter" column_invisible="1" />
                 <field name="notes" optional="show" />
-                <field name="amount" sum="Total" widget="monetary" />
-                <field name="currency_id" invisible="1" />
+                <field
+                    name="amount"
+                    sum="Total"
+                    widget="monetary"
+                    readonly="state!='todo'"
+                />
+                <field name="currency_id" column_invisible="1" />
                 <field
                     name="state"
                     readonly="1"
@@ -109,48 +110,36 @@
                     decoration-warning="state == 'todo'"
                     decoration-info="state == 'running'"
                 />
-            </tree>
+            </list>
         </field>
     </record>
     <record id='fleet_vehicle_log_fuel_view_kanban' model='ir.ui.view'>
         <field name="name">fleet.vehicle.log.fuel.kanban</field>
         <field name="model">fleet.vehicle.log.fuel</field>
         <field name="arch" type="xml">
-            <kanban class="o_kanban_mobile">
+            <kanban>
                 <field name="currency_id" />
                 <templates>
-                    <t t-name="kanban-box">
-                        <div t-attf-class="oe_kanban_global_click">
-                            <div>
-                                <strong>
-                                    <field
-                                        name="vehicle_id"
-                                        widget="res_partner_many2one"
-                                    />
-                                    <span class="float-right">
-                                        <field name="date" />
-                                    </span>
-                                </strong>
-                            </div>
-                            <div>
-                                <field
-                                    name="purchaser_id"
-                                    widget="res_partner_many2one"
-                                />
-                            </div>
-                            <div>
-                                <span>
-                                    <field
-                                        name="vendor_id"
-                                        widget="res_partner_many2one"
-                                    />
-                                </span>
-                                <span><field name="liter" /> Liter</span>
-                                <span class="float-right">
-                                    <field name="amount" widget="monetary" />
-                                </span>
-                            </div>
+                    <t t-name="card">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <field
+                                name="vehicle_id"
+                                class="fw-bold"
+                                widget="res_partner_many2one"
+                            />
+                            <field class="badge text-bg-secondary" name="state" />
                         </div>
+                        <field name="date" />
+                        <field name="purchaser_id" widget="res_partner_many2one" />
+                        <field name="vendor_id" widget="res_partner_many2one" />
+                        <span><field name="liter" /> Liter</span>
+                        <footer class="pt-0">
+                            <field
+                                name="amount"
+                                widget="monetary"
+                                options="{'currency_field': 'currency_id'}"
+                            />
+                        </footer>
                     </t>
                 </templates>
             </kanban>
@@ -187,7 +176,7 @@
     <record id='fleet_vehicle_log_fuel_action' model='ir.actions.act_window'>
         <field name="name">Fuel Logs</field>
         <field name="res_model">fleet.vehicle.log.fuel</field>
-        <field name="view_mode">tree,kanban,form,graph</field>
+        <field name="view_mode">list,kanban,form,graph</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
             Create a new fuel log entry

@@ -12,27 +12,19 @@ class FleetVehicleLogFuel(models.Model):
     _rec_name = "service_type_id"
     _description = "Fuel log for vehicles"
 
-    READONLY_STATES = {
-        "running": [("readonly", True)],
-        "done": [("readonly", True)],
-        "cancel": [("readonly", True)],
-    }
-
     active = fields.Boolean(default=True)
     vehicle_id = fields.Many2one(
         "fleet.vehicle",
         "Vehicle",
         required=True,
         help="Vehicle concerned by this log",
-        states=READONLY_STATES,
     )
-    amount = fields.Monetary("Cost", states=READONLY_STATES)
-    description = fields.Char(states=READONLY_STATES)
+    amount = fields.Monetary("Cost")
+    description = fields.Char()
     odometer_id = fields.Many2one(
         "fleet.vehicle.odometer",
         "Odometer",
         help="Odometer measure of the vehicle at the moment of this log",
-        states=READONLY_STATES,
     )
     odometer = fields.Float(
         compute="_compute_odometer",
@@ -40,13 +32,11 @@ class FleetVehicleLogFuel(models.Model):
         inverse="_inverse_odometer",
         string="Odometer Value",
         help="Odometer measure of the vehicle at the moment of this log",
-        states=READONLY_STATES,
     )
     odometer_unit = fields.Selection(related="vehicle_id.odometer_unit", string="Unit")
     date = fields.Date(
         help="Date when the cost has been executed",
         default=fields.Date.context_today,
-        states=READONLY_STATES,
     )
     company_id = fields.Many2one(
         "res.company", "Company", default=lambda self: self.env.company
@@ -57,10 +47,9 @@ class FleetVehicleLogFuel(models.Model):
         string="Driver",
         compute="_compute_purchaser_id",
         store=True,
-        states=READONLY_STATES,
     )
-    inv_ref = fields.Char("Vendor Reference", states=READONLY_STATES)
-    vendor_id = fields.Many2one("res.partner", "Vendor", states=READONLY_STATES)
+    inv_ref = fields.Char("Vendor Reference")
+    vendor_id = fields.Many2one("res.partner", "Vendor")
     notes = fields.Text()
     service_type_id = fields.Many2one(
         "fleet.service.type",
@@ -69,7 +58,6 @@ class FleetVehicleLogFuel(models.Model):
         default=lambda self: self.env.ref(
             "fleet.type_service_refueling", raise_if_not_found=False
         ),
-        states=READONLY_STATES,
     )
     state = fields.Selection(
         [
@@ -81,8 +69,8 @@ class FleetVehicleLogFuel(models.Model):
         default="todo",
         string="Stage",
     )
-    liter = fields.Float(states=READONLY_STATES)
-    price_per_liter = fields.Float(states=READONLY_STATES)
+    liter = fields.Float()
+    price_per_liter = fields.Float()
     service_id = fields.Many2one(
         comodel_name="fleet.vehicle.log.services", readonly=True, copy=False
     )

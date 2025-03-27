@@ -467,18 +467,3 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_view_form
 msgid "show the fuel logs for this vehicle"
 msgstr "mostrar os registros de combustível para este veículo"
-
-#~ msgid "Number of messages which requires an action"
-#~ msgstr "Número de mensagens que requer uma ação"
-
-#~ msgid "Number of unread messages"
-#~ msgstr "Número de mensagens não lidas"
-
-#~ msgid "Unit of the odometer "
-#~ msgstr "Unidade de medida do odômetro "
-
-#~ msgid "Unread Messages"
-#~ msgstr "Mensagens Não Lidas"
-
-#~ msgid "Unread Messages Counter"
-#~ msgstr "Contador de Mensagens Não Lidas"

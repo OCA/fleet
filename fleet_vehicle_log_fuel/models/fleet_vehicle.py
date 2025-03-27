@@ -32,11 +32,3 @@ class FleetVehicle(models.Model):
             domain=[("vehicle_id", "=", self.id)],
         )
         return action
-
-
-class FleetServiceType(models.Model):
-    _inherit = "fleet.service.type"
-
-    category = fields.Selection(
-        selection_add=[("fuel", "Fuel Log")], ondelete={"fuel": "cascade"}
-    )

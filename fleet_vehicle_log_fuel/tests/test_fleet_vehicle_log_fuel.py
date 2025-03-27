@@ -2,11 +2,13 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl
 from odoo.exceptions import UserError
 from odoo.tests import Form
+from odoo.tools import mute_logger
 
 from .common import TestFleetVehicleLogFuelBase
 
 
 class TestFleetVehicleLogFuelMisc(TestFleetVehicleLogFuelBase):
+    @mute_logger("odoo.models.unlink")
     def test_fleet_vehicle_log_fuel_process(self):
         fuel_form = Form(
             self.env["fleet.vehicle.log.fuel"].with_context(

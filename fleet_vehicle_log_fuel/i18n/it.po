@@ -465,18 +465,3 @@ msgstr "Indicare qui ogni altra informazione relativa al servizio completato."
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_view_form
 msgid "show the fuel logs for this vehicle"
 msgstr "visualizza i registri carburante per questo veicolo"
-
-#~ msgid "Number of messages which requires an action"
-#~ msgstr "Numero di messaggi che richiedono un'azione"
-
-#~ msgid "Number of unread messages"
-#~ msgstr "Numero di messaggi non letti"
-
-#~ msgid "Unit of the odometer "
-#~ msgstr "Unità del contachilometri "
-
-#~ msgid "Unread Messages"
-#~ msgstr "Messaggi non letti"
-
-#~ msgid "Unread Messages Counter"
-#~ msgstr "Contatore messaggi non letti"
