@@ -15,8 +15,8 @@ class FleetVehicleLogServices(models.Model):
         delay_alert_service = int(
             params.get_param("hr_fleet.delay_alert_service", default=30)
         )
-        date_today = fields.Date.today()
-        outdated_days = date_today + relativedelta(days=+delay_alert_service)
+        date_today = fields.Date.context_today(self)
+        outdated_days = date_today + relativedelta(days=delay_alert_service)
         reminder_activity_type = (
             self.env.ref(
                 "fleet_vehicle_service_activity.mail_act_fleet_service_to_check",

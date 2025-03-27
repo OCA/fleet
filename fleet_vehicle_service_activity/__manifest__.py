@@ -9,7 +9,7 @@
     "development_status": "Production/Stable",
     "website": "https://github.com/OCA/fleet",
     "license": "AGPL-3",
-    "version": "16.0.1.0.0",
+    "version": "18.0.1.0.0",
     "depends": ["fleet"],
     "data": [
         "data/fleet_data.xml",
@@ -17,4 +17,5 @@
         "views/res_config_settings_views.xml",
     ],
     "installable": True,
+    "maintainers": ["victoralmau"],
 }
