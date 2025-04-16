@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -14,24 +14,13 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: fleet_vehicle_purchase
-#: model:ir.model.fields,field_description:fleet_vehicle_purchase.field_fleet_vehicle__display_name
-#: model:ir.model.fields,field_description:fleet_vehicle_purchase.field_purchase_order__display_name
-#: model:ir.model.fields,field_description:fleet_vehicle_purchase.field_purchase_order_line__display_name
-msgid "Display Name"
+#: model:ir.model.fields,field_description:fleet_vehicle_purchase.field_purchase_order_line__fleet_vehicle_id
+msgid "Fleet Vehicle"
 msgstr ""
 
 #. module: fleet_vehicle_purchase
-#: model:ir.model.fields,field_description:fleet_vehicle_purchase.field_fleet_vehicle__id
-#: model:ir.model.fields,field_description:fleet_vehicle_purchase.field_purchase_order__id
-#: model:ir.model.fields,field_description:fleet_vehicle_purchase.field_purchase_order_line__id
-msgid "ID"
-msgstr ""
-
-#. module: fleet_vehicle_purchase
-#: model:ir.model.fields,field_description:fleet_vehicle_purchase.field_fleet_vehicle____last_update
-#: model:ir.model.fields,field_description:fleet_vehicle_purchase.field_purchase_order____last_update
-#: model:ir.model.fields,field_description:fleet_vehicle_purchase.field_purchase_order_line____last_update
-msgid "Last Modified on"
+#: model:ir.model.fields,field_description:fleet_vehicle_purchase.field_purchase_order_line__fleet_vehicle_from_po
+msgid "Fleet Vehicle From Po"
 msgstr ""
 
 #. module: fleet_vehicle_purchase
