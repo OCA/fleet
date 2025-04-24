@@ -251,6 +251,11 @@ msgid "Responsible User"
 msgstr ""
 
 #. module: fleet_vehicle_inspection_template
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template_line__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: fleet_vehicle_inspection_template
 #: model:ir.model.fields,help:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__activity_state
 msgid ""
 "Status based on activities\n"
