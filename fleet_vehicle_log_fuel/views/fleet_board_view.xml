@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="fleet_costs_report_view_search" model="ir.ui.view">
+        <field name="name">fleet.vehicle.cost.view.search</field>
+        <field name="model">fleet.vehicle.cost.report</field>
+        <field name="inherit_id" ref="fleet.fleet_costs_report_view_search" />
+        <field name="arch" type="xml">
+            <filter name="service" position="after">
+                <filter
+                    string="Fuel"
+                    name="fuel"
+                    domain="[('cost_type', '=', 'fuel')]"
+                />
+            </filter>
+        </field>
+    </record>
+</odoo>
