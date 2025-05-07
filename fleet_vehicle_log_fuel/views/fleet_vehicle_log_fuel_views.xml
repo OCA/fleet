@@ -113,7 +113,6 @@
         </field>
     </record>
     
-    <!-- No changes needed for kanban view -->
     <record id='fleet_vehicle_log_fuel_view_kanban' model='ir.ui.view'>
         <field name="name">fleet.vehicle.log.fuel.kanban</field>
         <field name="model">fleet.vehicle.log.fuel</field>
