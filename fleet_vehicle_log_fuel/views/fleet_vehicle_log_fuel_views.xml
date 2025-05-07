@@ -45,17 +45,45 @@
                     />
                     <group col="2">
                         <group>
-                            <field name="description" readonly="state in ('running', 'done', 'cancelled')" />
-                            <field name="service_type_id" readonly="state in ('running', 'done', 'cancelled')" />
-                            <field name="date" readonly="state in ('running', 'done', 'cancelled')" />
-                            <field name="amount" widget="monetary" readonly="state in ('running', 'done', 'cancelled')" />
-                            <field name="vendor_id" readonly="state in ('running', 'done', 'cancelled')" />
+                            <field
++                                name="description"
++                                readonly="state in ('running', 'done', 'cancelled')"
++                            />
++                            <field
++                                name="service_type_id"
++                                readonly="state in ('running', 'done', 'cancelled')"
++                            />
++                            <field
++                                name="date"
++                                readonly="state in ('running', 'done', 'cancelled')"
++                            />
++                            <field
++                                name="amount"
++                                widget="monetary"
++                                readonly="state in ('running', 'done', 'cancelled')"
++                            />
++                            <field
++                                name="vendor_id"
++                                readonly="state in ('running', 'done', 'cancelled')"
++                            />
                         </group>
                         <group>
-                            <field name="liter" readonly="state in ('running', 'done', 'cancelled')" />
-                            <field name="price_per_liter" readonly="state in ('running', 'done', 'cancelled')" />
-                            <field name="vehicle_id" readonly="state in ('running', 'done', 'cancelled')" />
-                            <field name="purchaser_id" readonly="state in ('running', 'done', 'cancelled')" />
+                            <field
++                                name="liter"
++                                readonly="state in ('running', 'done', 'cancelled')"
++                            />
++                            <field
++                                name="price_per_liter"
++                                readonly="state in ('running', 'done', 'cancelled')"
++                            />
++                            <field
++                                name="vehicle_id"
++                                readonly="state in ('running', 'done', 'cancelled')"
++                            />
++                            <field
++                                name="purchaser_id"
++                                readonly="state in ('running', 'done', 'cancelled')"
++                            />
                             <field name="odometer_id" invisible="1" />
                             <label for="odometer" />
                             <div class="o_row">
