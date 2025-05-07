@@ -87,8 +87,8 @@ class FleetVehicleLogFuel(models.Model):
         ],
         default="todo",
         string="Stage",
-        tracking=True,  
-    )
+        tracking=True,
+     )
     liter = fields.Float(states=READONLY_STATES, tracking=True)
     price_per_liter = fields.Float(states=READONLY_STATES, tracking=True)
     service_id = fields.Many2one(
@@ -169,10 +169,12 @@ class FleetVehicleLogFuel(models.Model):
             service = self.env["fleet.vehicle.log.services"].create(
                 item._prepare_fleet_vehicle_log_services_vals()
             )
-            item.write({
-                "service_id": service.id,
-                "state": "done",
-            })
+            item.write(
+                {
+                    "service_id": service.id,
+                    "state": "done",
+                }
+            )
         return True
 
     def button_cancel(self):
