@@ -88,7 +88,7 @@ class FleetVehicleLogFuel(models.Model):
         default="todo",
         string="Stage",
         tracking=True,
-     )
+    )
     liter = fields.Float(states=READONLY_STATES, tracking=True)
     price_per_liter = fields.Float(states=READONLY_STATES, tracking=True)
     service_id = fields.Many2one(
