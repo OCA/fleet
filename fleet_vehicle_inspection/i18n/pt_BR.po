@@ -7,16 +7,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-22 02:10+0000\n"
-"PO-Revision-Date: 2024-05-29 19:37+0000\n"
-"Last-Translator: Rodrigo Macedo <sottomaiormacedotec@users.noreply."
-"translation.odoo-community.org>\n"
+"PO-Revision-Date: 2025-05-13 14:11+0000\n"
+"Last-Translator: Marcel Savegnago <marcel.savegnago@gmail.com>\n"
 "Language-Team: \n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.10.4\n"
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection__state
@@ -73,14 +72,14 @@ msgstr "Atividades"
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__activity_exception_decoration
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr "Decoração de exceção de atividade"
+msgstr "Decoração de Atividade Excepcional"
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__activity_state
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__activity_state
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__activity_state
 msgid "Activity State"
-msgstr "Estado de Atividade"
+msgstr "Situação da Atividade"
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__activity_type_icon
@@ -262,7 +261,7 @@ msgstr "Seguidores (Parceiros)"
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__activity_type_icon
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
-msgstr "Ícone Font Awesome ex. fa-tasks"
+msgstr "Ícone do Font Awesome. Ex: fa-tasks"
 
 #. module: fleet_vehicle_inspection
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_search_view
@@ -306,14 +305,14 @@ msgstr "Ícone"
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__activity_exception_icon
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr "Ícone para indicar uma atividade de exceção."
+msgstr "Ícone para indicar uma atividade excepcional."
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection__message_needaction
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__message_needaction
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__message_needaction
 msgid "If checked, new messages require your attention."
-msgstr "Se marcado novas mensagens solicitarão sua atenção."
+msgstr "Se marcado, novas mensagens solicitarão sua atenção."
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection__message_has_error
@@ -434,7 +433,7 @@ msgstr "Resultado da Inspeção"
 #. module: fleet_vehicle_inspection
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_search_view
 msgid "Inspection State"
-msgstr "Estado da Inspeção"
+msgstr "Situação da Inspeção"
 
 #. module: fleet_vehicle_inspection
 #. odoo-python
@@ -474,7 +473,7 @@ msgstr "Quilômetros"
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line____last_update
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line_image____last_update
 msgid "Last Modified on"
-msgstr "Última modificação em"
+msgstr "Última Modificação em"
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__write_uid
@@ -482,7 +481,7 @@ msgstr "Última modificação em"
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__write_uid
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line_image__write_uid
 msgid "Last Updated by"
-msgstr "Última atualização por"
+msgstr "Última Atualização por"
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__write_date
@@ -490,7 +489,7 @@ msgstr "Última atualização por"
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__write_date
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line_image__write_date
 msgid "Last Updated on"
-msgstr "Última atualização em"
+msgstr "Última Atualização em"
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__message_main_attachment_id
@@ -504,7 +503,7 @@ msgstr "Anexo Principal"
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__message_has_error
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__message_has_error
 msgid "Message Delivery error"
-msgstr "Erro de entrega de Mensagem"
+msgstr "Erro na Entrega da Mensagem"
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__message_ids
@@ -530,7 +529,7 @@ msgstr "Deve selecionar o tipo de serviço"
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__my_activity_date_deadline
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr "Meu prazo de atividade"
+msgstr "Meu Prazo Final de Atividade"
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__name
@@ -550,7 +549,7 @@ msgstr "Próximo evento do calendário de atividades"
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__activity_date_deadline
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr "Prazo final para Próxima Atividade"
+msgstr "Prazo Final para Próxima Atividade"
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__activity_summary
@@ -577,7 +576,7 @@ msgstr "Observações"
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__message_needaction_counter
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__message_needaction_counter
 msgid "Number of Actions"
-msgstr "Número de ações"
+msgstr "Número de Ações"
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__message_has_error_counter
@@ -744,7 +743,7 @@ msgstr "A Fazer"
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__activity_exception_decoration
 #: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr "Tipo de atividade de exceção registrada."
+msgstr "Tipo da atividade de exceção no registro."
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model,name:fleet_vehicle_inspection.model_fleet_vehicle
