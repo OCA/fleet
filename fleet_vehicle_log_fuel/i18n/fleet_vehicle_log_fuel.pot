@@ -240,7 +240,6 @@ msgstr ""
 
 #. module: fleet_vehicle_log_fuel
 #: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_has_error
-#: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
 
@@ -354,11 +353,6 @@ msgid "Running"
 msgstr ""
 
 #. module: fleet_vehicle_log_fuel
-#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr ""
-
-#. module: fleet_vehicle_log_fuel
 #: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__service_id
 msgid "Service"
 msgstr ""
@@ -426,6 +420,16 @@ msgstr ""
 #. module: fleet_vehicle_log_fuel
 #: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__inv_ref
 msgid "Vendor Reference"
+msgstr ""
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__website_message_ids
+msgid "Website communication history"
 msgstr ""
 
 #. module: fleet_vehicle_log_fuel
