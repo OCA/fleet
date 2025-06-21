@@ -1,9 +1,9 @@
-from odoo.tests import SavepointCase
+from odoo.tests import TransactionCase
 
 
-class TestFleetVehicleOwner(SavepointCase):
+class TestFleetVehicleOwner(TransactionCase):
     def setUp(self):
-        super(TestFleetVehicleOwner, self).setUp()
+        super().setUp()
 
         # Create necessary test data here, such as a partner and vehicles
         self.partner = self.env["res.partner"].create(

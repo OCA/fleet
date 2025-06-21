@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="view_fleet_vehicle_form_inherited">
+        <field name="name">fleet.vehicle.form.inherited</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_form" />
+        <field name="arch" type="xml">
+            <field name="company_id" position="after">
+                <field name="owner_id" />
+            </field>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_fleet_vehicle_tree_inherited">
+        <field name="name">fleet.vehicle.tree.inherited</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_tree" />
+        <field name="arch" type="xml">
+            <field name="vin_sn" position="before">
+                <field name="owner_id" />
+            </field>
+        </field>
+    </record>
+</odoo>
