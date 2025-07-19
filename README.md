@@ -22,10 +22,10 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [fleet_vehicle_category](fleet_vehicle_category/) | 17.0.1.0.0 |  | Add category definition for vehicles.
-[fleet_vehicle_fuel_capacity](fleet_vehicle_fuel_capacity/) | 17.0.1.0.0 | [![marcelsavegnago](https://github.com/marcelsavegnago.png?size=30px)](https://github.com/marcelsavegnago) | This module extends the functionality of fleet management. It allows the registration of a vehicle's fuel capacity.
-[fleet_vehicle_history_date_end](fleet_vehicle_history_date_end/) | 17.0.1.0.0 | [![mamcode](https://github.com/mamcode.png?size=30px)](https://github.com/mamcode) [![ivantodorovich](https://github.com/ivantodorovich.png?size=30px)](https://github.com/ivantodorovich) | Automatically assign date end in vehicle history when a new driver is assigned.
+[fleet_vehicle_fuel_capacity](fleet_vehicle_fuel_capacity/) | 17.0.1.0.0 | <a href='https://github.com/marcelsavegnago'><img src='https://github.com/marcelsavegnago.png' width='32' height='32' style='border-radius:50%;' alt='marcelsavegnago'/></a> | This module extends the functionality of fleet management. It allows the registration of a vehicle's fuel capacity.
+[fleet_vehicle_history_date_end](fleet_vehicle_history_date_end/) | 17.0.1.0.0 | <a href='https://github.com/mamcode'><img src='https://github.com/mamcode.png' width='32' height='32' style='border-radius:50%;' alt='mamcode'/></a> <a href='https://github.com/ivantodorovich'><img src='https://github.com/ivantodorovich.png' width='32' height='32' style='border-radius:50%;' alt='ivantodorovich'/></a> | Automatically assign date end in vehicle history when a new driver is assigned.
 [fleet_vehicle_service_services](fleet_vehicle_service_services/) | 17.0.1.0.0 |  | Add subservices in Services.
-[fleet_vehicle_usage](fleet_vehicle_usage/) | 17.0.1.0.0 | [![victoralmau](https://github.com/victoralmau.png?size=30px)](https://github.com/victoralmau) | Fleet Vehicle Usage
+[fleet_vehicle_usage](fleet_vehicle_usage/) | 17.0.1.0.0 | <a href='https://github.com/victoralmau'><img src='https://github.com/victoralmau.png' width='32' height='32' style='border-radius:50%;' alt='victoralmau'/></a> | Fleet Vehicle Usage
 
 [//]: # (end addons)
 
