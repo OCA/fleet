@@ -89,7 +89,7 @@
                             <div class="o_row">
                                 <field
                                     name="odometer"
-                                    readonly="odometer_id != False or state in ('running', 'done', 'cancelled')"
+                                    readonly="odometer_id or state in ('running', 'done', 'cancelled')"
                                 />
                                 <field name="odometer_unit" />
                             </div>
@@ -123,12 +123,12 @@
                 <field name="vehicle_id" readonly="1" widget="many2one_avatar" />
                 <field name="purchaser_id" readonly="1" widget="many2one_avatar" />
                 <field name="vendor_id" optional="show" />
-                <field name="inv_ref" invisible="1" />
+                <field name="inv_ref" column_invisible="1" />
                 <field name="liter" />
-                <field name="price_per_liter" invisible="1" />
+                <field name="price_per_liter" column_invisible="1" />
                 <field name="notes" optional="show" />
                 <field name="amount" sum="Total" widget="monetary" />
-                <field name="currency_id" invisible="1" />
+                <field name="currency_id" column_invisible="1" />
                 <field
                     name="state"
                     readonly="1"
