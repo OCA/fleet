@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="res_partner_form_inherit_fleet_infraction" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit.fleet.infraction</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <!-- MODIFICATION:
+                 1. Removed the old xpath that placed 'Traffic Agency Details' group after 'website'.
+                 2. Added a new xpath to insert a 'Traffic Agency' page into the existing notebook.
+            -->
+            <xpath expr="//notebook/page[@name='sales_purchases']" position="before">
+                <!-- This new page is only visible if the partner is a company -->
+                <page
+                    string="Traffic Agency"
+                    name="traffic_agency_page"
+                    invisible="not is_company"
+                >
+                    <group>
+                        <!-- 'Is a Traffic Issuing Agency' checkbox -->
+                        <field name="is_issuing_agency" readonly="not is_company" />
+                        <!-- issuing_agency_rank field itself remains invisible; its value is shown on the stat button -->
+                        <field name="issuing_agency_rank" invisible="1" />
+                    </group>
+                </page>
+            </xpath>
+
+            <!-- The button_box remains in its correct position and is not affected by this change -->
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <!-- Button for Issued Infractions -->
+                <button
+                    name="action_view_issued_infractions"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="fa-file-text-o"
+                    invisible="not is_issuing_agency"
+                    help="Show all traffic infractions issued by this agency"
+                >
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="issuing_agency_rank" />
+                        </span>
+                        <span class="o_stat_text">Issued Infractions</span>
+                    </div>
+                </button>
+
+                <!-- Existing button for Driver Infractions -->
+                <button
+                    class="oe_stat_button"
+                    icon="fa-balance-scale"
+                    type="object"
+                    name="action_view_driver_infractions"
+                    invisible="total_infraction_fines == 0"
+                >
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value">
+                            <field
+                                name="total_infraction_fines"
+                                widget="monetary"
+                                options="{'currency_field': 'currency_id'}"
+                            />
+                        </span>
+                        <span class="o_stat_text">Infraction Fines</span>
+                    </div>
+                </button>
+            </xpath>
+            <!-- Removed the old xpath for 'issuing_agency_rank' as it's now handled in the new page -->
+        </field>
+    </record>
+</odoo>

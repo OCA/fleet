@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <!-- Demo: Fleet Traffic Infraction Types -->
+    <record id="infraction_type_speeding" model="fleet.traffic.infraction.type">
+        <field name="code">SPD001</field>
+        <field name="description">Exceeding speed limit</field>
+        <field name="legal_reference">Traffic Code Section 1.2.3</field>
+        <field name="jurisdiction_level">state</field>
+        <field name="country_id" ref="base.us" />
+        <field name="state_id" ref="base.state_us_2" />
+        <!-- California -->
+    </record>
+
+    <record id="infraction_type_parking" model="fleet.traffic.infraction.type">
+        <field name="code">PRK001</field>
+        <field name="description">Illegal parking</field>
+        <field name="legal_reference">Municipal Ordinance 4.5.6</field>
+        <field name="jurisdiction_level">municipal</field>
+        <field name="country_id" ref="base.us" />
+        <field name="state_id" ref="base.state_us_2" />
+        <!-- California -->
+        <field name="city">Los Angeles</field>
+    </record>
+
+    <record id="infraction_type_red_light" model="fleet.traffic.infraction.type">
+        <field name="code">RED001</field>
+        <field name="description">Running a red light</field>
+        <field name="legal_reference">Traffic Code Section 7.8.9</field>
+        <field name="jurisdiction_level">state</field>
+        <field name="country_id" ref="base.us" />
+        <field name="state_id" ref="base.state_us_2" />
+        <!-- California -->
+    </record>
+
+    <!-- Demo: Issuing Agencies (Partners) -->
+    <record id="partner_city_police_dept" model="res.partner">
+        <field name="name">City Police Department</field>
+        <field name="is_company" eval="True" />
+        <field name="is_issuing_agency" eval="True" />
+        <field name="street">123 Main St</field>
+        <field name="city">Los Angeles</field>
+        <field name="state_id" ref="base.state_us_2" />
+        <field name="zip">90001</field>
+        <field name="country_id" ref="base.us" />
+    </record>
+
+    <record id="partner_state_highway_patrol" model="res.partner">
+        <field name="name">State Highway Patrol</field>
+        <field name="is_company" eval="True" />
+        <field name="is_issuing_agency" eval="True" />
+        <field name="street">456 Highway Ave</field>
+        <field name="city">Sacramento</field>
+        <field name="state_id" ref="base.state_us_2" />
+        <field name="zip">95814</field>
+        <field name="country_id" ref="base.us" />
+    </record>
+
+    <!-- Demo: Traffic Infractions -->
+
+    <!-- Infraction 1: Speeding for Vehicle 1 (Micra) -->
+    <record id="traffic_infraction_1" model="fleet.traffic.infractions">
+        <field name="name">New</field>
+        <!-- Will be replaced by sequence -->
+        <field name="state">confirmed</field>
+        <field name="vehicle_id" ref="fleet.vehicle_1" />
+        <field name="driver_id" ref="base.partner_demo" />
+        <field name="infraction_type_id" ref="infraction_type_speeding" />
+        <field name="issuing_agency_id" ref="partner_state_highway_patrol" />
+        <field
+            name="infraction_datetime"
+            eval="(DateTime.now() - timedelta(days=15)).strftime('%Y-%m-%d %H:%M:%S')"
+        />
+        <field
+            name="due_date"
+            eval="(DateTime.now() + timedelta(days=15)).strftime('%Y-%m-%d')"
+        />
+        <field name="infraction_auto_number">987654321</field>
+        <field name="fine_amount">150.00</field>
+    </record>
+
+    <!-- Infraction 2: Parking for Vehicle 2 (Focus) -->
+    <record id="traffic_infraction_2" model="fleet.traffic.infractions">
+        <field name="name">New</field>
+        <!-- Will be replaced by sequence -->
+        <field name="state">confirmed</field>
+        <field name="vehicle_id" ref="fleet.vehicle_2" />
+        <field name="driver_id" ref="base.res_partner_address_25" />
+        <field name="infraction_type_id" ref="infraction_type_parking" />
+        <field name="issuing_agency_id" ref="partner_city_police_dept" />
+        <field
+            name="infraction_datetime"
+            eval="(DateTime.now() - timedelta(days=10)).strftime('%Y-%m-%d %H:%M:%S')"
+        />
+        <field
+            name="due_date"
+            eval="(DateTime.now() + timedelta(days=20)).strftime('%Y-%m-%d')"
+        />
+        <field name="infraction_auto_number">PARK00123</field>
+        <field name="fine_amount">75.00</field>
+    </record>
+
+    <!-- Infraction 3: Red Light for Vehicle 3 (Clio) -->
+    <record id="traffic_infraction_3" model="fleet.traffic.infractions">
+        <field name="name">New</field>
+        <!-- Will be replaced by sequence -->
+        <field name="state">confirmed</field>
+        <field name="vehicle_id" ref="fleet.vehicle_3" />
+        <field name="driver_id" ref="base.res_partner_address_17" />
+        <field name="infraction_type_id" ref="infraction_type_red_light" />
+        <field name="issuing_agency_id" ref="partner_state_highway_patrol" />
+        <field
+            name="infraction_datetime"
+            eval="(DateTime.now() - timedelta(days=5)).strftime('%Y-%m-%d %H:%M:%S')"
+        />
+        <field
+            name="due_date"
+            eval="(DateTime.now() + timedelta(days=25)).strftime('%Y-%m-%d')"
+        />
+        <field name="infraction_auto_number">RLA45678</field>
+        <field name="fine_amount">250.00</field>
+    </record>
+
+    <!-- Infraction 4: Another Speeding for Vehicle 1 (Micra) - to show multiple infractions -->
+    <record id="traffic_infraction_4" model="fleet.traffic.infractions">
+        <field name="name">New</field>
+        <!-- Will be replaced by sequence -->
+        <field name="state">draft</field>
+        <field name="vehicle_id" ref="fleet.vehicle_1" />
+        <field name="driver_id" ref="base.partner_demo" />
+        <field name="infraction_type_id" ref="infraction_type_speeding" />
+        <field name="issuing_agency_id" ref="partner_city_police_dept" />
+        <field
+            name="infraction_datetime"
+            eval="(DateTime.now() - timedelta(days=2)).strftime('%Y-%m-%d %H:%M:%S')"
+        />
+        <field
+            name="due_date"
+            eval="(DateTime.now() + timedelta(days=28)).strftime('%Y-%m-%d')"
+        />
+        <field name="infraction_auto_number">SPD00998</field>
+        <field name="fine_amount">120.00</field>
+    </record>
+</odoo>

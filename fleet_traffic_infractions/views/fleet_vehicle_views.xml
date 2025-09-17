@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="fleet_vehicle_view_form_inherit_infractions" model="ir.ui.view">
+        <field name="name">fleet.vehicle.form.inherit.infractions</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_button_box')]" position="inside">
+                <button
+                    name="action_view_infractions"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="fa-gavel"
+                >
+                    <field
+                        name="infraction_count"
+                        widget="statinfo"
+                        string="Infractions"
+                    />
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>

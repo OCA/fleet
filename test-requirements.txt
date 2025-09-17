@@ -1,0 +1,1 @@
+odoo-addon-fleet_vehicle_assignation_log_datetime@ git+https://github.com/OCA/fleet@refs/pull/184/head#subdirectory=fleet_vehicle_assignation_log_datetime

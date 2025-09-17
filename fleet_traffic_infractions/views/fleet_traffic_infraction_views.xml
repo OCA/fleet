@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2025 Raimundo Pereira da Silva Junior, Odoo Community Association (OCA) -->
+<!-- License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <!-- List View for Fleet Traffic Infractions -->
+    <record id="fleet_traffic_infractions_tree_view" model="ir.ui.view">
+        <field name="name">fleet.traffic.infractions.tree</field>
+        <field name="model">fleet.traffic.infractions</field>
+        <field name="arch" type="xml">
+            <list multi_edit="1">
+                <field name="name" />
+                <field name="vehicle_id" />
+                <field name="driver_id" widget="many2one_avatar_user" />
+                <field name="infraction_datetime" />
+                <field name="infraction_type_id" />
+                <field
+                    name="fine_amount"
+                    sum="Total Fines"
+                    widget="monetary"
+                    options="{'currency_field': 'currency_id'}"
+                />
+                <field name="currency_id" column_invisible="1" />
+                <field
+                    name="state"
+                    widget="badge"
+                    decoration-success="state == 'confirmed'"
+                    decoration-warning="state == 'draft'"
+                    decoration-danger="state == 'cancel'"
+                />
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View for Fleet Traffic Infractions -->
+    <record id="fleet_traffic_infractions_form_view" model="ir.ui.view">
+        <field name="name">fleet.traffic.infractions.form</field>
+        <field name="model">fleet.traffic.infractions</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button
+                        name="button_confirm"
+                        type="object"
+                        string="Confirm"
+                        class="oe_highlight"
+                        data-hotkey="c"
+                        invisible="state != 'draft'"
+                    />
+                    <button
+                        name="button_cancel"
+                        type="object"
+                        string="Cancel"
+                        data-hotkey="z"
+                        invisible="state not in ('draft', 'confirmed')"
+                    />
+                    <button
+                        name="button_draft"
+                        type="object"
+                        string="Set to Draft"
+                        data-hotkey="d"
+                        invisible="state != 'cancel'"
+                    />
+                    <field
+                        name="state"
+                        widget="statusbar"
+                        statusbar_visible="draft,confirmed"
+                    />
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group id="group_left">
+                            <field
+                                name="vehicle_id"
+                                options="{'no_create': True}"
+                                readonly="state != 'draft'"
+                            />
+                            <field
+                                name="infraction_datetime"
+                                readonly="state != 'draft'"
+                            />
+                            <field
+                                name="driver_id"
+                                options="{'no_create': True}"
+                                context="{'search_default_is_driver':1}"
+                                readonly="state != 'draft'"
+                            />
+                            <label for="street" string="Infraction Address" />
+                            <div class="o_address_format">
+                                <field
+                                    name="street"
+                                    placeholder="Street..."
+                                    class="o_address_street"
+                                    readonly="state != 'draft'"
+                                />
+                                <field
+                                    name="city"
+                                    placeholder="City"
+                                    class="o_address_city"
+                                    readonly="state != 'draft'"
+                                />
+                                <field
+                                    name="state_id"
+                                    class="o_address_state"
+                                    placeholder="State"
+                                    options="{&quot;no_open&quot;: True}"
+                                    readonly="state != 'draft'"
+                                />
+                                <field
+                                    name="zip"
+                                    placeholder="ZIP"
+                                    class="o_address_zip"
+                                    readonly="state != 'draft'"
+                                />
+                                <field
+                                    name="country_id"
+                                    placeholder="Country"
+                                    class="o_address_country"
+                                    options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}"
+                                    readonly="state != 'draft'"
+                                />
+                            </div>
+                        </group>
+                        <group id="group_right">
+                            <field
+                                name="infraction_type_id"
+                                options="{'no_create': True}"
+                                readonly="state != 'draft'"
+                            />
+                            <field
+                                name="infraction_auto_number"
+                                readonly="state != 'draft'"
+                            />
+                            <field
+                                name="issuing_agency_id"
+                                options="{'no_create': True}"
+                                readonly="state != 'draft'"
+                            />
+                            <separator string="Financial Details" />
+                            <field
+                                name="fine_amount"
+                                widget="monetary"
+                                options="{'currency_field': 'currency_id'}"
+                                readonly="state != 'draft'"
+                            />
+                            <field name="due_date" readonly="state != 'draft'" />
+                            <field name="currency_id" invisible="1" />
+                        </group>
+                    </group>
+                </sheet>
+                <chatter />
+            </form>
+        </field>
+    </record>
+
+    <!-- Search View for Fleet Traffic Infractions -->
+    <record id="fleet_traffic_infractions_search_view" model="ir.ui.view">
+        <field name="name">fleet.traffic.infractions.search</field>
+        <field name="model">fleet.traffic.infractions</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" string="Reference" />
+                <field name="vehicle_id" />
+                <field name="driver_id" />
+                <field name="infraction_type_id" />
+                <field name="issuing_agency_id" />
+                <field name="infraction_auto_number" />
+                <separator />
+                <filter
+                    string="Draft"
+                    name="draft"
+                    domain="[('state', '=', 'draft')]"
+                />
+                <filter
+                    string="Confirmed"
+                    name="confirmed"
+                    domain="[('state', '=', 'confirmed')]"
+                />
+                <group expand="0" string="Group By">
+                    <filter
+                        string="Status"
+                        name="group_by_state"
+                        context="{'group_by': 'state'}"
+                    />
+                    <filter
+                        string="Vehicle"
+                        name="group_by_vehicle"
+                        context="{'group_by': 'vehicle_id'}"
+                    />
+                    <filter
+                        string="Driver"
+                        name="group_by_driver"
+                        context="{'group_by': 'driver_id'}"
+                    />
+                    <filter
+                        string="Infraction Type"
+                        name="group_by_type"
+                        context="{'group_by': 'infraction_type_id'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Window Action for Fleet Traffic Infractions -->
+    <record
+        id="action_fleet_traffic_infractions_act_window"
+        model="ir.actions.act_window"
+    >
+        <field name="name">Traffic Infractions</field>
+        <field name="res_model">fleet.traffic.infractions</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="fleet_traffic_infractions_search_view" />
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No traffic infractions found. Let's create one!
+      </p>
+        </field>
+    </record>
+</odoo>
