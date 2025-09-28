@@ -77,10 +77,12 @@
         </field>
     </record>
 
-    <menuitem id="menu_fleet_traffic_infraction_invoicing_term"
-              name="Invoicing Rules"
-              parent="fleet_traffic_infractions.menu_fleet_infractions_config"
-              action="action_fleet_traffic_infraction_invoicing_term"
-              sequence="20"/>
+    <menuitem
+        id="menu_fleet_traffic_infraction_invoicing_term"
+        name="Invoicing Rules"
+        parent="fleet_traffic_infractions.menu_fleet_traffic_infractions_root"
+        action="action_fleet_traffic_infraction_invoicing_term"
+        sequence="30"
+    />
 
 </odoo>
