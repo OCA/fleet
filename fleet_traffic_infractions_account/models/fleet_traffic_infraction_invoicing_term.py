@@ -7,17 +7,21 @@ from odoo.exceptions import ValidationError
 
 class FleetTrafficInfractionInvoicingTerm(models.Model):
     _name = "fleet.traffic.infraction.invoicing.term"
-    _description = "Fleet Infraction Invoicing Terms"
+    _description = "Fleet Infraction Invoicing Term (Rule)"
     _order = "sequence, id"
 
-    name = fields.Char(required=True)
-    sequence = fields.Integer(default=10)
+    name = fields.Char(required=True, help="A descriptive name for this invoicing rule.")
+    sequence = fields.Integer(
+        default=10,
+        help="The priority of the rule. Lower numbers are checked first. "
+        "The first rule that matches the driver will be applied.",
+    )
     active = fields.Boolean(default=True)
     driver_domain = fields.Char(
-        string="Applies on Drivers",
+        string="Applies To Drivers",
         default="[]",
-        help="Domain to select the drivers to whom this term applies. "
-        "Leave empty to apply to all drivers.",
+        help="Use the domain builder to define which drivers this rule applies to. "
+        "Leave empty to create a 'catch-all' rule.",
     )
     action = fields.Selection(
         [
@@ -26,12 +30,14 @@ class FleetTrafficInfractionInvoicingTerm(models.Model):
         ],
         required=True,
         default="invoice_driver",
+        help="The action to take when this rule is matched.",
     )
 
     expense_line_ids = fields.One2many(
         "fleet.traffic.infraction.invoicing.term.line",
         "invoicing_term_id",
         string="Additional Expenses",
+        help="Add lines for administrative fees or other charges to be added to the driver's invoice.",
     )
 
     discount_type = fields.Selection(
@@ -40,9 +46,10 @@ class FleetTrafficInfractionInvoicingTerm(models.Model):
             ("percentage", "Percentage"),
             ("fixed", "Fixed Amount"),
         ],
+        string="Discount Type",
         default="none",
     )
-    discount_value = fields.Float()
+    discount_value = fields.Float("Discount Value")
     discount_product_id = fields.Many2one(
         "product.product",
         string="Discount Product",

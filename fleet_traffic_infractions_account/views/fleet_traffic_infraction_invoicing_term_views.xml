@@ -7,29 +7,39 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1><field name="name" placeholder="e.g. Standard Driver Invoice"/></h1>
+                    </div>
                     <group>
-                        <field name="name"/>
-                        <field name="sequence"/>
-                        <field name="active"/>
-                        <field name="action"/>
+                        <group>
+                            <field name="sequence" widget="handle"/>
+                            <field name="active"/>
+                        </group>
+                        <group>
+                            <field name="action"/>
+                        </group>
                     </group>
                     <notebook>
-                        <page string="Applicability">
+                        <page string="Applicability" name="applicability">
                             <group>
                                 <field name="driver_domain" widget="domain" options="{'model': 'res.partner'}"/>
+                                <p class="text-muted">
+                                    Define which drivers this rule applies to. Rules are checked by sequence order; the first one that matches is used.
+                                </p>
                             </group>
                         </page>
-                        <page string="Additional Expenses">
-                            <field name="expense_line_ids">
-                                <tree editable="bottom">
-                                    <field name="product_id"/>
-                                    <field name="calculation_method"/>
-                                    <field name="amount"/>
-                                </tree>
-                            </field>
-                        </page>
-                        <page string="Discount Policy">
-                            <group>
+                        <page string="Invoice Lines" name="invoice_lines" attrs="{'invisible': [('action', '!=', 'invoice_driver')]}">
+                            <group string="Additional Expenses">
+                                <field name="expense_line_ids" nolabel="1">
+                                    <tree editable="bottom">
+                                        <field name="product_id"/>
+                                        <field name="calculation_method"/>
+                                        <field name="amount"/>
+                                    </tree>
+                                </field>
+                            </group>
+                            <group string="Discount Policy">
                                 <field name="discount_type"/>
                                 <field name="discount_value" attrs="{'invisible': [('discount_type', '=', 'none')]}"/>
                                 <field name="discount_product_id" attrs="{'invisible': [('discount_type', '=', 'none')]}"/>
@@ -49,21 +59,62 @@
                 <field name="sequence" widget="handle"/>
                 <field name="name"/>
                 <field name="action"/>
-                <field name="active"/>
+                <field name="driver_domain"/>
+                <field name="active" widget="boolean_toggle"/>
             </tree>
         </field>
     </record>
 
     <record id="action_fleet_traffic_infraction_invoicing_term" model="ir.actions.act_window">
-        <field name="name">Invoicing Terms</field>
+        <field name="name">Invoicing Rules</field>
         <field name="res_model">fleet.traffic.infraction.invoicing.term</field>
         <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Invoicing Rule.
+            </p><p>
+                Invoicing Rules allow you to define different financial policies for different groups of drivers.
+                Use the domain builder to specify which drivers a rule applies to, and set the sequence to prioritize them.
+            </p>
+        </field>
     </record>
 
     <menuitem id="menu_fleet_traffic_infraction_invoicing_term"
-              name="Invoicing Terms"
+              name="Invoicing Rules"
               parent="fleet_traffic_infractions.menu_fleet_infractions_config"
               action="action_fleet_traffic_infraction_invoicing_term"
               sequence="20"/>
+
+</odoo>```
+
+**fleet_traffic_infractions_account/views/fleet_traffic_infraction_views.xml**
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="fleet_traffic_infraction_view_form_inherit_account" model="ir.ui.view">
+        <field name="name">fleet.traffic.infractions.form.inherit.account</field>
+        <field name="model">fleet.traffic.infractions</field>
+        <field name="inherit_id" ref="fleet_traffic_infractions.fleet_traffic_infraction_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="replace">
+                <header>
+                    <button name="button_confirm" string="Confirm" type="object" class="btn-primary" data-hotkey="v" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                    <button name="create_driver_invoice" string="Create Driver Invoice" type="object" class="btn-primary" attrs="{'invisible': [('state', '!=', 'invoice')]}"/>
+                    <button name="create_agency_entry" string="Create Agency Entry" type="object" class="btn-primary" attrs="{'invisible': [('state', '!=', 'bill')]}"/>
+                    <button name="button_cancel" string="Cancel" type="object" data-hotkey="z" attrs="{'invisible': [('state', 'not in', ['draft', 'confirmed', 'invoice', 'bill'])]}"/>
+                    <button name="button_draft" string="Set to Draft" type="object" data-hotkey="d" attrs="{'invisible': [('state', '!=', 'cancel')]}"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,invoice,bill,processed"/>
+                </header>
+            </xpath>
+            <xpath expr="//group[@id='infraction_main_details']" position="after">
+                <group string="Accounting" name="accounting_details">
+                    <field name="applied_invoicing_term_id" readonly="1"/>
+                    <field name="driver_invoice_id"/>
+                    <field name="agency_move_id"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
 
 </odoo>

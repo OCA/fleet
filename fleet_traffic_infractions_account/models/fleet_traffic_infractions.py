@@ -28,115 +28,70 @@ class FleetTrafficInfractions(models.Model):
     agency_move_id = fields.Many2one(
         "account.move", "Agency Accounting Entry", readonly=True, copy=False
     )
+    # This field is for display/informational purposes on the form
+    applied_invoicing_term_id = fields.Many2one(
+        "fleet.traffic.infraction.invoicing.term",
+        string="Applied Invoicing Rule",
+        compute="_compute_applied_invoicing_term_id",
+        store=True,
+    )
 
-    def action_view_driver_invoice(self):
-        self.ensure_one()
-        return {
-            "name": _("Driver Invoice"),
-            "view_mode": "form",
-            "res_model": "account.move",
-            "res_id": self.driver_invoice_id.id,
-            "type": "ir.actions.act_window",
-        }
-
-    def action_view_agency_move(self):
-        self.ensure_one()
-        return {
-            "name": _("Agency Accounting Entry"),
-            "view_mode": "form",
-            "res_model": "account.move",
-            "res_id": self.agency_move_id.id,
-            "type": "ir.actions.act_window",
-        }
-
-    def button_confirm(self):
-        # Overridden to move to the first accounting state
-        super().button_confirm()
-        self.write({"state": "invoice"})
-
-    def _prepare_invoice_line(self, product):
-        self.ensure_one()
-        line_name = f"{self.infraction_type_id.name} - {self.infraction_key}"
-        return {
-            "product_id": product.id,
-            "name": line_name,
-            "price_unit": self.fine_amount,
-            "quantity": 1,
-        }
-
-    def _get_fine_product(self):
-        self.ensure_one()
-        product = self.infraction_type_id.product_id
-        if not product:
-            raise UserError(
-                _(
-                    "Please configure a 'Fine Product' on the Infraction Type '%s' "
-                    "before creating an invoice or bill."
-                )
-                % self.infraction_type_id.name
-            )
-        return product
+    @api.depends("driver_id")
+    def _compute_applied_invoicing_term_id(self):
+        """Find and set the first matching invoicing term for the driver."""
+        for infraction in self:
+            infraction.applied_invoicing_term_id = infraction._get_invoicing_term()
 
     def _get_invoicing_term(self):
+        """
+        Find the first invoicing term that matches the driver of the infraction.
+        Terms are evaluated in ascending order of their sequence.
+        """
         self.ensure_one()
         if not self.driver_id:
             return self.env["fleet.traffic.infraction.invoicing.term"]
-        terms = self.env["fleet.traffic.infraction.invoicing.term"].search([])
-        for term in terms:
-            domain = safe_eval(term.driver_domain or "[]")
-            if self.driver_id.filtered_domain(domain):
-                return term
-        return self.env["fleet.traffic.infraction.invoicing.term"]
 
-    def _prepare_invoice_lines_from_term(self, term):
-        self.ensure_one()
-        invoice_lines = []
-        product = self._get_fine_product()
-        invoice_lines.append((0, 0, self._prepare_invoice_line(product)))
-        for line in term.expense_line_ids:
-            price = line.amount
-            if line.calculation_method == "percentage_fine":
-                price = (self.fine_amount * line.amount) / 100.0
-            invoice_lines.append(
-                (0, 0, {"product_id": line.product_id.id, "price_unit": price})
-            )
-        if term.discount_type != "none":
-            discount_amount = term.discount_value
-            if term.discount_type == "percentage":
-                discount_amount = (self.fine_amount * term.discount_value) / 100.0
-            invoice_lines.append(
-                (
-                    0,
-                    0,
-                    {
-                        "product_id": term.discount_product_id.id,
-                        "name": _("Discount"),
-                        "price_unit": -discount_amount,
-                    },
-                )
-            )
-        return invoice_lines
+        # Search for all active terms, ordered by sequence.
+        # The lowest sequence number has the highest priority.
+        terms = self.env["fleet.traffic.infraction.invoicing.term"].search(
+            [("active", "=", True)], order="sequence asc"
+        )
+
+        for term in terms:
+            try:
+                domain = safe_eval(term.driver_domain or "[]")
+                # Check if the current driver matches the domain of the term
+                if self.driver_id.filtered_domain(domain):
+                    return term  # Return the first matching term
+            except Exception:
+                # Ignore terms with invalid domains
+                continue
+
+        return self.env["fleet.traffic.infraction.invoicing.term"]
 
     def create_driver_invoice(self):
         for infraction in self:
             if not infraction.driver_id:
                 raise UserError(_("A driver must be assigned to create an invoice."))
-            term = infraction._get_invoicing_term()
+            
+            term = infraction.applied_invoicing_term_id
             if not term:
                 raise UserError(
-                    _("No applicable Invoicing Term found for driver %s.")
+                    _("No applicable Invoicing Rule found for driver %s.")
                     % infraction.driver_id.name
                 )
+
             if term.action == "company_pays":
                 infraction.message_post(
                     body=_(
-                        "Driver invoice skipped as per Invoicing Term '%s'. "
+                        "Driver invoice skipped as per Invoicing Rule '%s'. "
                         "The company will pay the fine."
                     )
                     % term.name
                 )
                 infraction.write({"state": "bill"})
                 continue
+
             if term.action == "invoice_driver":
                 invoice_line_vals = infraction._prepare_invoice_lines_from_term(term)
                 invoice = self.env["account.move"].create(
@@ -150,7 +105,7 @@ class FleetTrafficInfractions(models.Model):
                 )
                 infraction.write({"driver_invoice_id": invoice.id, "state": "bill"})
         return True
-
+    
     def create_agency_entry(self):
         for infraction in self:
             if not infraction.issuing_agency_id:
