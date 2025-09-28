@@ -53,13 +53,13 @@
         <field name="name">fleet.traffic.infraction.invoicing.term.tree</field>
         <field name="model">fleet.traffic.infraction.invoicing.term</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="sequence" widget="handle"/>
                 <field name="name"/>
                 <field name="action"/>
                 <field name="driver_domain"/>
                 <field name="active" widget="boolean_toggle"/>
-            </tree>
+            </list>
         </field>
     </record>
 
