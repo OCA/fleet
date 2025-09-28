@@ -1,18 +1,22 @@
-<record id="res_config_settings_view_form_inherit_fleet_infraction" model="ir.ui.view">
-    <field name="name">res.config.settings.view.form.inherit.fleet.infraction</field>
-    <field name="model">res.config.settings</field>
-    <field name="inherit_id" ref="fleet.res_config_settings_view_form"/>
-    <field name="arch" type="xml">
-        <xpath expr="//app[@name='fleet']" position="inside">
-            <block title="Traffic Infractions" id="infraction_settings">
-                <setting string="Agency Billing Method" help="Choose the default accounting method for agency fines.">
-                    <div class="content-group">
-                        <div class="mt16">
-                            <field name="infraction_bill_method" class="o_light_label" widget="radio"/>
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_settings_view_form_inherit_fleet_infraction" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.fleet.infraction</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="fleet.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//app[@name='fleet']" position="inside">
+                <block title="Traffic Infractions" id="infraction_settings">
+                    <setting string="Agency Billing Method">
+                        <div class="text-muted content-group mt16">
+                            <span>Choose the default accounting method for agency fines.</span>
+                            <field name="infraction_bill_method" widget="radio"/>
                         </div>
-                    </div>
-                </setting>
-            </block>
-        </xpath>
-    </field>
-</record>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
