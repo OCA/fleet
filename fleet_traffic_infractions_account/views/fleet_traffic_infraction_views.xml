@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="fleet_traffic_infraction_view_form_inherit_account" model="ir.ui.view">
+        <field name="name">fleet.traffic.infractions.form.inherit.account</field>
+        <field name="model">fleet.traffic.infractions</field>
+        <field name="inherit_id" ref="fleet_traffic_infractions.fleet_traffic_infraction_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="replace">
+                <header>
+                    <button name="button_confirm" string="Confirm" type="object" class="btn-primary" data-hotkey="v" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                    <button name="create_driver_invoice" string="Create Driver Invoice" type="object" class="btn-primary" attrs="{'invisible': [('state', '!=', 'invoice')]}"/>
+                    <button name="create_agency_entry" string="Create Agency Entry" type="object" class="btn-primary" attrs="{'invisible': [('state', '!=', 'bill')]}"/>
+                    <button name="button_cancel" string="Cancel" type="object" data-hotkey="z" attrs="{'invisible': [('state', 'not in', ['draft', 'confirmed', 'invoice', 'bill'])]}"/>
+                    <button name="button_draft" string="Set to Draft" type="object" data-hotkey="d" attrs="{'invisible': [('state', '!=', 'cancel')]}"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,invoice,bill,processed"/>
+                </header>
+            </xpath>
+            <xpath expr="//group[@id='infraction_main_details']" position="after">
+                <group string="Accounting" name="accounting_details">
+                    <field name="driver_invoice_id"/>
+                    <field name="agency_move_id"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

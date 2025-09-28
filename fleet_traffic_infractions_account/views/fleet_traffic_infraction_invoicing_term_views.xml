@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_fleet_traffic_infraction_invoicing_term_form" model="ir.ui.view">
+        <field name="name">fleet.traffic.infraction.invoicing.term.form</field>
+        <field name="model">fleet.traffic.infraction.invoicing.term</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="sequence"/>
+                        <field name="active"/>
+                        <field name="action"/>
+                    </group>
+                    <notebook>
+                        <page string="Applicability">
+                            <group>
+                                <field name="driver_domain" widget="domain" options="{'model': 'res.partner'}"/>
+                            </group>
+                        </page>
+                        <page string="Additional Expenses">
+                            <field name="expense_line_ids">
+                                <tree editable="bottom">
+                                    <field name="product_id"/>
+                                    <field name="calculation_method"/>
+                                    <field name="amount"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Discount Policy">
+                            <group>
+                                <field name="discount_type"/>
+                                <field name="discount_value" attrs="{'invisible': [('discount_type', '=', 'none')]}"/>
+                                <field name="discount_product_id" attrs="{'invisible': [('discount_type', '=', 'none')]}"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_fleet_traffic_infraction_invoicing_term_tree" model="ir.ui.view">
+        <field name="name">fleet.traffic.infraction.invoicing.term.tree</field>
+        <field name="model">fleet.traffic.infraction.invoicing.term</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="action"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_fleet_traffic_infraction_invoicing_term" model="ir.actions.act_window">
+        <field name="name">Invoicing Terms</field>
+        <field name="res_model">fleet.traffic.infraction.invoicing.term</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_fleet_traffic_infraction_invoicing_term"
+              name="Invoicing Terms"
+              parent="fleet_traffic_infractions.menu_fleet_infractions_config"
+              action="action_fleet_traffic_infraction_invoicing_term"
+              sequence="20"/>
+
+</odoo>
