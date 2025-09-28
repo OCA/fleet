@@ -8,11 +8,42 @@
         <field name="arch" type="xml">
             <xpath expr="//header" position="replace">
                 <header>
-                    <button name="button_confirm" string="Confirm" type="object" class="btn-primary" data-hotkey="v" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
-                    <button name="create_driver_invoice" string="Create Driver Invoice" type="object" class="btn-primary" attrs="{'invisible': [('state', '!=', 'invoice')]}"/>
-                    <button name="create_agency_entry" string="Create Agency Entry" type="object" class="btn-primary" attrs="{'invisible': [('state', '!=', 'bill')]}"/>
-                    <button name="button_cancel" string="Cancel" type="object" data-hotkey="z" attrs="{'invisible': [('state', 'not in', ['draft', 'confirmed', 'invoice', 'bill'])]}"/>
-                    <button name="button_draft" string="Set to Draft" type="object" data-hotkey="d" attrs="{'invisible': [('state', '!=', 'cancel')]}"/>
+                    <button
+                        name="button_confirm"
+                        type="object"
+                        string="Confirm"
+                        class="btn-primary"
+                        data-hotkey="v"
+                        invisible="state != 'draft'"
+                    />
+                    <button
+                        name="create_driver_invoice"
+                        type="object"
+                        string="Create Driver Invoice"
+                        class="btn-primary"
+                        invisible="state != 'invoice'"
+                    />
+                    <button
+                        name="create_agency_entry"
+                        type="object"
+                        string="Create Agency Entry"
+                        class="btn-primary"
+                        invisible="state != 'bill'"
+                    />
+                    <button
+                        name="button_cancel"
+                        type="object"
+                        string="Cancel"
+                        data-hotkey="z"
+                        invisible="[('state', 'not in', ['draft', 'confirmed', 'invoice', 'bill'])]"
+                    />
+                    <button
+                        name="button_draft"
+                        type="object"
+                        string="Set to Draft"
+                        data-hotkey="d"
+                        invisible="state != 'cancel'"
+                    />
                     <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,invoice,bill,processed"/>
                 </header>
             </xpath>
