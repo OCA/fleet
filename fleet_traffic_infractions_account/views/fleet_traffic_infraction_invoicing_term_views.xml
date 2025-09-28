@@ -31,11 +31,6 @@
                         </page>
                         <page string="Invoice Lines" name="invoice_lines" invisible="action != 'invoice_driver'">
                             <field name="expense_line_ids">
-                                <!--
-                                    CRITICAL FIX: Changed the <tree> tag to a <list> tag.
-                                    In Odoo 18, <list> is the modern standard for list views.
-                                    This change may resolve the parser's context ambiguity.
-                                -->
                                 <list editable="bottom">
                                     <field name="product_id"/>
                                     <field name="calculation_method"/>
@@ -54,7 +49,6 @@
         </field>
     </record>
 
-    <!-- The tree view for the main model should also use <tree>, not <list> as a root tag -->
     <record id="view_fleet_traffic_infraction_invoicing_term_tree" model="ir.ui.view">
         <field name="name">fleet.traffic.infraction.invoicing.term.tree</field>
         <field name="model">fleet.traffic.infraction.invoicing.term</field>
@@ -76,6 +70,17 @@
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Create a new Invoicing Rule.
-            </p><p>
+                <br/><br/>
                 Invoicing Rules allow you to define different financial policies for different groups of drivers.
-                Use the domain builder to specify which drive
+                Use the domain builder to specify which drivers a rule applies to, and set the sequence to prioritize them.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_fleet_traffic_infraction_invoicing_term"
+              name="Invoicing Rules"
+              parent="fleet_traffic_infractions.menu_fleet_infractions_config"
+              action="action_fleet_traffic_infraction_invoicing_term"
+              sequence="20"/>
+
+</odoo>
