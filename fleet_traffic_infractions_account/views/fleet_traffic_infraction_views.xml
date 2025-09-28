@@ -4,7 +4,7 @@
     <record id="fleet_traffic_infraction_view_form_inherit_account" model="ir.ui.view">
         <field name="name">fleet.traffic.infractions.form.inherit.account</field>
         <field name="model">fleet.traffic.infractions</field>
-        <field name="inherit_id" ref="fleet_traffic_infractions.fleet_traffic_infractions_view_form"/>
+        <field name="inherit_id" ref="fleet_traffic_infractions.fleet_traffic_infractions_form_view"/>
         <field name="arch" type="xml">
             <xpath expr="//header" position="replace">
                 <header>
@@ -16,8 +16,8 @@
                     <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,invoice,bill,processed"/>
                 </header>
             </xpath>
-            <xpath expr="//group[@string='Infraction Details']" position="after">
-                <group string="Accounting" name="accounting_details">
+            <xpath expr="//group[@id='group_right']" position="inside">
+                <group string="Accounting" name="accounting_details" colspan="2">
                     <field name="applied_invoicing_term_id" readonly="1"/>
                     <field name="driver_invoice_id"/>
                     <field name="agency_move_id"/>
