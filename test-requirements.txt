@@ -1,5 +1,5 @@
 # This file is used to install test dependencies.
 # It is executed by the oca-install-test-addons script.
 
-odoo18-addon-fleet_traffic_infractions @ git+https://github.com/OCA/fleet@18.0#subdirectory=fleet_traffic_infractions
-odoo18-addon-fleet_vehicle_assignation_log_datetime @ git+https://github.com/OCA/fleet@18.0#subdirectory=fleet_vehicle_assignation_log_datetime
+odoo-addon-fleet_traffic_infractions @ git+https://github.com/OCA/fleet@18.0#subdirectory=fleet_traffic_infractions
+odoo-addon-fleet_vehicle_assignation_log_datetime @ git+https://github.com/OCA/fleet@18.0#subdirectory=fleet_vehicle_assignation_log_datetime
