@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <record id="view_fleet_traffic_infraction_invoicing_term_line_tree" model="ir.ui.view">
-        <field name="name">fleet.traffic.infraction.invoicing.term.line.tree</field>
-        <field name="model">fleet.traffic.infraction.invoicing.term.line</field>
-        <field name="arch" type="xml">
-            <tree editable="bottom">
-                <field name="product_id"/>
-                <field name="calculation_method"/>
-                <field name="amount"/>
-            </tree>
-        </field>
-    </record>
-
     <record id="view_fleet_traffic_infraction_invoicing_term_form" model="ir.ui.view">
         <field name="name">fleet.traffic.infraction.invoicing.term.form</field>
         <field name="model">fleet.traffic.infraction.invoicing.term</field>
@@ -42,8 +30,19 @@
                             </group>
                         </page>
                         <page string="Invoice Lines" name="invoice_lines" invisible="action != 'invoice_driver'">
-                            <separator string="Additional Expenses"/>
-                            <field name="expense_line_ids" nolabel="1"/>
+                            <!--
+                                CRITICAL FIX: This is the simplest and most robust way to define a
+                                One2many field with an inline tree. The field will get its label from
+                                the string defined in the Python model ("Additional Expenses").
+                                This removes all structural ambiguity that was confusing the parser.
+                            -->
+                            <field name="expense_line_ids">
+                                <tree editable="bottom">
+                                    <field name="product_id"/>
+                                    <field name="calculation_method"/>
+                                    <field name="amount"/>
+                                </tree>
+                            </field>
                             <group string="Discount Policy">
                                 <field name="discount_type"/>
                                 <field name="discount_value" invisible="discount_type == 'none'"/>
@@ -56,6 +55,7 @@
         </field>
     </record>
 
+    <!-- The rest of the file remains the same -->
     <record id="view_fleet_traffic_infraction_invoicing_term_tree" model="ir.ui.view">
         <field name="name">fleet.traffic.infraction.invoicing.term.tree</field>
         <field name="model">fleet.traffic.infraction.invoicing.term</field>
