@@ -30,15 +30,14 @@
                             </group>
                         </page>
                         <page string="Invoice Lines" name="invoice_lines" invisible="action != 'invoice_driver'">
-                            <group string="Additional Expenses">
-                                <field name="expense_line_ids" nolabel="1">
-                                    <tree editable="bottom">
-                                        <field name="product_id"/>
-                                        <field name="calculation_method"/>
-                                        <field name="amount"/>
-                                    </tree>
-                                </field>
-                            </group>
+                            <separator string="Additional Expenses"/>
+                            <field name="expense_line_ids" nolabel="1">
+                                <tree editable="bottom">
+                                    <field name="product_id"/>
+                                    <field name="calculation_method"/>
+                                    <field name="amount"/>
+                                </tree>
+                            </field>
                             <group string="Discount Policy">
                                 <field name="discount_type"/>
                                 <field name="discount_value" invisible="discount_type == 'none'"/>
