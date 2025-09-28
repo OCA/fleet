@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
+    <record id="view_fleet_traffic_infraction_invoicing_term_line_tree" model="ir.ui.view">
+        <field name="name">fleet.traffic.infraction.invoicing.term.line.tree</field>
+        <field name="model">fleet.traffic.infraction.invoicing.term.line</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="product_id"/>
+                <field name="calculation_method"/>
+                <field name="amount"/>
+            </tree>
+        </field>
+    </record>
+
     <record id="view_fleet_traffic_infraction_invoicing_term_form" model="ir.ui.view">
         <field name="name">fleet.traffic.infraction.invoicing.term.form</field>
         <field name="model">fleet.traffic.infraction.invoicing.term</field>
@@ -30,13 +42,9 @@
                             </group>
                         </page>
                         <page string="Invoice Lines" name="invoice_lines" invisible="action != 'invoice_driver'">
-                            <field name="expense_line_ids">
-                                <list editable="bottom">
-                                    <field name="product_id"/>
-                                    <field name="calculation_method"/>
-                                    <field name="amount"/>
-                                </list>
-                            </field>
+                            <separator string="Additional Expenses"/>
+                            <!-- CRITICAL FIX: The field tag is now empty. Odoo will use the view defined above. -->
+                            <field name="expense_line_ids" nolabel="1"/>
                             <group string="Discount Policy">
                                 <field name="discount_type"/>
                                 <field name="discount_value" invisible="discount_type == 'none'"/>
