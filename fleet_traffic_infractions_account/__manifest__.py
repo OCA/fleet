@@ -9,8 +9,9 @@
     "website": "https://github.com/OCA/fleet",
     "license": "AGPL-3",
     "depends": [
-        "fleet_traffic_infractions",
         "account",
+        "fleet",
+        "fleet_traffic_infractions",
     ],
     "data": [
         "security/ir.model.access.csv",
