@@ -23,8 +23,11 @@
             <templates position="before">
                 <field name="in_use" />
             </templates>
-            <xpath expr="//div[hasclass('oe_kanban_details')]" position="inside">
-                <span class="label label-primary" invisible="not in_use">In use</span>
+            <xpath expr="//t[@t-name='card']/main" position="inside">
+                <span
+                    class="label label-primary"
+                    t-if="record.in_use.raw_value"
+                >In use</span>
             </xpath>
         </field>
     </record>
