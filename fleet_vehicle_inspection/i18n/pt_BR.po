@@ -49,11 +49,6 @@ msgid "<span class=\"o_stat_text\"> Inspection</span>"
 msgstr "<span class=\"o_stat_text\"> Inspeção</span>"
 
 #. module: fleet_vehicle_inspection
-#: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_line_form_view
-msgid "Acceptable file size"
-msgstr "Tamanho de arquivo aceitável"
-
-#. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__message_needaction
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__message_needaction
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__message_needaction
@@ -89,8 +84,8 @@ msgid "Activity Type Icon"
 msgstr "Ícone do Tipo de Atividade"
 
 #. module: fleet_vehicle_inspection
-#: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_form_view
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_line_form_view
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_line_kanban_view
 msgid "Approve"
 msgstr "Aprovado"
 
@@ -100,11 +95,6 @@ msgstr "Aprovado"
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__message_attachment_count
 msgid "Attachment Count"
 msgstr "Contagem de Anexos"
-
-#. module: fleet_vehicle_inspection
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line_image__can_image_1024_be_zoomed
-msgid "Can Image 1024 be zoomed"
-msgstr "Imagem 1024 ser pode ampliada"
 
 #. module: fleet_vehicle_inspection
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_form_view
@@ -192,14 +182,8 @@ msgid "Draft"
 msgstr "Provisório"
 
 #. module: fleet_vehicle_inspection
-#: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_form_view
-msgid "Dropdown menu"
-msgstr "Menu dropdown"
-
-#. module: fleet_vehicle_inspection
 #. odoo-python
 #: code:addons/fleet_vehicle_inspection/models/fleet_vehicle_inspection.py:0
-#, python-format
 msgid "Emptying the odometer value of a vehicle is not allowed."
 msgstr "Zerar o valor do odômetro de um veículo não é permitido."
 
@@ -213,6 +197,7 @@ msgstr "Inspeções com Falhas"
 #: model:ir.model.fields.selection,name:fleet_vehicle_inspection.selection__fleet_vehicle_inspection_line__result__failure
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_form_view
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_line_form_view
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_line_tree_view
 msgid "Failure"
 msgstr "Falha"
 
@@ -274,11 +259,6 @@ msgstr "Agrupar por"
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__has_message
 msgid "Has Message"
 msgstr "Tem Mensagem"
-
-#. module: fleet_vehicle_inspection
-#: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_line_form_view
-msgid "Huge file size. The image should be optimized/reduced."
-msgstr "Tamanho enorme do arquivo. A imagem deve ser otimizada/reduzida."
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__id
@@ -404,7 +384,6 @@ msgid "Inspection Line"
 msgstr "Linha de Inspeção"
 
 #. module: fleet_vehicle_inspection
-#: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_line_form_view
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_line_image_form_view
 msgid "Inspection Line Images"
 msgstr "Imagens da Linha de Inspeção"
@@ -438,7 +417,6 @@ msgstr "Situação da Inspeção"
 #. module: fleet_vehicle_inspection
 #. odoo-python
 #: code:addons/fleet_vehicle_inspection/models/fleet_vehicle_inspection.py:0
-#, python-format
 msgid "Inspection cannot be completed. There are uninspected items."
 msgstr "A inspeção não pode ser concluída. Há itens não inspecionados."
 
@@ -468,14 +446,6 @@ msgid "Kilometers"
 msgstr "Quilômetros"
 
 #. module: fleet_vehicle_inspection
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection____last_update
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item____last_update
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line____last_update
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line_image____last_update
-msgid "Last Modified on"
-msgstr "Última Modificação em"
-
-#. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__write_uid
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__write_uid
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__write_uid
@@ -490,13 +460,6 @@ msgstr "Última Atualização por"
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line_image__write_date
 msgid "Last Updated on"
 msgstr "Última Atualização em"
-
-#. module: fleet_vehicle_inspection
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__message_main_attachment_id
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__message_main_attachment_id
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__message_main_attachment_id
-msgid "Main Attachment"
-msgstr "Anexo Principal"
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__message_has_error
@@ -520,7 +483,6 @@ msgstr "Milhas"
 #. module: fleet_vehicle_inspection
 #. odoo-python
 #: code:addons/fleet_vehicle_inspection/models/fleet_vehicle_inspection.py:0
-#, python-format
 msgid "Must select service type"
 msgstr "Deve selecionar o tipo de serviço"
 
@@ -536,13 +498,6 @@ msgstr "Meu Prazo Final de Atividade"
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line_image__name
 msgid "Name"
 msgstr "Nome"
-
-#. module: fleet_vehicle_inspection
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__activity_calendar_event_id
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__activity_calendar_event_id
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__activity_calendar_event_id
-msgid "Next Activity Calendar Event"
-msgstr "Próximo evento do calendário de atividades"
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__activity_date_deadline
@@ -628,19 +583,9 @@ msgstr "Medida do odômetro do veículo no momento deste registro"
 #. module: fleet_vehicle_inspection
 #. odoo-python
 #: code:addons/fleet_vehicle_inspection/models/fleet_vehicle_inspection.py:0
-#, python-format
 msgid "Only inspections in 'draft' or 'cancel' states can be confirmed"
 msgstr ""
 "Apenas inspeções em estados 'rascunho' ou ‘cancelada’ podem ser confirmadas"
-
-#. module: fleet_vehicle_inspection
-#: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_line_form_view
-msgid ""
-"Optimization required! Reduce the image size or increase your compression "
-"settings."
-msgstr ""
-"Otimização necessária! Reduza o tamanho da imagem ou aumente as "
-"configurações de compressão."
 
 #. module: fleet_vehicle_inspection
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__name
@@ -648,8 +593,8 @@ msgid "Reference"
 msgstr "Referência"
 
 #. module: fleet_vehicle_inspection
-#: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_form_view
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_line_form_view
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_line_kanban_view
 msgid "Refuse"
 msgstr "Recusado"
 
@@ -723,6 +668,7 @@ msgstr ""
 #: model:ir.model.fields.selection,name:fleet_vehicle_inspection.selection__fleet_vehicle_inspection_line__result__success
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_form_view
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_line_form_view
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_inspection.fleet_vehicle_inspection_line_tree_view
 msgid "Success"
 msgstr "Sucesso"
 
@@ -776,16 +722,36 @@ msgstr "Inspeções de Veículos"
 msgid "Vendor"
 msgstr "Fornecedor"
 
-#. module: fleet_vehicle_inspection
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__website_message_ids
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__website_message_ids
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__website_message_ids
-msgid "Website Messages"
-msgstr "Mensagens do Website"
+#~ msgid "Acceptable file size"
+#~ msgstr "Tamanho de arquivo aceitável"
 
-#. module: fleet_vehicle_inspection
-#: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection__website_message_ids
-#: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__website_message_ids
-#: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__website_message_ids
-msgid "Website communication history"
-msgstr "Histórico de comunicação do website"
+#~ msgid "Can Image 1024 be zoomed"
+#~ msgstr "Imagem 1024 ser pode ampliada"
+
+#~ msgid "Dropdown menu"
+#~ msgstr "Menu dropdown"
+
+#~ msgid "Huge file size. The image should be optimized/reduced."
+#~ msgstr "Tamanho enorme do arquivo. A imagem deve ser otimizada/reduzida."
+
+#~ msgid "Last Modified on"
+#~ msgstr "Última Modificação em"
+
+#~ msgid "Main Attachment"
+#~ msgstr "Anexo Principal"
+
+#~ msgid "Next Activity Calendar Event"
+#~ msgstr "Próximo evento do calendário de atividades"
+
+#~ msgid ""
+#~ "Optimization required! Reduce the image size or increase your compression "
+#~ "settings."
+#~ msgstr ""
+#~ "Otimização necessária! Reduza o tamanho da imagem ou aumente as "
+#~ "configurações de compressão."
+
+#~ msgid "Website Messages"
+#~ msgstr "Mensagens do Website"
+
+#~ msgid "Website communication history"
+#~ msgstr "Histórico de comunicação do website"
