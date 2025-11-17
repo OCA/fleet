@@ -11,7 +11,7 @@
         </field>
     </record>
     <record model="ir.ui.view" id="view_fleet_vehicle_tree_inherited">
-        <field name="name">fleet.vehicle.tree.inherited</field>
+        <field name="name">fleet.vehicle.list.inherited</field>
         <field name="model">fleet.vehicle</field>
         <field name="inherit_id" ref="fleet.fleet_vehicle_view_tree" />
         <field name="arch" type="xml">
