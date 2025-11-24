@@ -14,8 +14,7 @@
                 />
             </field>
             <xpath expr="//notebook" position="inside">
-                <page name="fleet" string="Fleet" groups="fleet.fleet_group_manager">
-                </page>
+                <page name="fleet" string="Fleet" groups="fleet.fleet_group_manager" />
             </xpath>
         </field>
     </record>

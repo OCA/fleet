@@ -5,7 +5,6 @@ from odoo import api, fields, models
 
 
 class FleetVehicle(models.Model):
-
     _inherit = "fleet.vehicle"
 
     product_id = fields.Many2one(
@@ -49,7 +48,7 @@ class FleetVehicle(models.Model):
 
     @api.model
     def create(self, vals):
-        res = super(FleetVehicle, self).create(vals)
+        res = super().create(vals)
         if res.lot_id:
             if "lot_id" in vals:
                 res.lot_id.fleet_vehicle_id = res.id
