@@ -5,7 +5,6 @@ from odoo import fields, models
 
 
 class StockPickingType(models.Model):
-
     _inherit = "stock.picking.type"
 
     create_fleet_vehicle = fields.Boolean(

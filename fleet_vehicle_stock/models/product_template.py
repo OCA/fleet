@@ -5,7 +5,6 @@ from odoo import api, fields, models
 
 
 class ProductTemplate(models.Model):
-
     _inherit = "product.template"
 
     create_fleet_vehicle = fields.Boolean(string="Creates a Fleet Vehicle")
@@ -37,8 +36,8 @@ class ProductTemplate(models.Model):
 
     @api.model_create_multi
     def create(self, vals_list):
-        templates = super(ProductTemplate, self).create(vals_list)
-        for template, vals in zip(templates, vals_list):
+        templates = super().create(vals_list)
+        for template, vals in zip(templates, vals_list, strict=False):
             related_vals = {}
             if vals.get("fleet_vehicle_model_id"):
                 related_vals["fleet_vehicle_model_id"] = vals["fleet_vehicle_model_id"]

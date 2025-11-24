@@ -24,7 +24,6 @@
                     </group>
                 </page>
             </xpath>
-
         </field>
     </record>
     <record model="ir.ui.view" id="fleet_vehicle_search_view">

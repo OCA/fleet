@@ -5,7 +5,6 @@ from odoo import fields, models
 
 
 class ProductProduct(models.Model):
-
     _inherit = "product.product"
 
     fleet_vehicle_model_id = fields.Many2one(

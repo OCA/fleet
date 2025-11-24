@@ -7,7 +7,7 @@ from odoo.tests.common import TransactionCase
 class TestFleetVehicle(TransactionCase):
     @classmethod
     def setUpClass(cls):
-        super(TestFleetVehicle, cls).setUpClass()
+        super().setUpClass()
         cls.brand = cls.env.ref("fleet.brand_opel")
         cls.stock_location = cls.env.ref("stock.stock_location_customers")
 

@@ -10,7 +10,7 @@ class StockMove(models.Model):
 
     def _prepare_vehicle_values(self, move_line):
         return {
-            "name": "{} ({})".format(move_line.product_id.name, move_line.lot_id.name),
+            "name": f"{move_line.product_id.name} ({move_line.lot_id.name})",
             "model_id": move_line.product_id.fleet_vehicle_model_id.id,
             "product_id": move_line.product_id.id,
             "lot_id": move_line.lot_id.id,
@@ -20,7 +20,6 @@ class StockMove(models.Model):
     def _action_done(self, cancel_backorder=False):
         res = super()._action_done(cancel_backorder)
         for rec in self:
-
             if (
                 rec.product_id.product_tmpl_id.create_fleet_vehicle
                 and not rec.product_id.fleet_vehicle_model_id
