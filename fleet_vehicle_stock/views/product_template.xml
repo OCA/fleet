@@ -10,7 +10,8 @@
             <field name="tracking" position="after">
                 <field
                     name="create_fleet_vehicle"
-                    attrs="{'invisible': [('tracking', '!=', 'serial')]}"
+                    invisible="tracking != 'serial'"
+                    string="create fleet vehicle"
                 />
             </field>
             <xpath expr="//notebook" position="inside">
@@ -30,7 +31,8 @@
                 <group>
                     <field
                         name="fleet_vehicle_model_id"
-                        attrs="{'invisible': [('product_variant_count', '>', 1)], 'required': [('product_variant_count', '=', 1)]}"
+                        invisible="product_variant_count &gt; 1"
+                        required="product_variant_count == 1"
                     />
                 </group>
             </page>
