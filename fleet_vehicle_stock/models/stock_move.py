@@ -26,7 +26,7 @@ class StockMove(models.Model):
             ):
                 raise UserError(
                     _(
-                        "The product '%s' is configure to create a fleet "
+                        "The product '%s' is configured to create a fleet "
                         "vehicle but vehicle model is not configured in the "
                         "product."
                     )

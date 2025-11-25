@@ -46,13 +46,13 @@ class FleetVehicle(models.Model):
             rec.lot_id = False
             rec.current_stock_location_id = False
 
-    @api.model
-    def create(self, vals):
-        res = super().create(vals)
-        if res.lot_id:
-            if "lot_id" in vals:
-                res.lot_id.fleet_vehicle_id = res.id
-        return res
+    @api.model_create_multi
+    def create(self, vals_list):
+        records = super().create(vals_list)
+        for record, vals in zip(records, vals_list, strict=False):
+            if record.lot_id and "lot_id" in vals:
+                record.lot_id.fleet_vehicle_id = record.id
+        return records
 
     def write(self, vals):
         for rec in self:

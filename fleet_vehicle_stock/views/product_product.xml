@@ -13,7 +13,8 @@
                 <group>
                     <field
                         name="fleet_vehicle_model_id"
-                        attrs="{'invisible': [('tracking', '!=', 'serial')], 'required': [('create_fleet_vehicle', '=', True)]}"
+                        invisible="tracking != 'serial'"
+                        required="create_fleet_vehicle == True"
                     />
                 </group>
             </page>
@@ -37,7 +38,8 @@
                 >
                     <field
                         name="fleet_vehicle_model_id"
-                        attrs="{'invisible': [('tracking', '!=', 'serial')], 'required': [('create_fleet_vehicle', '=', True)]}"
+                        invisible="tracking != 'serial'"
+                        required="create_fleet_vehicle == True"
                     />
                 </group>
             </xpath>
