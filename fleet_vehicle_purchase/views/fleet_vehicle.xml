@@ -2,7 +2,6 @@
 <!-- Copyright 2023 Dixmit
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 <odoo>
-
     <record model="ir.ui.view" id="fleet_vehicle_form_view">
         <field name="name">fleet.vehicle.form (in fleet_vehicle_purchase)</field>
         <field name="model">fleet.vehicle</field>
@@ -26,6 +25,4 @@
             </div>
         </field>
     </record>
-
-
 </odoo>

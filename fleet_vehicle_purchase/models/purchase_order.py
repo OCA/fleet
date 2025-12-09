@@ -5,7 +5,6 @@ from odoo import fields, models
 
 
 class PurchaseOrder(models.Model):
-
     _inherit = "purchase.order"
 
     fleet_vehicle_id = fields.Many2one("fleet.vehicle", string="Vehicle")
