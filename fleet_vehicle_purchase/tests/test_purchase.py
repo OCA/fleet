@@ -2,7 +2,8 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 from odoo import fields
-from odoo.tests.common import Form, TransactionCase
+from odoo.tests import Form
+from odoo.tests.common import TransactionCase
 
 
 class TestPurchase(TransactionCase):
@@ -60,3 +61,21 @@ class TestPurchase(TransactionCase):
         self.assertFalse(self.car_1.log_services)
         invoice.action_post()
         self.assertTrue(self.car_1.log_services)
+
+    def test_purchase_no_vehicle(self):
+        """Test purchase order flow without a fleet vehicle."""
+        with Form(self.env["purchase.order"]) as form:
+            form.partner_id = self.env.user.partner_id
+            # Do not set fleet_vehicle_id
+            with form.order_line.new() as form_line:
+                form_line.product_id = self.product
+                form_line.price_unit = 100
+
+        purchase = form.save()
+        purchase.button_confirm()
+        purchase.order_line.qty_received = 1
+        invoice_action = purchase.action_create_invoice()
+        invoice = self.env[invoice_action["res_model"]].browse(invoice_action["res_id"])
+
+        # Verify that the invoice line does NOT have a vehicle_id set
+        self.assertFalse(invoice.invoice_line_ids.vehicle_id)

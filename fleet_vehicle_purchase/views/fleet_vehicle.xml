@@ -13,13 +13,13 @@
                     type="object"
                     class="oe_stat_button"
                     icon="fa-dollar"
-                    attrs="{'invisible': [('purchase_order_count', '=', 0)]}"
+                    invisible="purchase_order_count == 0"
                     help="show the purchase orders for this vehicle"
                 >
                     <field
                         name="purchase_order_count"
                         widget="statinfo"
-                        string="Purcase Orders"
+                        string="Purchase Orders"
                     />
                 </button>
             </div>
