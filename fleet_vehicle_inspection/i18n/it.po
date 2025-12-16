@@ -722,6 +722,20 @@ msgstr "Ispezioni veicoli"
 msgid "Vendor"
 msgstr "Fornitore"
 
+#. module: fleet_vehicle_inspection
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection__website_message_ids
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__website_message_ids
+#: model:ir.model.fields,field_description:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__website_message_ids
+msgid "Website Messages"
+msgstr "Messaggi sito web"
+
+#. module: fleet_vehicle_inspection
+#: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection__website_message_ids
+#: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_item__website_message_ids
+#: model:ir.model.fields,help:fleet_vehicle_inspection.field_fleet_vehicle_inspection_line__website_message_ids
+msgid "Website communication history"
+msgstr "Cronologia comunicazioni sito web"
+
 #~ msgid "Acceptable file size"
 #~ msgstr "Dimensione file accettabile"
 
@@ -750,9 +764,3 @@ msgstr "Fornitore"
 #~ msgstr ""
 #~ "Richiesta ottimizzazione! Ridurre la dimensione dell'immagine o aumentare "
 #~ "le impostazioni di compressione."
-
-#~ msgid "Website Messages"
-#~ msgstr "Messaggi sito web"
-
-#~ msgid "Website communication history"
-#~ msgstr "Cronologia comunicazioni sito web"
