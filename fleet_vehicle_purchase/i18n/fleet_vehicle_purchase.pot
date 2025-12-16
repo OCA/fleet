@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0\n"
+"Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -24,11 +24,6 @@ msgid "Fleet Vehicle From Po"
 msgstr ""
 
 #. module: fleet_vehicle_purchase
-#: model_terms:ir.ui.view,arch_db:fleet_vehicle_purchase.fleet_vehicle_form_view
-msgid "Purcase Orders"
-msgstr ""
-
-#. module: fleet_vehicle_purchase
 #: model:ir.model,name:fleet_vehicle_purchase.model_purchase_order
 #: model:ir.model.fields,field_description:fleet_vehicle_purchase.field_fleet_vehicle__purchase_order_ids
 msgid "Purchase Order"
@@ -42,6 +37,11 @@ msgstr ""
 #. module: fleet_vehicle_purchase
 #: model:ir.model,name:fleet_vehicle_purchase.model_purchase_order_line
 msgid "Purchase Order Line"
+msgstr ""
+
+#. module: fleet_vehicle_purchase
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_purchase.fleet_vehicle_form_view
+msgid "Purchase Orders"
 msgstr ""
 
 #. module: fleet_vehicle_purchase
