@@ -9,10 +9,7 @@ class FleetVehicle(models.Model):
 
     fuel_capacity = fields.Float(string="Fuel Capacity (L)", tracking=True)
 
-    _sql_constraints = [
-        (
-            "check_fuel_capacity",
-            "CHECK(fuel_capacity >= 0)",
-            "Fuel capacity must be greater than or equal to 0",
-        )
-    ]
+    _fuel_capacity_positive = models.Constraint(
+        "CHECK(fuel_capacity >= 0)",
+        "Fuel capacity must be greater than or equal to 0",
+    )
