@@ -11,7 +11,12 @@
         <field name="arch" type="xml">
             <xpath expr="//sheet//separator" position="before">
                 <group string="Included Services">
-                    <field name="service_ids" widget="many2many_tags" nolabel="1" />
+                    <field
+                        name="service_ids"
+                        widget="many2many_tags"
+                        nolabel="1"
+                        colspan="3"
+                    />
                 </group>
             </xpath>
         </field>
