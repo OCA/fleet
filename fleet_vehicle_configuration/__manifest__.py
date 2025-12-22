@@ -3,9 +3,9 @@
 
 {
     "name": "Fleet Vehicle Configuration",
-    "version": "18.0.1.0.0",
+    "version": "19.0.1.0.0",
     "depends": ["fleet"],
-    "author": "Camptocamp,Odoo Community Association (OCA)",
+    "author": "Camptocamp, Odoo Community Association (OCA)",
     "summary": "add vehicle configuration capacity",
     "website": "https://github.com/OCA/fleet",
     "license": "AGPL-3",
