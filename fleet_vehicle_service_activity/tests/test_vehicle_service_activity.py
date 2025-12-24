@@ -13,10 +13,19 @@ class TestVehicleServiceActivity(BaseCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.vehicle = cls.env.ref("fleet.vehicle_1")
+        cls.brand = cls.env["fleet.vehicle.model.brand"].create({"name": "Test Brand"})
+        cls.model = cls.env["fleet.vehicle.model"].create(
+            {"name": "Test Model", "brand_id": cls.brand.id}
+        )
         cls.user = new_test_user(cls.env, "test base user")
         cls.user2 = new_test_user(cls.env, "test base user 2")
-        cls.vehicle.manager_id = cls.user
+        cls.vehicle = cls.env["fleet.vehicle"].create(
+            {
+                "model_id": cls.model.id,
+                "license_plate": "TEST1234",
+                "manager_id": cls.user.id,
+            }
+        )
         cls.service_type = cls.env["fleet.service.type"].create(
             {"name": "Service Type Test", "category": "service"}
         )
