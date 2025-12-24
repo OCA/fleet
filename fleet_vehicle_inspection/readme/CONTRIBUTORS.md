@@ -3,3 +3,5 @@
 - [Tecnativa](https://www.tecnativa.com):
   - Carolina Fernandez
   - Víctor Martínez
+- [Heliconia Solutions Pvt. Ltd.](https://www.heliconia.io)
+  - Bhavesh Heliconia

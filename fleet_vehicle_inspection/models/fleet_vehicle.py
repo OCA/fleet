@@ -16,12 +16,13 @@ class FleetVehicle(models.Model):
 
     @api.depends("inspection_ids")
     def _compute_inspection_count(self):
-        res = self.env["fleet.vehicle.inspection"].read_group(
+        # Odoo 19: Use _read_group
+        data = self.env["fleet.vehicle.inspection"]._read_group(
             domain=[("vehicle_id", "in", self.ids)],
-            fields=["vehicle_id"],
             groupby=["vehicle_id"],
+            aggregates=["__count"],
         )
-        res_dict = {x["vehicle_id"][0]: x["vehicle_id_count"] for x in res}
+        res_dict = {vehicle.id: count for vehicle, count in data}
         for rec in self:
             rec.inspection_count = res_dict.get(rec.id, 0)
 
@@ -37,6 +38,6 @@ class FleetVehicle(models.Model):
             )
             action["views"] = [(form_view.id, "form")]
             action["res_id"] = (
-                fields.first(self.inspection_ids).id if self.inspection_ids else False
+                self.inspection_ids[0].id if self.inspection_ids else False
             )
         return action

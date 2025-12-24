@@ -2,7 +2,7 @@
 # Copyright 2023 Tecnativa - Carolina Fernandez
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 from odoo.exceptions import UserError, ValidationError
 
 
@@ -67,7 +67,6 @@ class FleetVehicleInspection(models.Model):
         "fleet.vehicle.inspection.line",
         "inspection_id",
         copy=True,
-        auto_join=True,
     )
     result = fields.Selection(
         [("todo", "Todo"), ("success", "Success"), ("failure", "Failure")],
@@ -137,15 +136,19 @@ class FleetVehicleInspection(models.Model):
             line.result == "todo" for line in self.mapped("inspection_line_ids")
         ):
             raise UserError(
-                _("Inspection cannot be completed. There are uninspected items.")
+                self.env._(
+                    "Inspection cannot be completed. There are uninspected items."
+                )
             )
         if any(rec.state not in ["draft", "cancel"] for rec in self):
             raise ValidationError(
-                _("Only inspections in 'draft' or 'cancel' states can be confirmed")
+                self.env._(
+                    "Only inspections in 'draft' or 'cancel' states can be confirmed"
+                )
             )
         if self.amount:
             if not self.service_type_id:
-                raise ValidationError(_("Must select service type"))
+                raise ValidationError(self.env._("Must select service type"))
             self.service_id = self.env["fleet.vehicle.log.services"].create(
                 self._prepare_fleet_vehicle_log_services_vals()
             )
@@ -172,7 +175,7 @@ class FleetVehicleInspection(models.Model):
     def _inverse_odometer(self):
         if any(not rec.odometer for rec in self):
             raise UserError(
-                _("Emptying the odometer value of a vehicle is not allowed.")
+                self.env._("Emptying the odometer value of a vehicle is not allowed.")
             )
         for rec in self:
             rec.odometer_id = self.env["fleet.vehicle.odometer"].create(
