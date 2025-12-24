@@ -13,15 +13,14 @@ class FleetVehicle(models.Model):
 
     @api.depends("log_fuels")
     def _compute_fuel_count(self):
-        res = self.env["fleet.vehicle.log.fuel"].read_group(
+        data = self.env["fleet.vehicle.log.fuel"]._read_group(
             domain=[("vehicle_id", "in", self.ids)],
-            fields=["vehicle_id"],
             groupby=["vehicle_id"],
+            aggregates=["__count"],
         )
-        res_dict = {x["vehicle_id"][0]: x["vehicle_id_count"] for x in res}
+        res_dict = {vehicle.id: count for vehicle, count in data}
         for record in self:
             record.fuel_count = res_dict.get(record.id, 0)
-        return res
 
     def action_view_log_fuel(self):
         action = self.env["ir.actions.act_window"]._for_xml_id(

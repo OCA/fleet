@@ -2,7 +2,7 @@
 # Copyright 2024 Tecnativa - Víctor Martínez
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 from odoo.exceptions import UserError
 
 
@@ -56,7 +56,7 @@ class FleetVehicleLogFuel(models.Model):
         "Service Type",
         required=True,
         default=lambda self: self.env.ref(
-            "fleet.type_service_refueling", raise_if_not_found=False
+            "fleet_vehicle_log_fuel.type_service_refueling", raise_if_not_found=False
         ),
     )
     state = fields.Selection(
@@ -103,7 +103,7 @@ class FleetVehicleLogFuel(models.Model):
     def _inverse_odometer(self):
         if any(not x.odometer for x in self):
             raise UserError(
-                _("Emptying the odometer value of a vehicle is not allowed.")
+                self.env._("Emptying the odometer value of a vehicle is not allowed.")
             )
         for record in self:
             self.odometer_id = self.env["fleet.vehicle.odometer"].create(
