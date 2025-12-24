@@ -3,13 +3,15 @@
 
 from odoo import fields
 from odoo.tests import Form
-from odoo.tests.common import TransactionCase
+
+from odoo.addons.base.tests.common import BaseCommon
 
 
-class TestPurchase(TransactionCase):
+class TestPurchase(BaseCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
+        cls.driver = cls.env["res.partner"].create({"name": "Driver"})
         cls.brand = cls.env["fleet.vehicle.model.brand"].create(
             {
                 "name": "Audi",
@@ -24,7 +26,7 @@ class TestPurchase(TransactionCase):
         cls.car_1 = cls.env["fleet.vehicle"].create(
             {
                 "model_id": cls.model.id,
-                "driver_id": cls.env.user.partner_id.id,
+                "driver_id": cls.driver.id,
                 "plan_to_change_car": False,
             }
         )
@@ -34,6 +36,7 @@ class TestPurchase(TransactionCase):
                 "type": "service",
             }
         )
+        cls.partner = cls.env["res.partner"].create({"name": "Vendor"})
 
     def test_purchase(self):
         self.assertEqual(0, self.car_1.purchase_order_count)
@@ -42,7 +45,7 @@ class TestPurchase(TransactionCase):
             self.env[order_action["res_model"]].search(order_action["domain"])
         )
         with Form(self.env["purchase.order"]) as form:
-            form.partner_id = self.env.user.partner_id
+            form.partner_id = self.partner
             form.fleet_vehicle_id = self.car_1
             with form.order_line.new() as form_line:
                 form_line.product_id = self.product
@@ -65,7 +68,7 @@ class TestPurchase(TransactionCase):
     def test_purchase_no_vehicle(self):
         """Test purchase order flow without a fleet vehicle."""
         with Form(self.env["purchase.order"]) as form:
-            form.partner_id = self.env.user.partner_id
+            form.partner_id = self.partner
             # Do not set fleet_vehicle_id
             with form.order_line.new() as form_line:
                 form_line.product_id = self.product

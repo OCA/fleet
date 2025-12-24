@@ -14,14 +14,13 @@ class FleetVehicle(models.Model):
 
     @api.depends("purchase_order_ids")
     def _compute_purchase_order_count(self):
-        orders = self.env["purchase.order"].read_group(
+        # Odoo 19: Use _read_group
+        data = self.env["purchase.order"]._read_group(
             [("fleet_vehicle_id", "in", self.ids)],
-            ["fleet_vehicle_id"],
-            ["fleet_vehicle_id"],
+            groupby=["fleet_vehicle_id"],
+            aggregates=["__count"],
         )
-        mapped_data = {
-            po["fleet_vehicle_id"][0]: po["fleet_vehicle_id_count"] for po in orders
-        }
+        mapped_data = {vehicle.id: count for vehicle, count in data}
         for rec in self:
             rec.purchase_order_count = mapped_data.get(rec.id, 0)
 

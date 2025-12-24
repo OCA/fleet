@@ -15,7 +15,7 @@
                 expr="//field[@name='order_line']//field[@name='product_qty']"
                 position="after"
             >
-                <field name="fleet_vehicle_from_po" invisible="1" />
+                <field name="fleet_vehicle_from_po" column_invisible="1" />
                 <field
                     name="fleet_vehicle_id"
                     optional="hide"
