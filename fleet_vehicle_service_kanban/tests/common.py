@@ -12,6 +12,10 @@ class TestVehicleLogServicesCommon(BaseCommon):
     def setUpClass(cls):
         super().setUpClass()
         cls.brand = cls.env["fleet.vehicle.model.brand"].create({"name": "Audi"})
+        cls.model = cls.env["fleet.vehicle.model"].create(
+            {"name": "Focus", "brand_id": cls.brand.id}
+        )
+        cls.driver = cls.env["res.partner"].create({"name": "Driver"})
         cls.vehicle = cls.env["fleet.vehicle"].create(
             {
                 "license_plate": "1-ACK-555",
@@ -19,10 +23,10 @@ class TestVehicleLogServicesCommon(BaseCommon):
                 "color": "Black",
                 "location": "Grand-Rosiere",
                 "doors": 5,
-                "driver_id": cls.env.ref("base.user_demo").id,
+                "driver_id": cls.driver.id,
                 "odometer_unit": "kilometers",
                 "car_value": 20000,
-                "model_id": cls.env.ref("fleet.model_focus").id,
+                "model_id": cls.model.id,
             }
         )
         cls.service_type_repair = cls.env["fleet.service.type"].create(

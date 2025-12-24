@@ -16,10 +16,7 @@ class FleetVehicleLogServicesStage(models.Model):
         help="If True this stage is folded in the kanban view.",
     )
 
-    _sql_constraints = [
-        (
-            "fleet_service_stage_name_unique",
-            "unique(name)",
-            "Stage name already exists",
-        )
-    ]
+    _name_unique = models.Constraint(
+        "unique(name)",
+        "Stage name already exists",
+    )
