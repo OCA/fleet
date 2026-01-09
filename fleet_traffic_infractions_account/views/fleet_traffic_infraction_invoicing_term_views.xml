@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_fleet_traffic_infraction_invoicing_term_form" model="ir.ui.view">
+        <field name="name">fleet.traffic.infraction.invoicing.term.form</field>
+        <field name="model">fleet.traffic.infraction.invoicing.term</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1><field name="name" placeholder="e.g. Standard Driver Invoice"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="sequence" widget="handle"/>
+                            <field name="active"/>
+                        </group>
+                        <group>
+                            <field name="action"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Applicability" name="applicability">
+                            <group>
+                                <field name="driver_domain" widget="domain" options="{'model': 'res.partner'}"/>
+                                <p class="text-muted">
+                                    Define which drivers this rule applies to. Rules are checked by sequence order; the first one that matches is used.
+                                </p>
+                            </group>
+                        </page>
+                        <page string="Invoice Lines" name="invoice_lines" invisible="action != 'invoice_driver'">
+                            <field name="expense_line_ids">
+                                <list editable="bottom">
+                                    <field name="product_id"/>
+                                    <field name="calculation_method"/>
+                                    <field name="amount"/>
+                                </list>
+                            </field>
+                            <group string="Discount Policy">
+                                <field name="discount_type"/>
+                                <field name="discount_value" invisible="discount_type == 'none'"/>
+                                <field name="discount_product_id" invisible="discount_type == 'none'"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_fleet_traffic_infraction_invoicing_term_tree" model="ir.ui.view">
+        <field name="name">fleet.traffic.infraction.invoicing.term.tree</field>
+        <field name="model">fleet.traffic.infraction.invoicing.term</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="action"/>
+                <field name="driver_domain"/>
+                <field name="active" widget="boolean_toggle"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_fleet_traffic_infraction_invoicing_term" model="ir.actions.act_window">
+        <field name="name">Invoicing Rules</field>
+        <field name="res_model">fleet.traffic.infraction.invoicing.term</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Invoicing Rule.
+                <br/><br/>
+                Invoicing Rules allow you to define different financial policies for different groups of drivers.
+                Use the domain builder to specify which drivers a rule applies to, and set the sequence to prioritize them.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_fleet_traffic_infraction_invoicing_term"
+              name="Invoicing Rules"
+              parent="fleet_traffic_infractions.menu_fleet_traffic_infractions_root"
+              action="action_fleet_traffic_infraction_invoicing_term"
+              sequence="30"/>
+
+</odoo>
