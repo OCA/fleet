@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fleet_traffic_infractions_user,fleet.traffic.infractions.user,model_fleet_traffic_infractions,base.group_user,1,0,0,0
+access_fleet_traffic_infractions_manager,fleet.traffic.infractions.manager,model_fleet_traffic_infractions,fleet.fleet_group_manager,1,1,1,1
+access_fleet_traffic_infraction_type_user,fleet.traffic.infraction.type.user,model_fleet_traffic_infraction_type,base.group_user,1,0,0,0
+access_fleet_traffic_infraction_type_manager,fleet.traffic.infraction.type.manager,model_fleet_traffic_infraction_type,fleet.fleet_group_manager,1,1,1,1

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Action for Fleet Traffic Infractions -->
+    <record id="action_fleet_traffic_infractions" model="ir.actions.act_window">
+        <field name="name">Traffic Infractions</field>
+        <field name="res_model">fleet.traffic.infractions</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Action for Fleet Traffic Infraction Types -->
+    <record id="action_fleet_traffic_infraction_type" model="ir.actions.act_window">
+        <field name="name">Infraction Types</field>
+        <field name="res_model">fleet.traffic.infraction.type</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- NEW: Action to configure Activity Types for Fleet Traffic Infractions -->
+    <record
+        id="mail_activity_type_action_config_fleet_traffic_infractions"
+        model="ir.actions.act_window"
+    >
+        <field name="name">Activity Types (Traffic Infractions)</field>
+        <field name="res_model">mail.activity.type</field>
+        <field name="view_mode">list,kanban,form</field>
+        <!-- Domain to show activities for this model, or generic ones -->
+        <field
+            name="domain"
+        >['|', ('res_model', '=', False), ('res_model', '=', 'fleet.traffic.infractions')]</field>
+        <field name="context">{'default_res_model': 'fleet.traffic.infractions'}</field>
+    </record>
+
+    <!--
+    Main menu for all traffic infraction related items.
+    This will appear under the Fleet application's main menu.
+-->
+    <menuitem
+        id="menu_fleet_traffic_infractions_root"
+        name="Infractions"
+        parent="fleet.fleet_vehicles"
+        sequence="50"
+    />
+
+    <!-- Menu Item for the list of Traffic Infractions -->
+    <menuitem
+        id="menu_fleet_traffic_infractions"
+        name="Traffic Infractions"
+        action="action_fleet_traffic_infractions"
+        parent="fleet_traffic_infractions.menu_fleet_traffic_infractions_root"
+        sequence="10"
+    />
+
+    <!-- Menu Item for configuring Infraction Types -->
+    <menuitem
+        id="menu_fleet_traffic_infraction_type"
+        name="Infraction Types"
+        action="action_fleet_traffic_infraction_type"
+        parent="fleet_traffic_infractions.menu_fleet_traffic_infractions_root"
+        sequence="20"
+    />
+
+    <!-- NEW: Menu Item for Activity Types configuration under Fleet Configuration -->
+    <menuitem
+        id="fleet_menu_config_activity_type_infractions"
+        action="mail_activity_type_action_config_fleet_traffic_infractions"
+        parent="fleet.fleet_configuration"
+        sequence="100"
+        groups="base.group_no_one"
+    />
+</odoo>

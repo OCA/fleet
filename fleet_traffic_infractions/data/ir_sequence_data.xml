@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <!-- Sequence for fleet.traffic.infractions -->
+    <record id="seq_fleet_traffic_infractions" model="ir.sequence">
+        <field name="name">Traffic Infraction Sequence</field>
+        <field name="code">fleet.traffic.infractions</field>
+        <field name="prefix">TI</field>
+        <field name="padding">5</field>
+        <field name="company_id" eval="False" />
+    </record>
+</odoo>

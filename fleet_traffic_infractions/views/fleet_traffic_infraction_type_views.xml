@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Form View for Fleet Traffic Infraction Type -->
+    <record id="fleet_traffic_infraction_type_view_form" model="ir.ui.view">
+        <field name="name">fleet.traffic.infraction.type.form</field>
+        <field name="model">fleet.traffic.infraction.type</field>
+        <field name="arch" type="xml">
+            <form string="Infraction Type">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="code" class="oe_edit_only" />
+                        <h1>
+                            <field name="code" placeholder="e.g., 501.00" />
+                        </h1>
+                        <field name="name" invisible="1" />
+                    </div>
+                    <group>
+                        <group>
+                            <field name="description" placeholder="e.g., Speeding" />
+                            <field name="legal_reference" />
+                        </group>
+                        <group>
+                            <field name="start_date" />
+                            <field name="end_date" />
+                        </group>
+                    </group>
+                    <group string="Jurisdiction">
+                        <field name="jurisdiction_level" />
+                        <field name="country_id" />
+                        <field
+                            name="state_id"
+                            invisible="jurisdiction_level == 'country'"
+                        />
+                        <field
+                            name="city"
+                            invisible="jurisdiction_level in ['country', 'state']"
+                        />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- List View for Fleet Traffic Infraction Type -->
+    <record id="fleet_traffic_infraction_type_view_tree" model="ir.ui.view">
+        <field name="name">fleet.traffic.infraction.type.tree</field>
+        <field name="model">fleet.traffic.infraction.type</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" />
+                <field name="jurisdiction_level" />
+                <field name="country_id" />
+                <field name="state_id" />
+            </list>
+        </field>
+    </record>
+</odoo>
