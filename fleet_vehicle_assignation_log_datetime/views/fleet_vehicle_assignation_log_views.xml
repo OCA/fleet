@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2025 Raimundo Pereira da Silva Junior, Odoo Community Association (OCA) -->
+<!-- License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="fleet_vehicle_assignation_log_view_form" model="ir.ui.view">
+        <field name="name">fleet.vehicle.assignation.log.form.datetime</field>
+        <field name="model">fleet.vehicle.assignation.log</field>
+        <field name="arch" type="xml">
+            <form string="Assignment Log">
+                <sheet>
+                    <group>
+                        <field name="vehicle_id" />
+                        <field name="driver_id" widget="many2one_avatar" />
+                        <field name="datetime_start" />
+                        <field name="datetime_end" />
+                        <field name="date_start" invisible="1" />
+                        <field name="date_end" invisible="1" />
+                    </group>
+                </sheet>
+                <!-- Add chatter to the form view -->
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" />
+                    <field name="activity_ids" />
+                    <field name="message_ids" />
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record
+        id="fleet_vehicle_assignation_log_view_list_inherit_datetime"
+        model="ir.ui.view"
+    >
+        <field name="name">fleet.vehicle.assignation.log.list.inherit.datetime</field>
+        <field name="model">fleet.vehicle.assignation.log</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_assignation_log_view_list" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='date_start']" position="before">
+                <field name="datetime_start" />
+            </xpath>
+            <xpath expr="//field[@name='date_start']" position="attributes">
+                <attribute name="column_invisible">True</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='date_end']" position="before">
+                <field name="datetime_end" />
+            </xpath>
+            <xpath expr="//field[@name='date_end']" position="attributes">
+                <attribute name="column_invisible">True</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>
