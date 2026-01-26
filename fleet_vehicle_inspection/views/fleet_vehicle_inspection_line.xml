@@ -12,7 +12,7 @@
                 <header>
                     <button
                         name="action_item_success"
-                        states="draft"
+                        invisible="state != 'draft'"
                         string="Approve"
                         type="object"
                         class="oe_highlight btn-success"
@@ -20,7 +20,7 @@
                     />
                     <button
                         name="action_item_failure"
-                        states="draft"
+                        invisible="state != 'draft'"
                         string="Refuse"
                         type="object"
                         class="oe_highlight btn-danger"
@@ -28,18 +28,19 @@
                     />
                 </header>
                 <sheet>
+                    <field name="state" invisible="1" />
                     <field name="result" invisible="1" />
                     <div
                         class="badge rounded-pill bg-primary float-end text-white"
-                        attrs="{'invisible': [('result', 'not in', ['todo'])]}"
+                        invisible="result not in ['todo']"
                     >Todo</div>
                     <div
                         class="badge rounded-pill bg-danger float-end text-white"
-                        attrs="{'invisible': [('result', 'not in', ['failure'])]}"
+                        invisible="result not in ['failure']"
                     >Failure</div>
                     <div
                         class="badge rounded-pill bg-success float-end text-white"
-                        attrs="{'invisible': [('result', 'not in', ['success'])]}"
+                        invisible="result not in ['success']"
                     >Success</div>
                     <div class="oe_title">
                         <h1>
@@ -47,7 +48,7 @@
                         </h1>
                     </div>
                     <group>
-                        <field name="inspection_item_id" />
+                        <field name="inspection_item_id" readonly="state!='draft'" />
                     </group>
                     <notebook>
                         <page name="instruction" string="Instruction">
@@ -61,7 +62,7 @@
                                 <field
                                     name="inspection_line_image_ids"
                                     class="o_inspection_image_list"
-                                    context="{'default_inspection_line_id': active_id}"
+                                    context="{'default_inspection_line_id': id}"
                                     nolabel="1"
                                 >
                                     <kanban

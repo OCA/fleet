@@ -13,7 +13,7 @@
                     <button
                         name="button_confirm"
                         type="object"
-                        states="draft"
+                        invisible="state != 'draft'"
                         string="Confirm Inspection"
                         class="oe_highlight"
                         id="bid_confirm"
@@ -21,14 +21,14 @@
                     />
                     <button
                         name="button_draft"
-                        states="cancel"
+                        invisible="state != 'cancel'"
                         string="Set to Draft"
                         type="object"
                         groups="fleet.fleet_group_manager"
                     />
                     <button
                         name="button_cancel"
-                        states="draft,confirmed"
+                        invisible="state not in ['draft', 'confirmed']"
                         string="Cancel"
                         type="object"
                         groups="fleet.fleet_group_manager"
@@ -43,11 +43,11 @@
                     <field name="result" invisible="1" />
                     <div
                         class="badge rounded-pill bg-danger float-end text-white"
-                        attrs="{'invisible': [('result', 'not in', ['failure'])]}"
+                        invisible="result not in ['failure']"
                     >Failure</div>
                     <div
                         class=" badge rounded-pill bg-success float-end text-white"
-                        attrs="{'invisible': [('result', 'not in', ['success'])]}"
+                        invisible="result not in ['success']"
                     >Success</div>
                     <div class="oe_title">
                         <h1>
@@ -56,14 +56,14 @@
                     </div>
                     <group>
                         <group>
-                            <field name="vehicle_id" />
-                            <field name="direction" />
-                            <field name="odometer" />
-                            <field name="odometer_unit" />
+                            <field name="vehicle_id" readonly="state!='draft'" />
+                            <field name="direction" readonly="state!='draft'" />
+                            <field name="odometer" readonly="state!='draft'" />
+                            <field name="odometer_unit" readonly="state!='draft'" />
                         </group>
                         <group>
-                            <field name="date_inspected" />
-                            <field name="inspected_by" />
+                            <field name="date_inspected" readonly="state!='draft'" />
+                            <field name="inspected_by" readonly="state!='draft'" />
                             <field name="vendor_id" />
                             <field name="service_type_id" />
                             <field name="currency_id" invisible="1" />
@@ -80,8 +80,9 @@
                         <page string="Inspection Lines" name="inspection_lines">
                             <field
                                 name="inspection_line_ids"
+                                readonly="state!='draft'"
                                 mode="tree,kanban"
-                                context="{'default_inspection_id': active_id}"
+                                context="{'default_inspection_id': id}"
                             >
                                 <tree>
                                     <field name="sequence" widget="handle" />
@@ -98,7 +99,7 @@
                                     />
                                     <button
                                         name="action_item_success"
-                                        states="draft"
+                                        invisible="state != 'draft'"
                                         type="object"
                                         class="oe_highlight btn-success"
                                         icon="fa-check-circle"
@@ -107,7 +108,7 @@
                                     />
                                     <button
                                         name="action_item_failure"
-                                        states="draft"
+                                        invisible="state != 'draft'"
                                         type="object"
                                         class="oe_highlight btn-danger"
                                         icon="fa-times-circle"
@@ -200,7 +201,7 @@
                             </field>
                         </page>
                         <page string="Notes" name="notes_information">
-                            <field name="note" />
+                            <field name="note" readonly="state!='draft'" />
                         </page>
                     </notebook>
                 </sheet>
@@ -356,10 +357,7 @@
                                 <div class="col-6 o_kanban_record_headings">
                                     <strong>
                                         <span>
-                                            <field
-                                                name="name"
-                                                attrs="{'invisible': [('name', '=', False)]}"
-                                            />
+                                            <field name="name" invisible="not name" />
                                         </span>
                                     </strong>
                                 </div>

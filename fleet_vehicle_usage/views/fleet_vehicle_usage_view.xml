@@ -205,8 +205,8 @@
         <field name="search_view_id" ref="fleet_vehicle_usage_search" />
         <field
             name="context"
-        >{'default_vehicle_id': active_id, 'search_default_not_returned': 1}</field>
-        <field name="domain">[('vehicle_id', '=', active_id)]</field>
+        >{'default_vehicle_id': id, 'search_default_not_returned': 1}</field>
+        <field name="domain">[('vehicle_id', '=', id)]</field>
         <field name="help" type="html">
             <p
                 class="oe_view_nocontent_create"
