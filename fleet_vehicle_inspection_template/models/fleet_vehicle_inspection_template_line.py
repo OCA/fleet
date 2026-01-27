@@ -5,7 +5,6 @@ from odoo import fields, models
 
 
 class FleetVehicleInspectionTemplateLine(models.Model):
-
     _name = "fleet.vehicle.inspection.template.line"
     _description = "Fleet Vehicle Inspection Template Line"
 

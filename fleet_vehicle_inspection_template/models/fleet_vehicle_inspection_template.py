@@ -5,7 +5,6 @@ from odoo import fields, models
 
 
 class FleetVehicleInspectionTemplate(models.Model):
-
     _name = "fleet.vehicle.inspection.template"
     _description = "Fleet Vehicle Inspection Template"
     _inherit = ["mail.thread", "mail.activity.mixin"]

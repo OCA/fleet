@@ -5,7 +5,6 @@ from odoo import api, fields, models
 
 
 class FleetVehicleInspection(models.Model):
-
     _inherit = "fleet.vehicle.inspection"
 
     inspection_template_id = fields.Many2one(

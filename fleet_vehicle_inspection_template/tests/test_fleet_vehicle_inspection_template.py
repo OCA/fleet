@@ -7,7 +7,7 @@ from odoo.tests import TransactionCase
 class TestFleetVehicleInspectionTemplate(TransactionCase):
     @classmethod
     def setUpClass(cls):
-        super(TestFleetVehicleInspectionTemplate, cls).setUpClass()
+        super().setUpClass()
         cls.inspection = cls.env["fleet.vehicle.inspection"]
         cls.inspection_item = cls.env["fleet.vehicle.inspection.item"]
         cls.inspection_template = cls.env["fleet.vehicle.inspection.template"]

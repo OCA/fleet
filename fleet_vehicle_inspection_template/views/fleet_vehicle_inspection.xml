@@ -13,7 +13,7 @@
         />
         <field name="arch" type="xml">
             <field name="vehicle_id" position="after">
-                <field name="inspection_template_id" />
+                <field name="inspection_template_id" readonly="state!='draft'" />
             </field>
         </field>
     </record>
