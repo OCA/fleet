@@ -4,6 +4,16 @@
 from odoo import fields, models
 
 
+class FleetVehicleModel(models.Model):
+    _inherit = "fleet.vehicle.model"
+    default_fuel_type = fields.Selection(
+        selection_add=[
+            ("ethanol", "Ethanol"),
+            ("flex", "Flex (Gasoline/Ethanol)"),
+        ]
+    )
+
+
 class FleetVehicle(models.Model):
     _inherit = "fleet.vehicle"
 

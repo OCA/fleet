@@ -22,6 +22,11 @@ msgid "Ethanol"
 msgstr "Etanolo"
 
 #. module: fleet_vehicle_fuel_type_ethanol
+#: model:ir.module.module,name:fleet_vehicle_fuel_type_ethanol
+msgid "Escodoo, Odoo Community Association (OCA)"
+msgstr "Escodoo, Associazione della Comunità Odoo (OCA)"
+
+#. module: fleet_vehicle_fuel_type_ethanol
 #: model:ir.model.fields.selection,name:fleet_vehicle_fuel_type_ethanol.selection__fleet_vehicle__fuel_type__flex
 msgid "Flex (Gasoline/Ethanol)"
 msgstr "Flessibile (Benzina/etanolo)"

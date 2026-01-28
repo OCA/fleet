@@ -17,6 +17,11 @@ msgstr ""
 "X-Generator: Weblate 4.17\n"
 
 #. module: fleet_vehicle_fuel_type_ethanol
+#: model:ir.module.module,name:fleet_vehicle_fuel_type_ethanol
+msgid "Escodoo, Odoo Community Association (OCA)"
+msgstr "Escodoo, Odoo Community-föreningen (OCA)"
+
+#. module: fleet_vehicle_fuel_type_ethanol
 #: model:ir.model.fields.selection,name:fleet_vehicle_fuel_type_ethanol.selection__fleet_vehicle__fuel_type__ethanol
 msgid "Ethanol"
 msgstr "Etanol"
