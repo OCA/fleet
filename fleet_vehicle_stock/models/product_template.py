@@ -45,12 +45,7 @@ class ProductTemplate(models.Model):
                 template.write(related_vals)
         return templates
 
-    _sql_constraints = [
-        (
-            "non_product_tracking_for_vehicle_model",
-            "CHECK((tracking != 'serial' AND fleet_vehicle_model_id IS NULL) "
-            "OR (tracking = 'serial'))",
-            "It is mandatory to configure the traceability by serial number in order "
-            "to be able to configure the vehicle model of the fleet in this product.",
-        ),
-    ]
+    _non_product_tracking_for_vehicle_model = models.Constraint(
+        "CHECK((tracking != 'serial' AND fleet_vehicle_model_id IS NULL) OR (tracking = 'serial'))",
+        "It is mandatory to configure the traceability by serial number in order to be able to configure the vehicle model of the fleet in this product.",
+    )
