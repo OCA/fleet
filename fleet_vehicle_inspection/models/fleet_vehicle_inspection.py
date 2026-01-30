@@ -137,7 +137,7 @@ class FleetVehicleInspection(models.Model):
             line.result == "todo" for line in self.mapped("inspection_line_ids")
         ):
             raise UserError(
-                _("Inspection cannot be completed. " "There are uninspected items.")
+                _("Inspection cannot be completed. There are uninspected items.")
             )
         if any(rec.state not in ["draft", "cancel"] for rec in self):
             raise ValidationError(
@@ -172,7 +172,7 @@ class FleetVehicleInspection(models.Model):
     def _inverse_odometer(self):
         if any(not rec.odometer for rec in self):
             raise UserError(
-                _("Emptying the odometer value of a " "vehicle is not allowed.")
+                _("Emptying the odometer value of a vehicle is not allowed.")
             )
         for rec in self:
             rec.odometer_id = self.env["fleet.vehicle.odometer"].create(
