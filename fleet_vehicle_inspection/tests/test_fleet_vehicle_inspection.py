@@ -29,11 +29,11 @@ class TestFleetVehicleInspection(BaseCommon):
                 "license_plate": "TEST123",
             }
         )
-        cls.item_lights = cls.env.ref(
-            "fleet_vehicle_inspection.fleet_vehicle_inspection_item_demo_1"
+        cls.item_lights = cls.env["fleet.vehicle.inspection.item"].create(
+            {"name": "Lights"}
         )
-        cls.item_mirrors = cls.env.ref(
-            "fleet_vehicle_inspection.fleet_vehicle_inspection_item_demo_2"
+        cls.item_mirrors = cls.env["fleet.vehicle.inspection.item"].create(
+            {"name": "Mirrors"}
         )
         cls.inspection = cls.env["fleet.vehicle.inspection"]
         cls.inspection = cls.inspection.create(

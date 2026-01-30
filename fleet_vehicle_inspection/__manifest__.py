@@ -1,4 +1,4 @@
-# Copyright 2020 - 2024, Escodoo
+# Copyright 2020 - 2025, Escodoo
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
@@ -6,7 +6,7 @@
     "summary": """
         This module extends the Fleet module allowing the registration
         of vehicle entry and exit inspections.""",
-    "version": "18.0.1.0.0",
+    "version": "19.0.1.0.0",
     "license": "AGPL-3",
     "category": "Fleet",
     "author": "Escodoo,Odoo Community Association (OCA)",

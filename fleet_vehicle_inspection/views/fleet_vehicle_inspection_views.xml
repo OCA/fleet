@@ -106,76 +106,76 @@
                 <separator />
                 <filter
                     string="Direction IN"
-                    name="direction"
+                    name="filter_direction_in"
                     domain="[('direction','=','in')]"
                 />
                 <filter
                     string="Direction OUT"
-                    name="direction"
+                    name="filter_direction_out"
                     domain="[('direction','=','out')]"
                 />
                 <separator />
                 <filter
                     string="Inspection Not Completed"
-                    name="state"
+                    name="filter_state_draft"
                     domain="[('state','=','draft')]"
                 />
                 <filter
                     string="Inspection Completed"
-                    name="result"
-                    domain="[('state','=','completed')]"
+                    name="filter_state_confirmed"
+                    domain="[('state','=','confirmed')]"
                 />
                 <filter
                     string="Inspection Canceled"
-                    name="result"
-                    domain="[('result','=','cancel')]"
+                    name="filter_state_cancel"
+                    domain="[('state','=','cancel')]"
                 />
                 <separator />
                 <filter
                     string="Successful Inspections"
-                    name="result"
+                    name="filter_result_success"
                     domain="[('result','=','success')]"
                 />
                 <filter
                     string="Failed Inspections"
-                    name="result"
+                    name="filter_result_failure"
                     domain="[('result','=','failure')]"
                 />
-                <group expand="0" string="Group By">
+                <group>
                     <filter
                         string="Vehicle"
-                        name="vehicle_id"
+                        name="group_vehicle_id"
                         domain="[]"
                         context="{'group_by':'vehicle_id'}"
                     />
                     <filter
                         string="Direction"
-                        name="direction"
+                        name="group_direction"
                         domain="[]"
                         context="{'group_by':'direction'}"
                     />
                     <filter
                         string="Inspected Date"
-                        name="date_inspected"
+                        name="group_date_inspected"
                         domain="[]"
                         context="{'group_by':'date_inspected'}"
                     />
                     <filter
                         string="Inspector"
-                        name="inspected_by"
+                        name="group_inspected_by"
                         domain="[]"
                         context="{'group_by':'inspected_by'}"
                     />
                     <separator />
                     <filter
                         string="Inspection State"
-                        name="state"
+                        name="group_state"
                         domain="[]"
                         context="{'group_by':'state'}"
                     />
                     <filter
                         string="Inspection Result"
-                        name="result"
+                        name="group_result"
                         domain="[]"
                         context="{'group_by':'result'}"
                     />

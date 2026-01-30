@@ -16,14 +16,8 @@ class FleetVehicle(models.Model):
 
     @api.depends("inspection_ids")
     def _compute_inspection_count(self):
-        res = self.env["fleet.vehicle.inspection"].read_group(
-            domain=[("vehicle_id", "in", self.ids)],
-            fields=["vehicle_id"],
-            groupby=["vehicle_id"],
-        )
-        res_dict = {x["vehicle_id"][0]: x["vehicle_id_count"] for x in res}
         for rec in self:
-            rec.inspection_count = res_dict.get(rec.id, 0)
+            rec.inspection_count = len(rec.inspection_ids)
 
     def action_view_inspection(self):
         action = self.env["ir.actions.act_window"]._for_xml_id(
@@ -36,7 +30,5 @@ class FleetVehicle(models.Model):
                 "fleet_vehicle_inspection.fleet_vehicle_inspection_form_view"
             )
             action["views"] = [(form_view.id, "form")]
-            action["res_id"] = (
-                fields.first(self.inspection_ids).id if self.inspection_ids else False
-            )
+            action["res_id"] = self.inspection_ids[:1].id
         return action
