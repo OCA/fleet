@@ -1,7 +1,7 @@
 # Copyright 2021 - TODAY, Marcel Savegnago <marcel.savegnago@escodoo.com.br>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import _, models
+from odoo import models
 from odoo.exceptions import UserError
 
 
@@ -25,12 +25,11 @@ class StockMove(models.Model):
                 and not rec.product_id.fleet_vehicle_model_id
             ):
                 raise UserError(
-                    _(
-                        "The product '%s' is configured to create a fleet "
-                        "vehicle but vehicle model is not configured in the "
-                        "product."
+                    self.env._(
+                        "Product %(product_name)s will create a fleet vehicle "
+                        "but model is missing.",
+                        product_name=rec.product_id.name,
                     )
-                    % rec.product_id.name
                 )
 
             if (

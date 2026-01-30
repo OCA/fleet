@@ -127,7 +127,6 @@ class TestFleetVehicle(TransactionCase):
 
         move = self.env["stock.move"].create(
             {
-                "name": "Test Move",
                 "product_id": self.product1.id,
                 "product_uom_qty": 1.0,
                 "product_uom": self.product1.uom_id.id,
@@ -171,7 +170,6 @@ class TestFleetVehicle(TransactionCase):
 
         move1 = self.env["stock.move"].create(
             {
-                "name": "Test Move Skip 1",
                 "product_id": self.product1.id,
                 "product_uom_qty": 1.0,
                 "product_uom": self.product1.uom_id.id,
@@ -208,7 +206,6 @@ class TestFleetVehicle(TransactionCase):
 
         move2 = self.env["stock.move"].create(
             {
-                "name": "Test Move Skip 2",
                 "product_id": self.product1.id,
                 "product_uom_qty": 1.0,
                 "product_uom": self.product1.uom_id.id,
@@ -282,7 +279,6 @@ class TestFleetVehicle(TransactionCase):
 
         move = self.env["stock.move"].create(
             {
-                "name": "Test Move Error",
                 "product_id": product_no_model.id,
                 "product_uom_qty": 1.0,
                 "location_id": self.env.ref("stock.stock_location_suppliers").id,
