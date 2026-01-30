@@ -433,6 +433,16 @@ msgid "Vendor Reference"
 msgstr "Referencia de proveedor"
 
 #. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes de Sitio Web"
+
+#. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,help:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de la comunicación en el sitio web"
+
+#. module: fleet_vehicle_log_fuel
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_log_fuel.fleet_vehicle_log_fuel_view_form
 msgid "Write here any other information related to the service completed."
 msgstr ""
@@ -452,9 +462,3 @@ msgstr "mostrar los registros de combustible para este vehículo"
 
 #~ msgid "Next Activity Calendar Event"
 #~ msgstr "Próximo Evento del Calendario de Actividades"
-
-#~ msgid "Website Messages"
-#~ msgstr "Mensajes de Sitio Web"
-
-#~ msgid "Website communication history"
-#~ msgstr "Historial de la comunicación en el sitio web"
