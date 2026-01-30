@@ -25,12 +25,11 @@ class StockMove(models.Model):
                 and not rec.product_id.fleet_vehicle_model_id
             ):
                 raise UserError(
-                    rec.env_(
-                        "The product '%s' is configured to create a fleet "
-                        "vehicle but vehicle model is not configured in the "
-                        "product."
+                    self.env._(
+                        "Product %(product_name)s will create a fleet vehicle "
+                        "but model is missing.",
+                        product_name=rec.product_id.name,
                     )
-                    % rec.product_id.name
                 )
 
             if (
