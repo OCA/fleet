@@ -5,7 +5,12 @@ class TestFleetVehicleOwner(TransactionCase):
     def setUp(self):
         super().setUp()
 
-        # Create necessary test data here, such as a partner and vehicles
+        # Create vehicle model (do not rely on fleet demo data xml_id)
+        brand = self.env["fleet.vehicle.model.brand"].create({"name": "Toyota"})
+        self.vehicle_model = self.env["fleet.vehicle.model"].create(
+            {"name": "Corolla", "brand_id": brand.id}
+        )
+
         self.partner = self.env["res.partner"].create(
             {
                 "name": "Lewis Hamilton",
@@ -22,7 +27,7 @@ class TestFleetVehicleOwner(TransactionCase):
                 "owner_id": self.partner.id,
                 "odometer_unit": "kilometers",
                 "car_value": 20000,
-                "model_id": self.env.ref("fleet.model_corolla_ts").id,
+                "model_id": self.vehicle_model.id,
             }
         )
         self.vehicle2 = self.env["fleet.vehicle"].create(
@@ -36,7 +41,7 @@ class TestFleetVehicleOwner(TransactionCase):
                 "owner_id": self.partner.id,
                 "odometer_unit": "kilometers",
                 "car_value": 30000,
-                "model_id": self.env.ref("fleet.model_corolla_ts").id,
+                "model_id": self.vehicle_model.id,
             }
         )
 

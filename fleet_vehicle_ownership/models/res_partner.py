@@ -15,11 +15,10 @@ class ResPartner(models.Model):
     vehicle_ids = fields.One2many(
         "fleet.vehicle",
         "owner_id",
-        required=True,
         help="Vehicles owned by this partner",
     )
     vehicle_count = fields.Integer(
-        compute=_compute_vehicle_count, string="Number of Vehicles", store=True
+        compute="_compute_vehicle_count", string="Number of Vehicles", store=True
     )
 
     def action_view_vehicles(self):

@@ -10,7 +10,7 @@
                     type="object"
                     name="action_view_vehicles"
                     icon="fa-car"
-                    context="{'default_partner_id': id}"
+                    context="{'default_owner_id': id}"
                 >
                     <div class="o_stat_info">
                         <field name="vehicle_count" class="o_stat_value" />
