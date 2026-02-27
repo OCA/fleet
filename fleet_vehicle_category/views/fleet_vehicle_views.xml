@@ -29,6 +29,7 @@
                             <field name="name" />
                         </h1>
                     </div>
+                    <group name="main" />
                     <notebook>
                         <page name="description_page" string="Description">
                             <field name="description" type="html" />
