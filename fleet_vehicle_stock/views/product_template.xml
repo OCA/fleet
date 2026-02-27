@@ -28,11 +28,12 @@
         <field name="arch" type="xml">
             <page name="fleet" position="inside">
                 <field name="product_variant_count" invisible="1" />
+                <field name="create_fleet_vehicle" invisible="1" />
                 <group>
                     <field
                         name="fleet_vehicle_model_id"
                         invisible="product_variant_count &gt; 1"
-                        required="product_variant_count == 1"
+                        required="create_fleet_vehicle == True"
                     />
                 </group>
             </page>
