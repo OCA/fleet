@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2021 to TODAY, Marcel Savegnago - Escodoo
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record model="ir.ui.view" id="fleet_vehicle_inspection_template_line_form_view">
+        <field
+            name="name"
+        >fleet.vehicle.inspection.template.line.form (in fleet_vehicle_inspection_template)</field>
+        <field name="model">fleet.vehicle.inspection.template.line</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="inspection_template_id" readonly="1" />
+                        </h1>
+                        <h2>
+                            <field name="inspection_template_item_id" />
+                        </h2>
+                    </div>
+                    <group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="fleet_vehicle_inspection_template_line_search_view">
+        <field
+            name="name"
+        >fleet.vehicle.inspection.template.line.search (in fleet_vehicle_inspection_template)</field>
+        <field name="model">fleet.vehicle.inspection.template.line</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="inspection_template_item_id" />
+            </search>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="fleet_vehicle_inspection_template_line_tree_view">
+        <field
+            name="name"
+        >fleet.vehicle.inspection.template.line.tree (in fleet_vehicle_inspection_template)</field>
+        <field name="model">fleet.vehicle.inspection.template.line</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="inspection_template_id" readonly="1" />
+                <field name="inspection_template_item_id" />
+            </tree>
+        </field>
+    </record>
+    <record
+        model="ir.actions.act_window"
+        id="fleet_vehicle_inspection_template_line_act_window"
+    >
+        <field name="name">Inspection Template Line</field>
+        <field name="res_model">fleet.vehicle.inspection.template.line</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
