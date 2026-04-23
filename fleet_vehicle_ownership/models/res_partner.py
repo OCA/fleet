@@ -19,7 +19,7 @@ class ResPartner(models.Model):
         help="Vehicles owned by this partner",
     )
     vehicle_count = fields.Integer(
-        compute=_compute_vehicle_count, string="Number of Vehicles", store=True
+        compute="_compute_vehicle_count", string="Number of Vehicles", store=True
     )
 
     def action_view_vehicles(self):
