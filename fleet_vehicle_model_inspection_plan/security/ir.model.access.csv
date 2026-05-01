@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fleet_vehicle_model_inspection_plan_manager,fleet.vehicle.model.inspection.plan manager,model_fleet_vehicle_model_inspection_plan,fleet.fleet_group_manager,1,1,1,1
+access_fleet_vehicle_model_inspection_plan_user,fleet.vehicle.model.inspection.plan user,model_fleet_vehicle_model_inspection_plan,fleet.fleet_group_user,1,0,0,0
+access_inspection_plan_import_export_manager,inspection.plan.import.export manager,model_inspection_plan_import_export,fleet.fleet_group_manager,1,1,1,1

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- Action to open Inspection Plans -->
+    <record
+        id="action_fleet_vehicle_model_inspection_plan"
+        model="ir.actions.act_window"
+    >
+        <field name="name">Model Inspection Plans</field>
+        <field name="res_model">fleet.vehicle.model.inspection.plan</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new vehicle model inspection plan
+          </p>
+        </field>
+    </record>
+
+    <!-- Menu Item under Fleet -> Configuration -->
+    <!-- Attempting to use a more standard parent if fleet.fleet_configuration is hidden or custom -->
+    <!-- Usually in Odoo 13 fleet:
+         fleet.menu_root (App)
+           -> fleet.fleet_configuration (Configuration)
+    -->
+
+    <menuitem
+        id="menu_fleet_vehicle_model_inspection_plan"
+        name="Model Inspection Plans"
+        parent="fleet.fleet_configuration"
+        action="action_fleet_vehicle_model_inspection_plan"
+        sequence="99"
+    />
+
+</odoo>

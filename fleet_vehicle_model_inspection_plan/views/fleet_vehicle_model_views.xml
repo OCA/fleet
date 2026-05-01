@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- Inherit view to add Inspection Plan tab in Model form -->
+    <record id="view_fleet_vehicle_model_form_inherit_inspection" model="ir.ui.view">
+        <field name="name">fleet.vehicle.model.form.inherit.inspection</field>
+        <field name="model">fleet.vehicle.model</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_model_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Inspection Plan">
+                    <field name="inspection_plan_ids">
+                        <tree string="Inspection Plan" editable="bottom">
+                            <field name="item_id" />
+                            <field name="interval_km" />
+                            <field name="interval_months" />
+                            <field name="criticality" />
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Tree view for Inspection Plans -->
+    <record id="view_fleet_vehicle_model_inspection_plan_tree" model="ir.ui.view">
+        <field name="name">fleet.vehicle.model.inspection.plan.tree</field>
+        <field name="model">fleet.vehicle.model.inspection.plan</field>
+        <field name="arch" type="xml">
+            <tree string="Vehicle Model Inspection Plans">
+                <field name="model_id" />
+                <field name="item_id" />
+                <field name="interval_km" />
+                <field name="interval_months" />
+                <field name="criticality" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form view for Inspection Plans -->
+    <record id="view_fleet_vehicle_model_inspection_plan_form" model="ir.ui.view">
+        <field name="name">fleet.vehicle.model.inspection.plan.form</field>
+        <field name="model">fleet.vehicle.model.inspection.plan</field>
+        <field name="arch" type="xml">
+            <form string="Vehicle Model Inspection Plan">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="model_id" />
+                            <field name="item_id" />
+                            <field name="criticality" />
+                        </group>
+                        <group>
+                            <field name="interval_km" />
+                            <field name="interval_months" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

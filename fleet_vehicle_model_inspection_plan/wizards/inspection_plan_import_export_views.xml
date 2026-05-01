@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_inspection_plan_import_export_form" model="ir.ui.view">
+        <field name="name">inspection.plan.import.export.form</field>
+        <field name="model">inspection.plan.import.export</field>
+        <field name="arch" type="xml">
+            <form string="Import/Export Inspection Plans">
+                <group>
+                    <field name="operation" widget="radio"/>
+                    <field name="file_data" filename="filename" 
+                           attrs="{'invisible': [('operation', '=', 'export'), ('file_data', '=', False)]}"/>
+                    <field name="filename" invisible="1"/>
+                </group>
+                <footer>
+                    <button name="action_process" string="Process" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_inspection_plan_import_export" model="ir.actions.act_window">
+        <field name="name">Import/Export Inspection Plans</field>
+        <field name="res_model">inspection.plan.import.export</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_inspection_plan_import_export"
+              name="Import/Export Plans"
+              parent="fleet.fleet_configuration"
+              action="action_inspection_plan_import_export"
+              sequence="100"/>
+</odoo>
