@@ -1,0 +1,23 @@
+{
+    "name": "Vehicle Parts Catalogue",
+    "version": "13.0.1.0.1",
+    "category": "Fleet",
+    "summary": "Manage vehicle parts catalogue",
+    "description": "Vehicle Parts Catalogue",
+    "author": "Odoo Community Association (OCA)",
+    "website": "https://github.com/OCA/fleet",
+    "license": "AGPL-3",
+    "depends": ["fleet", "product", "fleet_vehicle_inspection"],
+    "data": [
+        "security/ir.model.access.csv",
+        "data/vehicle_part_data.xml",
+        "views/vehicle_part_group_category_views.xml",
+        "views/vehicle_part_specification_views.xml",
+        "views/vehicle_part_views.xml",
+        "views/fleet_vehicle_model_views.xml",
+        "views/fleet_vehicle_views.xml",
+        "views/product_template_views.xml",
+        "views/menu_views.xml",
+    ],
+    "installable": True,
+}

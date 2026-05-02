@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Group Views -->
+    <record id="vehicle_part_group_view_tree" model="ir.ui.view">
+        <field name="name">vehicle.part.group.tree</field>
+        <field name="model">vehicle.part.group</field>
+        <field name="arch" type="xml">
+            <tree string="Vehicle Part Groups" editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_vehicle_part_group" model="ir.actions.act_window">
+        <field name="name">Part Groups</field>
+        <field name="res_model">vehicle.part.group</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Category Views -->
+    <record id="vehicle_part_category_view_tree" model="ir.ui.view">
+        <field name="name">vehicle.part.category.tree</field>
+        <field name="model">vehicle.part.category</field>
+        <field name="arch" type="xml">
+            <tree string="Vehicle Part Categories" editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_vehicle_part_category" model="ir.actions.act_window">
+        <field name="name">Part Categories</field>
+        <field name="res_model">vehicle.part.category</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

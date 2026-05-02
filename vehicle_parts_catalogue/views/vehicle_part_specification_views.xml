@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="vehicle_part_specification_view_tree" model="ir.ui.view">
+        <field name="name">vehicle.part.specification.tree</field>
+        <field name="model">vehicle.part.specification</field>
+        <field name="arch" type="xml">
+            <tree string="Part Specifications">
+                <field name="name"/>
+                <field name="group_id"/>
+                <field name="category_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="vehicle_part_specification_view_form" model="ir.ui.view">
+        <field name="name">vehicle.part.specification.form</field>
+        <field name="model">vehicle.part.specification</field>
+        <field name="arch" type="xml">
+            <form string="Part Specification">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name" placeholder="Ex: Filtro de Óleo X"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="group_id"/>
+                        </group>
+                        <group>
+                            <field name="category_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Products" name="products">
+                            <field name="product_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_vehicle_part_specification" model="ir.actions.act_window">
+        <field name="name">Part Specifications</field>
+        <field name="res_model">vehicle.part.specification</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Part Specification
+            </p>
+        </field>
+    </record>
+</odoo>

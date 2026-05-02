@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_vehicle_part_user,vehicle.part.user,model_vehicle_part,fleet.fleet_group_user,1,1,1,1
+access_vehicle_part_group_user,vehicle.part.group.user,model_vehicle_part_group,fleet.fleet_group_user,1,1,1,1
+access_vehicle_part_category_user,vehicle.part.category.user,model_vehicle_part_category,fleet.fleet_group_user,1,1,1,1
+access_vehicle_part_spec_user,vehicle.part.specification.user,model_vehicle_part_specification,fleet.fleet_group_user,1,1,1,1

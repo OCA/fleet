@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="fleet_vehicle_view_form_inherit_parts" model="ir.ui.view">
+        <field name="name">fleet.vehicle.form.inherit.parts</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_view_parts"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-cogs"
+                        attrs="{'invisible': [('part_count', '=', 0)]}">
+                    <field name="part_count" widget="statinfo" string="Parts"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>

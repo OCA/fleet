@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_template_form_view_inherit_vehicle_parts" model="ir.ui.view">
+        <field name="name">product.template.form.inherit.vehicle.parts</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Vehicle Parts" name="vehicle_parts">
+                    <field name="vehicle_part_ids">
+                        <tree>
+                            <field name="vehicle_model_id"/>
+                            <field name="inspection_item_id"/>
+                            <field name="part_number"/>
+                            <field name="qty"/>
+                            <field name="group_id"/>
+                            <field name="category_id"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

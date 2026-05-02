@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="inspection_item_filtro_oleo" model="fleet.vehicle.inspection.item">
+        <field name="name">Filtro de óleo do motor</field>
+    </record>
+    <record id="inspection_item_filtro_ar" model="fleet.vehicle.inspection.item">
+        <field name="name">Filtro de ar do motor</field>
+    </record>
+    <record id="inspection_item_filtro_combustivel" model="fleet.vehicle.inspection.item">
+        <field name="name">Filtro de combustível</field>
+    </record>
+    <record id="inspection_item_oleo_motor" model="fleet.vehicle.inspection.item">
+        <field name="name">Óleo lubrificante do motor</field>
+    </record>
+    <record id="inspection_item_oleo_caixa" model="fleet.vehicle.inspection.item">
+        <field name="name">Óleo lubrificante da caixa de marchas</field>
+    </record>
+    <record id="inspection_item_correia_sincronismo" model="fleet.vehicle.inspection.item">
+        <field name="name">Correia de sincronismo do motor</field>
+    </record>
+    <record id="inspection_item_correia_alternador" model="fleet.vehicle.inspection.item">
+        <field name="name">Correia auxiliar do alternador</field>
+    </record>
+    <record id="inspection_item_correia_ar" model="fleet.vehicle.inspection.item">
+        <field name="name">Correia auxiliar do ar-condicionado</field>
+    </record>
+    <record id="inspection_item_correia_direcao" model="fleet.vehicle.inspection.item">
+        <field name="name">Correia auxiliar da direção hidráulica</field>
+    </record>
+    <record id="inspection_item_correia_mult_ar_dir" model="fleet.vehicle.inspection.item">
+        <field name="name">Correia auxiliar multipla (ar-condicionado e direção hidráulica)</field>
+    </record>
+    <record id="inspection_item_correia_mult_alt_bomba" model="fleet.vehicle.inspection.item">
+        <field name="name">Correia auxiliar multipla (alternador e bomba-d'água)</field>
+    </record>
+    <record id="inspection_item_vela_ignicao" model="fleet.vehicle.inspection.item">
+        <field name="name">Vela de ignição</field>
+    </record>
+    <record id="inspection_item_bobina_ignicao" model="fleet.vehicle.inspection.item">
+        <field name="name">Bobina de ignição</field>
+    </record>
+    <record id="inspection_item_cabo_vela" model="fleet.vehicle.inspection.item">
+        <field name="name">Cabo de vela de ignição</field>
+    </record>
+</odoo>

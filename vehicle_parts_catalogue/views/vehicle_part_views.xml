@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="vehicle_part_view_tree" model="ir.ui.view">
+        <field name="name">vehicle.part.tree</field>
+        <field name="model">vehicle.part</field>
+        <field name="arch" type="xml">
+            <tree string="Vehicle Parts">
+                <field name="vehicle_model_id"/>
+                <field name="inspection_item_id"/>
+                <field name="specification_id"/>
+                <field name="qty"/>
+                <field name="group_id"/>
+                <field name="category_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="vehicle_part_view_form" model="ir.ui.view">
+        <field name="name">vehicle.part.form</field>
+        <field name="model">vehicle.part</field>
+        <field name="arch" type="xml">
+            <form string="Vehicle Part">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="vehicle_model_id"/>
+                            <field name="inspection_item_id"/>
+                            <field name="specification_id"/>
+                            <field name="qty"/>
+                        </group>
+                        <group>
+                            <field name="group_id"/>
+                            <field name="category_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Products" name="products">
+                            <field name="product_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="vehicle_part_view_search" model="ir.ui.view">
+        <field name="name">vehicle.part.search</field>
+        <field name="model">vehicle.part</field>
+        <field name="arch" type="xml">
+            <search string="Search Vehicle Parts">
+                <field name="vehicle_model_id"/>
+                <field name="inspection_item_id"/>
+                <field name="specification_id"/>
+                <field name="group_id"/>
+                <field name="category_id"/>
+                <group expand="0" string="Group By">
+                    <filter string="Vehicle Model" name="group_by_model" context="{'group_by':'vehicle_model_id'}"/>
+                    <filter string="Inspection Item" name="group_by_inspection_item" context="{'group_by':'inspection_item_id'}"/>
+                    <filter string="Group" name="group_by_group" context="{'group_by':'group_id'}"/>
+                    <filter string="Category" name="group_by_category" context="{'group_by':'category_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_vehicle_part" model="ir.actions.act_window">
+        <field name="name">Vehicle Parts</field>
+        <field name="res_model">vehicle.part</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="vehicle_part_view_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Vehicle Part
+            </p>
+        </field>
+    </record>
+</odoo>

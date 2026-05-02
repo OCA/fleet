@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_vehicle_parts_catalogue_config"
+              name="Parts Catalogue"
+              parent="fleet.fleet_configuration"
+              sequence="50"/>
+
+    <menuitem id="menu_vehicle_part"
+              name="Vehicle Parts"
+              parent="menu_vehicle_parts_catalogue_config"
+              action="action_vehicle_part"
+              sequence="10"/>
+
+    <menuitem id="menu_vehicle_part_specification"
+              name="Part Specifications"
+              parent="menu_vehicle_parts_catalogue_config"
+              action="action_vehicle_part_specification"
+              sequence="15"/>
+
+    <menuitem id="menu_vehicle_part_group"
+              name="Part Groups"
+              parent="menu_vehicle_parts_catalogue_config"
+              action="action_vehicle_part_group"
+              sequence="20"/>
+
+    <menuitem id="menu_vehicle_part_category"
+              name="Part Categories"
+              parent="menu_vehicle_parts_catalogue_config"
+              action="action_vehicle_part_category"
+              sequence="30"/>
+</odoo>
