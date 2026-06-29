@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2026 ACSONE SA/NV
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="fleet_vehicle_tyre_view_list" model="ir.ui.view">
+        <field name="model">fleet.vehicle.tyre</field>
+        <field name="arch" type="xml">
+            <list string="Tyres">
+                <field name="name" />
+                <field name="manufacturer" />
+                <field name="size" />
+                <field name="tyre_type" />
+                <field name="load_index" optional="hide" />
+                <field name="speed_rating" optional="hide" />
+                <field name="run_flat" optional="hide" />
+            </list>
+        </field>
+    </record>
+
+    <record id="fleet_vehicle_tyre_view_form" model="ir.ui.view">
+        <field name="model">fleet.vehicle.tyre</field>
+        <field name="arch" type="xml">
+            <form string="Tyre">
+                <sheet>
+                    <widget
+                        name="web_ribbon"
+                        text="Archived"
+                        bg_color="text-bg-danger"
+                        invisible="active"
+                    />
+                    <group>
+                        <group string="Tyre">
+                            <field name="active" invisible="1" />
+                            <field name="name" />
+                            <field name="manufacturer" />
+                            <field name="tyre_type" />
+                            <field name="size" placeholder="e.g. 205/55 R16" />
+                        </group>
+                        <group string="Specification">
+                            <field name="width" />
+                            <field name="aspect_ratio" />
+                            <field name="rim_diameter" />
+                            <field name="load_index" />
+                            <field name="speed_rating" />
+                            <field name="run_flat" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="fleet_vehicle_tyre_view_search" model="ir.ui.view">
+        <field name="model">fleet.vehicle.tyre</field>
+        <field name="arch" type="xml">
+            <search string="Tyres">
+                <field name="name" />
+                <field name="manufacturer" />
+                <field name="size" />
+                <field name="tyre_type" />
+                <field name="load_index" />
+                <field name="speed_rating" />
+                <filter
+                    string="Run Flat"
+                    name="run_flat"
+                    domain="[('run_flat', '=', True)]"
+                />
+                <filter
+                    string="Archived"
+                    name="inactive"
+                    domain="[('active', '=', False)]"
+                />
+                <group expand="1" string="Group By">
+                    <filter
+                        name="groupby_manufacturer"
+                        string="Manufacturer"
+                        context="{'group_by': 'manufacturer'}"
+                    />
+                    <filter
+                        name="groupby_tyre_type"
+                        string="Tyre Type"
+                        context="{'group_by': 'tyre_type'}"
+                    />
+                    <filter
+                        name="groupby_size"
+                        string="Size"
+                        context="{'group_by': 'size'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="fleet_vehicle_tyre_action" model="ir.actions.act_window">
+        <field name="name">Tyres</field>
+        <field name="res_model">fleet.vehicle.tyre</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem
+        id="fleet_vehicle_tyre_menu"
+        name="Tyres"
+        parent="fleet.fleet_configuration"
+        action="fleet_vehicle_tyre_action"
+        sequence="40"
+        groups="fleet.fleet_group_manager"
+    />
+</odoo>
