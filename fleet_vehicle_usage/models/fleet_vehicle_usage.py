@@ -1,7 +1,7 @@
 # Copyright 2021 César Fernández Domínguez
 # Copyright 2024 Tecnativa - Víctor Martínez
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 from odoo.exceptions import UserError
 
 
@@ -15,7 +15,7 @@ class FleetVehicleUsage(models.Model):
         string="Fleet Vehicle Usage",
         copy=False,
         readonly=True,
-        default=lambda x: _("New"),
+        default=lambda x: x.env._("New"),
     )
     state = fields.Selection(
         selection=[
@@ -83,10 +83,10 @@ class FleetVehicleUsage(models.Model):
     @api.model_create_multi
     def create(self, vals_list):
         for vals in vals_list:
-            if not vals.get("name") or vals["name"] == _("New"):
+            if not vals.get("name") or vals["name"] == self.env._("New"):
                 vals["name"] = self.env["ir.sequence"].next_by_code(
                     "fleet.vehicle.usage"
-                ) or _("New")
+                ) or self.env._("New")
         return super().create(vals_list)
 
     def action_pick(self):
@@ -121,9 +121,13 @@ class FleetVehicleUsage(models.Model):
             items = vehicle.usage_ids.filtered(lambda x: x.state == "in_use")
             if len(items) > 1:
                 raise UserError(
-                    _("Every vehicle can only be picked once at the same time!")
+                    self.env._(
+                        "Every vehicle can only be picked once at the same time!"
+                    )
                 )
         for driver in self.mapped("user_id"):
             domain = [("user_id", "=", driver.id), ("state", "=", "in_use")]
             if self.search_count(domain) > 1:
-                raise UserError(_("Every driver can only drive a vehicle at once!"))
+                raise UserError(
+                    self.env._("Every driver can only drive a vehicle at once!")
+                )

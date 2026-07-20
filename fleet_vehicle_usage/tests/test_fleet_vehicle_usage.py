@@ -2,6 +2,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo.exceptions import UserError
+from odoo.tests.common import new_test_user
 
 from odoo.addons.base.tests.common import BaseCommon
 
@@ -19,7 +20,7 @@ class TestFleetVehicleUsage(BaseCommon):
             }
         )
         cls.vehicle = cls.env["fleet.vehicle"].create({"model_id": cls.model.id})
-        cls.user = cls.env.ref("base.user_demo")
+        cls.user = new_test_user(cls.env, login="test_fleet_vehicle_usage_user")
 
     def _create_fleet_vehicle_usage(self, vehicle):
         return self.env["fleet.vehicle.usage"].create(
@@ -50,3 +51,17 @@ class TestFleetVehicleUsage(BaseCommon):
         with self.assertRaises(UserError):
             usage2 = self._create_fleet_vehicle_usage(vehicle2)
             usage2.action_pick()
+
+    def test_fleet_vehicle_usage_cancel(self):
+        usage = self._create_fleet_vehicle_usage(self.vehicle)
+        usage.action_pick()
+        usage.action_cancel()
+        self.assertEqual(usage.state, "cancel")
+
+    def test_fleet_vehicle_usage_onchange_user_id(self):
+        usage = self._create_fleet_vehicle_usage(self.vehicle)
+        user2 = new_test_user(self.env, login="test_fleet_vehicle_usage_user_2")
+        usage.user_id = user2
+        usage._onchange_user_id()
+        self.assertEqual(usage.picking_user_id, user2)
+        self.assertEqual(usage.return_user_id, user2)
