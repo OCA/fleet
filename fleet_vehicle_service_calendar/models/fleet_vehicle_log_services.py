@@ -13,16 +13,13 @@ class FleetVehicleLogServices(models.Model):
         meeting_data = (
             self.env["calendar.event"]
             .sudo()
-            .read_group(
+            ._read_group(
                 [("vehicle_service_id", "in", self.ids)],
                 ["vehicle_service_id"],
-                ["vehicle_service_id"],
+                ["__count"],
             )
         )
-        mapped_data = {
-            m["vehicle_service_id"][0]: m["vehicle_service_id_count"]
-            for m in meeting_data
-        }
+        mapped_data = {service.id: count for service, count in meeting_data}
         for record in self:
             record.meeting_count = mapped_data.get(record.id, 0)
 
@@ -31,7 +28,9 @@ class FleetVehicleLogServices(models.Model):
         :return dict: dictionary value for created Meeting view
         """
         self.ensure_one()
-        action = self.env.ref("calendar.action_calendar_event").read()[0]
+        action = self.env["ir.actions.actions"]._for_xml_id(
+            "calendar.action_calendar_event"
+        )
         partner_ids = self.env.user.partner_id.ids
         if self.user_id:
             partner_ids += self.user_id.partner_id.ids
@@ -39,8 +38,7 @@ class FleetVehicleLogServices(models.Model):
             "default_vehicle_service_id": self.id,
             "default_partner_id": self.user_id.partner_id.id if self.user_id else False,
             "default_partner_ids": partner_ids,
-            "default_name": "%s - %s"
-            % (self.vehicle_id.name, self.service_type_id.name),
+            "default_name": f"{self.vehicle_id.name} - {self.service_type_id.name}",
             "search_default_vehicle_service_id": self.id,
         }
         return action

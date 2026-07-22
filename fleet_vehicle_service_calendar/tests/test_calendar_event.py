@@ -1,36 +1,35 @@
+# Copyright 2020-Present Druidoo - Manuel Marquez <manuel.marquez@druidoo.io>
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+
 from datetime import datetime, timedelta
 
-from odoo.tests.common import TransactionCase
+from odoo.addons.base.tests.common import BaseCommon
 
 
-class TestCalendarEvent(TransactionCase):
-    def setUp(self):
-        super().setUp()
-        self.calendar_event = self.env["calendar.event"].create({"name": "Test Event"})
-        self.brand = self.env["fleet.vehicle.model.brand"].create(
-            {
-                "name": "Audi",
-            }
+class TestCalendarEvent(BaseCommon):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.calendar_event = cls.env["calendar.event"].create({"name": "Test Event"})
+        cls.brand = cls.env["fleet.vehicle.model.brand"].create({"name": "Audi"})
+        cls.vehicle_model = cls.env["fleet.vehicle.model"].create(
+            {"name": "Test Vehicle Model", "brand_id": cls.brand.id}
         )
-        self.vehicle_model = self.env["fleet.vehicle.model"].create(
-            {"name": "Test Vehicle Model", "brand_id": self.brand.id}
-        )
-        self.vehicle = self.env["fleet.vehicle"].create(
+        cls.vehicle = cls.env["fleet.vehicle"].create(
             {
-                "model_id": self.vehicle_model.id,
+                "model_id": cls.vehicle_model.id,
                 "license_plate": "ABC-1234",
                 "odometer": 1000,
             }
         )
-
-        self.service_type = self.env["fleet.service.type"].create(
+        cls.service_type = cls.env["fleet.service.type"].create(
             {"name": "Fatura do Fornecedor", "category": "service"}
         )
-        self.vehicle_service = self.env["fleet.vehicle.log.services"].create(
+        cls.vehicle_service = cls.env["fleet.vehicle.log.services"].create(
             {
-                "vehicle_id": self.vehicle.id,
+                "vehicle_id": cls.vehicle.id,
                 "notes": "Test notes",
-                "service_type_id": self.service_type.id,
+                "service_type_id": cls.service_type.id,
             }
         )
 
@@ -70,6 +69,7 @@ class TestCalendarEvent(TransactionCase):
         event = self.env["calendar.event"].create(
             {
                 "name": meeting_name,
+                "description": meeting_name,
                 "start": meeting_start,
                 "stop": meeting_end,
                 "vehicle_service_id": self.vehicle_service.id,
@@ -77,71 +77,43 @@ class TestCalendarEvent(TransactionCase):
             }
         )
         self.assertTrue(event.activity_ids)
-        self.assertTrue(
-            event.activity_ids.filtered(
-                lambda activity: activity.activity_type_id.name == "Meeting"
-            )
+        meeting_activity = event.activity_ids.filtered(
+            lambda activity: activity.activity_type_id.name == "Meeting"
         )
+        self.assertTrue(meeting_activity)
+        self.assertTrue(meeting_activity.note, meeting_name)
+        self.assertTrue(meeting_activity.date_deadline, meeting_start)
+        self.assertTrue(meeting_activity.user_id, self.env.uid)
         self.assertTrue(
-            event.activity_ids.filtered(
-                lambda activity: activity.activity_type_id.name == "Meeting"
-            ).note,
-            meeting_name,
-        )
-        self.assertTrue(
-            event.activity_ids.filtered(
-                lambda activity: activity.activity_type_id.name == "Meeting"
-            ).date_deadline,
-            meeting_start,
-        )
-        self.assertTrue(
-            event.activity_ids.filtered(
-                lambda activity: activity.activity_type_id.name == "Meeting"
-            ).user_id,
-            self.env.uid,
-        )
-        self.assertTrue(
-            event.activity_ids.filtered(
-                lambda activity: activity.activity_type_id.name == "Meeting"
-            ).res_model_id,
+            meeting_activity.res_model_id,
             self.env.ref("fleet.model_fleet_vehicle_log_services").id,
         )
-        self.assertTrue(
-            event.activity_ids.filtered(
-                lambda activity: activity.activity_type_id.name == "Meeting"
-            ).res_id,
-            self.vehicle_service.id,
+        self.assertTrue(meeting_activity.res_id, self.vehicle_service.id)
+
+
+class TestFleetVehicleLogServices2(BaseCommon):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.brand = cls.env["fleet.vehicle.model.brand"].create({"name": "Audi"})
+        cls.vehicle_model = cls.env["fleet.vehicle.model"].create(
+            {"name": "Test Vehicle Model", "brand_id": cls.brand.id}
         )
-
-
-class TestFleetVehicleLogServices2(TransactionCase):
-    def setUp(self):
-        super().setUp()
-
-        self.brand = self.env["fleet.vehicle.model.brand"].create(
+        cls.vehicle = cls.env["fleet.vehicle"].create(
             {
-                "name": "Audi",
-            }
-        )
-        self.vehicle_model = self.env["fleet.vehicle.model"].create(
-            {"name": "Test Vehicle Model", "brand_id": self.brand.id}
-        )
-        self.vehicle = self.env["fleet.vehicle"].create(
-            {
-                "model_id": self.vehicle_model.id,
+                "model_id": cls.vehicle_model.id,
                 "license_plate": "ABC-1234",
                 "odometer": 1000,
             }
         )
-
-        self.service_type = self.env["fleet.service.type"].create(
+        cls.service_type = cls.env["fleet.service.type"].create(
             {"name": "Fatura do Fornecedor", "category": "service"}
         )
-        self.vehicle_service = self.env["fleet.vehicle.log.services"].create(
+        cls.vehicle_service = cls.env["fleet.vehicle.log.services"].create(
             {
-                "vehicle_id": self.vehicle.id,
+                "vehicle_id": cls.vehicle.id,
                 "notes": "Test notes",
-                "service_type_id": self.service_type.id,
+                "service_type_id": cls.service_type.id,
             }
         )
 
@@ -154,7 +126,5 @@ class TestFleetVehicleLogServices2(TransactionCase):
                 "vehicle_service_id": self.vehicle_service.id,
             }
         )
-
         self.vehicle_service._compute_meeting_count()
-
         self.assertEqual(self.vehicle_service.meeting_count, 1)

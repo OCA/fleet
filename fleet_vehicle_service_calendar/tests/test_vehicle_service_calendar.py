@@ -25,5 +25,8 @@ class TestVehicleServiceCalendar(TestVehicleLogServicesCommon):
             )
         )
         self.assertEqual(service_meeting.vehicle_service_id, self.service_repair)
-        meeting_subject = f"{self.service_repair.vehicle_id.name} - {self.service_repair.service_type_id.name}"
+        meeting_subject = (
+            f"{self.service_repair.vehicle_id.name}"
+            f" - {self.service_repair.service_type_id.name}"
+        )
         self.assertEqual(service_meeting.name, meeting_subject)

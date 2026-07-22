@@ -44,12 +44,12 @@ class CalendarEvent(models.Model):
                     event.is_highlighted = True
         return True
 
-    @api.model
-    def create(self, vals):
-        event = super().create(vals)
-
-        if event.vehicle_service_id and not event.activity_ids:
-            event.vehicle_service_id.log_meeting(
-                event.name, event.start, event.duration
-            )
-        return event
+    @api.model_create_multi
+    def create(self, vals_list):
+        events = super().create(vals_list)
+        for event in events:
+            if event.vehicle_service_id and not event.activity_ids:
+                event.vehicle_service_id.log_meeting(
+                    event.name, event.start, event.duration
+                )
+        return events
