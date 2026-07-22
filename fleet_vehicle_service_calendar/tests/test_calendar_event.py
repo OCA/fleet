@@ -5,7 +5,7 @@ from odoo.tests.common import TransactionCase
 
 class TestCalendarEvent(TransactionCase):
     def setUp(self):
-        super(TestCalendarEvent, self).setUp()
+        super().setUp()
         self.calendar_event = self.env["calendar.event"].create({"name": "Test Event"})
         self.brand = self.env["fleet.vehicle.model.brand"].create(
             {
@@ -116,7 +116,7 @@ class TestCalendarEvent(TransactionCase):
 
 class TestFleetVehicleLogServices2(TransactionCase):
     def setUp(self):
-        super(TestFleetVehicleLogServices2, self).setUp()
+        super().setUp()
 
         self.brand = self.env["fleet.vehicle.model.brand"].create(
             {

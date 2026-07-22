@@ -20,7 +20,7 @@ class CalendarEvent(models.Model):
                 ).id,
                 default_res_id=self.env.context["default_vehicle_service_id"],
             )
-        defaults = super(CalendarEvent, self).default_get(fields)
+        defaults = super().default_get(fields)
 
         # sync res_model / res_id to service id
         # (aka creating meeting from service chatter)
@@ -36,7 +36,7 @@ class CalendarEvent(models.Model):
         return defaults
 
     def _compute_is_highlighted(self):
-        super(CalendarEvent, self)._compute_is_highlighted()
+        super()._compute_is_highlighted()
         if self.env.context.get("active_model") == "fleet.vehicle.log.services":
             vehicle_service_id = self.env.context.get("active_id")
             for event in self:
@@ -46,7 +46,7 @@ class CalendarEvent(models.Model):
 
     @api.model
     def create(self, vals):
-        event = super(CalendarEvent, self).create(vals)
+        event = super().create(vals)
 
         if event.vehicle_service_id and not event.activity_ids:
             event.vehicle_service_id.log_meeting(
