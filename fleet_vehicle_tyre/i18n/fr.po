@@ -1,0 +1,174 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fleet_vehicle_tyre
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-29 13:55+0000\n"
+"PO-Revision-Date: 2026-06-29 13:55+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: fleet_vehicle_tyre
+#: model:ir.model.fields,field_description:fleet_vehicle_tyre.field_fleet_vehicle_tyre__active
+msgid "Active"
+msgstr "Actif"
+
+#. module: fleet_vehicle_tyre
+#: model:ir.model.fields.selection,name:fleet_vehicle_tyre.selection__fleet_vehicle_tyre__tyre_type__all_season
+msgid "All Season"
+msgstr "Toutes saisons"
+
+#. module: fleet_vehicle_tyre
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_tyre.fleet_vehicle_tyre_view_search
+msgid "Archived"
+msgstr "Archivé"
+
+#. module: fleet_vehicle_tyre
+#: model:ir.model.fields,field_description:fleet_vehicle_tyre.field_fleet_vehicle_tyre__aspect_ratio
+msgid "Aspect Ratio"
+msgstr "Rapport d'aspect"
+
+#. module: fleet_vehicle_tyre
+#: model:ir.model.fields,field_description:fleet_vehicle_tyre.field_fleet_vehicle_tyre__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: fleet_vehicle_tyre
+#: model:ir.model.fields,field_description:fleet_vehicle_tyre.field_fleet_vehicle_tyre__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: fleet_vehicle_tyre
+#: model:ir.model.fields,field_description:fleet_vehicle_tyre.field_fleet_vehicle_tyre__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: fleet_vehicle_tyre
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_tyre.fleet_vehicle_tyre_view_search
+msgid "Group By"
+msgstr "Regrouper par"
+
+#. module: fleet_vehicle_tyre
+#: model:ir.model.fields,field_description:fleet_vehicle_tyre.field_fleet_vehicle_tyre__id
+msgid "ID"
+msgstr "ID"
+
+#. module: fleet_vehicle_tyre
+#: model:ir.model.fields,field_description:fleet_vehicle_tyre.field_fleet_vehicle__last_tyre_change_date
+msgid "Last Tyre Change Date"
+msgstr "Date du dernier changement de pneu"
+
+#. module: fleet_vehicle_tyre
+#: model:ir.model.fields,field_description:fleet_vehicle_tyre.field_fleet_vehicle_tyre__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: fleet_vehicle_tyre
+#: model:ir.model.fields,field_description:fleet_vehicle_tyre.field_fleet_vehicle_tyre__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: fleet_vehicle_tyre
+#: model:ir.model.fields,field_description:fleet_vehicle_tyre.field_fleet_vehicle_tyre__load_index
+msgid "Load Index"
+msgstr "Indice de charge"
+
+#. module: fleet_vehicle_tyre
+#: model:ir.model.fields,field_description:fleet_vehicle_tyre.field_fleet_vehicle_tyre__manufacturer
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_tyre.fleet_vehicle_tyre_view_search
+msgid "Manufacturer"
+msgstr "Fabricant"
+
+#. module: fleet_vehicle_tyre
+#: model:ir.model.fields,field_description:fleet_vehicle_tyre.field_fleet_vehicle_tyre__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: fleet_vehicle_tyre
+#: model:ir.model.fields,field_description:fleet_vehicle_tyre.field_fleet_vehicle_tyre__rim_diameter
+msgid "Rim Diameter (in)"
+msgstr "Diamètre de jante (po)"
+
+#. module: fleet_vehicle_tyre
+#: model:ir.model.fields,field_description:fleet_vehicle_tyre.field_fleet_vehicle_tyre__run_flat
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_tyre.fleet_vehicle_tyre_view_search
+msgid "Run Flat"
+msgstr "Run flat"
+
+#. module: fleet_vehicle_tyre
+#: model:ir.model.fields,field_description:fleet_vehicle_tyre.field_fleet_vehicle_tyre__size
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_tyre.fleet_vehicle_tyre_view_search
+msgid "Size"
+msgstr "Taille"
+
+#. module: fleet_vehicle_tyre
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_tyre.fleet_vehicle_tyre_view_form
+msgid "Specification"
+msgstr "Spécification"
+
+#. module: fleet_vehicle_tyre
+#: model:ir.model.fields,field_description:fleet_vehicle_tyre.field_fleet_vehicle_tyre__speed_rating
+msgid "Speed Rating"
+msgstr "Indice de vitesse"
+
+#. module: fleet_vehicle_tyre
+#: model:ir.model.fields.selection,name:fleet_vehicle_tyre.selection__fleet_vehicle_tyre__tyre_type__summer
+msgid "Summer"
+msgstr "Été"
+
+#. module: fleet_vehicle_tyre
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_tyre.fleet_vehicle_tyre_view_form
+msgid "Tyre"
+msgstr "Pneu"
+
+#. module: fleet_vehicle_tyre
+#: model:ir.model.fields,field_description:fleet_vehicle_tyre.field_fleet_vehicle_tyre__tyre_type
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_tyre.fleet_vehicle_tyre_view_search
+msgid "Tyre Type"
+msgstr "Type de pneu"
+
+#. module: fleet_vehicle_tyre
+#: model:ir.model.fields,help:fleet_vehicle_tyre.field_fleet_vehicle_tyre__size
+msgid "Tyre size marking, for example 205/55 R16."
+msgstr "Marquage de la taille du pneu, par exemple 205/55 R16."
+
+#. module: fleet_vehicle_tyre
+#: model:ir.actions.act_window,name:fleet_vehicle_tyre.fleet_vehicle_tyre_action
+#: model:ir.ui.menu,name:fleet_vehicle_tyre.fleet_vehicle_tyre_menu
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_tyre.fleet_vehicle_tyre_view_list
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_tyre.fleet_vehicle_tyre_view_search
+msgid "Tyres"
+msgstr "Pneus"
+
+#. module: fleet_vehicle_tyre
+#: model:ir.model,name:fleet_vehicle_tyre.model_fleet_vehicle
+msgid "Vehicle"
+msgstr "Véhicule"
+
+#. module: fleet_vehicle_tyre
+#: model:ir.model,name:fleet_vehicle_tyre.model_fleet_vehicle_tyre
+msgid "Vehicle Tyre"
+msgstr "Pneu du véhicule"
+
+#. module: fleet_vehicle_tyre
+#: model:ir.model.fields,field_description:fleet_vehicle_tyre.field_fleet_vehicle_tyre__width
+msgid "Width (mm)"
+msgstr "Largeur (mm)"
+
+#. module: fleet_vehicle_tyre
+#: model:ir.model.fields.selection,name:fleet_vehicle_tyre.selection__fleet_vehicle_tyre__tyre_type__winter
+msgid "Winter"
+msgstr "Hiver"
+
+#. module: fleet_vehicle_tyre
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_tyre.fleet_vehicle_tyre_view_form
+msgid "e.g. 205/55 R16"
+msgstr "p. ex. 205/55 R16"
