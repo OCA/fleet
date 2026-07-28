@@ -1,0 +1,153 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fleet_vehicle_technical_control
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-29 14:40+0000\n"
+"PO-Revision-Date: 2026-06-29 14:40+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: fleet_vehicle_technical_control
+#. odoo-python
+#: code:addons/fleet_vehicle_technical_control/models/fleet_vehicle_technical_control.py:0
+msgid "A comment is required when the technical control is not valid."
+msgstr "Un commentaire est requis lorsque le contrôle technique n'est pas valide."
+
+#. module: fleet_vehicle_technical_control
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_technical_control.fleet_vehicle_view_form
+msgid "Actions"
+msgstr "Actions"
+
+#. module: fleet_vehicle_technical_control
+#: model:ir.model.fields,field_description:fleet_vehicle_technical_control.field_fleet_vehicle_technical_control__attachment_id
+msgid "Attachment"
+msgstr "Pièce jointe"
+
+#. module: fleet_vehicle_technical_control
+#: model:ir.model.fields,field_description:fleet_vehicle_technical_control.field_fleet_vehicle_technical_control__attachment_filename
+msgid "Attachment Filename"
+msgstr "Nom du fichier joint"
+
+#. module: fleet_vehicle_technical_control
+#: model:ir.model.fields,field_description:fleet_vehicle_technical_control.field_fleet_vehicle_technical_control__comment
+msgid "Comment"
+msgstr "Commentaire"
+
+#. module: fleet_vehicle_technical_control
+#: model:ir.model.fields,field_description:fleet_vehicle_technical_control.field_fleet_vehicle_technical_control__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: fleet_vehicle_technical_control
+#: model:ir.model.fields,field_description:fleet_vehicle_technical_control.field_fleet_vehicle_technical_control__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: fleet_vehicle_technical_control
+#: model:ir.model.fields,field_description:fleet_vehicle_technical_control.field_fleet_vehicle_technical_control__date
+msgid "Date"
+msgstr "Date"
+
+#. module: fleet_vehicle_technical_control
+#: model:ir.model.fields,field_description:fleet_vehicle_technical_control.field_fleet_vehicle_technical_control__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: fleet_vehicle_technical_control
+#: model:ir.model,name:fleet_vehicle_technical_control.model_fleet_vehicle_technical_control
+msgid "Fleet Vehicle Technical Control"
+msgstr "Contrôle technique du véhicule de flotte"
+
+#. module: fleet_vehicle_technical_control
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_technical_control.fleet_vehicle_view_form
+msgid "History"
+msgstr "Historique"
+
+#. module: fleet_vehicle_technical_control
+#: model:ir.model.fields,field_description:fleet_vehicle_technical_control.field_fleet_vehicle_technical_control__id
+msgid "ID"
+msgstr "ID"
+
+#. module: fleet_vehicle_technical_control
+#: model:ir.model.fields,field_description:fleet_vehicle_technical_control.field_fleet_vehicle__date_last_technical_control
+msgid "Last Technical Control Date"
+msgstr "Date du dernier contrôle technique"
+
+#. module: fleet_vehicle_technical_control
+#: model:ir.model.fields,field_description:fleet_vehicle_technical_control.field_fleet_vehicle_technical_control__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: fleet_vehicle_technical_control
+#: model:ir.model.fields,field_description:fleet_vehicle_technical_control.field_fleet_vehicle_technical_control__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: fleet_vehicle_technical_control
+#: model:ir.model.fields,field_description:fleet_vehicle_technical_control.field_fleet_vehicle__date_next_technical_control
+msgid "Next Technical Control Date"
+msgstr "Date du prochain contrôle technique"
+
+#. module: fleet_vehicle_technical_control
+#: model:ir.model.fields.selection,name:fleet_vehicle_technical_control.selection__fleet_vehicle_technical_control__result__not_valid
+msgid "Not Valid"
+msgstr "Non valide"
+
+#. module: fleet_vehicle_technical_control
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_technical_control.fleet_vehicle_view_form
+msgid "Planning"
+msgstr "Planification"
+
+#. module: fleet_vehicle_technical_control
+#: model:ir.model.fields,field_description:fleet_vehicle_technical_control.field_fleet_vehicle_technical_control__result
+msgid "Result"
+msgstr "Résultat"
+
+#. module: fleet_vehicle_technical_control
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_technical_control.fleet_vehicle_view_form
+msgid "Technical Control"
+msgstr "Contrôle technique"
+
+#. module: fleet_vehicle_technical_control
+#. odoo-python
+#: code:addons/fleet_vehicle_technical_control/models/fleet_vehicle.py:0
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_technical_control.fleet_vehicle_technical_control_view_form
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_technical_control.fleet_vehicle_view_form
+msgid "Technical Control Done"
+msgstr "Contrôle technique effectué"
+
+#. module: fleet_vehicle_technical_control
+#: model:ir.model.fields,field_description:fleet_vehicle_technical_control.field_fleet_vehicle__technical_control_every_months
+msgid "Technical Control Every (Months)"
+msgstr "Contrôle technique tous les (mois)"
+
+#. module: fleet_vehicle_technical_control
+#: model:ir.model.fields,field_description:fleet_vehicle_technical_control.field_fleet_vehicle__technical_control_ids
+msgid "Technical Controls"
+msgstr "Contrôles techniques"
+
+#. module: fleet_vehicle_technical_control
+#. odoo-python
+#: code:addons/fleet_vehicle_technical_control/models/fleet_vehicle.py:0
+msgid "Technical control frequency must be greater than or equal to 0."
+msgstr "La fréquence du contrôle technique doit être supérieure ou égale à 0."
+
+#. module: fleet_vehicle_technical_control
+#: model:ir.model.fields.selection,name:fleet_vehicle_technical_control.selection__fleet_vehicle_technical_control__result__valid
+msgid "Valid"
+msgstr "Valide"
+
+#. module: fleet_vehicle_technical_control
+#: model:ir.model,name:fleet_vehicle_technical_control.model_fleet_vehicle
+#: model:ir.model.fields,field_description:fleet_vehicle_technical_control.field_fleet_vehicle_technical_control__vehicle_id
+msgid "Vehicle"
+msgstr "Véhicule"
