@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Form View: efrotas.config -->
+    <record id="view_efrotas_config_form" model="ir.ui.view">
+        <field name="name">efrotas.config.form</field>
+        <field name="model">efrotas.config</field>
+        <field name="arch" type="xml">
+            <form string="Configuração e-Frotas SENATRAN">
+                <header>
+                    <button name="action_test_connection"
+                            string="Testar Conexão"
+                            type="object"
+                            class="oe_highlight"
+                            icon="fa-plug"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <!-- Place for smart buttons if needed -->
+                    </div>
+                    <widget name="web_ribbon" title="Arquivado" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1><field name="name" placeholder="Ex: e-Frotas Matriz"/></h1>
+                    </div>
+                    <group>
+                        <group string="Ambiente e Conexão">
+                            <field name="environment" widget="radio"/>
+                            <field name="base_url"/>
+                            <field name="auth_mode" widget="radio"/>
+                            <field name="active"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                        <group string="Identificação da Frota">
+                            <field name="cnpj" placeholder="Ex: 33.683.111/0001-07"/>
+                            <field name="cnpj_filial" placeholder="Ex: 33.683.111/0002-80"/>
+                            <field name="timeout"/>
+                            <field name="enable_logging"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Autenticação" name="auth">
+                            <group attrs="{'invisible': [('auth_mode', '!=', 'token')]}">
+                                <field name="token" placeholder="Cole o token JWT aqui..."/>
+                            </group>
+                            <group attrs="{'invisible': [('auth_mode', '!=', 'certificate')]}">
+                                <field name="certificate_file" filename="certificate_filename"/>
+                                <field name="certificate_filename" invisible="1"/>
+                                <field name="certificate_password" password="True"/>
+                            </group>
+                        </page>
+                        <page string="Diagnóstico e Status" name="status">
+                            <group>
+                                <field name="last_test_date"/>
+                                <field name="last_test_status"/>
+                                <field name="last_test_result"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View: efrotas.config -->
+    <record id="view_efrotas_config_tree" model="ir.ui.view">
+        <field name="name">efrotas.config.tree</field>
+        <field name="model">efrotas.config</field>
+        <field name="arch" type="xml">
+            <tree string="Configurações e-Frotas"
+                  decoration-success="last_test_status == 'success'"
+                  decoration-danger="last_test_status == 'failed'">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="environment"/>
+                <field name="auth_mode"/>
+                <field name="cnpj"/>
+                <field name="last_test_date"/>
+                <field name="last_test_status"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action: efrotas.config -->
+    <record id="action_efrotas_config" model="ir.actions.act_window">
+        <field name="name">Configuração e-Frotas</field>
+        <field name="res_model">efrotas.config</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cadastre as credenciais e parâmetros de conexão com o e-Frotas SENATRAN!
+            </p>
+        </field>
+    </record>
+</odoo>

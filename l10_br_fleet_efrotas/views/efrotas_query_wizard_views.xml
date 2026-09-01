@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_efrotas_query_wizard_form" model="ir.ui.view">
+        <field name="name">efrotas.query.wizard.form</field>
+        <field name="model">efrotas.query.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Consulta Rápida e-Frotas SENATRAN">
+                <sheet>
+                    <group>
+                        <group string="Configuração">
+                            <field name="config_id"/>
+                            <field name="query_type"/>
+                        </group>
+                        <group string="Parâmetros">
+                            <field name="license_plate"
+                                   placeholder="Ex: SAV0741"
+                                   attrs="{'invisible': [('query_type', 'in', ['notificacoes'])], 'required': [('query_type', 'not in', ['notificacoes'])]}"/>
+                            <field name="date_start"
+                                   attrs="{'invisible': [('query_type', 'not in', ['infracoes', 'notificacoes'])], 'required': [('query_type', 'in', ['infracoes', 'notificacoes'])]}"/>
+                            <field name="date_end"
+                                   attrs="{'invisible': [('query_type', 'not in', ['infracoes', 'notificacoes'])], 'required': [('query_type', 'in', ['infracoes', 'notificacoes'])]}"/>
+                            <field name="codigo_orgao"
+                                   attrs="{'invisible': [('query_type', '!=', 'infracao_detalhe')], 'required': [('query_type', '=', 'infracao_detalhe')]}"/>
+                            <field name="numero_ait"
+                                   attrs="{'invisible': [('query_type', '!=', 'infracao_detalhe')], 'required': [('query_type', '=', 'infracao_detalhe')]}"/>
+                            <field name="codigo_infracao"
+                                   attrs="{'invisible': [('query_type', '!=', 'infracao_detalhe')], 'required': [('query_type', '=', 'infracao_detalhe')]}"/>
+                            <field name="tipo_restricao"
+                                   attrs="{'invisible': [('query_type', '!=', 'renajud')]}"/>
+                        </group>
+                    </group>
+                    <notebook attrs="{'invisible': [('result_text', '=', False), ('pdf_attachment_id', '=', False)]}">
+                        <page string="Resultado da Consulta" name="result">
+                            <group attrs="{'invisible': [('pdf_attachment_id', '=', False)]}">
+                                <field name="pdf_attachment_id" filename="name"/>
+                            </group>
+                            <field name="result_text" widget="ace" options="{'mode': 'json'}"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <footer>
+                    <button name="action_execute_query"
+                            string="Executar Consulta"
+                            type="object"
+                            class="oe_highlight"
+                            icon="fa-search"/>
+                    <button string="Fechar" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_efrotas_query_wizard" model="ir.actions.act_window">
+        <field name="name">Consulta e-Frotas</field>
+        <field name="res_model">efrotas.query.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

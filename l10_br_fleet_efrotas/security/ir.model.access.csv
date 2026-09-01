@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_efrotas_config_user,efrotas.config.user,model_efrotas_config,l10_br_fleet_efrotas.group_efrotas_user,1,0,0,0
+access_efrotas_config_manager,efrotas.config.manager,model_efrotas_config,l10_br_fleet_efrotas.group_efrotas_manager,1,1,1,1
+access_efrotas_log_user,efrotas.log.user,model_efrotas_log,l10_br_fleet_efrotas.group_efrotas_user,1,0,0,0
+access_efrotas_log_manager,efrotas.log.manager,model_efrotas_log,l10_br_fleet_efrotas.group_efrotas_manager,1,1,1,1

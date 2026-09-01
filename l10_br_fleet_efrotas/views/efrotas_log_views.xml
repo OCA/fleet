@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Form View: efrotas.log -->
+    <record id="view_efrotas_log_form" model="ir.ui.view">
+        <field name="name">efrotas.log.form</field>
+        <field name="model">efrotas.log</field>
+        <field name="arch" type="xml">
+            <form string="Log de Comunicação e-Frotas">
+                <sheet>
+                    <group>
+                        <group string="Informações da Requisição">
+                            <field name="create_date" string="Data e Hora"/>
+                            <field name="method"/>
+                            <field name="endpoint"/>
+                            <field name="status_code"/>
+                            <field name="duration"/>
+                        </group>
+                        <group string="Contexto">
+                            <field name="company_id"/>
+                            <field name="vehicle_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Payload da Requisição" name="req">
+                            <field name="request_payload" widget="ace" options="{'mode': 'json'}"/>
+                        </page>
+                        <page string="Payload da Resposta" name="resp">
+                            <field name="response_payload" widget="ace" options="{'mode': 'json'}"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View: efrotas.log -->
+    <record id="view_efrotas_log_tree" model="ir.ui.view">
+        <field name="name">efrotas.log.tree</field>
+        <field name="model">efrotas.log</field>
+        <field name="arch" type="xml">
+            <tree string="Logs de Comunicação e-Frotas" create="false" edit="false"
+                  decoration-success="status_code &gt;= 200 and status_code &lt; 300"
+                  decoration-danger="status_code &gt;= 400">
+                <field name="create_date" string="Data/Hora"/>
+                <field name="method"/>
+                <field name="endpoint"/>
+                <field name="status_code"/>
+                <field name="duration"/>
+                <field name="vehicle_id"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Search View: efrotas.log -->
+    <record id="view_efrotas_log_search" model="ir.ui.view">
+        <field name="name">efrotas.log.search</field>
+        <field name="model">efrotas.log</field>
+        <field name="arch" type="xml">
+            <search string="Pesquisar Logs e-Frotas">
+                <field name="endpoint"/>
+                <field name="vehicle_id"/>
+                <filter name="filter_errors" string="Com Erro (HTTP 4xx/5xx)" domain="[('status_code', '&gt;=', 400)]"/>
+                <filter name="filter_success" string="Sucesso (HTTP 2xx)" domain="[('status_code', '&gt;=', 200), ('status_code', '&lt;', 300)]"/>
+                <group expand="0" string="Agrupar por">
+                    <filter name="group_by_status" string="Código de Status" context="{'group_by': 'status_code'}"/>
+                    <filter name="group_by_vehicle" string="Veículo" context="{'group_by': 'vehicle_id'}"/>
+                    <filter name="group_by_method" string="Método" context="{'group_by': 'method'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action: efrotas.log -->
+    <record id="action_efrotas_log" model="ir.actions.act_window">
+        <field name="name">Logs e-Frotas</field>
+        <field name="res_model">efrotas.log</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_efrotas_log_search"/>
+    </record>
+</odoo>

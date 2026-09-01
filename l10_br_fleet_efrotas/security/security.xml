@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="module_category_efrotas" model="ir.module.category">
+        <field name="name">e-Frotas SENATRAN</field>
+        <field name="sequence">25</field>
+    </record>
+
+    <record id="group_efrotas_user" model="res.groups">
+        <field name="name">Usuário e-Frotas</field>
+        <field name="category_id" ref="module_category_efrotas"/>
+        <field name="implied_ids" eval="[(4, ref('fleet.fleet_group_user'))]"/>
+    </record>
+
+    <record id="group_efrotas_manager" model="res.groups">
+        <field name="name">Gestor e-Frotas</field>
+        <field name="category_id" ref="module_category_efrotas"/>
+        <field name="implied_ids" eval="[(4, ref('group_efrotas_user')), (4, ref('fleet.fleet_group_manager'))]"/>
+    </record>
+</odoo>

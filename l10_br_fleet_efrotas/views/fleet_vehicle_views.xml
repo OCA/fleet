@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="fleet_vehicle_view_form_efrotas" model="ir.ui.view">
+        <field name="name">fleet.vehicle.form.efrotas</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/>
+        <field name="arch" type="xml">
+            <!-- Header and status banner before sheet -->
+            <xpath expr="//sheet" position="before">
+                <header>
+                    <button name="action_efrotas_sync"
+                            string="Consultar e-Frotas"
+                            type="object"
+                            class="oe_highlight"
+                            icon="fa-refresh"
+                            help="Atualiza dados cadastrais, restrições e pendências via SENATRAN e-Frotas"/>
+                    <button name="action_efrotas_download_crlv"
+                            string="Baixar CRLV-e"
+                            type="object"
+                            icon="fa-file-pdf-o"
+                            help="Baixa o CRLV digital oficial e anexa ao veículo"/>
+                    <button name="action_efrotas_check_association"
+                            string="Verificar Associação"
+                            type="object"
+                            icon="fa-check-circle"
+                            help="Verifica se o veículo pertence à frota do CNPJ"/>
+                </header>
+                <div class="alert alert-warning" role="alert" style="margin-bottom:0px;"
+                     attrs="{'invisible': [('efrotas_has_theft', '=', False)]}">
+                    <i class="fa fa-exclamation-triangle"/> <strong>Atenção:</strong> Consta ocorrência de Roubo/Furto para este veículo no SENATRAN.
+                </div>
+                <div class="alert alert-warning" role="alert" style="margin-bottom:0px;"
+                     attrs="{'invisible': [('efrotas_has_recall', '=', False)]}">
+                    <i class="fa fa-wrench"/> <strong>Recall Pendente:</strong> Consta chamado de recall não atendido para este veículo.
+                </div>
+                <div class="alert alert-danger" role="alert" style="margin-bottom:0px;"
+                     attrs="{'invisible': [('efrotas_has_renajud', '=', False)]}">
+                    <i class="fa fa-gavel"/> <strong>Restrição Judicial:</strong> Consta restrição judicial ativa no RENAJUD.
+                </div>
+            </xpath>
+
+            <!-- Smart button in button_box -->
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button class="oe_stat_button"
+                        type="object"
+                        name="action_view_efrotas_logs"
+                        icon="fa-history">
+                    <field name="efrotas_log_count" widget="statinfo" string="Logs e-Frotas"/>
+                </button>
+            </xpath>
+
+            <!-- e-Frotas section inside sheet -->
+            <xpath expr="//sheet" position="inside">
+                <group string="e-Frotas SENATRAN" name="efrotas_section">
+                    <group string="Status da Sincronização">
+                        <field name="efrotas_config_id"/>
+                        <field name="efrotas_synced"/>
+                        <field name="efrotas_last_sync"/>
+                        <field name="efrotas_last_status_msg"/>
+                    </group>
+                    <group string="Indicadores SENATRAN">
+                        <field name="efrotas_is_associated"/>
+                        <field name="efrotas_has_theft"/>
+                        <field name="efrotas_has_recall"/>
+                        <field name="efrotas_has_renajud"/>
+                        <field name="efrotas_has_infractions"/>
+                        <field name="efrotas_has_sale_comm"/>
+                    </group>
+                    <group string="Dados Cadastrais Oficiais">
+                        <field name="efrotas_renavam"/>
+                        <field name="efrotas_chassi"/>
+                        <field name="efrotas_municipio"/>
+                        <field name="efrotas_cor"/>
+                    </group>
+                    <group string="Características Técnicas">
+                        <field name="efrotas_marca_modelo"/>
+                        <field name="efrotas_ano_fabricacao"/>
+                        <field name="efrotas_ano_modelo"/>
+                        <field name="efrotas_combustivel"/>
+                        <field name="efrotas_tipo_veiculo"/>
+                        <field name="efrotas_especie"/>
+                        <field name="efrotas_categoria"/>
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Search view extension -->
+    <record id="fleet_vehicle_view_search_efrotas" model="ir.ui.view">
+        <field name="name">fleet.vehicle.search.efrotas</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="efrotas_renavam"/>
+                <field name="efrotas_chassi"/>
+            </xpath>
+            <xpath expr="//filter[@name='alert_true']" position="after">
+                <separator/>
+                <filter name="filter_efrotas_synced" string="Sincronizado e-Frotas" domain="[('efrotas_synced', '=', True)]"/>
+                <filter name="filter_efrotas_associated" string="Associado à Frota" domain="[('efrotas_is_associated', '=', True)]"/>
+                <filter name="filter_efrotas_recall" string="Com Recall Pendente" domain="[('efrotas_has_recall', '=', True)]"/>
+                <filter name="filter_efrotas_renajud" string="Com Restrição RENAJUD" domain="[('efrotas_has_renajud', '=', True)]"/>
+                <filter name="filter_efrotas_theft" string="Alerta Roubo/Furto" domain="[('efrotas_has_theft', '=', True)]"/>
+                <filter name="filter_efrotas_infractions" string="Com Infrações" domain="[('efrotas_has_infractions', '=', True)]"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

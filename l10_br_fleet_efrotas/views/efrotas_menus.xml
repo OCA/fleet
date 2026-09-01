@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Menu: Consultas Rápidas -->
+    <menuitem id="menu_efrotas_query_wizard"
+              name="Consulta e-Frotas SENATRAN"
+              parent="fleet.fleet_vehicles"
+              action="action_efrotas_query_wizard"
+              sequence="30"/>
+
+    <!-- Menu: Configurações e-Frotas -->
+    <menuitem id="menu_efrotas_config"
+              name="e-Frotas SENATRAN"
+              parent="fleet.fleet_configuration"
+              action="action_efrotas_config"
+              sequence="50"/>
+
+    <!-- Menu: Logs de Comunicação -->
+    <menuitem id="menu_efrotas_log"
+              name="Logs e-Frotas"
+              parent="fleet.fleet_configuration"
+              action="action_efrotas_log"
+              sequence="55"/>
+</odoo>
