@@ -17,6 +17,7 @@ msgstr ""
 #. odoo-python
 #: code:addons/fleet_vehicle_purchase_link/models/fleet_vehicle.py:0
 #: model:ir.model.fields,field_description:fleet_vehicle_purchase_link.field_fleet_vehicle__purchase_line_count
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_purchase_link.fleet_vehicle_view_form_inherit
 #, python-format
 msgid "Purchase Lines"
 msgstr ""
@@ -24,7 +25,6 @@ msgstr ""
 #. module: fleet_vehicle_purchase_link
 #: model:ir.actions.act_window,name:fleet_vehicle_purchase_link.purchase_order_with_vehicle_action
 #: model:ir.ui.menu,name:fleet_vehicle_purchase_link.fleet_purchase_menu
-#: model_terms:ir.ui.view,arch_db:fleet_vehicle_purchase_link.fleet_vehicle_view_form_inherit
 msgid "Purchases"
 msgstr ""
 
