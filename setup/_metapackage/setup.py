@@ -19,6 +19,7 @@ setuptools.setup(
         'odoo-addon-fleet_vehicle_log_fuel>=16.0dev,<16.1dev',
         'odoo-addon-fleet_vehicle_ownership>=16.0dev,<16.1dev',
         'odoo-addon-fleet_vehicle_purchase>=16.0dev,<16.1dev',
+        'odoo-addon-fleet_vehicle_purchase_link>=16.0dev,<16.1dev',
         'odoo-addon-fleet_vehicle_service_activity>=16.0dev,<16.1dev',
         'odoo-addon-fleet_vehicle_service_calendar>=16.0dev,<16.1dev',
         'odoo-addon-fleet_vehicle_service_kanban>=16.0dev,<16.1dev',
