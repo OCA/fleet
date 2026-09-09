@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2026 Escodoo - Wesley Oliveira <wesley.oliveira@escodoo.com.br>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="fleet_vehicle_view_form_inherit" model="ir.ui.view">
+        <field name="name">fleet.vehicle.form.inherit</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button
+                    name="action_view_purchase_lines"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="fa-shopping-cart"
+                >
+                    <field
+                        name="purchase_line_count"
+                        widget="statinfo"
+                        string="Purchase Lines"
+                    />
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="purchase_order_with_vehicle_action" model="ir.actions.act_window">
+        <field name="name">Purchases</field>
+        <field name="res_model">purchase.order</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('order_line.fleet_vehicle_id', '!=', False)]</field>
+    </record>
+
+    <menuitem
+        id="fleet_purchase_menu"
+        name="Purchases"
+        parent="fleet.fleet_vehicles"
+        action="purchase_order_with_vehicle_action"
+        sequence="20"
+        groups="fleet.fleet_group_user"
+    />
+</odoo>
