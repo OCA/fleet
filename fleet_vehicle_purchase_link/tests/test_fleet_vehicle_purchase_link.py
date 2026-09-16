@@ -1,10 +1,12 @@
 # Copyright 2026 Escodoo - Wesley Oliveira <wesley.oliveira@escodoo.com.br>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from odoo.tests.common import Form, TransactionCase
+from odoo.tests import Form
+
+from odoo.addons.base.tests.common import BaseCommon
 
 
-class TestFleetVehiclePurchaseLink(TransactionCase):
+class TestFleetVehiclePurchaseLink(BaseCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
