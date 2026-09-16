@@ -31,7 +31,7 @@ class FleetVehicle(models.Model):
             "name": _("Purchase Lines"),
             "type": "ir.actions.act_window",
             "res_model": "purchase.order.line",
-            "view_mode": "tree,form",
+            "view_mode": "list,form",
             "domain": [("fleet_vehicle_id", "=", self.id)],
             "context": {"default_fleet_vehicle_id": self.id},
         }
