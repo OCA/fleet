@@ -122,13 +122,13 @@
                 />
                 <filter
                     string="Inspection Completed"
-                    name="result"
-                    domain="[('state','=','completed')]"
+                    name="confirmed"
+                    domain="[('state','=','confirmed')]"
                 />
                 <filter
                     string="Inspection Canceled"
-                    name="result"
-                    domain="[('result','=','cancel')]"
+                    name="cancel"
+                    domain="[('state','=','cancel')]"
                 />
                 <separator />
                 <filter
