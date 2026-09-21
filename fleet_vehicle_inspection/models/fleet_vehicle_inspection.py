@@ -143,12 +143,13 @@ class FleetVehicleInspection(models.Model):
             raise ValidationError(
                 _("Only inspections in 'draft' or 'cancel' states can be confirmed")
             )
-        if self.amount:
-            if not self.service_type_id:
-                raise ValidationError(_("Must select service type"))
-            self.service_id = self.env["fleet.vehicle.log.services"].create(
-                self._prepare_fleet_vehicle_log_services_vals()
-            )
+        for rec in self:
+            if rec.amount:
+                if not rec.service_type_id:
+                    raise ValidationError(_("Must select service type"))
+                rec.service_id = self.env["fleet.vehicle.log.services"].create(
+                    rec._prepare_fleet_vehicle_log_services_vals()
+                )
         self.state = "confirmed"
         return True
 
