@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2026 ACSONE SA/NV
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="fleet_vehicle_view_form" model="ir.ui.view">
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_form" />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//group[@name='group_model']/field[@name='trailer_hook']"
+                position="after"
+            >
+                <field name="vehicle_tyre_id" />
+                <field name="last_tyre_change_date" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
