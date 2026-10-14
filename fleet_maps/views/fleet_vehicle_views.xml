@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_fleet_vehicle_leaflet_map" model="ir.ui.view">
+        <field name="name">fleet.vehicle.leaflet.map</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="arch" type="xml">
+            <leaflet_map
+                field_latitude="map_latitude"
+                field_longitude="map_longitude"
+                field_title="map_marker_title"
+                field_address="map_marker_address"
+                default_zoom="7"
+                max_zoom="19"
+                zoom_snap="1"
+            >
+                <field name="map_latitude" />
+                <field name="map_longitude" />
+                <field name="map_marker_title" />
+                <field name="map_marker_address" />
+                <field name="map_last_update" />
+                <field name="date_localization" />
+                <field name="license_plate" />
+            </leaflet_map>
+        </field>
+    </record>
+
+    <record id="fleet_vehicle_view_form_maps" model="ir.ui.view">
+        <field name="name">fleet.vehicle.form.maps</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_form" />
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button
+                    name="action_view_vehicle_map"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="fa-map"
+                >
+                    <div class="o_stat_info">
+                        <span class="o_stat_text">Map</span>
+                    </div>
+                </button>
+            </div>
+            <notebook position="inside">
+                <page string="Map">
+                    <field name="map_preview_html" nolabel="1" />
+                    <group>
+                        <group>
+                            <field name="map_latitude" readonly="1" />
+                            <field name="map_longitude" readonly="1" />
+                            <field name="map_last_update" readonly="1" />
+                            <field name="map_has_position" readonly="1" />
+                        </group>
+                        <group>
+                            <field name="map_marker_title" readonly="1" />
+                            <field name="map_marker_address" readonly="1" />
+                            <field name="map_url" widget="url" readonly="1" />
+                        </group>
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+    <record id="view_fleet_vehicle_map_search" model="ir.ui.view">
+        <field name="name">fleet.vehicle.map.search</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+                <field name="license_plate" />
+                <field name="driver_id" />
+                <field name="model_id" />
+                <filter
+                    string="With Position"
+                    name="has_position"
+                    domain="[('map_has_position', '=', True)]"
+                />
+                <filter
+                    string="Without Position"
+                    name="without_position"
+                    domain="[('map_has_position', '=', False)]"
+                />
+                <separator />
+                <filter
+                    string="Driver"
+                    name="group_driver"
+                    context="{'group_by': 'driver_id'}"
+                />
+                <filter
+                    string="Model"
+                    name="group_model"
+                    context="{'group_by': 'model_id'}"
+                />
+            </search>
+        </field>
+    </record>
+
+    <record id="action_fleet_vehicle_map" model="ir.actions.act_window">
+        <field name="name">Fleet Map</field>
+        <field name="res_model">fleet.vehicle</field>
+        <field name="view_mode">leaflet_map,list,form</field>
+        <field name="domain">[("map_has_position", "=", True)]</field>
+        <field
+            name="context"
+        >{"create": False, "search_default_has_position": 1}</field>
+        <field name="limit">1000</field>
+        <field name="search_view_id" ref="view_fleet_vehicle_map_search" />
+    </record>
+</odoo>

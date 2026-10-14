@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t
+        t-name="fleet_maps.MapViewNoFleetCreate"
+        t-inherit="web_view_leaflet_map.MapView"
+        t-inherit-mode="extension"
+    >
+        <xpath
+            expr="//t[@t-set-slot='control-panel-create-button']/button"
+            position="attributes"
+        >
+            <attribute name="t-if">props.resModel !== 'fleet.vehicle'</attribute>
+        </xpath>
+    </t>
+</templates>
