@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_fleet_telemetry_map" model="ir.ui.view">
+        <field name="name">fleet.telemetry.map</field>
+        <field name="model">fleet.telemetry</field>
+        <field name="arch" type="xml">
+            <leaflet_map
+                field_latitude="latitude"
+                field_longitude="longitude"
+                field_title="map_marker_title"
+                field_address="map_marker_address"
+                default_zoom="13"
+                max_zoom="19"
+                zoom_snap="1"
+            >
+                <field name="latitude" />
+                <field name="longitude" />
+                <field name="map_marker_title" />
+                <field name="map_marker_address" />
+                <field name="fix_time" />
+                <field name="date_localization" />
+                <field name="route_day" />
+                <field name="route_color" />
+                <field name="vehicle_id" />
+                <field name="device_id" />
+                <field name="provider" />
+                <field name="speed" />
+                <field name="address" />
+            </leaflet_map>
+        </field>
+    </record>
+
+    <record id="action_fleet_telemetry_map" model="ir.actions.act_window">
+        <field name="name">Telemetry Map</field>
+        <field name="res_model">fleet.telemetry</field>
+        <field name="view_mode">leaflet_map,list,form</field>
+        <field
+            name="search_view_id"
+            ref="fleet_telemetry.view_fleet_telemetry_search"
+        />
+        <field name="context">{"create": false}</field>
+        <field name="limit">5000</field>
+    </record>
+
+    <record id="action_fleet_telemetry_map_view_map" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1" />
+        <field name="view_mode">leaflet_map</field>
+        <field name="view_id" ref="view_fleet_telemetry_map" />
+        <field name="act_window_id" ref="action_fleet_telemetry_map" />
+    </record>
+
+    <record
+        id="action_fleet_telemetry_map_view_list"
+        model="ir.actions.act_window.view"
+    >
+        <field name="sequence" eval="2" />
+        <field name="view_mode">list</field>
+        <field name="view_id" ref="fleet_telemetry.view_fleet_telemetry_list" />
+        <field name="act_window_id" ref="action_fleet_telemetry_map" />
+    </record>
+
+    <record
+        id="action_fleet_telemetry_map_view_form"
+        model="ir.actions.act_window.view"
+    >
+        <field name="sequence" eval="3" />
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="fleet_telemetry.view_fleet_telemetry_form" />
+        <field name="act_window_id" ref="action_fleet_telemetry_map" />
+    </record>
+
+    <record id="fleet_telemetry.action_fleet_telemetry" model="ir.actions.act_window">
+        <field name="view_mode">leaflet_map,list,form</field>
+        <field name="context">{"create": false}</field>
+        <field name="limit">5000</field>
+    </record>
+
+    <record id="action_fleet_telemetry_view_map" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1" />
+        <field name="view_mode">leaflet_map</field>
+        <field name="view_id" ref="view_fleet_telemetry_map" />
+        <field name="act_window_id" ref="fleet_telemetry.action_fleet_telemetry" />
+    </record>
+
+    <record id="action_fleet_telemetry_view_list" model="ir.actions.act_window.view">
+        <field name="sequence" eval="2" />
+        <field name="view_mode">list</field>
+        <field name="view_id" ref="fleet_telemetry.view_fleet_telemetry_list" />
+        <field name="act_window_id" ref="fleet_telemetry.action_fleet_telemetry" />
+    </record>
+
+    <record id="action_fleet_telemetry_view_form" model="ir.actions.act_window.view">
+        <field name="sequence" eval="3" />
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="fleet_telemetry.view_fleet_telemetry_form" />
+        <field name="act_window_id" ref="fleet_telemetry.action_fleet_telemetry" />
+    </record>
+
+    <menuitem
+        id="menu_fleet_telemetry_map"
+        name="Telemetry Map"
+        parent="fleet_telemetry.menu_fleet_telemetry_root"
+        action="action_fleet_telemetry_map"
+        sequence="15"
+    />
+</odoo>
