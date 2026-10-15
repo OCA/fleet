@@ -5,7 +5,7 @@
         <field name="model">fleet.vehicle</field>
         <field name="inherit_id" ref="fleet.fleet_vehicle_view_form" />
         <field name="arch" type="xml">
-            <field name="company_id" position="after">
+            <field name="manager_id" position="after">
                 <field name="owner_id" />
             </field>
         </field>
