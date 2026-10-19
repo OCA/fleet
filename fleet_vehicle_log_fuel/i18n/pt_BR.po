@@ -284,6 +284,11 @@ msgid "My Activity Deadline"
 msgstr "Meu Prazo Final de Atividade"
 
 #. module: fleet_vehicle_log_fuel
+#: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Próximo evento do calendário de atividades"
+
+#. module: fleet_vehicle_log_fuel
 #: model:ir.model.fields,field_description:fleet_vehicle_log_fuel.field_fleet_vehicle_log_fuel__activity_date_deadline
 msgid "Next Activity Deadline"
 msgstr "Prazo Final para Próxima Atividade"
@@ -456,6 +461,3 @@ msgstr "mostrar os registros de combustível deste veículo"
 
 #~ msgid "Main Attachment"
 #~ msgstr "Anexo Principal"
-
-#~ msgid "Next Activity Calendar Event"
-#~ msgstr "Próximo evento do calendário de atividades"
