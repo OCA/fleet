@@ -1,6 +1,6 @@
 [project]
 name = "odoo-addons-oca-fleet"
-version = "19.0.20260824.0"
+version = "19.0.20261019.0"
 dependencies = [
     "odoo-addon-fleet_vehicle_calendar_year==19.0.*",
     "odoo-addon-fleet_vehicle_category==19.0.*",
@@ -12,6 +12,7 @@ dependencies = [
     "odoo-addon-fleet_vehicle_inspection_template==19.0.*",
     "odoo-addon-fleet_vehicle_log_fuel==19.0.*",
     "odoo-addon-fleet_vehicle_purchase==19.0.*",
+    "odoo-addon-fleet_vehicle_purchase_link==19.0.*",
     "odoo-addon-fleet_vehicle_service_activity==19.0.*",
     "odoo-addon-fleet_vehicle_service_kanban==19.0.*",
     "odoo-addon-fleet_vehicle_service_services==19.0.*",
