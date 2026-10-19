@@ -162,12 +162,6 @@ msgid "Is Follower"
 msgstr "É um seguidor"
 
 #. module: fleet_vehicle_inspection_template
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template____last_update
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template_line____last_update
-msgid "Last Modified on"
-msgstr "Última modificação em"
-
-#. module: fleet_vehicle_inspection_template
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__write_uid
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template_line__write_uid
 msgid "Last Updated by"
@@ -178,11 +172,6 @@ msgstr "Última atualização por"
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template_line__write_date
 msgid "Last Updated on"
 msgstr "Atualizado pela última vez em"
-
-#. module: fleet_vehicle_inspection_template
-#: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_main_attachment_id
-msgid "Main Attachment"
-msgstr "Anexo Principal"
 
 #. module: fleet_vehicle_inspection_template
 #: model:ir.model.fields,field_description:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__message_has_error
@@ -287,6 +276,12 @@ msgstr "Mensagens do Website"
 #: model:ir.model.fields,help:fleet_vehicle_inspection_template.field_fleet_vehicle_inspection_template__website_message_ids
 msgid "Website communication history"
 msgstr "Histórico de comunicação do website"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Última modificação em"
+
+#~ msgid "Main Attachment"
+#~ msgstr "Anexo Principal"
 
 #~ msgid "Number of messages which requires an action"
 #~ msgstr "Número de mensagens que requer uma ação"
