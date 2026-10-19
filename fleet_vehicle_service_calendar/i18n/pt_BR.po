@@ -1,0 +1,67 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fleet_vehicle_service_calendar
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2024-07-06 20:58+0000\n"
+"Last-Translator: Rodrigo Sottomaior Macedo "
+"<sottomaiormacedotec@sottomaiormacedo.tech>\n"
+"Language-Team: none\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 5.6.2\n"
+
+#. module: fleet_vehicle_service_calendar
+#: model:ir.model.fields,field_description:fleet_vehicle_service_calendar.field_fleet_vehicle_log_services__meeting_count
+msgid "# Meetings"
+msgstr "# Encontros"
+
+#. module: fleet_vehicle_service_calendar
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_service_calendar.fleet_vehicle_log_services_view_form
+msgid ""
+"<span class=\"o_stat_text\" attrs=\"{'invisible': [('meeting_count', '&lt;', 2)]}\"> Meetings</span>\n"
+"                        <span class=\"o_stat_text\" attrs=\"{'invisible': [('meeting_count', '&gt;', 1)]}\"> Meeting</span>"
+msgstr ""
+"<span class=\"o_stat_text\" attrs=\"{'invisible': [('meeting_count', '&lt;', "
+"2)]}\"> Encontros</span>\n"
+"                        <span class=\"o_stat_text\" attrs=\"{'invisible': [("
+"'meeting_count', '&gt;', 1)]}\"> Encontro</span>"
+
+#. module: fleet_vehicle_service_calendar
+#: model:ir.model,name:fleet_vehicle_service_calendar.model_calendar_event
+msgid "Calendar Event"
+msgstr "Evento do calendário"
+
+#. module: fleet_vehicle_service_calendar
+#. odoo-python
+#: code:addons/fleet_vehicle_service_calendar/models/fleet_vehicle_log_services.py:0
+#, python-format
+msgid ""
+"Meeting scheduled at '%(html_time)s'<br> Subject: %(meeting_subject)s <br> "
+"Duration: %(duration)s hours"
+msgstr ""
+"Reunião agendada para '%(html_time)s'<br> Assunto: %(meeting_subject)s <br> "
+"Duração: %(duration)s horas"
+
+#. module: fleet_vehicle_service_calendar
+#: model:ir.model,name:fleet_vehicle_service_calendar.model_fleet_vehicle_log_services
+msgid "Services for vehicles"
+msgstr "Serviços para veículos"
+
+#. module: fleet_vehicle_service_calendar
+#: model:ir.model.fields,field_description:fleet_vehicle_service_calendar.field_calendar_event__vehicle_service_id
+msgid "Vehicle Service"
+msgstr "Serviço de veículos"
+
+#. module: fleet_vehicle_service_calendar
+#. odoo-python
+#: code:addons/fleet_vehicle_service_calendar/models/fleet_vehicle_log_services.py:0
+#, python-format
+msgid "unknown"
+msgstr "desconhecido"
