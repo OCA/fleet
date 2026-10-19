@@ -19,7 +19,6 @@ msgstr ""
 
 #. module: fleet_vehicle_usage
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_usage.fleet_vehicle_view_form
-#: model_terms:ir.ui.view,arch_db:fleet_vehicle_usage.fleet_vehicle_view_kanban
 msgid ""
 "<span class=\"label label-primary\" invisible=\"not in_use\">In use</span>"
 msgstr ""
@@ -106,14 +105,12 @@ msgstr "Conductor"
 #. module: fleet_vehicle_usage
 #. odoo-python
 #: code:addons/fleet_vehicle_usage/models/fleet_vehicle_usage.py:0
-#, python-format
 msgid "Every driver can only drive a vehicle at once!"
 msgstr "¡Cada conductor solo puede conducir un vehículo a la vez!"
 
 #. module: fleet_vehicle_usage
 #. odoo-python
 #: code:addons/fleet_vehicle_usage/models/fleet_vehicle_usage.py:0
-#, python-format
 msgid "Every vehicle can only be picked once at the same time!"
 msgstr "¡Cada vehículo solo se puede recoger una vez al mismo tiempo!"
 
@@ -182,6 +179,7 @@ msgid "In Use"
 msgstr "En uso"
 
 #. module: fleet_vehicle_usage
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_usage.fleet_vehicle_view_kanban
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_usage.fleet_vehicle_view_search
 msgid "In use"
 msgstr "En uso"
@@ -220,9 +218,13 @@ msgstr "Mi fecha de límite de actividad"
 #. odoo-python
 #: code:addons/fleet_vehicle_usage/models/fleet_vehicle_usage.py:0
 #: model:ir.model.fields.selection,name:fleet_vehicle_usage.selection__fleet_vehicle_usage__state__draft
-#, python-format
 msgid "New"
 msgstr "Nuevo"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Próximo Evento del Calendario de Actividades"
 
 #. module: fleet_vehicle_usage
 #: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__activity_date_deadline
@@ -382,6 +384,16 @@ msgstr "Vehículo"
 msgid "Vehicle Usage"
 msgstr "Uso de vehículo"
 
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes de la Página Web"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,help:fleet_vehicle_usage.field_fleet_vehicle_usage__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de la comunicación en el sitio web"
+
 #~ msgid ""
 #~ "<span class=\"label label-primary\" attrs=\"{'invisible': [('in_use', "
 #~ "'=', False)]}\">In use</span>"
@@ -394,12 +406,3 @@ msgstr "Uso de vehículo"
 
 #~ msgid "Main Attachment"
 #~ msgstr "Adjunto Principal"
-
-#~ msgid "Next Activity Calendar Event"
-#~ msgstr "Próximo Evento del Calendario de Actividades"
-
-#~ msgid "Website Messages"
-#~ msgstr "Mensajes de la Página Web"
-
-#~ msgid "Website communication history"
-#~ msgstr "Historial de la comunicación en el sitio web"
