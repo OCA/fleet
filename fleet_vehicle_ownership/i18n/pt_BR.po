@@ -1,0 +1,74 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fleet_vehicle_ownership
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2024-09-13 23:06+0000\n"
+"Last-Translator: Marcel Savegnago <marcel.savegnago@gmail.com>\n"
+"Language-Team: none\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 5.6.2\n"
+
+#. module: fleet_vehicle_ownership
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_ownership.view_partner_vehicle_owner_form
+msgid "<span class=\"o_stat_text\"> Vehicles</span>"
+msgstr "<span class=\"o_stat_text\"> Veículos</span>"
+
+#. module: fleet_vehicle_ownership
+#: model:ir.model,name:fleet_vehicle_ownership.model_res_partner
+msgid "Contact"
+msgstr "Contato"
+
+#. module: fleet_vehicle_ownership
+#: model:ir.model.fields,field_description:fleet_vehicle_ownership.field_fleet_vehicle__display_name
+#: model:ir.model.fields,field_description:fleet_vehicle_ownership.field_res_partner__display_name
+msgid "Display Name"
+msgstr "Nome Exibido"
+
+#. module: fleet_vehicle_ownership
+#: model:ir.model.fields,field_description:fleet_vehicle_ownership.field_fleet_vehicle__id
+#: model:ir.model.fields,field_description:fleet_vehicle_ownership.field_res_partner__id
+msgid "ID"
+msgstr "ID"
+
+#. module: fleet_vehicle_ownership
+#: model:ir.model.fields,field_description:fleet_vehicle_ownership.field_fleet_vehicle____last_update
+#: model:ir.model.fields,field_description:fleet_vehicle_ownership.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr "Última Modificação em"
+
+#. module: fleet_vehicle_ownership
+#: model:ir.model.fields,field_description:fleet_vehicle_ownership.field_res_partner__vehicle_count
+#: model:ir.model.fields,field_description:fleet_vehicle_ownership.field_res_users__vehicle_count
+msgid "Number of Vehicles"
+msgstr "Número do Veículos"
+
+#. module: fleet_vehicle_ownership
+#: model:ir.model.fields,field_description:fleet_vehicle_ownership.field_fleet_vehicle__owner_id
+msgid "Owner"
+msgstr "Proprietário"
+
+#. module: fleet_vehicle_ownership
+#: model:ir.model.fields,help:fleet_vehicle_ownership.field_fleet_vehicle__owner_id
+msgid "Owner of the vehicle"
+msgstr "Proprietário do Veículo"
+
+#. module: fleet_vehicle_ownership
+#: model:ir.model,name:fleet_vehicle_ownership.model_fleet_vehicle
+#: model:ir.model.fields,field_description:fleet_vehicle_ownership.field_res_partner__vehicle_ids
+#: model:ir.model.fields,field_description:fleet_vehicle_ownership.field_res_users__vehicle_ids
+msgid "Vehicle"
+msgstr "Veículo"
+
+#. module: fleet_vehicle_ownership
+#: model:ir.model.fields,help:fleet_vehicle_ownership.field_res_partner__vehicle_ids
+#: model:ir.model.fields,help:fleet_vehicle_ownership.field_res_users__vehicle_ids
+msgid "Vehicles owned by this partner"
+msgstr "Veículos de propriedade deste parceiro"
