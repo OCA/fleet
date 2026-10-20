@@ -127,7 +127,6 @@ class TestFleetVehicle(TransactionCase):
 
         move = self.env["stock.move"].create(
             {
-                "name": "Test Move",
                 "product_id": self.product1.id,
                 "product_uom_qty": 1.0,
                 "product_uom": self.product1.uom_id.id,
@@ -158,6 +157,33 @@ class TestFleetVehicle(TransactionCase):
             lot.fleet_vehicle_id.current_stock_location_id, self.stock_location
         )
 
+    def test_template_with_several_variants_has_no_vehicle_model(self):
+        attribute = self.env["product.attribute"].create(
+            {
+                "name": "Color",
+                "value_ids": [(0, 0, {"name": "Red"}), (0, 0, {"name": "Blue"})],
+            }
+        )
+        template = self.env["product.template"].create(
+            {
+                "name": "Template With Variants",
+                "attribute_line_ids": [
+                    (
+                        0,
+                        0,
+                        {
+                            "attribute_id": attribute.id,
+                            "value_ids": [(6, 0, attribute.value_ids.ids)],
+                        },
+                    )
+                ],
+            }
+        )
+        self.assertEqual(len(template.product_variant_ids), 2)
+        self.assertFalse(template.fleet_vehicle_model_id)
+        template.fleet_vehicle_model_id = self.vehicle_model1
+        self.assertFalse(template.product_variant_ids.fleet_vehicle_model_id)
+
     def test_stock_move_skip_vehicle_creation(self):
         picking_type_no_create = self.env["stock.picking.type"].create(
             {
@@ -171,7 +197,6 @@ class TestFleetVehicle(TransactionCase):
 
         move1 = self.env["stock.move"].create(
             {
-                "name": "Test Move Skip 1",
                 "product_id": self.product1.id,
                 "product_uom_qty": 1.0,
                 "product_uom": self.product1.uom_id.id,
@@ -208,7 +233,6 @@ class TestFleetVehicle(TransactionCase):
 
         move2 = self.env["stock.move"].create(
             {
-                "name": "Test Move Skip 2",
                 "product_id": self.product1.id,
                 "product_uom_qty": 1.0,
                 "product_uom": self.product1.uom_id.id,
@@ -282,7 +306,6 @@ class TestFleetVehicle(TransactionCase):
 
         move = self.env["stock.move"].create(
             {
-                "name": "Test Move Error",
                 "product_id": product_no_model.id,
                 "product_uom_qty": 1.0,
                 "location_id": self.env.ref("stock.stock_location_suppliers").id,
