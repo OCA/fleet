@@ -1,0 +1,131 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fleet_vehicle_stock
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2024-08-22 11:07+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
+"Language-Team: none\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.6.2\n"
+
+#. module: fleet_vehicle_stock
+#: model:ir.model.fields,field_description:fleet_vehicle_stock.field_stock_picking_type__create_fleet_vehicle
+msgid "Create Fleet Vehicle"
+msgstr "Crea veicolo flotta"
+
+#. module: fleet_vehicle_stock
+#: model:ir.model.fields,field_description:fleet_vehicle_stock.field_product_product__create_fleet_vehicle
+#: model:ir.model.fields,field_description:fleet_vehicle_stock.field_product_template__create_fleet_vehicle
+msgid "Creates a Fleet Vehicle"
+msgstr "Crea un veicolo flotta"
+
+#. module: fleet_vehicle_stock
+#: model:ir.model.fields,field_description:fleet_vehicle_stock.field_fleet_vehicle__current_stock_location_id
+msgid "Current Inventory Location"
+msgstr "Ubicazione giacenza attuale"
+
+#. module: fleet_vehicle_stock
+#: model:ir.model.fields,field_description:fleet_vehicle_stock.field_fleet_vehicle_model__product_id
+msgid "Default Product"
+msgstr "Prodotto predefinito"
+
+#. module: fleet_vehicle_stock
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_stock.product_template_form_view
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_stock.product_variant_easy_edit_view
+msgid "Fleet"
+msgstr "Flotta"
+
+#. module: fleet_vehicle_stock
+#: model:ir.model.fields,field_description:fleet_vehicle_stock.field_stock_lot__fleet_vehicle_id
+msgid "Fleet Vehicle"
+msgstr "Veicolo flotta"
+
+#. module: fleet_vehicle_stock
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_stock.fleet_vehicle_form_view
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_stock.fleet_vehicle_model_form_view
+msgid "Inventory"
+msgstr "Inventario"
+
+#. module: fleet_vehicle_stock
+#: model:ir.model.constraint,message:fleet_vehicle_stock.constraint_product_template_non_product_tracking_for_vehicle_model
+msgid ""
+"It is mandatory to configure the traceability by serial number in order to "
+"be able to configure the vehicle model of the fleet in this product."
+msgstr ""
+"È necessario configurare la tracciabilità per numero seriale per poter "
+"configurare in questo prodotto il modello veicolo della flotta."
+
+#. module: fleet_vehicle_stock
+#: model:ir.model,name:fleet_vehicle_stock.model_stock_lot
+msgid "Lot/Serial"
+msgstr "Lotto/seriale"
+
+#. module: fleet_vehicle_stock
+#: model:ir.model,name:fleet_vehicle_stock.model_fleet_vehicle_model
+msgid "Model of a vehicle"
+msgstr "Modello di un veicolo"
+
+#. module: fleet_vehicle_stock
+#: model:ir.model,name:fleet_vehicle_stock.model_stock_picking_type
+msgid "Picking Type"
+msgstr "Tipo prelievo"
+
+#. module: fleet_vehicle_stock
+#: model:ir.model,name:fleet_vehicle_stock.model_product_template
+#: model:ir.model.fields,field_description:fleet_vehicle_stock.field_fleet_vehicle__product_id
+msgid "Product"
+msgstr "Prodotto"
+
+#. module: fleet_vehicle_stock
+#: model:ir.model,name:fleet_vehicle_stock.model_product_product
+msgid "Product Variant"
+msgstr "Variante prodotto"
+
+#. module: fleet_vehicle_stock
+#: model:ir.model.fields,help:fleet_vehicle_stock.field_stock_picking_type__create_fleet_vehicle
+msgid ""
+"Products with the \"Creates a Fleet Vehicle\" flagwill automatically be "
+"converted to an Fleet Vehicle."
+msgstr ""
+"I prodotti con la spunta \"Crea un veicolo flotta\" verranno automaticamente "
+"convertiti in un veicolo flotta."
+
+#. module: fleet_vehicle_stock
+#: model:ir.model.fields,field_description:fleet_vehicle_stock.field_fleet_vehicle__lot_id
+msgid "Serial #"
+msgstr "Nr. seriale"
+
+#. module: fleet_vehicle_stock
+#: model:ir.model,name:fleet_vehicle_stock.model_stock_move
+msgid "Stock Move"
+msgstr "Movimento di magazzino"
+
+#. module: fleet_vehicle_stock
+#. odoo-python
+#: code:addons/fleet_vehicle_stock/models/stock_move.py:0
+#, python-format
+msgid ""
+"The product '%s' is configure to create a fleet vehicle but vehicle model is "
+"not configured in the product."
+msgstr ""
+"Il prodotto '%s' è configurato per creare una veicolo flotta ma il modello "
+"veicolo non è configurato nel prodotto."
+
+#. module: fleet_vehicle_stock
+#: model:ir.model,name:fleet_vehicle_stock.model_fleet_vehicle
+msgid "Vehicle"
+msgstr "Veicolo"
+
+#. module: fleet_vehicle_stock
+#: model:ir.model.fields,field_description:fleet_vehicle_stock.field_product_product__fleet_vehicle_model_id
+#: model:ir.model.fields,field_description:fleet_vehicle_stock.field_product_template__fleet_vehicle_model_id
+msgid "Vehicle Model"
+msgstr "Modello veicolo"
