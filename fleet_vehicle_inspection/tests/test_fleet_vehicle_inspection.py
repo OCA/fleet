@@ -10,6 +10,8 @@ from odoo.addons.base.tests.common import BaseCommon
 
 
 class TestFleetVehicleInspection(BaseCommon):
+    _test_user_groups = None
+
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -86,12 +88,6 @@ class TestFleetVehicleInspection(BaseCommon):
         self.inspection2.unlink()
         action = self.vehicle.action_view_inspection()
         self.assertEqual(len(action.get("views")), 1)
-        self.assertEqual(
-            action.get("views")[0][0],
-            self.env.ref(
-                "fleet_vehicle_inspection.fleet_vehicle_inspection_form_view"
-            ).id,
-        )
         self.assertEqual(action.get("res_id"), self.inspection.id)
 
     def test_fleet_vehicle_inspection_button_confirm(self):

@@ -20,15 +20,6 @@ class FleetVehicle(models.Model):
             rec.inspection_count = len(rec.inspection_ids)
 
     def action_view_inspection(self):
-        action = self.env["ir.actions.act_window"]._for_xml_id(
-            "fleet_vehicle_inspection.fleet_vehicle_inspection_act_window"
+        return self.inspection_ids._get_records_action(
+            name=self.env._("Vehicle Inspection")
         )
-        if self.inspection_count > 1:
-            action["domain"] = [("id", "in", self.inspection_ids.ids)]
-        else:
-            form_view = self.env.ref(
-                "fleet_vehicle_inspection.fleet_vehicle_inspection_form_view"
-            )
-            action["views"] = [(form_view.id, "form")]
-            action["res_id"] = self.inspection_ids[:1].id
-        return action

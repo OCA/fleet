@@ -12,7 +12,8 @@
                     class="oe_stat_button"
                     type="object"
                     name="action_view_inspection"
-                    icon="fa-th-list"
+                    icon="list_alt"
+                    invisible="not inspection_count"
                     context="{'default_vehicle_id': id}"
                 >
                     <div class="o_stat_info">

@@ -241,15 +241,16 @@
                                         </span>
                                     </strong>
                                 </div>
-                                <div class="col-6 text-right">
+                                <div class="col-6 text-end">
                                     <strong>
                                         <i
-                                            class="fa fa-clock-o"
+                                            class="oi me-1"
+                                            data-icon="schedule"
                                             aria-label="Date Inspected"
                                             role="img"
                                             title="Date"
                                         />
-                                        <t t-esc="record.date_inspected.value" />
+                                        <field name="date_inspected" />
                                     </strong>
                                 </div>
                             </div>
@@ -260,25 +261,21 @@
                                     </span>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <span class="float-right">
-                                        <field
-                                            name="state"
-                                            widget="badge"
-                                            decoration-info="state == 'draft'"
-                                            decoration-success="state == 'confirmed'"
-                                            decoration-danger="state == 'cancel'"
-                                        />
-                                        <field
-                                            name="result"
-                                            widget="badge"
-                                            decoration-info="result == 'todo'"
-                                            decoration-success="result == 'success'"
-                                            decoration-danger="result == 'failure'"
-                                        />
-                                    </span>
-                                </div>
+                            <div class="d-flex justify-content-end gap-2">
+                                <field
+                                    name="state"
+                                    widget="badge"
+                                    decoration-info="state == 'draft'"
+                                    decoration-success="state == 'confirmed'"
+                                    decoration-danger="state == 'cancel'"
+                                />
+                                <field
+                                    name="result"
+                                    widget="badge"
+                                    decoration-info="result == 'todo'"
+                                    decoration-success="result == 'success'"
+                                    decoration-danger="result == 'failure'"
+                                />
                             </div>
                         </div>
                     </t>

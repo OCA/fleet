@@ -160,7 +160,7 @@
                     invisible="state!='draft' or result=='success'"
                     type="object"
                     class="oe_highlight btn-success"
-                    icon="fa-check-circle"
+                    icon="check_circle"
                     title="Success"
                     groups="fleet.fleet_group_manager"
                 />
@@ -169,7 +169,7 @@
                     invisible="state!='draft' or result == 'failure'"
                     type="object"
                     class="oe_highlight btn-danger"
-                    icon="fa-times-circle"
+                    icon="cancel"
                     title="Failure"
                     groups="fleet.fleet_group_manager"
                 />

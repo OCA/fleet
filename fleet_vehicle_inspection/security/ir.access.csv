@@ -1,0 +1,9 @@
+id,name,model_id,group_id/id,operation,domain
+fleet_vehicle_inspection_item_user,fleet_vehicle_inspection_item_user,fleet.vehicle.inspection.item,fleet.fleet_group_user,r
+fleet_vehicle_inspection_item_manager,fleet_vehicle_inspection_item_manager,fleet.vehicle.inspection.item,fleet.fleet_group_manager,crud
+fleet_vehicle_inspection_line_image_user,fleet_vehicle_inspection_line_image_user,fleet.vehicle.inspection.line.image,fleet.fleet_group_user,r
+fleet_vehicle_inspection_line_image_manager,fleet_vehicle_inspection_line_image_manager,fleet.vehicle.inspection.line.image,fleet.fleet_group_manager,crud
+fleet_vehicle_inspection_line_user,fleet_vehicle_inspection_line_user,fleet.vehicle.inspection.line,fleet.fleet_group_user,r,"[('inspection_id.vehicle_id.driver_id','=',user.partner_id.id)]"
+fleet_vehicle_inspection_line_manager,fleet_vehicle_inspection_line_manager,fleet.vehicle.inspection.line,fleet.fleet_group_manager,crud
+fleet_vehicle_inspection_user,fleet_vehicle_inspection_user,fleet.vehicle.inspection,fleet.fleet_group_user,r,"[('vehicle_id.driver_id','=',user.partner_id.id)]"
+fleet_vehicle_inspection_manager,fleet_vehicle_inspection_manager,fleet.vehicle.inspection,fleet.fleet_group_manager,crud

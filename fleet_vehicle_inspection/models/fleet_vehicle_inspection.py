@@ -27,16 +27,15 @@ class FleetVehicleInspection(models.Model):
     )
     vehicle_id = fields.Many2one(
         "fleet.vehicle",
-        "Vehicle",
         help="Fleet Vehicle",
         required=True,
     )
     odometer_id = fields.Many2one(
         "fleet.vehicle.odometer",
-        "Odometer ID",
         help="Odometer measure of the vehicle at the moment of this log",
     )
     odometer = fields.Float(
+        string="Odometer measure",
         compute="_compute_odometer",
         inverse="_inverse_odometer",
         help="Odometer measure of the vehicle at the moment of this log",
@@ -80,16 +79,13 @@ class FleetVehicleInspection(models.Model):
     amount = fields.Monetary("Cost")
     service_type_id = fields.Many2one(
         comodel_name="fleet.service.type",
-        string="Service Type",
         domain=[("category", "=", "service")],
     )
-    vendor_id = fields.Many2one("res.partner", "Vendor")
+    vendor_id = fields.Many2one("res.partner")
     service_id = fields.Many2one(
         comodel_name="fleet.vehicle.log.services", readonly=True, copy=False
     )
-    company_id = fields.Many2one(
-        "res.company", "Company", default=lambda self: self.env.company
-    )
+    company_id = fields.Many2one("res.company", default=lambda self: self.env.company)
     currency_id = fields.Many2one("res.currency", related="company_id.currency_id")
 
     @api.depends("inspection_line_ids", "inspection_line_ids.result", "state")

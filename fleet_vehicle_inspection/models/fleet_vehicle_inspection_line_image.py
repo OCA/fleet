@@ -7,7 +7,7 @@ from odoo import fields, models
 class FleetVehicleInspectionLineImage(models.Model):
     _name = "fleet.vehicle.inspection.line.image"
     _description = "Fleet Vehicle Inspection Line Image"
-    _inherit = ["image.mixin"]
+    _inherit = "image.mixin"
     _order = "sequence, id"
 
     name = fields.Char()

@@ -17,7 +17,6 @@ class FleetVehicleInspectionLine(models.Model):
     )
     inspection_item_id = fields.Many2one(
         "fleet.vehicle.inspection.item",
-        "Inspection Item",
         required=True,
         tracking=True,
         index=True,
