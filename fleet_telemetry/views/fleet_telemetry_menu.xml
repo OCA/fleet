@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem
+        id="menu_fleet_telemetry_root"
+        name="Telemetry"
+        parent="fleet.fleet_configuration"
+        sequence="85"
+    />
+    <menuitem
+        id="menu_fleet_telemetry"
+        name="Telemetry"
+        parent="menu_fleet_telemetry_root"
+        action="action_fleet_telemetry"
+        sequence="10"
+    />
+    <menuitem
+        id="menu_fleet_telemetry_device"
+        name="Devices"
+        parent="menu_fleet_telemetry_root"
+        action="action_fleet_telemetry_device"
+        sequence="20"
+    />
+</odoo>
