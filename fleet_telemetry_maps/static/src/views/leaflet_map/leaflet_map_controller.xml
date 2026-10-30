@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t
+        t-name="fleet_telemetry_maps.MapView"
+        t-inherit="web_view_leaflet_map.MapView"
+        t-inherit-mode="extension"
+    >
+        <xpath expr="//Layout" position="inside">
+            <t t-set-slot="layout-actions">
+                <SearchBar toggler="searchBarToggler" />
+            </t>
+            <t t-set-slot="control-panel-navigation-additional">
+                <t
+                    t-component="searchBarToggler.component"
+                    t-props="searchBarToggler.props"
+                />
+            </t>
+        </xpath>
+    </t>
+</templates>
