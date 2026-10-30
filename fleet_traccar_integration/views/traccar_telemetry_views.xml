@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_traccar_telemetry_search" model="ir.ui.view">
+        <field name="name">fleet.telemetry.traccar.search</field>
+        <field name="model">fleet.telemetry</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="vehicle_id" />
+                <field name="device_id" />
+                <field name="traccar_device_id" />
+                <field name="route_day" />
+                <filter
+                    string="Traccar"
+                    name="provider_traccar"
+                    domain="[('provider', '=', 'traccar')]"
+                />
+                <filter string="Route Day" name="route_day_filter" date="route_day" />
+                <filter
+                    string="Last 7 Days"
+                    name="last_7_days"
+                    domain="[('route_day', '&gt;=', (context_today() - datetime.timedelta(days=7)).strftime('%Y-%m-%d'))]"
+                />
+                <separator />
+                <filter
+                    string="Vehicle"
+                    name="group_vehicle"
+                    context="{'group_by': 'vehicle_id'}"
+                />
+                <filter
+                    string="Device"
+                    name="group_device"
+                    context="{'group_by': 'traccar_device_id'}"
+                />
+                <filter
+                    string="Route Day"
+                    name="group_route_day"
+                    context="{'group_by': 'route_day'}"
+                />
+            </search>
+        </field>
+    </record>
+
+    <record id="action_traccar_telemetry" model="ir.actions.act_window">
+        <field name="name">Traccar Telemetry</field>
+        <field name="res_model">fleet.telemetry</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[("provider", "=", "traccar")]</field>
+        <field name="search_view_id" ref="view_traccar_telemetry_search" />
+        <field
+            name="context"
+        >{"create": false, "search_default_provider_traccar": 1}</field>
+    </record>
+</odoo>
