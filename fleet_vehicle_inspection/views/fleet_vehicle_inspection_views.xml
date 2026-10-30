@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2020 - 2024, Marcel Savegnago - Escodoo https://www.escodoo.com.br
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="fleet_vehicle_inspection_form_view" model="ir.ui.view">
+        <field
+            name="name"
+        >fleet.vehicle.inspection.form (in fleet_vehicle_inspection)</field>
+        <field name="model">fleet.vehicle.inspection</field>
+        <field name="arch" type="xml">
+            <form string="Vehicle Inspection">
+                <header>
+                    <button
+                        id="bid_confirm"
+                        class="oe_highlight"
+                        name="button_confirm"
+                        type="object"
+                        invisible="state!='draft'"
+                        string="Confirm Inspection"
+                        groups="fleet.fleet_group_manager"
+                    />
+                    <button
+                        name="button_draft"
+                        invisible="state!='cancel'"
+                        string="Set to Draft"
+                        type="object"
+                        groups="fleet.fleet_group_manager"
+                    />
+                    <button
+                        name="button_cancel"
+                        invisible="state not in ('draft','confirmed')"
+                        string="Cancel"
+                        type="object"
+                        groups="fleet.fleet_group_manager"
+                    />
+                    <field
+                        name="state"
+                        widget="statusbar"
+                        statusbar_visible="draft,confirmed,cancel"
+                    />
+                </header>
+                <sheet>
+                    <field name="result" invisible="1" />
+                    <div
+                        class="badge rounded-pill bg-danger float-end text-white"
+                        invisible="result!='failure'"
+                    >Failure</div>
+                    <div
+                        class=" badge rounded-pill bg-success float-end text-white"
+                        invisible="result!='success'"
+                    >Success</div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="vehicle_id" readonly="state!='draft'" />
+                            <field name="direction" readonly="state!='draft'" />
+                            <field name="odometer" readonly="state!='draft'" />
+                            <field name="odometer_unit" readonly="state!='draft'" />
+                        </group>
+                        <group>
+                            <field name="date_inspected" readonly="state!='draft'" />
+                            <field name="inspected_by" readonly="state!='draft'" />
+                            <field name="vendor_id" />
+                            <field name="service_type_id" />
+                            <field name="currency_id" invisible="1" />
+                            <field name="company_id" invisible="1" />
+                            <field name="service_id" invisible="1" />
+                            <field
+                                name="amount"
+                                widget="monetary"
+                                options="{'currency_field': 'currency_id'}"
+                            />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Inspection Lines" name="inspection_lines">
+                            <field
+                                name="inspection_line_ids"
+                                readonly="state!='draft'"
+                                context="{'list_view_ref': 'fleet_vehicle_inspection.fleet_vehicle_inspection_line_tree_view', 'form_view_ref':'fleet_vehicle_inspection.fleet_vehicle_inspection_line_form_view', 'kanban_view_ref': 'fleet_vehicle_inspection.fleet_vehicle_inspection_line_kanban_view', 'default_inspection_id': id}"
+                            />
+                        </page>
+                        <page string="Notes" name="notes_information">
+                            <field name="note" readonly="state!='draft'" />
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter />
+            </form>
+        </field>
+    </record>
+    <record id="fleet_vehicle_inspection_search_view" model="ir.ui.view">
+        <field
+            name="name"
+        >fleet.vehicle.inspection.search (in fleet_vehicle_inspection)</field>
+        <field name="model">fleet.vehicle.inspection</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+                <field name="vehicle_id" />
+                <field name="inspected_by" />
+                <separator />
+                <filter
+                    string="Direction IN"
+                    name="filter_direction_in"
+                    domain="[('direction','=','in')]"
+                />
+                <filter
+                    string="Direction OUT"
+                    name="filter_direction_out"
+                    domain="[('direction','=','out')]"
+                />
+                <separator />
+                <filter
+                    string="Inspection Not Completed"
+                    name="filter_state_draft"
+                    domain="[('state','=','draft')]"
+                />
+                <filter
+                    string="Inspection Completed"
+                    name="filter_state_confirmed"
+                    domain="[('state','=','confirmed')]"
+                />
+                <filter
+                    string="Inspection Canceled"
+                    name="filter_state_cancel"
+                    domain="[('state','=','cancel')]"
+                />
+                <separator />
+                <filter
+                    string="Successful Inspections"
+                    name="filter_result_success"
+                    domain="[('result','=','success')]"
+                />
+                <filter
+                    string="Failed Inspections"
+                    name="filter_result_failure"
+                    domain="[('result','=','failure')]"
+                />
+                <group>
+                    <filter
+                        string="Vehicle"
+                        name="group_vehicle_id"
+                        domain="[]"
+                        context="{'group_by':'vehicle_id'}"
+                    />
+                    <filter
+                        string="Direction"
+                        name="group_direction"
+                        domain="[]"
+                        context="{'group_by':'direction'}"
+                    />
+                    <filter
+                        string="Inspected Date"
+                        name="group_date_inspected"
+                        domain="[]"
+                        context="{'group_by':'date_inspected'}"
+                    />
+                    <filter
+                        string="Inspector"
+                        name="group_inspected_by"
+                        domain="[]"
+                        context="{'group_by':'inspected_by'}"
+                    />
+                    <separator />
+                    <filter
+                        string="Inspection State"
+                        name="group_state"
+                        domain="[]"
+                        context="{'group_by':'state'}"
+                    />
+                    <filter
+                        string="Inspection Result"
+                        name="group_result"
+                        domain="[]"
+                        context="{'group_by':'result'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="fleet_vehicle_inspection_tree_view" model="ir.ui.view">
+        <field
+            name="name"
+        >fleet.vehicle.inspection.tree (in fleet_vehicle_inspection)</field>
+        <field name="model">fleet.vehicle.inspection</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" />
+                <field name="date_inspected" />
+                <field name="vehicle_id" />
+                <field name="direction" />
+                <field name="inspected_by" />
+                <field
+                    name="state"
+                    widget="badge"
+                    decoration-info="state == 'draft'"
+                    decoration-success="state == 'confirmed'"
+                    decoration-danger="state == 'cancel'"
+                />
+                <field
+                    name="result"
+                    widget="badge"
+                    decoration-info="result == 'todo'"
+                    decoration-success="result == 'success'"
+                    decoration-danger="result == 'failure'"
+                />
+            </list>
+        </field>
+    </record>
+    <record id="fleet_vehicle_inspection_kanban_view" model="ir.ui.view">
+        <field
+            name="name"
+        >fleet.vehicle.inspection.kanban (in fleet_vehicle_inspection)</field>
+        <field name="model">fleet.vehicle.inspection</field>
+        <field name="arch" type="xml">
+            <kanban
+                class="o_kanban_mobile"
+                default_order="date_inspected desc"
+                group_create="0"
+                group_delete="0"
+                quick_create="false"
+            >
+                <field name="name" />
+                <field name="vehicle_id" />
+                <field name="state" />
+                <field name="result" />
+                <field name="date_inspected" />
+                <templates>
+                    <t t-name="card">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="row mb4">
+                                <div class="col-6 o_kanban_record_headings">
+                                    <strong>
+                                        <span>
+                                            <field name="name" invisible="not name" />
+                                        </span>
+                                    </strong>
+                                </div>
+                                <div class="col-6 text-end">
+                                    <strong>
+                                        <i
+                                            class="oi me-1"
+                                            data-icon="schedule"
+                                            aria-label="Date Inspected"
+                                            role="img"
+                                            title="Date"
+                                        />
+                                        <field name="date_inspected" />
+                                    </strong>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <span>
+                                        <field name="vehicle_id" />
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-end gap-2">
+                                <field
+                                    name="state"
+                                    widget="badge"
+                                    decoration-info="state == 'draft'"
+                                    decoration-success="state == 'confirmed'"
+                                    decoration-danger="state == 'cancel'"
+                                />
+                                <field
+                                    name="result"
+                                    widget="badge"
+                                    decoration-info="result == 'todo'"
+                                    decoration-success="result == 'success'"
+                                    decoration-danger="result == 'failure'"
+                                />
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    <record id="fleet_vehicle_inspection_pivot_view" model="ir.ui.view">
+        <field
+            name="name"
+        >fleet.vehicle.inspection.pivot (in fleet_vehicle_inspection)</field>
+        <field name="model">fleet.vehicle.inspection</field>
+        <field name="arch" type="xml">
+            <pivot string="Vehicles Inspections">
+                <field name="state" type="row" />
+                <field name="vehicle_id" type="row" />
+                <field name="result" type="col" />
+            </pivot>
+        </field>
+    </record>
+    <record id="fleet_vehicle_inspection_calendar_view" model="ir.ui.view">
+        <field
+            name="name"
+        >fleet.vehicle.inspection.calendar (in fleet_vehicle_inspection)</field>
+        <field name="model">fleet.vehicle.inspection</field>
+        <field name="arch" type="xml">
+            <calendar
+                string="Fleet Vehicle Inspection"
+                date_start="date_inspected"
+                color="inspected_by"
+            >
+                <field name="vehicle_id" />
+                <field name="inspected_by" />
+                <field name="direction" />
+                <field name="odometer" />
+                <field name="odometer_unit" />
+                <field name="state" widget="badge" />
+                <field name="result" widget="badge" />
+            </calendar>
+        </field>
+    </record>
+    <record id="fleet_vehicle_inspection_graph_view" model="ir.ui.view">
+        <field
+            name="name"
+        >fleet.vehicle.inspection.graph (in fleet_vehicle_inspection)</field>
+        <field name="model">fleet.vehicle.inspection</field>
+        <field name="arch" type="xml">
+            <graph string="Vehicles Inspections">
+                <field name="result" type="row" />
+            </graph>
+        </field>
+    </record>
+    <record id="fleet_vehicle_inspection_act_window" model="ir.actions.act_window">
+        <field name="name">Vehicle Inspection</field>
+        <field name="res_model">fleet.vehicle.inspection</field>
+        <field name="view_mode">kanban,list,calendar,pivot,graph,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+    <menuitem
+        id="fleet_vehicle_inspection_menu"
+        name="Vehicles Inspections"
+        parent="fleet.fleet_vehicles"
+        action="fleet_vehicle_inspection_act_window"
+        sequence="16"
+    />
+</odoo>
