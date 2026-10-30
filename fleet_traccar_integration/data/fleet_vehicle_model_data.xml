@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="fleet_vehicle_model_brand_traccar" model="fleet.vehicle.model.brand">
+        <field name="name">Traccar</field>
+    </record>
+
+    <record id="fleet_vehicle_model_traccar_device" model="fleet.vehicle.model">
+        <field name="name">Device</field>
+        <field name="brand_id" ref="fleet_vehicle_model_brand_traccar" />
+        <field name="vehicle_type">car</field>
+    </record>
+</odoo>

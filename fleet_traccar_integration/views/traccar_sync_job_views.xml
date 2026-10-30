@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_traccar_sync_job_list" model="ir.ui.view">
+        <field name="name">traccar.sync.job.list</field>
+        <field name="model">traccar.sync.job</field>
+        <field name="arch" type="xml">
+            <list
+                create="false"
+                decoration-info="state in ('queued', 'running')"
+                decoration-danger="state == 'failed'"
+                decoration-muted="state == 'cancelled'"
+            >
+                <field name="name" />
+                <field name="date_from" />
+                <field name="date_to" />
+                <field name="progress" widget="progressbar" />
+                <field name="points_created" />
+                <field name="user_id" widget="many2one_avatar_user" />
+                <field name="create_date" string="Requested On" />
+                <field name="company_id" groups="base.group_multi_company" />
+                <field
+                    name="state"
+                    widget="badge"
+                    decoration-info="state in ('queued', 'running')"
+                    decoration-success="state == 'done'"
+                    decoration-danger="state == 'failed'"
+                />
+            </list>
+        </field>
+    </record>
+
+    <record id="view_traccar_sync_job_form" model="ir.ui.view">
+        <field name="name">traccar.sync.job.form</field>
+        <field name="model">traccar.sync.job</field>
+        <field name="arch" type="xml">
+            <form create="false">
+                <header>
+                    <button
+                        name="action_cancel"
+                        type="object"
+                        string="Cancel"
+                        invisible="state not in ('queued', 'running')"
+                    />
+                    <button
+                        name="action_resume"
+                        type="object"
+                        string="Resume"
+                        class="btn-primary"
+                        invisible="state not in ('failed', 'cancelled')"
+                    />
+                    <field
+                        name="state"
+                        widget="statusbar"
+                        statusbar_visible="queued,running,done"
+                    />
+                </header>
+                <sheet>
+                    <div
+                        class="alert alert-info"
+                        role="status"
+                        invisible="state not in ('queued', 'running')"
+                    >
+                        The history is being imported in background. You can
+                        leave this page: you will be notified when it finishes.
+                        Reload the page to update the progress.
+                    </div>
+                    <div
+                        class="alert alert-danger"
+                        role="alert"
+                        invisible="state != 'failed'"
+                    >
+                        <field name="error_message" />
+                    </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="device_ids" widget="many2many_tags" />
+                            <field name="date_from" />
+                            <field name="date_to" />
+                            <field name="user_id" widget="many2one_avatar_user" />
+                            <field
+                                name="company_id"
+                                groups="base.group_multi_company"
+                            />
+                        </group>
+                        <group>
+                            <field name="progress" widget="progressbar" />
+                            <field
+                                name="current_device_id"
+                                invisible="state != 'running'"
+                            />
+                            <field name="current_date" />
+                            <field name="window_done" />
+                            <field name="window_count" />
+                            <field name="points_created" />
+                            <field name="points_updated" />
+                            <field name="date_started" />
+                            <field name="date_finished" />
+                        </group>
+                    </group>
+                </sheet>
+                <chatter />
+            </form>
+        </field>
+    </record>
+
+    <record id="view_traccar_sync_job_search" model="ir.ui.view">
+        <field name="name">traccar.sync.job.search</field>
+        <field name="model">traccar.sync.job</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="device_ids" />
+                <field name="user_id" />
+                <filter
+                    string="In Progress"
+                    name="in_progress"
+                    domain="[('state', 'in', ('queued', 'running'))]"
+                />
+                <filter
+                    string="Failed"
+                    name="failed"
+                    domain="[('state', '=', 'failed')]"
+                />
+                <filter
+                    string="My Imports"
+                    name="my_imports"
+                    domain="[('user_id', '=', uid)]"
+                />
+                <separator />
+                <filter
+                    string="Status"
+                    name="group_state"
+                    context="{'group_by': 'state'}"
+                />
+            </search>
+        </field>
+    </record>
+
+    <record id="action_traccar_sync_job" model="ir.actions.act_window">
+        <field name="name">History Imports</field>
+        <field name="res_model">traccar.sync.job</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_traccar_sync_job_search" />
+        <field name="context">{"create": false}</field>
+    </record>
+
+    <record id="view_traccar_history_import_wizard_form" model="ir.ui.view">
+        <field name="name">traccar.history.import.wizard.form</field>
+        <field name="model">traccar.history.import.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="device_ids" widget="many2many_tags" />
+                        <field name="period" />
+                    </group>
+                    <group>
+                        <field name="date_from" readonly="period != 'custom'" />
+                        <field name="date_to" readonly="period != 'custom'" />
+                        <field name="company_id" invisible="1" />
+                    </group>
+                </group>
+                <p class="text-muted">
+                    The import runs in background, one day at a time, and can
+                    be followed in Fleet &gt; Configuration &gt; Traccar &gt;
+                    History Imports. The longest allowed period is
+                    <field name="max_days" class="oe_inline" /> days.
+                </p>
+                <footer>
+                    <button
+                        name="action_confirm"
+                        type="object"
+                        string="Import"
+                        class="btn-primary"
+                        data-hotkey="q"
+                    />
+                    <button string="Cancel" special="cancel" data-hotkey="x" />
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

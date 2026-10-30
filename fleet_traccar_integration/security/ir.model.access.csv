@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_traccar_device_user,traccar.device.user,model_traccar_device,fleet.fleet_group_user,1,1,1,0
+access_traccar_device_manager,traccar.device.manager,model_traccar_device,fleet.fleet_group_manager,1,1,1,1
+access_traccar_sync_job_user,traccar.sync.job.user,model_traccar_sync_job,fleet.fleet_group_user,1,1,1,0
+access_traccar_sync_job_manager,traccar.sync.job.manager,model_traccar_sync_job,fleet.fleet_group_manager,1,1,1,1
+access_traccar_history_import_wizard_user,traccar.history.import.wizard.user,model_traccar_history_import_wizard,fleet.fleet_group_user,1,1,1,1

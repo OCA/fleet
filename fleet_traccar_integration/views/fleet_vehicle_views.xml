@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="fleet_vehicle_view_form_inherit_traccar" model="ir.ui.view">
+        <field name="name">fleet.vehicle.form.inherit.traccar</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_form" />
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button
+                    name="action_view_traccar_telemetry"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="fa-map-marker"
+                >
+                    <field
+                        name="traccar_telemetry_count"
+                        widget="statinfo"
+                        string="Telemetry"
+                    />
+                </button>
+            </div>
+            <notebook position="inside">
+                <page string="Traccar">
+                    <group>
+                        <group>
+                            <field name="traccar_device_id" />
+                            <field name="traccar_device_status" />
+                            <field name="traccar_last_update" />
+                        </group>
+                        <group>
+                            <field name="traccar_latitude" />
+                            <field name="traccar_longitude" />
+                            <field name="traccar_speed" />
+                        </group>
+                    </group>
+                    <button
+                        name="action_traccar_sync_locations"
+                        type="object"
+                        string="Update Locations"
+                        class="btn-secondary"
+                    />
+                    <button
+                        name="action_traccar_import_history"
+                        type="object"
+                        string="Import History"
+                        class="btn-secondary ms-2"
+                        invisible="not traccar_device_id"
+                    />
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+    <record id="fleet_vehicle_action_traccar_sync_locations" model="ir.actions.server">
+        <field name="name">Update Traccar Locations</field>
+        <field name="model_id" ref="fleet.model_fleet_vehicle" />
+        <field name="binding_model_id" ref="fleet.model_fleet_vehicle" />
+        <field name="binding_type">action</field>
+        <field name="state">code</field>
+        <field name="code">action = records.action_traccar_sync_locations()</field>
+    </record>
+</odoo>
