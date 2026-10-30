@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_traccar_device_list" model="ir.ui.view">
+        <field name="name">traccar.device.list</field>
+        <field name="model">traccar.device</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" />
+                <field name="unique_id" />
+                <field name="vehicle_id" />
+                <field name="status" />
+                <field name="last_update" />
+                <field name="company_id" groups="base.group_multi_company" />
+            </list>
+        </field>
+    </record>
+
+    <record id="view_traccar_device_form" model="ir.ui.view">
+        <field name="name">traccar.device.form</field>
+        <field name="model">traccar.device</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button
+                        name="action_traccar_update_status"
+                        type="object"
+                        string="Update Status"
+                        class="btn-primary"
+                    />
+                    <button
+                        name="action_traccar_sync_telemetry_history"
+                        type="object"
+                        string="Import History"
+                        class="btn-secondary"
+                    />
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button
+                            name="action_view_traccar_sync_jobs"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-history"
+                            invisible="not traccar_sync_job_count"
+                        >
+                            <div class="o_stat_info">
+                                <span
+                                    class="o_stat_value"
+                                    invisible="not traccar_sync_job_progress"
+                                >
+                                    <field
+                                    name="traccar_sync_job_progress"
+                                    widget="integer"
+                                />%
+                                </span>
+                                <span
+                                    class="o_stat_value"
+                                    invisible="traccar_sync_job_progress"
+                                >
+                                    <field name="traccar_sync_job_count" />
+                                </span>
+                                <span class="o_stat_text">History Imports</span>
+                            </div>
+                        </button>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="unique_id" />
+                            <field name="traccar_id" readonly="1" />
+                            <field name="vehicle_id" />
+                        </group>
+                        <group>
+                            <field
+                                name="company_id"
+                                groups="base.group_multi_company"
+                            />
+                            <field name="status" readonly="1" />
+                            <field name="last_update" readonly="1" />
+                            <field name="active" />
+                        </group>
+                    </group>
+                    <group string="Last Position">
+                        <field name="latitude" readonly="1" />
+                        <field name="longitude" readonly="1" />
+                        <field name="speed" readonly="1" />
+                        <field name="course" readonly="1" />
+                        <field name="address" readonly="1" />
+                    </group>
+                </sheet>
+                <chatter />
+            </form>
+        </field>
+    </record>
+
+    <record id="action_traccar_device" model="ir.actions.act_window">
+        <field name="name">Traccar Devices</field>
+        <field name="res_model">traccar.device</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="traccar_device_action_update_status" model="ir.actions.server">
+        <field name="name">Update Traccar Status</field>
+        <field name="model_id" ref="model_traccar_device" />
+        <field name="binding_model_id" ref="model_traccar_device" />
+        <field name="binding_type">action</field>
+        <field name="state">code</field>
+        <field name="code">action = records.action_traccar_update_status()</field>
+    </record>
+
+    <record id="traccar_device_action_sync_telemetry_history" model="ir.actions.server">
+        <field name="name">Import Telemetry History</field>
+        <field name="model_id" ref="model_traccar_device" />
+        <field name="binding_model_id" ref="model_traccar_device" />
+        <field name="binding_type">action</field>
+        <field name="state">code</field>
+        <field
+            name="code"
+        >action = records.action_traccar_sync_telemetry_history()</field>
+    </record>
+</odoo>

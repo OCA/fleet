@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="ir_cron_traccar_sync" model="ir.cron">
+        <field name="name">Traccar: Synchronize Devices and Telemetry</field>
+        <field name="model_id" ref="base.model_res_company" />
+        <field name="state">code</field>
+        <field name="code">model._cron_traccar_sync()</field>
+        <field name="interval_number">5</field>
+        <field name="interval_type">minutes</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="ir_cron_traccar_sync_job" model="ir.cron">
+        <field name="name">Traccar: Process History Imports</field>
+        <field name="model_id" ref="model_traccar_sync_job" />
+        <field name="state">code</field>
+        <field name="code">model._cron_process_jobs()</field>
+        <field name="interval_number">10</field>
+        <field name="interval_type">minutes</field>
+        <field name="active">True</field>
+    </record>
+</odoo>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem
+        id="menu_fleet_traccar_root"
+        name="Traccar"
+        parent="fleet.fleet_configuration"
+        sequence="90"
+        groups="fleet_traccar_integration.group_traccar_administrator"
+    />
+    <menuitem
+        id="menu_traccar_device"
+        name="Devices"
+        parent="menu_fleet_traccar_root"
+        action="action_traccar_device"
+        sequence="10"
+        groups="fleet_traccar_integration.group_traccar_administrator"
+    />
+    <menuitem
+        id="menu_traccar_telemetry"
+        name="Telemetry"
+        parent="menu_fleet_traccar_root"
+        action="action_traccar_telemetry"
+        sequence="20"
+        groups="fleet_traccar_integration.group_traccar_administrator"
+    />
+    <menuitem
+        id="menu_traccar_sync_job"
+        name="History Imports"
+        parent="menu_fleet_traccar_root"
+        action="action_traccar_sync_job"
+        sequence="30"
+        groups="fleet_traccar_integration.group_traccar_administrator"
+    />
+</odoo>
