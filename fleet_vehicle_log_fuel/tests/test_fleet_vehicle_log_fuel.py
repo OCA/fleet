@@ -68,6 +68,16 @@ class TestFleetVehicleLogFuelMisc(TestFleetVehicleLogFuelBase):
         fuel_form_2.price_per_liter = 1.5
         self.assertEqual(fuel_form_2.liter, 50)
 
+    def test_fleet_vehicle_log_fuel_odometer_multi(self):
+        fuels = self.env["fleet.vehicle.log.fuel"].create(
+            [
+                {"vehicle_id": self.vehicle.id, "date": "2024-01-01", "odometer": 5000},
+                {"vehicle_id": self.vehicle.id, "date": "2024-02-01", "odometer": 5600},
+            ]
+        )
+        self.assertEqual(fuels.mapped("odometer"), [5000, 5600])
+        self.assertEqual([fuel.odometer_id.value for fuel in fuels], [5000, 5600])
+
 
 class TestFleetVehicleLogFuelReport(TestFleetVehicleLogFuelBase):
     @classmethod
