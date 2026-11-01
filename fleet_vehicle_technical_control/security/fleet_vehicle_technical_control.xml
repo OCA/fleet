@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2026 ACSONE SA/NV
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="fleet_vehicle_technical_control_access_user" model="ir.model.access">
+        <field name="name">fleet.vehicle.technical.control access user</field>
+        <field name="model_id" ref="model_fleet_vehicle_technical_control" />
+        <field name="group_id" ref="fleet.fleet_group_user" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_unlink" eval="0" />
+    </record>
+
+    <record id="fleet_vehicle_technical_control_access_manager" model="ir.model.access">
+        <field name="name">fleet.vehicle.technical.control access manager</field>
+        <field name="model_id" ref="model_fleet_vehicle_technical_control" />
+        <field name="group_id" ref="fleet.fleet_group_manager" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_unlink" eval="1" />
+    </record>
+</odoo>
