@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="res_config_settings_view_form_inherit_traccar" model="ir.ui.view">
+        <field name="name">res.config.settings.form.inherit.traccar</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="fleet.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <block id="end_contract_setting" position="after">
+                <block title="Traccar" name="traccar_integration">
+                    <setting string="Enable Integration">
+                        <field name="traccar_enabled" />
+                    </setting>
+                    <setting string="Traccar API">
+                        <div class="content-group">
+                            <field
+                                name="traccar_base_url"
+                                placeholder="https://traccar.example.com"
+                            />
+                            <field name="traccar_auth_mode" />
+                            <field name="traccar_username" placeholder="username" />
+                            <field
+                                name="traccar_password"
+                                password="True"
+                                placeholder="password or token"
+                            />
+                            <button
+                                name="action_traccar_test_connection"
+                                type="object"
+                                string="Test Connection"
+                                class="btn-secondary"
+                            />
+                            <button
+                                name="action_traccar_test_api_access"
+                                type="object"
+                                string="Test API Access"
+                                class="btn-secondary"
+                            />
+                            <button
+                                name="action_traccar_merge_duplicate_telemetry"
+                                type="object"
+                                string="Merge Duplicate Telemetry"
+                                class="btn-secondary"
+                            />
+                        </div>
+                    </setting>
+                    <setting string="Synchronization Intervals">
+                        <div class="content-group">
+                            <label
+                                for="traccar_device_sync_interval"
+                                string="Devices (minutes)"
+                            />
+                            <field name="traccar_device_sync_interval" />
+                            <label
+                                for="traccar_telemetry_sync_interval"
+                                string="Telemetry (minutes)"
+                            />
+                            <field name="traccar_telemetry_sync_interval" />
+                            <label
+                                for="traccar_history_days"
+                                string="Initial History (days)"
+                            />
+                            <field name="traccar_history_days" />
+                            <label
+                                for="traccar_inline_sync_hours"
+                                string="Immediate Sync Limit (hours)"
+                            />
+                            <field name="traccar_inline_sync_hours" />
+                            <label
+                                for="traccar_history_max_days"
+                                string="Maximum Import Period (days)"
+                            />
+                            <field name="traccar_history_max_days" />
+                        </div>
+                    </setting>
+                </block>
+            </block>
+        </field>
+    </record>
+</odoo>

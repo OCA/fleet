@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="module_category_traccar" model="ir.module.category">
+        <field name="name">Traccar</field>
+        <field name="sequence">35</field>
+    </record>
+
+    <record id="group_traccar_administrator" model="res.groups">
+        <field name="name">Administrator</field>
+        <field name="category_id" ref="module_category_traccar" />
+        <field name="implied_ids" eval="[(4, ref('fleet.fleet_group_manager'))]" />
+        <field name="users" eval="[(4, ref('base.user_admin'))]" />
+    </record>
+</odoo>
