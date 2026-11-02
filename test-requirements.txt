@@ -1,0 +1,2 @@
+odoo-addon-fleet_maps @ git+https://github.com/OCA/fleet.git@refs/pull/241/head#subdirectory=fleet_maps
+odoo-addon-fleet_telemetry @ git+https://github.com/OCA/fleet.git@refs/pull/238/head#subdirectory=fleet_telemetry
