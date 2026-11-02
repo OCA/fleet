@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem
+        id="menu_fleet_vehicle_map"
+        name="Fleet Map"
+        parent="fleet.fleet_vehicles"
+        action="action_fleet_vehicle_map"
+        sequence="30"
+    />
+</odoo>
