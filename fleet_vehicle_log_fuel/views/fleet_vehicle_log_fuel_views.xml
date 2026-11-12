@@ -188,9 +188,9 @@
         </field>
     </record>
     <menuitem
+        id="fleet_vehicle_log_fuel_menu"
         action="fleet_vehicle_log_fuel_action"
         parent="fleet.fleet_vehicles"
-        id="fleet_vehicle_log_fuel_menu"
         groups="fleet.fleet_group_user"
         sequence="4"
     />

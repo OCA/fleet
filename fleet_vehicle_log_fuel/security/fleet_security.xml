@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo noupdate="1">
     <record id="fleet_rule_fuel_log_visibility_user" model="ir.rule">
         <field name="name">User can only see his/her vehicle's fuel log</field>
