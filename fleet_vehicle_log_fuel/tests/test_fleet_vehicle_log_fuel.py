@@ -1,0 +1,149 @@
+# Copyright 2024 Tecnativa - Víctor Martínez
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl
+from odoo.exceptions import AccessError, UserError
+from odoo.tests import Form, new_test_user
+from odoo.tools import mute_logger
+
+from .common import TestFleetVehicleLogFuelBase
+
+
+class TestFleetVehicleLogFuelMisc(TestFleetVehicleLogFuelBase):
+    @mute_logger("odoo.models.unlink")
+    def test_fleet_vehicle_log_fuel_process(self):
+        fuel_form = Form(
+            self.env["fleet.vehicle.log.fuel"].with_context(
+                default_vehicle_id=self.vehicle.id
+            )
+        )
+        with self.assertRaises(UserError):
+            fuel_form.odometer = 0
+            fuel_form.save()
+        fuel_form.odometer = 5000
+        fuel = fuel_form.save()
+        self.assertTrue(fuel.odometer_id)
+        self.assertEqual(self.vehicle.odometer, 5000)
+        self.assertEqual(self.vehicle.fuel_count, 1)
+        res = self.vehicle.action_view_log_fuel()
+        items = self.env[res["res_model"]].search(res["domain"])
+        self.assertIn(fuel, items)
+        fuel.button_running()
+        self.assertEqual(fuel.state, "running")
+        fuel.button_done()
+        self.assertEqual(fuel.state, "done")
+        self.assertTrue(fuel.service_id)
+        self.assertEqual(fuel.service_id.service_type_id, fuel.service_type_id)
+        self.assertEqual(fuel.service_id.state, "done")
+        self.assertEqual(fuel.service_id.date_from, fuel.date)
+        fuel.button_cancel()
+        self.assertEqual(fuel.state, "cancelled")
+        self.assertFalse(fuel.service_id)
+        fuel.button_todo()
+        self.assertEqual(fuel.state, "todo")
+
+    def test_fleet_vehicle_log_fuel_done_by_officer(self):
+        officer = new_test_user(
+            self.env, login="fleet_officer", groups="fleet.fleet_group_user"
+        )
+        self.vehicle.driver_id = officer.partner_id
+        fuel = (
+            self.env["fleet.vehicle.log.fuel"]
+            .with_user(officer)
+            .create({"vehicle_id": self.vehicle.id, "amount": 50, "odometer": 1000})
+        )
+        fuel.button_running()
+        fuel.button_done()
+        self.assertEqual(fuel.state, "done")
+        self.assertTrue(fuel.sudo().service_id)
+        # Other service types still need the rights to create services
+        repair = self.env["fleet.service.type"].create(
+            {"name": "Test repair", "category": "service"}
+        )
+        fuel_repair = (
+            self.env["fleet.vehicle.log.fuel"]
+            .with_user(officer)
+            .create(
+                {
+                    "vehicle_id": self.vehicle.id,
+                    "service_type_id": repair.id,
+                    "amount": 50,
+                    "odometer": 1100,
+                }
+            )
+        )
+        fuel_repair.button_running()
+        with self.assertRaises(AccessError):
+            fuel_repair.button_done()
+
+    def test_fleet_vehicle_log_fuel_onchange(self):
+        # Check amount
+        fuel_form_1 = Form(
+            self.env["fleet.vehicle.log.fuel"].with_context(
+                default_vehicle_id=self.vehicle.id
+            )
+        )
+        fuel_form_1.liter = 50
+        fuel_form_1.price_per_liter = 1.5
+        self.assertEqual(fuel_form_1.amount, 75)
+        # Check price_per_liter
+        fuel_form_2 = Form(
+            self.env["fleet.vehicle.log.fuel"].with_context(
+                default_vehicle_id=self.vehicle.id
+            )
+        )
+        fuel_form_2.amount = 75
+        fuel_form_2.liter = 50
+        self.assertEqual(fuel_form_2.price_per_liter, 1.5)
+        # Check liter
+        fuel_form_2 = Form(
+            self.env["fleet.vehicle.log.fuel"].with_context(
+                default_vehicle_id=self.vehicle.id
+            )
+        )
+        fuel_form_2.amount = 75
+        fuel_form_2.price_per_liter = 1.5
+        self.assertEqual(fuel_form_2.liter, 50)
+
+
+class TestFleetVehicleLogFuelReport(TestFleetVehicleLogFuelBase):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        # Create log fuel + log service to check report after
+        fuel = cls.env["fleet.vehicle.log.fuel"].create(
+            {
+                "vehicle_id": cls.vehicle.id,
+                "date": "2024-01-01",
+                "amount": 75,
+                "price_per_liter": 1.5,
+                "liter": 50,
+            }
+        )
+        fuel.button_running()
+        fuel.button_done()
+
+    def test_fleet_vehicle_cost_report(self):
+        items = self.env["fleet.vehicle.cost.report"].search(
+            [("vehicle_id", "=", self.vehicle.id), ("date_start", "=", "2024-01-01")]
+        )
+        self.assertIn("fuel", items.mapped("cost_type"))
+        self.assertEqual(
+            sum(items.filtered(lambda x: x.cost_type == "fuel").mapped("cost")), 75
+        )
+        service_items = self.env["fleet.vehicle.cost.report"].search(
+            [("vehicle_id", "=", self.vehicle.id), ("cost_type", "=", "service")]
+        )
+        self.assertFalse(sum(service_items.mapped("cost")))
+        # An archived fuel log is still counted once, as its service
+        self.env["fleet.vehicle.log.fuel"].search(
+            [("vehicle_id", "=", self.vehicle.id)]
+        ).action_archive()
+        # The report ids are row numbers of the view: read it again from the database
+        self.env.flush_all()
+        self.env.invalidate_all()
+        items = self.env["fleet.vehicle.cost.report"].search(
+            [("vehicle_id", "=", self.vehicle.id)]
+        )
+        self.assertFalse(items.filtered(lambda x: x.cost_type == "fuel"))
+        self.assertEqual(
+            sum(items.filtered(lambda x: x.cost_type == "service").mapped("cost")), 75
+        )
