@@ -20,6 +20,16 @@ class FleetReport(models.Model):
         view_def = self.env.cr.fetchone()[0]
         if view_def[-1] == ";":  # Remove trailing semicolon
             view_def = view_def[:-1]
+        # Services created from a fuel log are already counted as fuel costs
+        view_def = view_def.replace(
+            "se.active",
+            """se.active AND NOT EXISTS (
+                SELECT 1 FROM fleet_vehicle_log_fuel fvlf_se
+                WHERE fvlf_se.service_id = se.id
+                    AND fvlf_se.active
+                    AND fvlf_se.state <> 'cancelled'
+            )""",
+        )
         # Subquery
         view_def = view_def.replace(
             "contract_costs AS (",

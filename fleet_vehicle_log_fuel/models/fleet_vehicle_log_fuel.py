@@ -126,6 +126,7 @@ class FleetVehicleLogFuel(models.Model):
             "service_type_id": self.service_type_id.id,
             "description": self.description,
             "vehicle_id": self.vehicle_id.id,
+            "date_from": self.date or fields.Date.context_today(self),
             "amount": self.amount,
             "odometer": self.odometer,
             "vendor_id": self.vendor_id.id if self.vendor_id else False,

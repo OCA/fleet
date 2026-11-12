@@ -33,6 +33,7 @@ class TestFleetVehicleLogFuelMisc(TestFleetVehicleLogFuelBase):
         self.assertTrue(fuel.service_id)
         self.assertEqual(fuel.service_id.service_type_id, fuel.service_type_id)
         self.assertEqual(fuel.service_id.state, "done")
+        self.assertEqual(fuel.service_id.date_from, fuel.date)
         fuel.button_cancel()
         self.assertEqual(fuel.state, "cancelled")
         self.assertFalse(fuel.service_id)
@@ -127,4 +128,22 @@ class TestFleetVehicleLogFuelReport(TestFleetVehicleLogFuelBase):
         self.assertIn("fuel", items.mapped("cost_type"))
         self.assertEqual(
             sum(items.filtered(lambda x: x.cost_type == "fuel").mapped("cost")), 75
+        )
+        service_items = self.env["fleet.vehicle.cost.report"].search(
+            [("vehicle_id", "=", self.vehicle.id), ("cost_type", "=", "service")]
+        )
+        self.assertFalse(sum(service_items.mapped("cost")))
+        # An archived fuel log is still counted once, as its service
+        self.env["fleet.vehicle.log.fuel"].search(
+            [("vehicle_id", "=", self.vehicle.id)]
+        ).action_archive()
+        # The report ids are row numbers of the view: read it again from the database
+        self.env.flush_all()
+        self.env.invalidate_all()
+        items = self.env["fleet.vehicle.cost.report"].search(
+            [("vehicle_id", "=", self.vehicle.id)]
+        )
+        self.assertFalse(items.filtered(lambda x: x.cost_type == "fuel"))
+        self.assertEqual(
+            sum(items.filtered(lambda x: x.cost_type == "service").mapped("cost")), 75
         )
