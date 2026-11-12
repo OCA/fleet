@@ -34,7 +34,8 @@ class FleetReport(models.Model):
                     date(date_trunc('month', d)) AS date_start,
                     vem.vehicle_type as vehicle_type,
                     COALESCE(sum(fvlf.amount), 0) AS cost,
-                    'fuel' AS cost_type
+                    'fuel' AS cost_type,
+                    fvlf.service_type_id AS service_type
                 FROM
                     fleet_vehicle ve
                 JOIN
@@ -48,7 +49,14 @@ class FleetReport(models.Model):
                     AND date_trunc('month', fvlf.date) = date_trunc('month', d)
                 WHERE
                     ve.active AND fvlf.active AND fvlf.state <> 'cancelled'
-                GROUP BY ve.id, ve.company_id, ve.name, vem.vehicle_type, date_start, d
+                GROUP BY
+                    ve.id,
+                    ve.company_id,
+                    ve.name,
+                    vem.vehicle_type,
+                    date_start,
+                    d,
+                    fvlf.service_type_id
                 ORDER BY ve.id, date_start
             ),
             contract_costs AS (""",
@@ -67,7 +75,8 @@ class FleetReport(models.Model):
                     fc.date_start,
                     fc.vehicle_type,
                     fc.cost,
-                    'fuel' as cost_type
+                    'fuel' as cost_type,
+                    fc.service_type
                 FROM
                     fuel_costs fc
             UNION ALL""",

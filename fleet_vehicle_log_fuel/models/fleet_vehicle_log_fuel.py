@@ -15,7 +15,6 @@ class FleetVehicleLogFuel(models.Model):
     active = fields.Boolean(default=True)
     vehicle_id = fields.Many2one(
         "fleet.vehicle",
-        "Vehicle",
         required=True,
         help="Vehicle concerned by this log",
     )
@@ -23,7 +22,6 @@ class FleetVehicleLogFuel(models.Model):
     description = fields.Char()
     odometer_id = fields.Many2one(
         "fleet.vehicle.odometer",
-        "Odometer",
         help="Odometer measure of the vehicle at the moment of this log",
     )
     odometer = fields.Float(
@@ -38,9 +36,7 @@ class FleetVehicleLogFuel(models.Model):
         help="Date when the cost has been executed",
         default=fields.Date.context_today,
     )
-    company_id = fields.Many2one(
-        "res.company", "Company", default=lambda self: self.env.company
-    )
+    company_id = fields.Many2one("res.company", default=lambda self: self.env.company)
     currency_id = fields.Many2one("res.currency", related="company_id.currency_id")
     purchaser_id = fields.Many2one(
         "res.partner",
@@ -49,11 +45,10 @@ class FleetVehicleLogFuel(models.Model):
         store=True,
     )
     inv_ref = fields.Char("Vendor Reference")
-    vendor_id = fields.Many2one("res.partner", "Vendor")
+    vendor_id = fields.Many2one("res.partner")
     notes = fields.Text()
     service_type_id = fields.Many2one(
         "fleet.service.type",
-        "Service Type",
         required=True,
         default=lambda self: self.env.ref(
             "fleet_vehicle_log_fuel.type_service_refueling", raise_if_not_found=False

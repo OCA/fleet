@@ -10,7 +10,7 @@
                     name="action_view_log_fuel"
                     type="object"
                     class="oe_stat_button"
-                    icon="fa-wrench"
+                    icon="build"
                     help="show the fuel logs for this vehicle"
                 >
                     <field name="fuel_count" widget="statinfo" string="Fuel Logs" />

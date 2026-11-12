@@ -4,16 +4,15 @@
 {
     "name": "Fleet Vehicle Log Fuel",
     "summary": "Add Log Fuels for your vehicles.",
-    "version": "19.0.1.0.0",
+    "version": "20.0.1.0.0",
     "category": "Fleet",
     "author": "ForgeFlow, Tecnativa, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/fleet",
     "license": "AGPL-3",
     "depends": ["fleet"],
     "data": [
-        "security/ir.model.access.csv",
+        "security/ir.access.csv",
         "data/fleet_vehicle_log_fuel_data.xml",
-        "security/fleet_security.xml",
         "views/fleet_board_view.xml",
         "views/fleet_vehicle_log_fuel_views.xml",
         "views/fleet_vehicle_views.xml",
