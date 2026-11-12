@@ -137,10 +137,22 @@ class FleetVehicleLogFuel(models.Model):
         records.state = "todo"
         return True
 
+    def _is_fuel_service_type(self):
+        refueling = self.env.ref(
+            "fleet_vehicle_log_fuel.type_service_refueling", raise_if_not_found=False
+        )
+        return (
+            self.service_type_id.category == "fuel" or self.service_type_id == refueling
+        )
+
     def button_done(self):
         for item in self.filtered(lambda x: x.state == "running"):
-            item.service_id = self.env["fleet.vehicle.log.services"].create(
-                self._prepare_fleet_vehicle_log_services_vals()
+            services = self.env["fleet.vehicle.log.services"]
+            # Fleet officers can't create services: allow it only for fuel types
+            if item._is_fuel_service_type():
+                services = services.sudo()
+            item.service_id = services.create(
+                item._prepare_fleet_vehicle_log_services_vals()
             )
             item.state = "done"
         return True

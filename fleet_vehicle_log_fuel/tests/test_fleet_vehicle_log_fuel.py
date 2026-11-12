@@ -1,7 +1,7 @@
 # Copyright 2024 Tecnativa - Víctor Martínez
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl
-from odoo.exceptions import UserError
-from odoo.tests import Form
+from odoo.exceptions import AccessError, UserError
+from odoo.tests import Form, new_test_user
 from odoo.tools import mute_logger
 
 from .common import TestFleetVehicleLogFuelBase
@@ -38,6 +38,40 @@ class TestFleetVehicleLogFuelMisc(TestFleetVehicleLogFuelBase):
         self.assertFalse(fuel.service_id)
         fuel.button_todo()
         self.assertEqual(fuel.state, "todo")
+
+    def test_fleet_vehicle_log_fuel_done_by_officer(self):
+        officer = new_test_user(
+            self.env, login="fleet_officer", groups="fleet.fleet_group_user"
+        )
+        self.vehicle.driver_id = officer.partner_id
+        fuel = (
+            self.env["fleet.vehicle.log.fuel"]
+            .with_user(officer)
+            .create({"vehicle_id": self.vehicle.id, "amount": 50, "odometer": 1000})
+        )
+        fuel.button_running()
+        fuel.button_done()
+        self.assertEqual(fuel.state, "done")
+        self.assertTrue(fuel.sudo().service_id)
+        # Other service types still need the rights to create services
+        repair = self.env["fleet.service.type"].create(
+            {"name": "Test repair", "category": "service"}
+        )
+        fuel_repair = (
+            self.env["fleet.vehicle.log.fuel"]
+            .with_user(officer)
+            .create(
+                {
+                    "vehicle_id": self.vehicle.id,
+                    "service_type_id": repair.id,
+                    "amount": 50,
+                    "odometer": 1100,
+                }
+            )
+        )
+        fuel_repair.button_running()
+        with self.assertRaises(AccessError):
+            fuel_repair.button_done()
 
     def test_fleet_vehicle_log_fuel_onchange(self):
         # Check amount
