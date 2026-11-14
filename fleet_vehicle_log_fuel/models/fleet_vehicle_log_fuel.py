@@ -106,7 +106,7 @@ class FleetVehicleLogFuel(models.Model):
                 _("Emptying the odometer value of a vehicle is not allowed.")
             )
         for record in self:
-            self.odometer_id = self.env["fleet.vehicle.odometer"].create(
+            record.odometer_id = self.env["fleet.vehicle.odometer"].create(
                 record._prepare_fleet_vehicle_odometer_vals()
             )
 
