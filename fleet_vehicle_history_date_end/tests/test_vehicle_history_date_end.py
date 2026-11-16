@@ -5,6 +5,11 @@ from odoo.addons.base.tests.common import BaseCommon
 
 
 class TestFleetVehicleDateEnd(BaseCommon):
+    _test_user_groups = (
+        "base.group_user",
+        "fleet.fleet_group_user",
+    )
+
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -19,7 +24,7 @@ class TestFleetVehicleDateEnd(BaseCommon):
             {
                 "model_id": cls.model.id,
                 "driver_id": cls.driver1.id,
-                "plan_to_change_car": False,
+                "plan_to_change_vehicle": False,
             }
         )
 
