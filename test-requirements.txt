@@ -1,0 +1,1 @@
+odoo-addon-fleet_vehicle_purchase @ git+https://github.com/OCA/fleet.git@refs/pull/258/head#subdirectory=fleet_vehicle_purchase
