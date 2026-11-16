@@ -4,14 +4,14 @@
 {
     "name": "Fleet Vehicle Category",
     "summary": "Add category definition for vehicles.",
-    "version": "19.0.1.0.0",
+    "version": "20.0.1.0.0",
     "category": "Human Resources",
     "author": "Stefano Consolaro, Associazione PNLUG - Gruppo Odoo, "
     "Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/fleet",
     "license": "AGPL-3",
     "depends": ["fleet"],
-    "data": ["security/ir.model.access.csv", "views/fleet_vehicle_views.xml"],
+    "data": ["security/ir.access.csv", "views/fleet_vehicle_views.xml"],
     "installable": True,
     "auto_install": False,
 }
