@@ -12,9 +12,7 @@ class FleetVehicleLogServices(models.Model):
     @api.model
     def _cron_manage_service_date(self):
         params = self.env["ir.config_parameter"].sudo()
-        delay_alert_service = int(
-            params.get_param("hr_fleet.delay_alert_service", default=30)
-        )
+        delay_alert_service = params.get_int("hr_fleet.delay_alert_service", default=30)
         date_today = fields.Date.context_today(self)
         outdated_days = date_today + relativedelta(days=delay_alert_service)
         reminder_activity_type = (
@@ -27,7 +25,7 @@ class FleetVehicleLogServices(models.Model):
         nearly_date_services = self.search(
             [
                 ("state", "in", ("new", "running")),
-                ("date", "<", outdated_days),
+                ("date_from", "<", outdated_days),
                 ("vehicle_id.manager_id", "!=", False),
             ]
         ).filtered(
@@ -36,6 +34,6 @@ class FleetVehicleLogServices(models.Model):
         for service in nearly_date_services:
             service.activity_schedule(
                 "fleet_vehicle_service_activity.mail_act_fleet_service_to_check",
-                service.date,
+                service.date_from,
                 user_id=service.vehicle_id.manager_id.id,
             )

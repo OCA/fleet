@@ -10,6 +10,11 @@ from odoo.addons.base.tests.common import BaseCommon
 
 
 class TestVehicleServiceActivity(BaseCommon):
+    _test_user_groups = (
+        "base.group_user",
+        "fleet.fleet_group_manager",
+    )
+
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -17,8 +22,12 @@ class TestVehicleServiceActivity(BaseCommon):
         cls.model = cls.env["fleet.vehicle.model"].create(
             {"name": "Test Model", "brand_id": cls.brand.id}
         )
-        cls.user = new_test_user(cls.env, "test base user")
-        cls.user2 = new_test_user(cls.env, "test base user 2")
+        cls.user = new_test_user(
+            cls.env, "test base user", groups="fleet.fleet_group_user"
+        )
+        cls.user2 = new_test_user(
+            cls.env, "test base user 2", groups="fleet.fleet_group_user"
+        )
         cls.vehicle = cls.env["fleet.vehicle"].create(
             {
                 "model_id": cls.model.id,
@@ -35,7 +44,7 @@ class TestVehicleServiceActivity(BaseCommon):
             {
                 "description": f"Test Service ({state})",
                 "vehicle_id": self.vehicle.id,
-                "date": date,
+                "date_from": date,
                 "state": state,
                 "service_type_id": self.service_type.id,
             }
@@ -49,7 +58,7 @@ class TestVehicleServiceActivity(BaseCommon):
         self.env["fleet.vehicle.log.services"]._cron_manage_service_date()
         self.assertFalse(service1.activity_ids)
         # Change the date to an older date
-        service1.date = "2024-01-15"
+        service1.date_from = "2024-01-15"
         # Run the scheduler again (2)
         self.env["fleet.vehicle.log.services"]._cron_manage_service_date()
         self.assertEqual(len(service1.activity_ids), 1)
