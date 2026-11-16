@@ -12,7 +12,7 @@
                     name="action_view_purchase_lines"
                     type="object"
                     class="oe_stat_button"
-                    icon="fa-shopping-cart"
+                    icon="shopping_cart"
                 >
                     <field
                         name="purchase_line_count"

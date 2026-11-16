@@ -7,6 +7,12 @@ from odoo.addons.base.tests.common import BaseCommon
 
 
 class TestFleetVehiclePurchaseLink(BaseCommon):
+    _test_user_groups = (
+        "base.group_user",
+        "purchase.group_purchase_user",
+        "fleet.fleet_group_user",
+    )
+
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
