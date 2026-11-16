@@ -9,6 +9,5 @@ class FleetVehicle(models.Model):
 
     vehicle_category_id = fields.Many2one(
         "fleet.vehicle.category",
-        "Vehicle Category",
         help="Eg. Tow truck, Ambulance, Trailer, Boat",
     )

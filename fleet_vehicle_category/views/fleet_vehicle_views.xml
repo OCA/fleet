@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!--
     Copyright 2019 Stefano Consolaro (Ass. PNLUG<http://odoo.pnlug.it>)
     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl)
@@ -16,7 +16,7 @@
         </field>
     </record>
 
-    <record model="ir.ui.view" id="fleet_vehicle_category_view_form">
+    <record id="fleet_vehicle_category_view_form" model="ir.ui.view">
         <field name="name">fleet.vehicle.category.form</field>
         <field name="model">fleet.vehicle.category</field>
         <field name="arch" type="xml">
@@ -40,7 +40,7 @@
         </field>
     </record>
 
-    <record model='ir.ui.view' id='fleet_vehicle_category_view_tree'>
+    <record id='fleet_vehicle_category_view_tree' model='ir.ui.view'>
         <field name="name">fleet.vehicle.category.tree</field>
         <field name="model">fleet.vehicle.category</field>
         <field name="arch" type="xml">
@@ -50,7 +50,7 @@
         </field>
     </record>
 
-    <record model="ir.actions.act_window" id="fleet_vehicle_category_act_window">
+    <record id="fleet_vehicle_category_act_window" model="ir.actions.act_window">
         <field name="name">Vehicle Category</field>
         <field name="res_model">fleet.vehicle.category</field>
         <field name="view_mode">list,form</field>
@@ -64,7 +64,7 @@
         </field>
     </record>
 
-    <record model="ir.ui.menu" id="fleet_vehicle_category_menu">
+    <record id="fleet_vehicle_category_menu" model="ir.ui.menu">
         <field name="name">Categories</field>
         <field name="parent_id" ref="fleet.fleet_vehicles_configuration" />
         <field name="action" ref="fleet_vehicle_category_act_window" />
