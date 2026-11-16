@@ -1,0 +1,32 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fleet_vehicle_fuel_capacity
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2021-04-27 19:59+0000\n"
+"Last-Translator: Marcel Savegnago <marcel.savegnago@gmail.com>\n"
+"Language-Team: none\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.3.2\n"
+
+#. module: fleet_vehicle_fuel_capacity
+#: model:ir.model.fields,field_description:fleet_vehicle_fuel_capacity.field_fleet_vehicle__fuel_capacity
+msgid "Fuel Capacity (L)"
+msgstr "Capacidade de Combustível(L)"
+
+#. module: fleet_vehicle_fuel_capacity
+#: model:ir.model.constraint,message:fleet_vehicle_fuel_capacity.constraint_fleet_vehicle_check_fuel_capacity
+msgid "Fuel capacity must be greater than or equal to 0"
+msgstr "A capacidade do combustível deve ser maior ou igual a 0"
+
+#. module: fleet_vehicle_fuel_capacity
+#: model:ir.model,name:fleet_vehicle_fuel_capacity.model_fleet_vehicle
+msgid "Vehicle"
+msgstr "Veículo"
