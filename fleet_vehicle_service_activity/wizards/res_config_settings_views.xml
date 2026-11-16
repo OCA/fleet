@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <record id="res_config_settings_view_form" model="ir.ui.view">
         <field name="name">res.config.settings.view.form.inherit.hr.fleet</field>
@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <block id="end_contract_setting" position="inside">
                 <setting string="Date Service Activity">
-                    <div class="text-muted content-group mt16" id="delay_alert_service">
+                    <div id="delay_alert_service" class="text-muted content-group mt16">
                         <span>Create an activity </span>
                         <field
                             name="delay_alert_service"
