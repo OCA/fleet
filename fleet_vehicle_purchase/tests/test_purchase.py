@@ -8,6 +8,13 @@ from odoo.addons.base.tests.common import BaseCommon
 
 
 class TestPurchase(BaseCommon):
+    _test_user_groups = (
+        "base.group_user",
+        "purchase.group_purchase_user",
+        "fleet.fleet_group_manager",
+        "account.group_account_invoice",
+    )
+
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -27,7 +34,7 @@ class TestPurchase(BaseCommon):
             {
                 "model_id": cls.model.id,
                 "driver_id": cls.driver.id,
-                "plan_to_change_car": False,
+                "plan_to_change_vehicle": False,
             }
         )
         cls.product = cls.env["product.product"].create(
