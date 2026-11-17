@@ -8,7 +8,7 @@
             <field name="service_type_id" position="after">
                 <field name="stage_id" />
             </field>
-            <field name="date" position="after">
+            <field name="date_from" position="after">
                 <field name="user_id" />
             </field>
             <xpath expr="//sheet/group[@col='2']" position="inside">
@@ -43,6 +43,7 @@
     <record id="fleet.fleet_vehicle_log_services_action" model="ir.actions.act_window">
         <!-- Redefine the views to define the kanban view the first one. !-->
         <field name="view_mode">kanban,list,form,graph,activity</field>
+        <field name="context">{'search_default_groupby_stage_id': 1}</field>
     </record>
     <record id="fleet_vehicle_log_services_view_search" model="ir.ui.view">
         <field name="name">fleet.vehicle.log.services.search</field>
@@ -82,7 +83,7 @@
                 <group>
                     <filter
                         string="Stage"
-                        name="groupby_status"
+                        name="groupby_stage_id"
                         context="{'group_by': 'stage_id'}"
                     />
                 </group>

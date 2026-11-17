@@ -2,12 +2,19 @@
 # Copyright 2025 Tecnativa - Víctor Martínez
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
+from odoo import Command
 from odoo.tests import new_test_user
 
 from odoo.addons.base.tests.common import BaseCommon
 
 
 class TestVehicleLogServicesCommon(BaseCommon):
+    _test_user_groups = (
+        "base.group_user",
+        "fleet.fleet_group_manager",
+        "base.group_system",
+    )
+
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -50,8 +57,8 @@ class TestVehicleLogServicesCommon(BaseCommon):
                 "service_type_id": cls.service_type_repair.id,
                 "amount": 500,
                 "priority": "1",
-                "tag_ids": [(4, service_tag_oil.id)],
-                "date": "2020-05-21",
+                "tag_ids": [Command.link(service_tag_oil.id)],
+                "date_from": "2020-05-21",
                 "inv_ref": "INV123",
             }
         )
