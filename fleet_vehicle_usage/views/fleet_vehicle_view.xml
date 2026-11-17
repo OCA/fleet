@@ -25,7 +25,7 @@
             </templates>
             <xpath expr="//div[hasclass('oe_kanban_details')]" position="inside">
                 <span
-                    class="label label-primary"
+                    class="badge text-bg-primary"
                     attrs="{'invisible': [('in_use', '=', False)]}"
                 >In use</span>
             </xpath>
@@ -49,7 +49,7 @@
             <field name="tag_ids" position="after">
                 <field name="in_use" invisible="1" />
                 <span
-                    class="label label-primary"
+                    class="badge text-bg-primary"
                     attrs="{'invisible': [('in_use', '=', False)]}"
                 >In use</span>
             </field>
