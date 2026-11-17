@@ -10,10 +10,10 @@
     "development_status": "Production/Stable",
     "website": "https://github.com/OCA/fleet",
     "license": "AGPL-3",
-    "version": "19.0.1.0.0",
+    "version": "20.0.1.0.0",
     "depends": ["fleet"],
     "data": [
-        "security/ir.model.access.csv",
+        "security/ir.access.csv",
         "data/fleet_vehicle_log_services_stage_data.xml",
         "data/mail_message_subtype_data.xml",
         "views/fleet_vehicle_log_services_views.xml",

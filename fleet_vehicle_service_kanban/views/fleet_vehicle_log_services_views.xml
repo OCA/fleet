@@ -8,7 +8,7 @@
             <field name="service_type_id" position="after">
                 <field name="stage_id" />
             </field>
-            <field name="date" position="after">
+            <field name="date_from" position="after">
                 <field name="user_id" />
             </field>
             <xpath expr="//sheet/group[@col='2']" position="inside">
