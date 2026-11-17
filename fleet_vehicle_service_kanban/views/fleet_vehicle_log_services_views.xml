@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <record id="fleet_vehicle_log_services_view_form" model="ir.ui.view">
         <field name="name">fleet.vehicle.log.services.form.kanban</field>
@@ -108,8 +108,8 @@
         </field>
     </record>
     <menuitem
-        name="Services Logs"
         id="fleet_vehicle_log_services_conf_menu"
+        name="Services Logs"
         parent="fleet.fleet_configuration"
         sequence="99"
     />

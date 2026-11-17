@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <record id="fleet_vehicle_log_services_stage_view_tree" model='ir.ui.view'>
         <field name="name">fleet.vehicle.log.services.stage.tree</field>
@@ -26,9 +26,9 @@
         </field>
     </record>
     <menuitem
+        id="fleet_vehicle_log_services_stage_menu"
         action="fleet_vehicle_log_services_stage_action"
         parent="fleet_vehicle_log_services_conf_menu"
-        id="fleet_vehicle_log_services_stage_menu"
         groups="fleet.fleet_group_manager"
     />
 </odoo>
