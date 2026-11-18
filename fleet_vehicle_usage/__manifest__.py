@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 {
     "name": "Fleet Vehicle Usage",
-    "version": "19.0.1.0.0",
+    "version": "20.0.1.0.0",
     "category": "Human Resources/Fleet",
     "website": "https://github.com/OCA/fleet",
     "author": "César Fernández, Tecnativa, Odoo Community Association (OCA)",
@@ -11,8 +11,7 @@
     "depends": ["fleet"],
     "installable": True,
     "data": [
-        "security/ir.model.access.csv",
-        "security/security.xml",
+        "security/ir.access.csv",
         "data/ir_sequence_data.xml",
         "views/fleet_vehicle_usage_view.xml",
         "views/fleet_vehicle_view.xml",
