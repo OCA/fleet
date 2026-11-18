@@ -25,7 +25,7 @@
             </templates>
             <xpath expr="//t[@t-name='card']/main" position="inside">
                 <span
-                    class="label label-primary"
+                    class="badge text-bg-primary align-self-start"
                     t-if="record.in_use.raw_value"
                 >In use</span>
             </xpath>
@@ -48,7 +48,7 @@
             </div>
             <field name="tag_ids" position="after">
                 <field name="in_use" invisible="1" />
-                <span class="label label-primary" invisible="not in_use">In use</span>
+                <span class="badge text-bg-primary" invisible="not in_use">In use</span>
             </field>
         </field>
     </record>
