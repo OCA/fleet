@@ -1,0 +1,3 @@
+- Marcel Savegnago \<<marcel.savegnago@escodoo.com.br>\>
+- Kaynnan Lemes \<<kaynnan.lemes@escodoo.com.br>\>
+- [Heliconia Solutions Pvt. Ltd.](https://www.heliconia.io)

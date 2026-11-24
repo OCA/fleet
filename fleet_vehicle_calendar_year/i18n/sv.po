@@ -1,0 +1,32 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fleet_vehicle_calendar_year
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2023-11-02 14:36+0000\n"
+"Last-Translator: jakobkrabbe <jakob@syscare.se>\n"
+"Language-Team: none\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
+
+#. module: fleet_vehicle_calendar_year
+#: model:ir.model.fields,field_description:fleet_vehicle_calendar_year.field_fleet_vehicle__calendar_year
+msgid "Calendar Year"
+msgstr "Kalenderår"
+
+#. module: fleet_vehicle_calendar_year
+#: model:ir.model.fields,help:fleet_vehicle_calendar_year.field_fleet_vehicle__calendar_year
+msgid "Calendar year of the vehicle"
+msgstr "Kalenderår för fordonet"
+
+#. module: fleet_vehicle_calendar_year
+#: model:ir.model,name:fleet_vehicle_calendar_year.model_fleet_vehicle
+msgid "Vehicle"
+msgstr "Fordon"
