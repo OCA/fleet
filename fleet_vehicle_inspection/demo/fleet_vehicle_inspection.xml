@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2020 - TODAY, Marcel Savegnago - Escodoo https://www.escodoo.com.br
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo noupdate="1">
+    <!--Items-->
+    <record
+        id="fleet_vehicle_inspection_item_demo_1"
+        model="fleet.vehicle.inspection.item"
+    >
+        <field name="name">Lights</field>
+    </record>
+    <record
+        id="fleet_vehicle_inspection_item_demo_2"
+        model="fleet.vehicle.inspection.item"
+    >
+        <field name="name">Mirrors</field>
+    </record>
+    <!--Inspection-->
+    <record id="fleet_vehicle_inspection_demo_1" model="fleet.vehicle.inspection">
+        <field name="vehicle_id" ref="fleet.vehicle_1" />
+        <field name="direction">out</field>
+        <field name="state">confirmed</field>
+        <field name="result">failure</field>
+        <field
+            name="date_inspected"
+            eval="(DateTime.today() - relativedelta(months=1)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+    <record id="fleet_vehicle_inspection_demo_2" model="fleet.vehicle.inspection">
+        <field name="vehicle_id" ref="fleet.vehicle_1" />
+        <field name="direction">out</field>
+        <field name="state">confirmed</field>
+        <field name="result">success</field>
+        <field
+            name="date_inspected"
+            eval="(DateTime.today() - relativedelta(months=1)).strftime('%Y-%m-%d %H:%M')"
+        />
+    </record>
+    <record id="fleet_vehicle_inspection_demo_3" model="fleet.vehicle.inspection">
+        <field name="vehicle_id" ref="fleet.vehicle_1" />
+        <field name="direction">out</field>
+        <field name="state">draft</field>
+        <field name="result">todo</field>
+    </record>
+    <!--Lines-->
+    <!--Inspection 1 - Lines-->
+    <record
+        id="fleet_vehicle_inspection_line_demo_1"
+        model="fleet.vehicle.inspection.line"
+    >
+        <field name="inspection_id" ref="fleet_vehicle_inspection_demo_1" />
+        <field name="inspection_item_id" ref="fleet_vehicle_inspection_item_demo_1" />
+        <field name="result">success</field>
+        <field name="state">confirmed</field>
+    </record>
+    <record
+        id="fleet_vehicle_inspection_line_demo_2"
+        model="fleet.vehicle.inspection.line"
+    >
+        <field name="inspection_id" ref="fleet_vehicle_inspection_demo_1" />
+        <field name="inspection_item_id" ref="fleet_vehicle_inspection_item_demo_2" />
+        <field name="result">failure</field>
+        <field name="state">confirmed</field>
+    </record>
+    <!--Inspection 2 - Lines-->
+    <record
+        id="fleet_vehicle_inspection_line_demo_3"
+        model="fleet.vehicle.inspection.line"
+    >
+        <field name="inspection_id" ref="fleet_vehicle_inspection_demo_2" />
+        <field name="inspection_item_id" ref="fleet_vehicle_inspection_item_demo_1" />
+        <field name="result">success</field>
+        <field name="state">confirmed</field>
+    </record>
+    <record
+        id="fleet_vehicle_inspection_line_demo_4"
+        model="fleet.vehicle.inspection.line"
+    >
+        <field name="inspection_id" ref="fleet_vehicle_inspection_demo_2" />
+        <field name="inspection_item_id" ref="fleet_vehicle_inspection_item_demo_2" />
+        <field name="result">success</field>
+        <field name="state">confirmed</field>
+    </record>
+</odoo>
