@@ -1,0 +1,91 @@
+# Copyright 2023 Dixmit
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+
+from odoo import fields
+from odoo.tests import Form
+
+from odoo.addons.base.tests.common import BaseCommon
+
+
+class TestPurchase(BaseCommon):
+    _test_user_groups = (
+        "base.group_user",
+        "purchase.group_purchase_user",
+        "fleet.fleet_group_manager",
+        "account.group_account_invoice",
+    )
+
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.driver = cls.env["res.partner"].create({"name": "Driver"})
+        cls.brand = cls.env["fleet.vehicle.model.brand"].create(
+            {
+                "name": "Audi",
+            }
+        )
+        cls.model = cls.env["fleet.vehicle.model"].create(
+            {
+                "brand_id": cls.brand.id,
+                "name": "A3",
+            }
+        )
+        cls.car_1 = cls.env["fleet.vehicle"].create(
+            {
+                "model_id": cls.model.id,
+                "driver_id": cls.driver.id,
+                "plan_to_change_vehicle": False,
+            }
+        )
+        cls.product = cls.env["product.product"].create(
+            {
+                "name": "product",
+                "type": "service",
+            }
+        )
+        cls.partner = cls.env["res.partner"].create({"name": "Vendor"})
+
+    def test_purchase(self):
+        self.assertEqual(0, self.car_1.purchase_order_count)
+        order_action = self.car_1.action_view_purchase_orders()
+        self.assertFalse(
+            self.env[order_action["res_model"]].search(order_action["domain"])
+        )
+        with Form(self.env["purchase.order"]) as form:
+            form.partner_id = self.partner
+            form.fleet_vehicle_id = self.car_1
+            with form.order_line.new() as form_line:
+                form_line.product_id = self.product
+                form_line.price_unit = 100
+        self.assertEqual(1, self.car_1.purchase_order_count)
+        purchase = form.save()
+        self.assertEqual(
+            purchase, self.env[order_action["res_model"]].search(order_action["domain"])
+        )
+        purchase.button_confirm()
+        purchase.order_line.qty_received = 1
+        invoice_action = purchase.action_create_invoice()
+        invoice = self.env[invoice_action["res_model"]].browse(invoice_action["res_id"])
+        invoice.invoice_date = fields.Date.today()
+        self.assertTrue(invoice.invoice_line_ids.vehicle_id)
+        self.assertFalse(self.car_1.log_services)
+        invoice.action_post()
+        self.assertTrue(self.car_1.log_services)
+
+    def test_purchase_no_vehicle(self):
+        """Test purchase order flow without a fleet vehicle."""
+        with Form(self.env["purchase.order"]) as form:
+            form.partner_id = self.partner
+            # Do not set fleet_vehicle_id
+            with form.order_line.new() as form_line:
+                form_line.product_id = self.product
+                form_line.price_unit = 100
+
+        purchase = form.save()
+        purchase.button_confirm()
+        purchase.order_line.qty_received = 1
+        invoice_action = purchase.action_create_invoice()
+        invoice = self.env[invoice_action["res_model"]].browse(invoice_action["res_id"])
+
+        # Verify that the invoice line does NOT have a vehicle_id set
+        self.assertFalse(invoice.invoice_line_ids.vehicle_id)
