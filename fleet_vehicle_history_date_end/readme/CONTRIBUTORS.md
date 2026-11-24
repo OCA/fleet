@@ -1,0 +1,6 @@
+- [Druidoo](https://www.druidoo.io):
+  - Iván Todorovich \<<ivan.todorovich@druidoo.io>\>
+  - Manuel Marquez \<<manuel.marquez@druidoo.io>\>
+- [Escodoo](https://www.escodoo.com.br):
+  - Marcel Savegnago \<<marcel.savegnago@escodoo.com.br>\>
+- [Heliconia Solutions Pvt. Ltd.](https://www.heliconia.io)
