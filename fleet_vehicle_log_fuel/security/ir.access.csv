@@ -1,0 +1,3 @@
+id,name,model_id,group_id/id,operation,domain
+fleet_rule_fuel_log_visibility_user,User can only see his/her vehicle's fuel log,fleet.vehicle.log.fuel,fleet.fleet_group_user,crud,"[('vehicle_id.driver_id','=',user.partner_id.id)]"
+fleet_rule_fuel_log_visibility_manager,Administrator has all rights on vehicle's fuel log,fleet.vehicle.log.fuel,fleet.fleet_group_manager,crud,
