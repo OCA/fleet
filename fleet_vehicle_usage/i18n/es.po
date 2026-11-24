@@ -1,0 +1,405 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fleet_vehicle_usage
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-26 08:22+0000\n"
+"PO-Revision-Date: 2024-12-20 09:06+0000\n"
+"Last-Translator: Víctor Martínez <victor.martinez@tecnativa.com>\n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.6.2\n"
+
+#. module: fleet_vehicle_usage
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_usage.fleet_vehicle_view_form
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_usage.fleet_vehicle_view_kanban
+msgid ""
+"<span class=\"label label-primary\" invisible=\"not in_use\">In use</span>"
+msgstr ""
+"<span class=\"label label-primary\" invisible=\"not in_use\">En uso</span>"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__message_needaction
+msgid "Action Needed"
+msgstr "Acción Necesaria"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Actividad Excepción Decoración"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__activity_state
+msgid "Activity State"
+msgstr "Estado de Actividad"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Icono de tipo de actividad"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__message_attachment_count
+msgid "Attachment Count"
+msgstr "Total de adjuntos"
+
+#. module: fleet_vehicle_usage
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_usage.fleet_vehicle_usage_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields.selection,name:fleet_vehicle_usage.selection__fleet_vehicle_usage__state__cancel
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_usage.fleet_vehicle_usage_search
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: fleet_vehicle_usage
+#: model_terms:ir.actions.act_window,help:fleet_vehicle_usage.fleet_vehicle_usage_action
+#: model_terms:ir.actions.act_window,help:fleet_vehicle_usage.fleet_vehicle_usage_action_from_vehicle
+msgid "Click to create a Fleet Vehicle Usage."
+msgstr "Haga clic para crear un uso de vehículo de flota."
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__partner_id
+msgid "Destination"
+msgstr "Destino"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__user_id
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_usage.fleet_vehicle_usage_search
+msgid "Driver"
+msgstr "Conductor"
+
+#. module: fleet_vehicle_usage
+#. odoo-python
+#: code:addons/fleet_vehicle_usage/models/fleet_vehicle_usage.py:0
+#, python-format
+msgid "Every driver can only drive a vehicle at once!"
+msgstr "¡Cada conductor solo puede conducir un vehículo a la vez!"
+
+#. module: fleet_vehicle_usage
+#. odoo-python
+#: code:addons/fleet_vehicle_usage/models/fleet_vehicle_usage.py:0
+#, python-format
+msgid "Every vehicle can only be picked once at the same time!"
+msgstr "¡Cada vehículo solo se puede recoger una vez al mismo tiempo!"
+
+#. module: fleet_vehicle_usage
+#: model:ir.actions.act_window,name:fleet_vehicle_usage.fleet_vehicle_usage_action
+#: model:ir.actions.act_window,name:fleet_vehicle_usage.fleet_vehicle_usage_action_from_vehicle
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__name
+msgid "Fleet Vehicle Usage"
+msgstr "Uso de vehículo"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Socios)"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,help:fleet_vehicle_usage.field_fleet_vehicle_usage__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Icono de Font Awesome ej. fa-tasks"
+
+#. module: fleet_vehicle_usage
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_usage.fleet_vehicle_usage_search
+msgid "Group By..."
+msgstr "Agrupar por..."
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__has_message
+msgid "Has Message"
+msgstr "Tiene mensaje"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__id
+msgid "ID"
+msgstr "ID"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__activity_exception_icon
+msgid "Icon"
+msgstr "Icono"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,help:fleet_vehicle_usage.field_fleet_vehicle_usage__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icono para indicar una actividad de excepción."
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,help:fleet_vehicle_usage.field_fleet_vehicle_usage__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado hay nuevos mensajes que requieren su atención."
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,help:fleet_vehicle_usage.field_fleet_vehicle_usage__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si se encuentra marcado, algunos mensajes tienen error de envío."
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle__in_use
+#: model:ir.model.fields.selection,name:fleet_vehicle_usage.selection__fleet_vehicle_usage__state__in_use
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_usage.fleet_vehicle_usage_search
+msgid "In Use"
+msgstr "En uso"
+
+#. module: fleet_vehicle_usage
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_usage.fleet_vehicle_view_search
+msgid "In use"
+msgstr "En uso"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__message_is_follower
+msgid "Is Follower"
+msgstr "Es Seguidor"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__write_uid
+msgid "Last Updated by"
+msgstr "Ultima actualización por"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__write_date
+msgid "Last Updated on"
+msgstr "Fecha modificación"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de Envío de Mensaje"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Mi fecha de límite de actividad"
+
+#. module: fleet_vehicle_usage
+#. odoo-python
+#: code:addons/fleet_vehicle_usage/models/fleet_vehicle_usage.py:0
+#: model:ir.model.fields.selection,name:fleet_vehicle_usage.selection__fleet_vehicle_usage__state__draft
+#, python-format
+msgid "New"
+msgstr "Nuevo"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Fecha Límite de Actividad Siguiente"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de actividad siguiente"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__activity_type_id
+msgid "Next Activity Type"
+msgstr "Siguiente tipo de actividad"
+
+#. module: fleet_vehicle_usage
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_usage.fleet_vehicle_usage_search
+msgid "Not Returned"
+msgstr "No devuelto"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__notes
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_usage.fleet_vehicle_usage_form
+msgid "Notes"
+msgstr "Notas"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Numero de Acciones"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de errores"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,help:fleet_vehicle_usage.field_fleet_vehicle_usage__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,help:fleet_vehicle_usage.field_fleet_vehicle_usage__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de entrega"
+
+#. module: fleet_vehicle_usage
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_usage.fleet_vehicle_usage_form
+msgid "Pick"
+msgstr "Recoger"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__picking_user_id
+msgid "Picked up by"
+msgstr "Recogido por"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__date_picking
+msgid "Picking Date"
+msgstr "Fecha de recogida"
+
+#. module: fleet_vehicle_usage
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_usage.fleet_vehicle_usage_search
+msgid "Picking Date by Month"
+msgstr "Fecha de recogida por mes"
+
+#. module: fleet_vehicle_usage
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_usage.fleet_vehicle_usage_search
+msgid "Picking Month"
+msgstr "Mes de recogida"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields.selection,name:fleet_vehicle_usage.selection__fleet_vehicle_usage__state__reserved
+msgid "Reserved"
+msgstr "Reservado"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario Responsable"
+
+#. module: fleet_vehicle_usage
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_usage.fleet_vehicle_usage_form
+msgid "Return"
+msgstr "Devolver"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__date_return
+msgid "Return Date"
+msgstr "Fecha de devolución"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields.selection,name:fleet_vehicle_usage.selection__fleet_vehicle_usage__state__returned
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_usage.fleet_vehicle_usage_search
+msgid "Returned"
+msgstr "Devuelto"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__return_user_id
+msgid "Returned by"
+msgstr "Devuelto por"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__state
+msgid "State"
+msgstr "Estado"
+
+#. module: fleet_vehicle_usage
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_usage.fleet_vehicle_usage_search
+msgid "Status"
+msgstr "Estado"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,help:fleet_vehicle_usage.field_fleet_vehicle_usage__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Estado en base a las actividades\n"
+"Atrasada: La fecha de vencimiento ya ha pasado\n"
+"Hoy: La fecha de la actividad es hoy\n"
+"Planificada: Actividades futuras."
+
+#. module: fleet_vehicle_usage
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_usage.fleet_vehicle_usage_search
+msgid "To Pick"
+msgstr "Para recoger"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,help:fleet_vehicle_usage.field_fleet_vehicle_usage__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo de actividad de excepción registrada."
+
+#. module: fleet_vehicle_usage
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_usage.fleet_vehicle_view_form
+msgid "Usage"
+msgstr "Uso"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle__usage_ids
+#: model:ir.ui.menu,name:fleet_vehicle_usage.menu_fleet_vehicle_usage_action
+msgid "Usages"
+msgstr "Usos"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model,name:fleet_vehicle_usage.model_fleet_vehicle
+#: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__vehicle_id
+#: model_terms:ir.ui.view,arch_db:fleet_vehicle_usage.fleet_vehicle_usage_search
+msgid "Vehicle"
+msgstr "Vehículo"
+
+#. module: fleet_vehicle_usage
+#: model:ir.model,name:fleet_vehicle_usage.model_fleet_vehicle_usage
+msgid "Vehicle Usage"
+msgstr "Uso de vehículo"
+
+#~ msgid ""
+#~ "<span class=\"label label-primary\" attrs=\"{'invisible': [('in_use', "
+#~ "'=', False)]}\">In use</span>"
+#~ msgstr ""
+#~ "<span class=\"label label-primary\" attrs=\"{'invisible': [('in_use', "
+#~ "'=', False)]}\">En uso</span>"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Última Modificación el"
+
+#~ msgid "Main Attachment"
+#~ msgstr "Adjunto Principal"
+
+#~ msgid "Next Activity Calendar Event"
+#~ msgstr "Próximo Evento del Calendario de Actividades"
+
+#~ msgid "Website Messages"
+#~ msgstr "Mensajes de la Página Web"
+
+#~ msgid "Website communication history"
+#~ msgstr "Historial de la comunicación en el sitio web"
