@@ -1,0 +1,11 @@
+[project]
+name = "odoo-addons-oca-fleet"
+version = "20.0.20261124.0"
+dependencies = [
+    "odoo-addon-fleet_vehicle_service_activity==20.0.*",
+]
+classifiers=[
+    "Programming Language :: Python",
+    "Framework :: Odoo",
+    "Framework :: Odoo :: 20.0",
+]
