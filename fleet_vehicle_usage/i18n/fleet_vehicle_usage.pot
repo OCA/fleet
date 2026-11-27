@@ -15,7 +15,7 @@ msgstr ""
 
 #. module: fleet_vehicle_usage
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_usage.fleet_vehicle_view_form
-msgid "<span class=\"label label-primary\" invisible=\"not in_use\">In use</span>"
+msgid "<span class=\"badge text-bg-primary\" invisible=\"not in_use\">In use</span>"
 msgstr ""
 
 #. module: fleet_vehicle_usage
