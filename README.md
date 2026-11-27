@@ -27,7 +27,7 @@ addon | version | maintainers | summary
 [fleet_vehicle_inspection](fleet_vehicle_inspection/) | 17.0.1.0.0 | <a href='https://github.com/marcelsavegnago'><img src='https://github.com/marcelsavegnago.png' width='32' height='32' style='border-radius:50%;' alt='marcelsavegnago'/></a> | This module extends the Fleet module allowing the registration of vehicle entry and exit inspections.
 [fleet_vehicle_inspection_template](fleet_vehicle_inspection_template/) | 17.0.1.0.0 | <a href='https://github.com/marcelsavegnago'><img src='https://github.com/marcelsavegnago.png' width='32' height='32' style='border-radius:50%;' alt='marcelsavegnago'/></a> | This module extend module fleet_vehicle_inspection enable inspection templates feature
 [fleet_vehicle_service_services](fleet_vehicle_service_services/) | 17.0.1.0.0 |  | Add subservices in Services.
-[fleet_vehicle_usage](fleet_vehicle_usage/) | 17.0.1.0.0 | <a href='https://github.com/victoralmau'><img src='https://github.com/victoralmau.png' width='32' height='32' style='border-radius:50%;' alt='victoralmau'/></a> | Fleet Vehicle Usage
+[fleet_vehicle_usage](fleet_vehicle_usage/) | 17.0.1.0.1 | <a href='https://github.com/victoralmau'><img src='https://github.com/victoralmau.png' width='32' height='32' style='border-radius:50%;' alt='victoralmau'/></a> | Fleet Vehicle Usage
 
 [//]: # (end addons)
 
