@@ -292,3 +292,24 @@ class TestFleetVehicle(TransactionCase):
 
         with self.assertRaises(UserError):
             move._action_done()
+
+    def test_write_empty_recordset(self):
+        vehicles = self.env["fleet.vehicle"].browse()
+        self.assertTrue(vehicles.write({"driver_id": False}))
+
+    def test_write_lot_change_releases_previous_lot(self):
+        self.assertEqual(self.lot1.fleet_vehicle_id, self.vehicle)
+        self.vehicle.write({"lot_id": self.lot2.id})
+        self.assertFalse(self.lot1.fleet_vehicle_id)
+        self.assertEqual(self.lot2.fleet_vehicle_id, self.vehicle)
+        self.vehicle.write({"lot_id": False})
+        self.assertFalse(self.lot2.fleet_vehicle_id)
+
+    def test_write_multi_records(self):
+        vehicle2 = self.env["fleet.vehicle"].create(
+            {"model_id": self.vehicle_model1.id, "product_id": self.product1.id}
+        )
+        vehicles = self.vehicle | vehicle2
+        self.assertTrue(vehicles.write({"color": "Blue"}))
+        self.assertEqual(vehicles.mapped("color"), ["Blue", "Blue"])
+        self.assertEqual(self.lot1.fleet_vehicle_id, self.vehicle)

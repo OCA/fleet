@@ -55,9 +55,10 @@ class FleetVehicle(models.Model):
         return records
 
     def write(self, vals):
+        prev_lots = {rec.id: rec.lot_id for rec in self}
+        res = super().write(vals)
         for rec in self:
-            prev_lot = rec.lot_id
-            res = super(FleetVehicle, rec).write(vals)
+            prev_lot = prev_lots[rec.id]
             if prev_lot and (prev_lot != rec.lot_id):
                 prev_lot.fleet_vehicle_id = False
             if rec.lot_id and "lot_id" in vals:
