@@ -21,9 +21,8 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_usage.fleet_vehicle_view_form
 #: model_terms:ir.ui.view,arch_db:fleet_vehicle_usage.fleet_vehicle_view_kanban
 msgid ""
-"<span class=\"label label-primary\" invisible=\"not in_use\">In use</span>"
+"<span class=\"badge text-bg-primary\" invisible=\"not in_use\">In use</span>"
 msgstr ""
-"<span class=\"label label-primary\" invisible=\"not in_use\">En uso</span>"
 
 #. module: fleet_vehicle_usage
 #: model:ir.model.fields,field_description:fleet_vehicle_usage.field_fleet_vehicle_usage__message_needaction
@@ -381,6 +380,11 @@ msgstr "Vehículo"
 #: model:ir.model,name:fleet_vehicle_usage.model_fleet_vehicle_usage
 msgid "Vehicle Usage"
 msgstr "Uso de vehículo"
+
+#~ msgid ""
+#~ "<span class=\"label label-primary\" invisible=\"not in_use\">In use</span>"
+#~ msgstr ""
+#~ "<span class=\"label label-primary\" invisible=\"not in_use\">En uso</span>"
 
 #~ msgid ""
 #~ "<span class=\"label label-primary\" attrs=\"{'invisible': [('in_use', "
