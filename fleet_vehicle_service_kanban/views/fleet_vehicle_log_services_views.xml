@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="fleet_vehicle_log_services_view_form" model="ir.ui.view">
+        <field name="name">fleet.vehicle.log.services.form.kanban</field>
+        <field name="model">fleet.vehicle.log.services</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_log_services_view_form" />
+        <field name="arch" type="xml">
+            <field name="service_type_id" position="after">
+                <field name="stage_id" />
+            </field>
+            <field name="date_from" position="after">
+                <field name="user_id" />
+            </field>
+            <xpath expr="//sheet/group[@col='2']" position="inside">
+                <group name="service_priority" string="Priority">
+                    <field name="priority" widget="priority" />
+                    <field
+                        name="tag_ids"
+                        widget="many2many_tags"
+                        options="{'color_field': 'color', 'no_create_edit': True}"
+                    />
+                </group>
+            </xpath>
+        </field>
+    </record>
+    <record id="fleet_vehicle_log_services_view_kanban" model="ir.ui.view">
+        <field name="name">fleet.vehicle.log.services.kanban</field>
+        <field name="model">fleet.vehicle.log.services</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_log_services_view_kanban" />
+        <field name="arch" type="xml">
+            <kanban position="attributes">
+                <attribute name="default_group_by">stage_id</attribute>
+            </kanban>
+            <field name="vendor_id" position="after">
+                <field
+                    name="tag_ids"
+                    widget="many2many_tags"
+                    options="{'color_field': 'color'}"
+                />
+            </field>
+        </field>
+    </record>
+    <record id="fleet.fleet_vehicle_log_services_action" model="ir.actions.act_window">
+        <!-- Redefine the views to define the kanban view the first one. !-->
+        <field name="view_mode">kanban,list,form,graph,activity</field>
+        <field name="context">{'search_default_groupby_stage_id': 1}</field>
+    </record>
+    <record id="fleet_vehicle_log_services_view_search" model="ir.ui.view">
+        <field name="name">fleet.vehicle.log.services.search</field>
+        <field name="model">fleet.vehicle.log.services</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_log_services_view_search" />
+        <field name="arch" type="xml">
+            <search position="inside">
+                <field string="Stage" name="stage_id" />
+                <filter
+                    string="My Services"
+                    name="my_services"
+                    domain="[('user_id', '=', uid)]"
+                />
+                <separator />
+                <filter
+                    string="Unread Messages"
+                    name="message_needaction"
+                    domain="[('message_needaction', '=', True)]"
+                />
+                <separator />
+                <filter
+                    string="Late Activities"
+                    name="activities_overdue"
+                    domain="[('activity_ids.date_deadline', '&lt;', context_today().strftime('%Y-%m-%d'))]"
+                    help="Show all records which has next action date is before today"
+                />
+                <filter
+                    string="Today Activities"
+                    name="activities_today"
+                    domain="[('activity_ids.date_deadline', '=', context_today().strftime('%Y-%m-%d'))]"
+                />
+                <filter
+                    string="Future Activities"
+                    name="activities_upcoming_all"
+                    domain="[('activity_ids.date_deadline', '&gt;', context_today().strftime('%Y-%m-%d'))]"
+                />
+                <group>
+                    <filter
+                        string="Stage"
+                        name="groupby_stage_id"
+                        context="{'group_by': 'stage_id'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="fleet_vehicle_log_services_view_tree" model="ir.ui.view">
+        <field name="name">fleet.vehicle.log.services.tree</field>
+        <field name="model">fleet.vehicle.log.services</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_log_services_view_tree" />
+        <field name="arch" type="xml">
+            <field name="state" position="before">
+                <field
+                    name="tag_ids"
+                    widget="many2many_tags"
+                    options="{'color_field': 'color'}"
+                    optional="show"
+                />
+            </field>
+            <field name="state" position="after">
+                <field name="stage_id" optional="show" />
+            </field>
+        </field>
+    </record>
+    <menuitem
+        id="fleet_vehicle_log_services_conf_menu"
+        name="Services Logs"
+        parent="fleet.fleet_configuration"
+        sequence="99"
+    />
+</odoo>

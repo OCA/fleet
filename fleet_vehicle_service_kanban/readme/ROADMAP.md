@@ -1,0 +1,1 @@
+Make a module similar to project_task_stage_state to link stages to states and avoid displaying 2 states.
